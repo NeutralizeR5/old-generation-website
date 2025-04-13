@@ -1,277 +1,84 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Old Generation - Gaming & Clan</title>
-  <link rel="icon" href="favicon.ico">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Roboto:300,400,500&display=swap" rel="stylesheet">
-  <!-- Dahili Stil (İsteğe bağlı harici CSS dosyası oluşturabilirsiniz) -->
-  <style>
-    /* Genel ayarlar ve sıfırlama */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
-      line-height: 1.6;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    /* Navigasyon Menüsü */
-    nav {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 100;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.6);
-    }
-    nav .logo {
-      font-family: 'Oswald', sans-serif;
-      font-size: 1.8rem;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-    }
-    nav ul li {
-      margin-left: 20px;
-    }
-    nav ul li a {
-      color: #fff;
-      font-size: 1rem;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #e50914;
-    }
-    /* Header (Hero Bölümü) */
-    header {
-      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
-                  url('hero-bg.jpg') no-repeat center center/cover;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
-    }
-    header h1 {
-      font-family: 'Oswald', sans-serif;
-      font-size: 3.5rem;
-      margin-bottom: 20px;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 40px;
-    }
-    header a.btn {
-      background: #e50914;
-      color: #fff;
-      padding: 12px 30px;
-      font-size: 1.1rem;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-    header a.btn:hover {
-      background: #b20710;
-    }
-    /* Bölümler */
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    section h2 {
-      font-family: 'Oswald', sans-serif;
-      font-size: 2.8rem;
-      margin-bottom: 40px;
-    }
-    /* Özellikler Bölümü */
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .feature-box {
-      background: #1e1e1e;
-      border-radius: 5px;
-      padding: 20px;
-      width: 300px;
-      transition: transform 0.3s, background 0.3s;
-    }
-    .feature-box:hover {
-      transform: translateY(-10px);
-      background: #292929;
-    }
-    .feature-box i {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      color: #e50914;
-    }
-    .feature-box h3 {
-      font-family: 'Oswald', sans-serif;
-      margin-bottom: 10px;
-    }
-    /* Galeri Bölümü */
-    #galeri div {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
-    }
-    #galeri img {
-      width: 300px;
-      border-radius: 5px;
-    }
-    /* İletişim Formu */
-    form {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: left;
-    }
-    form label {
-      display: block;
-      margin-bottom: 5px;
-      margin-top: 20px;
-      font-weight: bold;
-    }
-    form input, 
-    form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: none;
-      border-radius: 5px;
-      background-color: #1e1e1e;
-      color: #f0f0f0;
-    }
-    form button {
-      background: #e50914;
-      border: none;
-      padding: 12px 25px;
-      color: #fff;
-      border-radius: 5px;
-      margin-top: 20px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    form button:hover {
-      background: #b20710;
-    }
-    /* Footer */
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 20px 0;
-      font-size: 0.9rem;
-      color: #777;
-    }
-    /* Responsive Tasarım */
-    @media (max-width: 768px) {
-      nav {
-        padding: 15px 20px;
-      }
-      header h1 {
-        font-size: 2.8rem;
-      }
-      .features {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLD GENERATION - NEVER GIVE UP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        #main-header {
+            background-color: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #0779e4 3px solid;
+        }
+        #main-header h1 {
+            text-transform: uppercase;
+            margin: 0;
+            font-size: 24px;
+        }
+        #main-header p {
+            margin: 0;
+            font-size: 16px;
+        }
+        #logo {
+            margin: 20px 0;
+        }
+        #logo img {
+            width: 150px;
+            height: auto;
+        }
+        #content {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        #content h2 {
+            color: #333;
+        }
+        #content p {
+            line-height: 1.6;
+        }
+        footer {
+            background-color: #333;
+            color: #ccc;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
-  <!-- Navigasyon Menüsü -->
-  <nav>
-    <div class="logo">Old Generation</div>
-    <ul>
-      <li><a href="#anasayfa">Anasayfa</a></li>
-      <li><a href="#ozellikler">Özellikler</a></li>
-      <li><a href="#galeri">Galeri</a></li>
-      <li><a href="#iletisim">İletişim</a></li>
-    </ul>
-  </nav>
-  
-  <!-- Hero Bölümü -->
-  <header id="anasayfa">
-    <h1>Old Generation</h1>
-    <p>En iyi oyun deneyimi ve clan buluşmaları için hazır mısın?</p>
-    <a href="#ozellikler" class="btn">Keşfet</a>
-  </header>
-  
-  <!-- Özellikler Bölümü -->
-  <section id="ozellikler">
-    <h2>Özellikler</h2>
-    <div class="features">
-      <div class="feature-box">
-        <i class="fas fa-gamepad"></i>
-        <h3>Oyun Deneyimi</h3>
-        <p>Gelişmiş oyun analizleri ve turnuva bilgileri.</p>
-      </div>
-      <div class="feature-box">
-        <i class="fas fa-users"></i>
-        <h3>Clan Topluluğu</h3>
-        <p>Kendi clan’ınızı kurun veya mevcutlara katılın.</p>
-      </div>
-      <div class="feature-box">
-        <i class="fas fa-trophy"></i>
-        <h3>Turnuvalar</h3>
-        <p>Yarışmalar, turnuvalar ve ödüller sizi bekliyor.</p>
-      </div>
+    <header id="main-header">
+        <div class="container">
+            <h1>OLD GENERATION</h1>
+            <p>NEVER GIVE UP</p>
+        </div>
+    </header>
+    <div id="logo">
+        <img src="logo.jpg" alt="OLD GENERATION Logosu">
     </div>
-  </section>
-  
-  <!-- Galeri Bölümü -->
-  <section id="galeri">
-    <h2>Galeri</h2>
-    <p>En son oyun anları ve etkinliklerden kareler.</p>
-    <div>
-      <img src="gallery1.jpg" alt="Galeri 1">
-      <img src="gallery2.jpg" alt="Galeri 2">
-      <img src="gallery3.jpg" alt="Galeri 3">
-    </div>
-  </section>
-  
-  <!-- İletişim Bölümü -->
-  <section id="iletisim">
-    <h2>İletişim</h2>
-    <p>Sorularınız veya önerileriniz için bizimle iletişime geçin.</p>
-    <form>
-      <label for="isim">İsim:</label>
-      <input type="text" id="isim" name="isim" required>
-      
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      
-      <label for="mesaj">Mesaj:</label>
-      <textarea id="mesaj" name="mesaj" rows="5" required></textarea>
-      
-      <button type="submit">Gönder</button>
-    </form>
-  </section>
-  
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Old Generation. Tüm hakları saklıdır.
-  </footer>
-  
-  <!-- FontAwesome İkonları için Script -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <section id="content" class="container">
+        <h2>Hakkımızda</h2>
+        <p>OLD GENERATION, 2016 yılında kurulmuş uluslararası bir Lord's Mobile loncasıdır.</p>
+    </section>
+    <footer>
+        © 2016-2025 OLD GENERATION | Tüm hakları saklıdır. NeutralizeR tarafından desteklenmektedir.
+    </footer>
 </body>
 </html>
