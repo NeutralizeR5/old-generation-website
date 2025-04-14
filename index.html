@@ -6,150 +6,155 @@
   <title>OLD GENERATION - NEVER GIVE UP</title>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet" />
   <style>
-    /* Genel Sıfırlama */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     html, body {
       height: 100%;
       font-family: 'Oswald', sans-serif;
-      user-select: none;
       overflow-x: hidden;
-    }
-    
-    /* Arka Plan ve Genel Düzen */
-    body {
+      user-select: none;
       background: url('https://i.hizliresim.com/f7vsoke.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
     }
-    
+
+    body {
+      position: relative;
+    }
+
     .overlay {
-      background: rgba(0, 0, 0, 0.7);
-      flex: 1;
+      background: rgba(0, 0, 0, 0.75);
+      min-height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      animation: fadeIn 1s ease-out;
+      justify-content: flex-start;
+      align-items: center;
+      padding-bottom: 80px;
     }
-    
+
     .container {
       width: 90%;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px 0;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
     }
-    
-    /* Logo - Daha Büyük, Vektörel Hissiyat */
+
     #logo {
       margin-top: 40px;
-      animation: bounce 1.2s ease-out;
+      animation: fadeIn 2s ease;
     }
+
     #logo img {
-      width: 250px;
+      width: 240px;
       height: auto;
-      opacity: 0.95;
-      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
-      transition: transform 0.3s ease;
+      filter: drop-shadow(0 0 8px #ff0000);
     }
-    #logo img:hover {
-      transform: scale(1.05);
-    }
-    
-    /* Header - Başlık ve Slogan */
+
     #main-header {
-      padding-top: 20px;
+      margin-top: 20px;
     }
+
     #main-header h1 {
-      font-size: 48px;
-      margin-top: 10px;
-      letter-spacing: 3px;
-      /* Başlık renkleri logoya uyumlu olacak şekilde ayarlandı (örneğin logo: beyaz ve kırmızı tonları) */
-      background: linear-gradient(90deg, #ffffff, #ff0000);
+      font-size: 52px;
+      background: linear-gradient(to right, #ff0000, #ffffff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.5);
-      animation: slideDown 1s ease-out;
+      text-shadow: 2px 2px 6px rgba(255, 0, 0, 0.3);
+      letter-spacing: 3px;
+      animation: slideDown 1.5s ease;
     }
+
     #main-header p {
       font-size: 20px;
-      color: #ffd1d1;
+      text-transform: uppercase;
+      color: #ffcccc;
       letter-spacing: 2px;
-      margin-top: 5px;
-      animation: slideDown 1s ease-out 0.3s both;
+      animation: fadeIn 2s ease 0.5s forwards;
+      opacity: 0;
     }
-    
-    /* Flex Spacer: Boşluk bırakarak About Us ve Footer'ı alta yaslayacağız */
-    .spacer {
-      flex: 1;
-    }
-    
-    /* About Us bölümü */
+
     #content {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 30px 20px;
+      background: rgba(0, 0, 0, 0.65);
+      padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-      margin: 30px auto;
-      max-width: 800px;
-      animation: fadeIn 1s ease-out;
+      margin-top: 40px;
+      width: 100%;
+      animation: fadeInUp 2s ease;
     }
+
     #content h2 {
-      font-size: 26px;
+      font-size: 28px;
       margin-bottom: 15px;
-      color: #ffb3b3;
+      color: #ff4d4d;
     }
+
     #content p {
       font-size: 18px;
       line-height: 1.6;
-      color: #f3f3f3;
+      color: #e0e0e0;
     }
-    
-    /* Footer sabit en alt */
+
     footer {
+      margin-top: 40px;
       padding: 20px 10px;
-      background-color: rgba(0, 0, 0, 0.85);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #ccc;
       font-size: 14px;
-      color: #bbb;
+      width: 100%;
+      text-align: center;
+      animation: fadeIn 2.5s ease;
     }
-    
+
     /* Animasyonlar */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    
-    @keyframes slideDown {
-      from { transform: translateY(-20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    
-    @keyframes bounce {
-      0% { transform: translateY(-100%); opacity: 0; }
-      60% { transform: translateY(10%); opacity: 1; }
-      80% { transform: translateY(-5%); }
-      100% { transform: translateY(0); }
-    }
-    
-    /* Mobil Uyumluluk */
-    @media screen and (max-width: 768px) {
-      #logo img {
-        width: 200px;
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
       }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Mobil uyumluluk */
+    @media (max-width: 768px) {
       #main-header h1 {
         font-size: 36px;
       }
-      #main-header p {
-        font-size: 18px;
+
+      #logo img {
+        width: 180px;
       }
+
+      #content {
+        padding: 20px;
+      }
+
       #content h2 {
         font-size: 22px;
       }
+
       #content p {
         font-size: 16px;
       }
@@ -158,53 +163,17 @@
 </head>
 <body oncontextmenu="return false">
   <div class="overlay">
+    <div id="logo">
+      <img src="logo.svg" alt="OLD GENERATION Logosu" />
+    </div>
+
     <header id="main-header">
       <div class="container">
-        <!-- Logo artık başlık bölümünün üstüne alındı ve vektörel görünüm sağlandı -->
-        <div id="logo">
-          <img src="logo.jpg" alt="OLD GENERATION Logosu" />
-        </div>
         <h1>OLD GENERATION</h1>
         <p>NEVER GIVE UP</p>
       </div>
     </header>
-    
-    <!-- Spacer boşluk bırakır, böylece About Us ve Footer en alta yaslanır -->
-    <div class="spacer"></div>
-    
-    <section id="content" class="container">
+
+    <div class="container" id="content">
       <h2>About Us</h2>
-      <p>LORDS MOBILE not just a game .. OLD GENERATION not just a clan ..</p>
-    </section>
-    
-    <footer>
-      © 2016-2025 OLD GENERATION | All Rights Reserved. Powered by NeutralizeR
-    </footer>
-  </div>
-
-  <!-- Kopyalama Koruması -->
-  <script>
-    document.addEventListener('keydown', function (e) {
-      if (
-        (e.ctrlKey && ['u', 's', 'c', 'a'].includes(e.key.toLowerCase())) ||
-        e.key === 'F12'
-      ) {
-        e.preventDefault();
-        alert("Bu içerik kopyalanamaz!");
-      }
-    });
-
-    document.addEventListener('contextmenu', function (e) {
-      e.preventDefault();
-    });
-
-    document.addEventListener('selectstart', function (e) {
-      e.preventDefault();
-    });
-
-    document.addEventListener('copy', function (e) {
-      e.preventDefault();
-    });
-  </script>
-</body>
-</html>
+      <p
