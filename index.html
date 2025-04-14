@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OLD GENERATION - NEVER GIVE UP</title>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -12,10 +12,11 @@
       box-sizing: border-box;
     }
 
-    body, html {
+    html, body {
       height: 100%;
       font-family: 'Oswald', sans-serif;
-      user-select: none; /* Metin seçimini engelle */
+      user-select: none;
+      overflow-x: hidden;
     }
 
     body {
@@ -23,89 +24,122 @@
       background-size: cover;
       color: #fff;
       text-align: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .overlay {
       background: rgba(0, 0, 0, 0.7);
       min-height: 100%;
-      padding-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .container {
       width: 90%;
-      margin: auto;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 0;
     }
 
     #main-header {
-      padding-top: 60px;
-    }
-
-    #main-header h1 {
-      font-size: 60px;
-      margin-bottom: 10px;
-      letter-spacing: 3px;
-      background: linear-gradient(90deg, #ffffff, #ff0000);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 2px 2px 6px rgba(255, 0, 0, 0.4);
-    }
-
-    #main-header p {
-      font-size: 22px;
-      margin-bottom: 20px;
-      color: #ffcccc;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    #logo {
-      margin: 30px 0;
+      padding-top: 20px;
     }
 
     #logo img {
-      max-width: 220px;
+      width: 200px;
       height: auto;
+      opacity: 0.85;
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+      transition: transform 0.3s ease;
+    }
+
+    #logo img:hover {
+      transform: scale(1.05);
+    }
+
+    #main-header h1 {
+      font-size: 48px;
+      margin-top: 10px;
+      background: linear-gradient(90deg, #ff0000, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.4);
+      letter-spacing: 3px;
+    }
+
+    #main-header p {
+      font-size: 20px;
+      color: #ffd1d1;
+      letter-spacing: 2px;
+      margin-top: 5px;
     }
 
     #content {
       background: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-      margin-top: 20px;
+      padding: 30px 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+      margin-top: 30px;
     }
 
     #content h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
+      font-size: 26px;
+      margin-bottom: 15px;
+      color: #ffb3b3;
     }
 
     #content p {
       font-size: 18px;
       line-height: 1.6;
+      color: #f3f3f3;
     }
 
     footer {
-      margin-top: 40px;
-      padding: 20px 0;
-      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px 10px;
+      background-color: rgba(0, 0, 0, 0.8);
       font-size: 14px;
-      color: #ccc;
+      color: #bbb;
+      margin-top: auto;
+    }
+
+    @media screen and (max-width: 768px) {
+      #main-header h1 {
+        font-size: 34px;
+      }
+
+      #main-header p {
+        font-size: 16px;
+      }
+
+      #logo img {
+        width: 150px;
+      }
+
+      #content h2 {
+        font-size: 22px;
+      }
+
+      #content p {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body oncontextmenu="return false">
   <div class="overlay">
     <header id="main-header">
+      <div id="logo">
+        <img src="logo.jpg" alt="OLD GENERATION Logosu" />
+      </div>
       <div class="container">
         <h1>OLD GENERATION</h1>
         <p>NEVER GIVE UP</p>
       </div>
     </header>
-
-    <div id="logo">
-      <img src="logo.jpg" alt="OLD GENERATION Logosu">
-    </div>
 
     <section id="content" class="container">
       <h2>About Us</h2>
@@ -113,15 +147,15 @@
     </section>
 
     <footer>
-      © 2016-2025 OLD GENERATION | All Rights Reserved. powered by NeutralizeR
+      © 2016-2025 OLD GENERATION | All Rights Reserved. Powered by NeutralizeR
     </footer>
   </div>
 
-  <!-- Kopyalama koruması -->
+  <!-- Kopyalama Koruması -->
   <script>
     document.addEventListener('keydown', function (e) {
       if (
-        e.ctrlKey && (e.key === 'u' || e.key === 'c' || e.key === 's' || e.key === 'a') ||
+        (e.ctrlKey && ['u', 's', 'c', 'a'].includes(e.key.toLowerCase())) ||
         e.key === 'F12'
       ) {
         e.preventDefault();
