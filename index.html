@@ -15,6 +15,7 @@
     body, html {
       height: 100%;
       font-family: 'Oswald', sans-serif;
+      user-select: none; /* Metin seçimini engelle */
     }
 
     body {
@@ -93,7 +94,7 @@
     }
   </style>
 </head>
-<body>
+<body oncontextmenu="return false">
   <div class="overlay">
     <header id="main-header">
       <div class="container">
@@ -103,7 +104,7 @@
     </header>
 
     <div id="logo">
-      <img src="logo_transparent.png" alt="OLD GENERATION Logosu">
+      <img src="logo.jpg" alt="OLD GENERATION Logosu">
     </div>
 
     <section id="content" class="container">
@@ -115,5 +116,30 @@
       © 2016-2025 OLD GENERATION | All Rights Reserved. powered by NeutralizeR
     </footer>
   </div>
+
+  <!-- Kopyalama koruması -->
+  <script>
+    document.addEventListener('keydown', function (e) {
+      if (
+        e.ctrlKey && (e.key === 'u' || e.key === 'c' || e.key === 's' || e.key === 'a') ||
+        e.key === 'F12'
+      ) {
+        e.preventDefault();
+        alert("Bu içerik kopyalanamaz!");
+      }
+    });
+
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener('selectstart', function (e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener('copy', function (e) {
+      e.preventDefault();
+    });
+  </script>
 </body>
 </html>
