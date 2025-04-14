@@ -1,192 +1,167 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OLD GENERATION - NEVER GIVE UP</title>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="logo.jpg" type="image/jpg">
+
+  <!-- SEO META -->
+  <meta name="description" content="Lords Mobile'da efsanevi OLD GENERATION loncası. Asla pes etmeyenlerin topluluğu.">
+  <meta name="keywords" content="Lords Mobile, OLD GENERATION, lonca, clan, oyun, mobil oyun">
+  <meta name="author" content="NeutralizeR">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+
   <style>
-    /* Genel Sıfırlama */
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
     }
+
     html, body {
       height: 100%;
       font-family: 'Oswald', sans-serif;
       user-select: none;
-      overflow-x: hidden;
-    }
-    
-    /* Arka Plan ve Genel Düzen */
-    body {
       background: url('https://i.hizliresim.com/f7vsoke.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
     }
-    
+
     .overlay {
       background: rgba(0, 0, 0, 0.7);
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      animation: fadeIn 1s ease-out;
+      min-height: 100%;
+      padding-bottom: 50px;
     }
-    
+
     .container {
       width: 90%;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px 0;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
     }
-    
-    /* Logo - Daha Büyük, Vektörel Hissiyat */
-    #logo {
-      margin-top: 40px;
-      animation: bounce 1.2s ease-out;
-    }
+
     #logo img {
-      width: 250px;
-      height: auto;
-      opacity: 0.95;
-      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
-      transition: transform 0.3s ease;
+      width: 200px;
+      margin-top: 30px;
+      filter: drop-shadow(0 0 10px rgba(255,0,0,0.5));
     }
-    #logo img:hover {
-      transform: scale(1.05);
+
+    h1 {
+      font-size: 50px;
+      margin-top: 20px;
+      color: #ff4444;
+      animation: fadeIn 2s ease-in-out;
     }
-    
-    /* Header - Başlık ve Slogan */
-    #main-header {
-      padding-top: 20px;
-    }
-    #main-header h1 {
-      font-size: 48px;
-      margin-top: 10px;
-      letter-spacing: 3px;
-      /* Başlık renkleri logoya uyumlu olacak şekilde ayarlandı (örneğin logo: beyaz ve kırmızı tonları) */
-      background: linear-gradient(90deg, #ffffff, #ff0000);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.5);
-      animation: slideDown 1s ease-out;
-    }
-    #main-header p {
+
+    p.tagline {
       font-size: 20px;
-      color: #ffd1d1;
+      margin-bottom: 30px;
+      color: #ffdddd;
       letter-spacing: 2px;
-      margin-top: 5px;
-      animation: slideDown 1s ease-out 0.3s both;
     }
-    
-    /* Flex Spacer: Boşluk bırakarak About Us ve Footer'ı alta yaslayacağız */
-    .spacer {
-      flex: 1;
-    }
-    
-    /* About Us bölümü */
-    #content {
+
+    .section {
       background: rgba(0, 0, 0, 0.6);
-      padding: 30px 20px;
+      padding: 30px;
+      margin-top: 40px;
       border-radius: 10px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-      margin: 30px auto;
-      max-width: 800px;
-      animation: fadeIn 1s ease-out;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
     }
-    #content h2 {
-      font-size: 26px;
+
+    .section h2 {
+      font-size: 28px;
       margin-bottom: 15px;
-      color: #ffb3b3;
+      color: #ff6666;
     }
-    #content p {
+
+    .section p {
       font-size: 18px;
       line-height: 1.6;
-      color: #f3f3f3;
     }
-    
-    /* Footer sabit en alt */
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    form button {
+      background: #ff4444;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
     footer {
-      padding: 20px 10px;
-      background-color: rgba(0, 0, 0, 0.85);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      color: #aaa;
       font-size: 14px;
-      color: #bbb;
+      text-align: center;
+      position: relative;
+      margin-top: 50px;
     }
-    
-    /* Animasyonlar */
+
+    /* Animasyon */
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    
-    @keyframes slideDown {
-      from { transform: translateY(-20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    
-    @keyframes bounce {
-      0% { transform: translateY(-100%); opacity: 0; }
-      60% { transform: translateY(10%); opacity: 1; }
-      80% { transform: translateY(-5%); }
-      100% { transform: translateY(0); }
-    }
-    
-    /* Mobil Uyumluluk */
-    @media screen and (max-width: 768px) {
-      #logo img {
-        width: 200px;
-      }
-      #main-header h1 {
-        font-size: 36px;
-      }
-      #main-header p {
-        font-size: 18px;
-      }
-      #content h2 {
-        font-size: 22px;
-      }
-      #content p {
-        font-size: 16px;
-      }
+
+    /* Mobil */
+    @media (max-width: 600px) {
+      h1 { font-size: 36px; }
+      .section { padding: 20px; }
+      #logo img { width: 150px; }
     }
   </style>
 </head>
 <body oncontextmenu="return false">
   <div class="overlay">
-    <header id="main-header">
-      <div class="container">
-        <!-- Logo artık başlık bölümünün üstüne alındı ve vektörel görünüm sağlandı -->
-        <div id="logo">
-          <img src="logo.jpg" alt="OLD GENERATION Logosu" />
-        </div>
-        <h1>OLD GENERATION</h1>
-        <p>NEVER GIVE UP</p>
+    <div class="container">
+      <div id="logo">
+        <img src="logo.jpg" alt="OLD GENERATION Logosu">
       </div>
-    </header>
-    
-    <!-- Spacer boşluk bırakır, böylece About Us ve Footer en alta yaslanır -->
-    <div class="spacer"></div>
-    
-    <section id="content" class="container">
-      <h2>About Us</h2>
-      <p>LORDS MOBILE not just a game .. OLD GENERATION not just a clan ..</p>
-    </section>
-    
-    <footer>
-      © 2016-2025 OLD GENERATION | All Rights Reserved. Powered by NeutralizeR
-    </footer>
+      <h1>OLD GENERATION</h1>
+      <p class="tagline">NEVER GIVE UP</p>
+
+      <div class="section" id="contact">
+        <h2>İletişim</h2>
+        <form action="https://formspree.io/f/myzeveog" method="POST">
+          <input type="text" name="name" placeholder="Adınız" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <textarea name="message" rows="4" placeholder="Mesajınız" required></textarea>
+          <button type="submit">Gönder</button>
+        </form>
+      </div>
+
+      <div class="section" id="about">
+        <h2>About Us</h2>
+        <p>LORDS MOBILE not just a game .. OLD GENERATION not just a clan ..</p>
+      </div>
+
+      <footer>
+        © 2016-2025 OLD GENERATION | All Rights Reserved. powered by NeutralizeR
+      </footer>
+    </div>
   </div>
 
-  <!-- Kopyalama Koruması -->
+  <!-- WhatsApp Butonu -->
+  <a href="https://wa.me/905010829293" target="_blank" style="position:fixed; bottom:20px; right:20px; background:#25D366; color:#fff; border-radius:50%; padding:15px; font-size:24px; text-decoration:none; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+    💬
+  </a>
+
+  <!-- Kopyalama koruması -->
   <script>
     document.addEventListener('keydown', function (e) {
       if (
-        (e.ctrlKey && ['u', 's', 'c', 'a'].includes(e.key.toLowerCase())) ||
+        e.ctrlKey && (e.key === 'u' || e.key === 'c' || e.key === 's' || e.key === 'a') ||
         e.key === 'F12'
       ) {
         e.preventDefault();
