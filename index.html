@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OLD GENERATION - NEVER GIVE UP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -13,8 +14,7 @@
 
     body, html {
       height: 100%;
-      font-family: Arial, sans-serif;
-      user-select: none; /* Metin seçimini engelle */
+      font-family: 'Oswald', sans-serif;
     }
 
     body {
@@ -31,24 +31,30 @@
     }
 
     .container {
-      width: 80%;
+      width: 90%;
       margin: auto;
     }
 
     #main-header {
-      padding-top: 30px;
-      padding-bottom: 10px;
+      padding-top: 60px;
     }
 
     #main-header h1 {
-      text-transform: uppercase;
-      font-size: 36px;
+      font-size: 60px;
       margin-bottom: 10px;
+      letter-spacing: 3px;
+      background: linear-gradient(90deg, #ffffff, #ff0000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 6px rgba(255, 0, 0, 0.4);
     }
 
     #main-header p {
-      font-size: 20px;
+      font-size: 22px;
       margin-bottom: 20px;
+      color: #ffcccc;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
     #logo {
@@ -56,7 +62,7 @@
     }
 
     #logo img {
-      max-width: 100%;
+      max-width: 220px;
       height: auto;
     }
 
@@ -86,19 +92,6 @@
       color: #ccc;
     }
   </style>
-
-  <!-- Kopyalama koruma scripti -->
-  <script>
-    document.addEventListener('contextmenu', e => e.preventDefault()); // Sağ tık
-    document.addEventListener('keydown', e => {
-      if (
-        e.ctrlKey && ['c', 'u', 's', 'p'].includes(e.key.toLowerCase()) || 
-        e.key === 'F12'
-      ) {
-        e.preventDefault();
-      }
-    });
-  </script>
 </head>
 <body>
   <div class="overlay">
@@ -110,7 +103,7 @@
     </header>
 
     <div id="logo">
-      <img src="logo.jpg" alt="OLD GENERATION Logosu">
+      <img src="logo_transparent.png" alt="OLD GENERATION Logosu">
     </div>
 
     <section id="content" class="container">
