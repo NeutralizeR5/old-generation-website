@@ -140,15 +140,21 @@
           <button type="submit">Submit</button>
         </form>
     </div>
-      
-<!-- Spacer boşluk bırakır, böylece About Us ve Footer en alta yaslanır -->
+      <!-- Spacer boşluk bırakır, böylece About Us ve Footer en alta yaslanır -->
     <div class="spacer"></div>
-     
       <div class="section" id="about">
         <h2>About Us</h2>
         <p>LORDS MOBILE not just a game .. OLD GENERATION not just a clan .. powered by NeutralizeR</p>
       </div>
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
+.spacer {
+  flex: 1;
+}
       <footer>
         © 2016-2025 OLD GENERATION | All Rights Reserved. designed by NeutralizeR
       </footer>
