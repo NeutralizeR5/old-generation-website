@@ -2,162 +2,98 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>OLD GENERATION - NEVER GIVE UP</title>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html, body {
-      height: 100%;
+    body {
       font-family: 'Oswald', sans-serif;
-      overflow-x: hidden;
-      user-select: none;
       background: url('https://i.hizliresim.com/f7vsoke.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
-    }
-
-    body {
-      position: relative;
+      user-select: none;
+      overflow-x: hidden;
     }
 
     .overlay {
-      background: rgba(0, 0, 0, 0.75);
-      min-height: 100%;
+      background: rgba(0,0,0,0.7);
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
       align-items: center;
-      padding-bottom: 80px;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-      text-align: center;
-    }
-
-    #logo {
-      margin-top: 40px;
-      animation: fadeIn 2s ease;
+      padding-bottom: 60px;
     }
 
     #logo img {
-      width: 240px;
+      width: 260px;
       height: auto;
-      filter: drop-shadow(0 0 8px #ff0000);
+      margin-top: 40px;
+      filter: drop-shadow(0 0 8px #f00);
+      animation: fadeIn 2s ease;
     }
 
-    #main-header {
-      margin-top: 20px;
-    }
-
-    #main-header h1 {
-      font-size: 52px;
+    h1 {
+      font-size: 56px;
       background: linear-gradient(to right, #ff0000, #ffffff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 2px 2px 6px rgba(255, 0, 0, 0.3);
+      margin-top: 20px;
       letter-spacing: 3px;
       animation: slideDown 1.5s ease;
     }
 
-    #main-header p {
-      font-size: 20px;
+    p.slogan {
+      font-size: 22px;
       text-transform: uppercase;
       color: #ffcccc;
-      letter-spacing: 2px;
+      margin-bottom: 40px;
       animation: fadeIn 2s ease 0.5s forwards;
-      opacity: 0;
     }
 
-    #content {
-      background: rgba(0, 0, 0, 0.65);
+    .box {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
       padding: 30px;
-      border-radius: 10px;
-      margin-top: 40px;
-      width: 100%;
+      max-width: 800px;
+      text-align: center;
+      margin: 20px;
       animation: fadeInUp 2s ease;
     }
 
-    #content h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
+    .box h2 {
+      font-size: 30px;
       color: #ff4d4d;
+      margin-bottom: 10px;
     }
 
-    #content p {
+    .box p {
       font-size: 18px;
+      color: #eee;
       line-height: 1.6;
-      color: #e0e0e0;
     }
 
     footer {
-      margin-top: 40px;
-      padding: 20px 10px;
-      background-color: rgba(0, 0, 0, 0.8);
-      color: #ccc;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 15px;
       font-size: 14px;
-      width: 100%;
+      color: #ccc;
       text-align: center;
-      animation: fadeIn 2.5s ease;
+      margin-top: auto;
+      width: 100%;
+      animation: fadeIn 3s ease;
     }
 
     /* Animasyonlar */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Mobil uyumluluk */
     @media (max-width: 768px) {
-      #main-header h1 {
-        font-size: 36px;
-      }
-
-      #logo img {
-        width: 180px;
-      }
-
-      #content {
-        padding: 20px;
-      }
-
-      #content h2 {
-        font-size: 22px;
-      }
-
-      #content p {
-        font-size: 16px;
-      }
+      h1 { font-size: 38px; }
+      p.slogan { font-size: 18px; }
+      #logo img { width: 180px; }
     }
   </style>
 </head>
@@ -167,13 +103,35 @@
       <img src="logo.svg" alt="OLD GENERATION Logosu" />
     </div>
 
-    <header id="main-header">
-      <div class="container">
-        <h1>OLD GENERATION</h1>
-        <p>NEVER GIVE UP</p>
-      </div>
-    </header>
+    <h1>OLD GENERATION</h1>
+    <p class="slogan">NEVER GIVE UP</p>
 
-    <div class="container" id="content">
+    <div class="box">
       <h2>About Us</h2>
-      <p
+      <p>
+        We are the OLD GENERATION – a powerful guild with legacy, honor, and determination. United by strategy, driven by loyalty. Join us in battle, rise with the legends.
+      </p>
+    </div>
+
+    <footer>
+      © 2016–2025 OLD GENERATION | Powered by NeutralizeR
+    </footer>
+  </div>
+
+  <!-- Kopyalama Koruması -->
+  <script>
+    document.addEventListener('keydown', function (e) {
+      if (
+        e.ctrlKey && ['u','c','s','a'].includes(e.key.toLowerCase()) ||
+        e.key === 'F12'
+      ) {
+        e.preventDefault();
+        alert("Bu içerik kopyalanamaz!");
+      }
+    });
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('selectstart', e => e.preventDefault());
+    document.addEventListener('copy', e => e.preventDefault());
+  </script>
+</body>
+</html>
