@@ -7,12 +7,15 @@
   <link rel="icon" href="logo.jpg" type="image/jpg" />
 
   <!-- SEO META -->
-  <meta name="description" content="Lords Mobile'da efsanevi OLD GENERATION loncası. Asla pes etmeyenlerin topluluğu.">
-  <meta name="keywords" content="Lords Mobile, OLD GENERATION, lonca, clan, oyun, mobil oyun">
-  <meta name="author" content="NeutralizeR">
+  <meta name="description" content="Lords Mobile'da efsanevi OLD GENERATION loncası. Asla pes etmeyenlerin topluluğu." />
+  <meta name="keywords" content="Lords Mobile, OLD GENERATION, lonca, clan, oyun, mobil oyun" />
+  <meta name="author" content="NeutralizeR" />
 
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet" />
+
+  <!-- Telegram Logo için CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-VlzI0fF3yqE7U+vj2C5B0+DFEXz2yRj8YHdOoERKoW6ECtV9KztE0MiGJQ0b0PMW7WkM4Nd5lZBlcHoMIWyQxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
     * {
@@ -20,19 +23,18 @@
     }
 
     html, body {
-      min-height: 100%;
+      height: 100%;
       font-family: 'Oswald', sans-serif;
       user-select: none;
       background: url('https://i.hizliresim.com/f7vsoke.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
-      display: flex;
-      flex-direction: column;
     }
 
     .overlay {
       background: rgba(0, 0, 0, 0.7);
-      flex: 1;
+      min-height: 100%;
+      padding-bottom: 100px;
     }
 
     .container {
@@ -46,7 +48,7 @@
     #logo img {
       width: 220px;
       margin-top: 30px;
-      filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.5));
+      filter: drop-shadow(0 0 10px rgba(255,0,0,0.5));
     }
 
     h1 {
@@ -99,22 +101,19 @@
       cursor: pointer;
     }
 
-    .bottom-sections {
-      background: rgba(0, 0, 0, 0.8);
-      padding: 30px 20px 10px;
-      text-align: center;
-    }
-
     footer {
+      background: rgba(0, 0, 0, 0.7);
       padding: 20px;
       color: #aaa;
       font-size: 14px;
+      text-align: center;
+      margin-top: 50px;
     }
 
-    .visitor-counter {
-      margin-top: 20px;
-      font-size: 16px;
-      color: #aaa;
+    #visitor-counter {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #ccc;
     }
 
     /* Animasyon */
@@ -123,80 +122,106 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* Telegram Butonu */
+    .telegram-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #0088cc;
+      color: white;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    /* Mobil */
     @media (max-width: 600px) {
       h1 { font-size: 36px; }
       .section { padding: 20px; }
-      #logo img { width: 150px; }
+      #logo img { width: 160px; }
     }
   </style>
 </head>
-
 <body oncontextmenu="return false">
   <div class="overlay">
     <div class="container">
       <div id="logo">
-        <img src="logo.jpg" alt="OLD GENERATION Logosu">
+        <img src="logo.jpg" alt="OLD GENERATION Logosu" />
       </div>
       <h1>OLD GENERATION</h1>
       <p class="tagline">NEVER GIVE UP</p>
 
-      <!-- İletişim Formu -->
       <div class="section" id="contact">
         <h2>Contact</h2>
         <form action="https://formspree.io/f/myzeveog" method="POST">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="email" name="email" placeholder="Email" required>
+          <input type="text" name="name" placeholder="Name" required />
+          <input type="email" name="email" placeholder="Email" required />
           <textarea name="message" rows="4" placeholder="Message" required></textarea>
           <button type="submit">Submit</button>
         </form>
       </div>
-    </div>
-  </div>
 
-  <!-- Hakkımızda ve Footer -->
-  <div class="bottom-sections">
-    <div class="section" id="about">
-      <h2>About Us</h2>
-      <p>LORDS MOBILE not just a game .. OLD GENERATION not just a clan .. powered by NeutralizeR</p>
-    </div>
-    <footer>
-      © 2016-2025 OLD GENERATION | All Rights Reserved. designed by NeutralizeR
-      <div class="visitor-counter">
-        Ziyaretçi Sayısı: <span id="visitor-count">yükleniyor...</span>
+      <div class="section" id="about">
+        <h2>About Us</h2>
+        <p>LORDS MOBILE not just a game .. OLD GENERATION not just a clan .. powered by NeutralizeR</p>
       </div>
-    </footer>
+
+      <footer>
+        © 2016-2025 OLD GENERATION | All Rights Reserved. designed by NeutralizeR
+        <div id="visitor-counter">Toplam ziyaretçi: <span id="visitorCount">...</span></div>
+      </footer>
+    </div>
   </div>
 
   <!-- Telegram Butonu -->
-  <a href="https://t.me/+tUKdRu2diKtlM2Vk" target="_blank" style="position:fixed; bottom:20px; right:20px; background:#25D366; color:#fff; border-radius:50%; padding:15px; font-size:24px; text-decoration:none; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
-    📞
+  <a href="https://t.me/+tUKdRu2diKtlM2Vk" class="telegram-btn" target="_blank" title="Bize Telegram'dan ulaş">
+    <i class="fab fa-telegram-plane"></i>
   </a>
 
-  <!-- Kopyalama Koruması -->
+  <!-- Kopyalama koruması -->
   <script>
     document.addEventListener('keydown', function (e) {
-      if (e.ctrlKey && ['u', 'c', 's', 'a'].includes(e.key) || e.key === 'F12') {
+      if (
+        e.ctrlKey && (e.key === 'u' || e.key === 'c' || e.key === 's' || e.key === 'a') ||
+        e.key === 'F12'
+      ) {
         e.preventDefault();
         alert("Bu içerik kopyalanamaz!");
       }
     });
 
-    document.addEventListener('contextmenu', e => e.preventDefault());
-    document.addEventListener('selectstart', e => e.preventDefault());
-    document.addEventListener('copy', e => e.preventDefault());
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener('selectstart', function (e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener('copy', function (e) {
+      e.preventDefault();
+    });
   </script>
 
-  <!-- Ziyaretçi Sayacı (Basit LocalStorage tabanlı) -->
+  <!-- Basit Tarayıcı Bazlı Ziyaretçi Sayacı -->
   <script>
-    const countElement = document.getElementById("visitor-count");
-    let count = localStorage.getItem("visitor_count");
-    if (!count) {
-      count = 1;
-    } else {
-      count = parseInt(count) + 1;
+    const localStorageKey = 'oldgeneration-visited';
+    const visitorKey = 'oldgeneration-total-visits';
+
+    if (!localStorage.getItem(localStorageKey)) {
+      localStorage.setItem(localStorageKey, 'true');
+      let count = parseInt(localStorage.getItem(visitorKey) || '0', 10);
+      localStorage.setItem(visitorKey, count + 1);
     }
-    localStorage.setItem("visitor_count", count);
-    countElement.textContent = count;
+
+    document.getElementById('visitorCount').innerText = localStorage.getItem(visitorKey) || '1';
   </script>
 </body>
 </html>
