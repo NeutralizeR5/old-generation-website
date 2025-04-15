@@ -14,8 +14,8 @@
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet" />
 
-  <!-- Telegram Logo için CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-VlzI0fF3yqE7U+vj2C5B0+DFEXz2yRj8YHdOoERKoW6ECtV9KztE0MiGJQ0b0PMW7WkM4Nd5lZBlcHoMIWyQxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Font Awesome for Telegram Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKB4Imkb9xYZDx6K3U04bZ1F3F3e/pE+LL5Yc5VU9KJkz5k+KgA4hZ+jDDvWjwp4rxDoN6aWw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
     * {
@@ -32,9 +32,11 @@
     }
 
     .overlay {
-      background: rgba(0, 0, 0, 0.7);
       min-height: 100%;
-      padding-bottom: 100px;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .container {
@@ -43,6 +45,7 @@
       margin: auto;
       padding: 20px;
       text-align: center;
+      flex-grow: 1;
     }
 
     #logo img {
@@ -172,16 +175,16 @@
         <h2>About Us</h2>
         <p>LORDS MOBILE not just a game .. OLD GENERATION not just a clan .. powered by NeutralizeR</p>
       </div>
-
-      <footer>
-        © 2016-2025 OLD GENERATION | All Rights Reserved. designed by NeutralizeR
-        <div id="visitor-counter">Toplam ziyaretçi: <span id="visitorCount">...</span></div>
-      </footer>
     </div>
+
+    <footer>
+      © 2016-2025 OLD GENERATION | All Rights Reserved. designed by NeutralizeR
+      <div id="visitor-counter">Toplam ziyaretçi: <span id="visitorCount">...</span></div>
+    </footer>
   </div>
 
   <!-- Telegram Butonu -->
-  <a href="https://t.me/+tUKdRu2diKtlM2Vk" class="telegram-btn" target="_blank" title="Bize Telegram'dan ulaş">
+  <a href="https://t.me/+tUKdRu2diKtlM2Vk" class="telegram-btn" target="_blank" title="Telegram ile iletişime geç">
     <i class="fab fa-telegram-plane"></i>
   </a>
 
@@ -210,7 +213,7 @@
     });
   </script>
 
-  <!-- Basit Tarayıcı Bazlı Ziyaretçi Sayacı -->
+  <!-- Tarayıcı Bazlı Ziyaretçi Sayacı -->
   <script>
     const localStorageKey = 'oldgeneration-visited';
     const visitorKey = 'oldgeneration-total-visits';
