@@ -1,189 +1,190 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OLD GENERATION - NEVER GIVE UP</title>
-  <link rel="icon" href="logo.jpg" type="image/jpg" />
+  <!-- Temel Meta & Başlık -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover">
+  <title>OLD GENERATION – NEVER GIVE UP</title>
+  <link rel="icon" href="images/logo.jpg" type="image/jpg">
 
-  <!-- SEO META -->
-  <meta name="description" content="Lords Mobile'da efsanevi OLD GENERATION loncası. Asla pes etmeyenlerin topluluğu." />
-  <meta name="keywords" content="Lords Mobile, OLD GENERATION, lonca, clan, oyun, mobil oyun" />
-  <meta name="author" content="NeutralizeR" />
+  <!-- Security -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self' https://i.hizliresim.com; 
+             script-src 'self'; 
+             style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
+             img-src 'self' data: https://i.hizliresim.com;
+             font-src 'self' https://fonts.gstatic.com;">
+  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+  <meta name="referrer" content="no-referrer-when-downgrade">
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet" />
+  <!-- SEO & Social -->
+  <meta name="description" content="Lords Mobile'da efsanevi OLD GENERATION loncası. Asla pes etmeyenlerin topluluğu.">
+  <meta property="og:title" content="OLD GENERATION – NEVER GIVE UP">
+  <meta property="og:description" content="Lords Mobile'da efsanevi OLD GENERATION loncası.">
+  <meta property="og:image" content="images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
+  <!-- Font Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap"></noscript>
+
+  <!-- Critical / Inline CSS -->
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    /* CSS Variables for Theme */
+    :root {
+      --bg-overlay: rgba(0,0,0,0.7);
+      --primary: #ff4444;
+      --text-light: #fff;
+      --text-dark: #111;
+    }
+    [data-theme="light"] {
+      --bg-overlay: rgba(255,255,255,0.8);
+      --primary: #222;
+      --text-light: #111;
     }
 
-    html, body {
-      height: 100%;
-      font-family: 'Oswald', sans-serif;
-      user-select: none;
-      background: url('https://i.hizliresim.com/f7vsoke.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
+    html { scroll-behavior: smooth; }
+    *,*::before,*::after { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      min-height:100vh;
+      font-family:'Oswald',sans-serif;
+      background:url('https://i.hizliresim.com/f7vsoke.jpg')center/cover fixed;
+      color:var(--text-light);
+      user-select:none;
+      display:flex; flex-direction:column;
     }
-
-    .overlay {
-      min-height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    header, main, section, footer { width:90%; max-width:1000px; margin:auto; }
+    header {
+      padding:20px 0;
+      text-align:center;
+      background:var(--bg-overlay);
+      backdrop-filter:blur(4px);
     }
+    header #logo img { width:200px; filter:drop-shadow(0 0 10px var(--primary)); }
+    header h1 { font-size:3rem; color:var(--primary); animation:fadeIn 1.5s; }
+    header p.tagline { font-size:1.2rem; color:var(--text-light); margin-top:10px; }
 
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-      text-align: center;
-      flex-grow: 1;
+    .cta { margin:20px 0; text-align:center; }
+    .cta a {
+      display:inline-block;
+      padding:12px 24px;
+      background:var(--primary);
+      color:#fff;
+      border-radius:5px;
+      text-decoration:none;
+      font-size:1.1rem;
+      transition:background .3s;
     }
+    .cta a:hover { background:#cc0000; }
 
-    #logo img {
-      width: 220px;
-      margin-top: 30px;
-      filter: drop-shadow(0 0 10px rgba(255,0,0,0.5));
+    section {
+      margin:40px 0;
+      background:var(--bg-overlay);
+      padding:30px;
+      border-radius:10px;
+      box-shadow:0 0 20px rgba(0,0,0,0.5);
+      opacity:0; transform:translateY(20px);
+      transition:opacity .6s ease, transform .6s ease;
     }
+    section.reveal { opacity:1; transform:translateY(0); }
 
-    h1 {
-      font-size: 50px;
-      margin-top: 20px;
-      color: #ff4444;
-      animation: fadeIn 2s ease-in-out;
+    .gallery { display:flex; flex-wrap:wrap; gap:15px; justify-content:center;margin-top:15px; }
+    .gallery img { width:150px; border-radius:8px; cursor:pointer; transition:transform .3s; }
+    .gallery img:hover { transform:scale(1.05); }
+
+    .news .item { margin-bottom:15px; }
+    .news h3 { color:var(--primary); }
+    .news p { color:var(--text-light); }
+
+    form { display:flex; flex-direction:column; }
+    form input,form textarea {
+      margin:8px 0; padding:10px; border:none; border-radius:5px;
+      font-size:1rem;
     }
-
-    p.tagline {
-      font-size: 20px;
-      margin-bottom: 30px;
-      color: #ffdddd;
-      letter-spacing: 2px;
-    }
-
-    .section {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 30px;
-      margin-top: 40px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
-    }
-
-    .section h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
-      color: #ff6666;
-    }
-
-    .section p {
-      font-size: 18px;
-      line-height: 1.6;
-    }
-
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
-    }
-
     form button {
-      background: #ff4444;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      margin-top:10px; padding:10px; background:var(--primary);
+      color:#fff; border:none; border-radius:5px; cursor:pointer;
     }
+    form button:hover { background:#cc0000; }
 
     footer {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 20px;
-      color: #aaa;
-      font-size: 14px;
-      text-align: center;
-      margin-top: 50px;
+      text-align:center; padding:20px 0;
+      background:var(--bg-overlay); margin-top:auto;
     }
 
-    /* Animasyon */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Sosyal Medya Butonları */
     .social-buttons {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      gap: 8px;
-      z-index: 1000;
+      position:fixed; bottom:20px; right:20px;
+      display:flex; flex-direction:column; gap:10px; z-index:1000;
     }
-    .social-buttons a img {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
-      transition: transform 0.2s;
+    .social-buttons img {
+      width:32px; height:32px; border-radius:50%;
+      box-shadow:0 0 8px rgba(0,0,0,0.4);
+      transition:transform .2s;
     }
-    .social-buttons a img:hover {
-      transform: scale(1.1);
+    .social-buttons img:hover { transform:scale(1.1); }
+
+    /* Responsive */
+    @media(max-width:600px){
+      header h1 { font-size:2.2rem; }
+      .gallery img { width:100px; }
+      .social-buttons { bottom:15px; right:15px; }
     }
 
-    /* Mobil */
-    @media (max-width: 600px) {
-      h1 { font-size: 36px; }
-      .section { padding: 20px; }
-      #logo img { width: 160px; }
-      .social-buttons {
-        bottom: 15px;
-        right: 15px;
-      }
-      .social-buttons a img {
-        width: 28px;
-        height: 28px;
-      }
-    }
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
   </style>
 </head>
 <body oncontextmenu="return false">
-  <div class="overlay">
-    <div class="container">
-      <div id="logo">
-        <img src="logo.jpg" alt="OLD GENERATION Logosu" />
-      </div>
-      <h1>OLD GENERATION</h1>
-      <p class="tagline">NEVER GIVE UP</p>
 
-      <div class="section" id="contact">
-        <h2>Contact</h2>
-        <form action="https://formspree.io/f/myzeveog" method="POST">
-          <input type="text" name="name" placeholder="Name" required />
-          <input type="email" name="email" placeholder="Email" required />
-          <textarea name="message" rows="4" placeholder="Message" required></textarea>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+  <header>
+    <div id="logo"><img src="images/logo.jpg" alt="OLD GENERATION Logosu" loading="lazy"></div>
+    <h1>OLD GENERATION</h1>
+    <p class="tagline">NEVER GIVE UP</p>
+    <div class="cta"><a href="#contact">Katılmak İçin Tıkla</a></div>
+    <button aria-label="Tema Değiştir" onclick="toggleTheme()" style="position:absolute;top:20px;right:20px;padding:6px 10px;border:none;background:var(--primary);color:#fff;border-radius:4px;cursor:pointer;">Toggle Theme</button>
+  </header>
 
-      <div class="section" id="about">
-        <h2>About Us</h2>
-        <p>LORDS MOBILE not just a game .. OLD GENERATION not just a clan .. powered by NeutralizeR</p>
+  <main>
+    <section class="gallery-section reveal">
+      <h2>Karakter Görselleri</h2>
+      <div class="gallery">
+        <img src="https://i.hizliresim.com/lords-character1.jpg" alt="Karakter 1" loading="lazy">
+        <img src="https://i.hizliresim.com/lords-character2.jpg" alt="Karakter 2" loading="lazy">
+        <img src="https://i.hizliresim.com/lords-character3.jpg" alt="Karakter 3" loading="lazy">
       </div>
-    </div>
+    </section>
 
-    <footer>
-      © 2016-2025 OLD GENERATION | All Rights Reserved. designed by NeutralizeR
-    </footer>
-  </div>
+    <section class="news reveal">
+      <h2>Son Haberler & Duyurular</h2>
+      <div class="item">
+        <h3>Yeni Üyeler Alınıyor!</h3>
+        <p>Loncamız aktif oyunculara açık! Başvuru için iletişim kanallarımızı kullanabilirsiniz.</p>
+      </div>
+      <div class="item">
+        <h3>Yeni Turnuva Başlıyor</h3>
+        <p>Bu hafta sonu gerçekleşecek olan lonca savaşlarına katılmayı unutmayın.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="reveal">
+      <h2>Contact</h2>
+      <form action="https://formspree.io/f/myzeveog" method="POST" aria-label="İletişim Formu">
+        <input type="text" name="name" placeholder="Name" required aria-required="true">
+        <input type="email" name="email" placeholder="Email" required aria-required="true">
+        <textarea name="message" rows="4" placeholder="Message" required aria-required="true"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section id="about" class="reveal">
+      <h2>About Us</h2>
+      <p>LORDS MOBILE not just a game .. OLD GENERATION not just a clan .. powered by NeutralizeR</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2016-2025 OLD GENERATION | All Rights Reserved. designed by NeutralizeR
+  </footer>
 
   <!-- Sosyal Medya Butonları -->
   <div class="social-buttons">
@@ -195,20 +196,22 @@
     </a>
   </div>
 
-  <!-- Kopyalama Koruması -->
+  <!-- Scroll‑Reveal (IntersectionObserver) -->
   <script>
-    document.addEventListener('keydown', function (e) {
-      if (
-        e.ctrlKey && ['u','c','s','a'].includes(e.key.toLowerCase()) ||
-        e.key === 'F12'
-      ) {
-        e.preventDefault();
-        alert("Bu içerik kopyalanamaz!");
-      }
-    });
-    document.addEventListener('contextmenu', e => e.preventDefault());
-    document.addEventListener('selectstart', e => e.preventDefault());
-    document.addEventListener('copy', e => e.preventDefault());
+    const sections = document.querySelectorAll('section.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('reveal');
+        }
+      });
+    }, { threshold: 0.2 });
+    sections.forEach(s => obs.observe(s));
+    function toggleTheme(){
+      document.documentElement.dataset.theme =
+        document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    }
   </script>
+
 </body>
 </html>
