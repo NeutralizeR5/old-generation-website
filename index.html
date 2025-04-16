@@ -1,222 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OLD GENERATION - NEVER GIVE UP</title>
-  <link rel="icon" href="images/logo.png" type="image/png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OLD GENERATION – NEVER GIVE UP</title>
+  <link rel="icon" href="images/logo.png" type="image/png">
 
-  <!-- SEO -->
-  <meta name="description" content="Legendary OLD GENERATION guild in Lords Mobile. The community of those who never surrender." />
-  <meta name="keywords" content="Lords Mobile, OLD GENERATION, guild, mobile game, clan, strategy" />
-  <meta name="author" content="NeutralizeR" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:;" />
+  <!-- SEO & Social -->
+  <meta name="description" content="OLD GENERATION: A distinguished guild in Lords Mobile, uniting champions since 2016.">
+  <meta property="og:title" content="OLD GENERATION – NEVER GIVE UP">
+  <meta property="og:description" content="OLD GENERATION: A distinguished guild in Lords Mobile, uniting champions since 2016.">
+  <meta property="og:image" content="images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet" />
-
+  <!-- Inline CSS -->
   <style>
     :root {
-      --primary: #ff3333;
-      --text: #ffffff;
+      --bg: url('https://i.hizliresim.com/f7vsoke.jpg') center/cover fixed no-repeat;
+      --overlay: rgba(0,0,0,0.3);
+      --primary: #ff4444;
+      --text: #fff;
+      --radius: 8px;
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body {
+      min-height:100vh;
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Oswald',sans-serif;
+      user-select:none;
     }
-
-    html, body {
-      height: 100%;
-      font-family: 'Oswald', sans-serif;
-      background: url('https://i.hizliresim.com/f7vsoke.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: var(--text);
-      overflow-x: hidden;
+    .wrapper {
+      max-width:1000px;
+      margin:0 auto;
+      padding:20px;
+      display:flex;
+      flex-direction:column;
     }
-
-    .overlay {
-      min-height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 100px;
+    header {
+      background:var(--overlay);
+      padding:30px;
+      border-radius:var(--radius);
+      text-align:center;
+      backdrop-filter:blur(3px);
     }
-
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-      text-align: center;
-      flex-grow: 1;
-    }
-
     #logo img {
-      width: 220px;
-      margin-top: 30px;
-      filter: drop-shadow(0 0 10px rgba(255,0,0,0.5));
+      width:180px;
+      filter:drop-shadow(0 0 8px var(--primary));
+    }
+    header h1 {
+      font-size:2.8rem;
+      color:var(--primary);
+      margin:15px 0;
+    }
+    header p {
+      font-size:1.1rem;
+      opacity:0.9;
     }
 
-    h1 {
-      font-size: 50px;
-      margin-top: 20px;
-      color: var(--primary);
+    main section {
+      background:var(--overlay);
+      margin:30px 0;
+      padding:25px;
+      border-radius:var(--radius);
+      line-height:1.6;
+    }
+    main section h2 {
+      color:var(--primary);
+      font-size:1.8rem;
+      margin-bottom:12px;
+    }
+    main section p {
+      font-size:1rem;
     }
 
-    p.tagline {
-      font-size: 20px;
-      margin-bottom: 30px;
-      color: #ffdddd;
-      letter-spacing: 2px;
+    /* Placeholder for future game stats & profiles */
+    #live-stats, #profiles, #terminology {
+      min-height:150px;
     }
 
-    .section {
-      background: rgba(0, 0, 0, 0.4);
-      padding: 30px;
-      margin-top: 40px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    /* Contact Form */
+    #contact form {
+      display:flex;
+      flex-direction:column;
     }
-
-    .section h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
-      color: #ff6666;
+    #contact input, #contact textarea {
+      background:rgba(255,255,255,0.9);
+      color:#111;
+      border:none;
+      border-radius:5px;
+      padding:10px;
+      margin:8px 0;
+      font-size:1rem;
     }
-
-    .section p, form input, form textarea {
-      font-size: 18px;
-      line-height: 1.6;
+    #contact button {
+      align-self:flex-start;
+      padding:10px 20px;
+      background:var(--primary);
+      color:#fff;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+      font-size:1rem;
+      margin-top:10px;
     }
+    #contact button:hover { background:#cc0000; }
 
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
-    }
-
-    form button {
-      background: var(--primary);
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
+    /* Footer */
     footer {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 30px 20px 20px;
-      font-size: 14px;
-      text-align: center;
-      width: 100%;
-      position: fixed;
-      bottom: 0;
-      left: 0;
+      background:var(--overlay);
+      padding:15px;
+      border-radius:var(--radius);
+      text-align:center;
+      backdrop-filter:blur(3px);
+      margin-top:auto;
     }
+    footer p { font-size:0.9rem; }
 
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
+    /* Social Buttons in Footer */
+    .social-buttons {
+      margin-top:12px;
+      display:flex;
+      justify-content:center;
+      gap:12px;
     }
-
-    .footer-content p {
-      margin: 0;
+    .social-buttons img {
+      width:32px;height:32px;
+      border-radius:50%;
+      box-shadow:0 0 8px rgba(0,0,0,0.4);
+      transition:transform .2s;
     }
+    .social-buttons img:hover { transform:scale(1.1); }
 
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .social-icons a img {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 36px; }
-      .section { padding: 20px; }
-      #logo img { width: 160px; }
-      .social-icons a img {
-        width: 32px;
-        height: 32px;
-      }
+    @media(max-width:600px){
+      header h1{font-size:2.2rem;}
+      main section{padding:15px;margin:20px 0;}
+      #logo img{width:140px;}
+      .social-buttons img{width:28px;height:28px;}
     }
   </style>
 </head>
+
 <body oncontextmenu="return false">
-  <div class="overlay">
-    <div class="container">
+  <div class="wrapper">
+    <!-- HEADER -->
+    <header>
       <div id="logo">
-        <img src="images/logo.png" alt="OLD GENERATION Logo" />
+        <img src="images/logo.png" alt="OLD GENERATION Logo" loading="lazy">
       </div>
       <h1>OLD GENERATION</h1>
-      <p class="tagline">NEVER GIVE UP</p>
+      <p>PRESERVING LEGACY, DEFYING FATE</p>
+    </header>
 
-      <div class="section" id="contact">
-        <h2>Contact Us</h2>
+    <!-- MAIN CONTENT -->
+    <main>
+      <!-- Live Stats Placeholder -->
+      <section id="live-stats">
+        <h2>Live Guild Statistics</h2>
+        <p>Integration with real-time game data coming soon.</p>
+      </section>
+
+      <!-- Member Profiles Placeholder -->
+      <section id="profiles">
+        <h2>Member Spotlight</h2>
+        <p>Showcase of elite guild members under development.</p>
+      </section>
+
+      <!-- Terminology Placeholder -->
+      <section id="terminology">
+        <h2>Game Terminology</h2>
+        <p>Glossary of key Lords Mobile terms will be added here.</p>
+      </section>
+
+      <!-- Announcements -->
+      <section id="news">
+        <h2>Latest Announcements &amp; Updates</h2>
+        <p><strong>Recruitment Open:</strong> Dedicated champions are invited to join our ranks. Contact us via Telegram or Line to apply.</p>
+        <p><strong>Upcoming Tournament:</strong> Prepare your alliances and tactics for this weekend's guild clash.</p>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <h2>Get in Touch</h2>
         <form action="https://formspree.io/f/myzeveog" method="POST">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required />
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
           <button type="submit">Send Message</button>
         </form>
-      </div>
-    </div>
-  </div>
+      </section>
+    </main>
 
-  <footer>
-    <div class="footer-content">
-      <div class="social-icons">
-        <a href="https://t.me/+tUKdRu2diKtlM2Vk" target="_blank">
+    <!-- FOOTER -->
+    <footer>
+      <p>OLD GENERATION is a distinguished guild in Lords Mobile, uniting champions since 2016.</p>
+      <p>&copy; 2016–2025 OLD GENERATION. All rights reserved. Designed by NeutralizeR</p>
+      <div class="social-buttons">
+        <a href="https://t.me/+tUKdRu2diKtlM2Vk" target="_blank" aria-label="Telegram">
           <img src="images/telegram.png" alt="Telegram">
         </a>
-        <a href="https://line.me/R/ti/g/AtkvcNSP6B" target="_blank">
+        <a href="https://line.me/R/ti/g/AtkvcNSP6B" target="_blank" aria-label="Line">
           <img src="images/line.png" alt="Line">
         </a>
       </div>
-      <p>LORDS MOBILE is more than a game. OLD GENERATION is more than a guild. Powered by NeutralizeR.</p>
-      <p>© 2016-2025 OLD GENERATION | All Rights Reserved.</p>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
-  <!-- Gelişmiş Kopya Koruması -->
+  <!-- Copy & DevTools Protection -->
   <script>
-    document.addEventListener('keydown', function (e) {
-      if (
-        e.key === 'PrintScreen' ||
-        (e.ctrlKey && ['u', 'c', 's', 'a', 'x'].includes(e.key.toLowerCase())) ||
-        e.key === 'F12'
+    document.addEventListener('keydown', e => {
+      const blocked = [
+        'u','c','s','a','p','F12'
+      ];
+      if (e.ctrlKey && blocked.includes(e.key.toLowerCase()) ||
+          e.key==='PrintScreen' ||
+          (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(e.key.toLowerCase()))
       ) {
         e.preventDefault();
-        alert("This content is protected!");
+        alert('Action disabled for content protection.');
       }
     });
-
     document.addEventListener('contextmenu', e => e.preventDefault());
-    document.addEventListener('copy', e => e.preventDefault());
-    document.addEventListener('cut', e => e.preventDefault());
     document.addEventListener('selectstart', e => e.preventDefault());
-
-    // Print screen koruması
-    setInterval(() => {
-      navigator.clipboard.writeText('');
-    }, 1000);
+    document.addEventListener('copy', e => e.preventDefault());
   </script>
 </body>
 </html>
