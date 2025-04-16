@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="tr" data-theme="dark">
 <head>
-  <!-- Temel Meta & Başlık -->
+  <!-- Temel Meta -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover">
   <title>OLD GENERATION – NEVER GIVE UP</title>
@@ -27,125 +27,206 @@
   <!-- Font Preconnect & Preload -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" as="style" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap"></noscript>
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap">
+  </noscript>
 
-  <!-- Critical / Inline CSS -->
+  <!-- Critical CSS + Variables -->
   <style>
-    /* CSS Variables for Theme */
     :root {
+      --bg-image: url('https://i.hizliresim.com/f7vsoke.jpg');
       --bg-overlay: rgba(0,0,0,0.7);
+      --text-color: #fff;
       --primary: #ff4444;
-      --text-light: #fff;
-      --text-dark: #111;
     }
-    [data-theme="light"] {
-      --bg-overlay: rgba(255,255,255,0.8);
-      --primary: #222;
-      --text-light: #111;
+    html[data-theme="light"] {
+      --bg-overlay: rgba(255,255,255,0.85);
+      --text-color: #111;
+      --primary: #333;
+      /* dilersen light tema için farklı resim: */
+      /* --bg-image: url('images/light-bg.jpg'); */
     }
 
+    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
     html { scroll-behavior: smooth; }
-    *,*::before,*::after { box-sizing: border-box; margin:0; padding:0; }
     body {
-      min-height:100vh;
-      font-family:'Oswald',sans-serif;
-      background:url('https://i.hizliresim.com/f7vsoke.jpg')center/cover fixed;
-      color:var(--text-light);
-      user-select:none;
-      display:flex; flex-direction:column;
+      min-height: 100vh;
+      font-family: 'Oswald', sans-serif;
+      color: var(--text-color);
+      background: var(--bg-image) center/cover fixed no-repeat;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
     }
-    header, main, section, footer { width:90%; max-width:1000px; margin:auto; }
+
+    header, main, section, footer {
+      width: 90%; max-width: 1000px; margin: auto;
+    }
     header {
-      padding:20px 0;
-      text-align:center;
-      background:var(--bg-overlay);
-      backdrop-filter:blur(4px);
+      padding: 30px 0;
+      background: var(--bg-overlay);
+      text-align: center;
+      backdrop-filter: blur(4px);
+      position: relative;
     }
-    header #logo img { width:200px; filter:drop-shadow(0 0 10px var(--primary)); }
-    header h1 { font-size:3rem; color:var(--primary); animation:fadeIn 1.5s; }
-    header p.tagline { font-size:1.2rem; color:var(--text-light); margin-top:10px; }
-
-    .cta { margin:20px 0; text-align:center; }
+    #logo img {
+      width: 200px;
+      filter: drop-shadow(0 0 10px var(--primary));
+    }
+    header h1 {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-top: 15px;
+      animation: fadeIn 1.2s ease-out;
+    }
+    header p.tagline {
+      margin-top: 8px;
+      font-size: 1.1rem;
+      color: var(--text-color);
+    }
+    .cta {
+      margin: 20px 0;
+    }
     .cta a {
-      display:inline-block;
-      padding:12px 24px;
-      background:var(--primary);
-      color:#fff;
-      border-radius:5px;
-      text-decoration:none;
-      font-size:1.1rem;
-      transition:background .3s;
+      display: inline-block;
+      padding: 12px 24px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background .3s;
     }
-    .cta a:hover { background:#cc0000; }
+    .cta a:hover { background: darken(var(--primary),10%); }
 
+    /* Tema Toggle Butonu */
+    #theme-toggle {
+      position: absolute; top: 20px; right: 20px;
+      padding: 6px 10px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius:4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    main {
+      flex: 1;
+    }
     section {
-      margin:40px 0;
-      background:var(--bg-overlay);
-      padding:30px;
-      border-radius:10px;
-      box-shadow:0 0 20px rgba(0,0,0,0.5);
-      opacity:0; transform:translateY(20px);
-      transition:opacity .6s ease, transform .6s ease;
+      margin: 40px 0;
+      background: var(--bg-overlay);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s ease, transform .6s ease;
     }
-    section.reveal { opacity:1; transform:translateY(0); }
-
-    .gallery { display:flex; flex-wrap:wrap; gap:15px; justify-content:center;margin-top:15px; }
-    .gallery img { width:150px; border-radius:8px; cursor:pointer; transition:transform .3s; }
-    .gallery img:hover { transform:scale(1.05); }
+    section.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    section h2 {
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+    .gallery img {
+      width: 150px;
+      border-radius:8px;
+      cursor:pointer;
+      transition: transform .3s;
+      loading: lazy;
+    }
+    .gallery img:hover { transform: scale(1.05); }
 
     .news .item { margin-bottom:15px; }
-    .news h3 { color:var(--primary); }
-    .news p { color:var(--text-light); }
+    .news .item h3 { margin-bottom:5px; font-size:1.2rem; }
+    .news .item p { font-size:1rem; }
 
-    form { display:flex; flex-direction:column; }
-    form input,form textarea {
-      margin:8px 0; padding:10px; border:none; border-radius:5px;
+    form {
+      display:flex;
+      flex-direction:column;
+    }
+    form input, form textarea {
+      padding:10px;
+      margin:8px 0;
+      border:none;
+      border-radius:5px;
       font-size:1rem;
     }
     form button {
-      margin-top:10px; padding:10px; background:var(--primary);
-      color:#fff; border:none; border-radius:5px; cursor:pointer;
+      align-self:flex-start;
+      padding:10px 20px;
+      background: var(--primary);
+      color:#fff;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+      margin-top: 10px;
     }
-    form button:hover { background:#cc0000; }
+    form button:hover { background: darken(var(--primary),10%); }
 
     footer {
-      text-align:center; padding:20px 0;
-      background:var(--bg-overlay); margin-top:auto;
+      background: var(--bg-overlay);
+      text-align:center;
+      padding:20px 0;
+      font-size:0.9rem;
+      margin-top:auto;
     }
 
     .social-buttons {
-      position:fixed; bottom:20px; right:20px;
-      display:flex; flex-direction:column; gap:10px; z-index:1000;
+      position:fixed;
+      bottom:20px; right:20px;
+      display:flex; flex-direction:column; gap:10px;
+      z-index:1000;
     }
-    .social-buttons img {
-      width:32px; height:32px; border-radius:50%;
+    .social-buttons a img {
+      width:32px; height:32px;
+      border-radius:50%;
       box-shadow:0 0 8px rgba(0,0,0,0.4);
       transition:transform .2s;
     }
-    .social-buttons img:hover { transform:scale(1.1); }
+    .social-buttons a img:hover { transform: scale(1.1); }
 
     /* Responsive */
     @media(max-width:600px){
       header h1 { font-size:2.2rem; }
       .gallery img { width:100px; }
       .social-buttons { bottom:15px; right:15px; }
+      .social-buttons a img { width:28px; height:28px; }
     }
 
-    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
   </style>
 </head>
 <body oncontextmenu="return false">
 
   <header>
-    <div id="logo"><img src="images/logo.jpg" alt="OLD GENERATION Logosu" loading="lazy"></div>
+    <div id="logo">
+      <img src="images/logo.jpg" alt="OLD GENERATION Logosu" loading="lazy">
+    </div>
     <h1>OLD GENERATION</h1>
     <p class="tagline">NEVER GIVE UP</p>
-    <div class="cta"><a href="#contact">Katılmak İçin Tıkla</a></div>
-    <button aria-label="Tema Değiştir" onclick="toggleTheme()" style="position:absolute;top:20px;right:20px;padding:6px 10px;border:none;background:var(--primary);color:#fff;border-radius:4px;cursor:pointer;">Toggle Theme</button>
+    <div class="cta">
+      <a href="#contact">Katılmak İçin Tıkla</a>
+    </div>
+    <button id="theme-toggle" aria-label="Tema Değiştir">Toggle Theme</button>
   </header>
 
   <main>
-    <section class="gallery-section reveal">
+    <section class="gallery reveal" id="gallery">
       <h2>Karakter Görselleri</h2>
       <div class="gallery">
         <img src="https://i.hizliresim.com/lords-character1.jpg" alt="Karakter 1" loading="lazy">
@@ -154,7 +235,7 @@
       </div>
     </section>
 
-    <section class="news reveal">
+    <section class="news reveal" id="news">
       <h2>Son Haberler & Duyurular</h2>
       <div class="item">
         <h3>Yeni Üyeler Alınıyor!</h3>
@@ -166,7 +247,7 @@
       </div>
     </section>
 
-    <section id="contact" class="reveal">
+    <section class="reveal" id="contact">
       <h2>Contact</h2>
       <form action="https://formspree.io/f/myzeveog" method="POST" aria-label="İletişim Formu">
         <input type="text" name="name" placeholder="Name" required aria-required="true">
@@ -176,17 +257,17 @@
       </form>
     </section>
 
-    <section id="about" class="reveal">
+    <section class="reveal" id="about">
       <h2>About Us</h2>
       <p>LORDS MOBILE not just a game .. OLD GENERATION not just a clan .. powered by NeutralizeR</p>
     </section>
   </main>
 
   <footer>
-    © 2016-2025 OLD GENERATION | All Rights Reserved. designed by NeutralizeR
+    © 2016-2025 OLD GENERATION | Tüm Hakları Saklıdır. designed by NeutralizeR
   </footer>
 
-  <!-- Sosyal Medya Butonları -->
+  <!-- Sosyal Butonlar -->
   <div class="social-buttons">
     <a href="https://t.me/+tUKdRu2diKtlM2Vk" target="_blank" aria-label="Telegram">
       <img src="images/telegram.png" alt="Telegram">
@@ -196,22 +277,25 @@
     </a>
   </div>
 
-  <!-- Scroll‑Reveal (IntersectionObserver) -->
+  <!-- Scroll‑Reveal & Theme Toggle Script -->
   <script>
-    const sections = document.querySelectorAll('section.reveal');
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('reveal');
+    // Section reveal
+    const revealElems = document.querySelectorAll('section.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('reveal');
+          observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.2 });
-    sections.forEach(s => obs.observe(s));
-    function toggleTheme(){
-      document.documentElement.dataset.theme =
-        document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-    }
-  </script>
+    revealElems.forEach(el => observer.observe(el));
 
+    // Theme toggle
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      const html = document.documentElement;
+      html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+    });
+  </script>
 </body>
 </html>
