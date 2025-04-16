@@ -14,8 +14,8 @@
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet" />
 
-  <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Font Awesome for Telegram Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKB4Imkb9xYZDx6K3U04bZ1F3F3e/pE+LL5Yc5VU9KJkz5k+KgA4hZ+jDDvWjwp4rxDoN6aWw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
     * {
@@ -68,22 +68,6 @@
       letter-spacing: 2px;
     }
 
-    .cta-button {
-      display: inline-block;
-      margin: 20px 0;
-      padding: 10px 20px;
-      background-color: #ff4444;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 18px;
-      transition: background-color 0.3s;
-    }
-
-    .cta-button:hover {
-      background-color: #cc0000;
-    }
-
     .section {
       background: rgba(0, 0, 0, 0.6);
       padding: 30px;
@@ -101,42 +85,6 @@
     .section p {
       font-size: 18px;
       line-height: 1.6;
-    }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .gallery img {
-      width: 150px;
-      border-radius: 10px;
-      transition: transform 0.3s;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    .news {
-      text-align: left;
-    }
-
-    .news-item {
-      margin-bottom: 15px;
-    }
-
-    .news-item h3 {
-      font-size: 20px;
-      color: #ff4444;
-    }
-
-    .news-item p {
-      font-size: 16px;
-      color: #ddd;
     }
 
     form input, form textarea {
@@ -177,31 +125,23 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Sabit Butonlar */
-    .fixed-btn {
+    /* Telegram Butonu */
+    .telegram-btn {
       position: fixed;
       bottom: 20px;
+      left: 20px;
+      background: #0088cc;
+      color: white;
+      border-radius: 50%;
       width: 50px;
       height: 50px;
-      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
       font-size: 24px;
       text-decoration: none;
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
       z-index: 1000;
-    }
-
-    .telegram-btn {
-      right: 80px;
-      background: #0088cc;
-    }
-
-    .line-btn {
-      right: 20px;
-      background: #00c300;
     }
 
     /* Mobil */
@@ -209,11 +149,6 @@
       h1 { font-size: 36px; }
       .section { padding: 20px; }
       #logo img { width: 160px; }
-      .fixed-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-      }
     }
   </style>
 </head>
@@ -225,79 +160,48 @@
       </div>
       <h1>OLD GENERATION</h1>
       <p class="tagline">NEVER GIVE UP</p>
-      <a href="https
-::contentReference[oaicite:0]{index=0}
- 
-      <a href="https://discord.gg/your-discord-link" class="cta-button" target="_blank">Katılmak için Tıkla</a>
-
-      <div class="section" id="gallery">
-        <h2>Karakter Görselleri</h2>
-        <div class="gallery">
-          <img src="https://i.hizliresim.com/lords-character1.jpg" alt="Character 1">
-          <img src="https://i.hizliresim.com/lords-character2.jpg" alt="Character 2">
-          <img src="https://i.hizliresim.com/lords-character3.jpg" alt="Character 3">
-        </div>
-      </div>
-
-      <div class="section news">
-        <h2>Son Haberler & Duyurular</h2>
-        <div class="news-item">
-          <h3>Yeni Üyeler Alınıyor!</h3>
-          <p>Loncamız aktif oyunculara açık! Başvuru için iletişim kanallarımızı kullanabilirsiniz.</p>
-        </div>
-        <div class="news-item">
-          <h3>Yeni Turnuva Başlıyor</h3>
-          <p>Bu hafta sonu gerçekleşecek olan lonca savaşlarına katılmayı unutmayın.</p>
-        </div>
-      </div>
 
       <div class="section" id="contact">
-        <h2>İletişim</h2>
+        <h2>Contact</h2>
         <form action="https://formspree.io/f/myzeveog" method="POST">
-          <input type="text" name="name" placeholder="İsminiz" required />
-          <input type="email" name="email" placeholder="Email adresiniz" required />
-          <textarea name="message" rows="4" placeholder="Mesajınız" required></textarea>
-          <button type="submit">Gönder</button>
+          <input type="text" name="name" placeholder="Name" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <textarea name="message" rows="4" placeholder="Message" required></textarea>
+          <button type="submit">Submit</button>
         </form>
       </div>
 
       <div class="section" id="about">
-        <h2>Hakkımızda</h2>
-        <p>LORDS MOBILE sadece bir oyun değil, OLD GENERATION sadece bir lonca değil... Gücümüz birliğimizden gelir.</p>
+        <h2>About Us</h2>
+        <p>LORDS MOBILE not just a game .. OLD GENERATION not just a clan .. powered by NeutralizeR</p>
       </div>
     </div>
 
     <footer>
-      © 2016-2025 OLD GENERATION | Tüm Hakları Saklıdır | Designed by NeutralizeR
-      <div id="visitor-counter">Toplam Ziyaretçi: <span id="visitorCount">...</span></div>
+      © 2016-2025 OLD GENERATION | All Rights Reserved. designed by NeutralizeR
+      <div id="visitor-counter">Toplam ziyaretçi: <span id="visitorCount">...</span></div>
     </footer>
   </div>
 
-  <!-- Telegram Buton -->
-  <a href="https://t.me/+tUKdRu2diKtlM2Vk" class="fixed-btn telegram-btn" target="_blank" title="Telegram">
-    <i class="fab fa-telegram-plane"></i>
-  </a>
+<!-- Sosyal Medya Butonları (Sağ Alt Köşe) -->
+  <div style="position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; z-index: 1000;">
+    <!-- Telegram -->
+    <a href="https://t.me/+tUKdRu2diKtlM2Vk" target="_blank" aria-label="Telegram">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 240 240" fill="none"
+           style="background-color: #0088cc; border-radius: 50%; padding: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.4);">
+        <path fill="#fff" d="M100.7 160.1l-4.2 36.6c6.1 0 8.8-2.6 12.1-5.7l29-27.4 60.1 43.9c11 6.1 18.7 2.9 21.5-10.2l38.9-182.2c3.5-16.5-6-23.9-17.3-19.8L9.1 90.9c-16.2 6.3-16 15.3-2.8 19.4l65.7 20.5 152.2-95.5c7.2-4.4 13.8-2 8.4 2.8L100.7 160.1z"/>
+      </svg>
+    </a>
+    <!-- Line -->
+    <a href="https://line.me/R/ti/g/AtkvcNSP6B" target="_blank" aria-label="Line">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 36 30" fill="none"
+           style="background-color: #00c300; border-radius: 50%; padding: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.4);">
+        <path fill="#fff" d="M18 0C8.06 0 0 6.72 0 15c0 4.71 2.5 8.91 6.45 11.64l-1.33 3.95a.61.61 0 0 0 .91.71L11.93 28c1.96.55 4.06.85 6.23.85 9.94 0 18-6.72 18-15S27.94 0 18 0zm-2.26 17.46h-2.7v-4.6h2.7v4.6zm-1.35-5.29c-.77 0-1.4-.63-1.4-1.4 0-.77.63-1.4 1.4-1.4.77 0 1.4.63 1.4 1.4 0 .77-.63 1.4-1.4 1.4zm6.3 5.29H18.9v-2.7c0-.37.3-.68.68-.68h1.11c.38 0 .68.3.68.68v2.7zm0-3.41h-2.47c-.38 0-.68-.3-.68-.68v-1.11c0-.38.3-.68.68-.68h2.47c.38 0 .68.3.68.68v1.11c0 .38-.3.68-.68.68zm6.3 3.41h-2.7v-4.6h2.7v4.6zm-1.35-5.29c-.77 0-1.4-.63-1.4-1.4 0-.77.63-1.4 1.4-1.4.77 0 1.4.63 1.4 1.4 0 .77-.63 1.4-1.4 1.4z"/>
+      </svg>
+    </a>
+  </div>
 
-  <!-- Line Buton -->
-  <a href="https://line.me/R/ti/g/AtkvcNSP6B" class="fixed-btn line-btn" target="_blank" title="Line">
-    <i class="fab fa-line"></i>
-  </a>
-
-  <!-- Ziyaretçi Sayacı (Tarayıcı Bazlı) -->
-  <script>
-    const localStorageKey = 'oldgeneration-visited';
-    const visitorKey = 'oldgeneration-total-visits';
-
-    if (!localStorage.getItem(localStorageKey)) {
-      localStorage.setItem(localStorageKey, 'true');
-      let count = parseInt(localStorage.getItem(visitorKey) || '0', 10);
-      localStorage.setItem(visitorKey, count + 1);
-    }
-
-    document.getElementById('visitorCount').innerText = localStorage.getItem(visitorKey) || '1';
-  </script>
-
-  <!-- Kopyalama Koruması -->
+  <!-- Kopyalama koruması -->
   <script>
     document.addEventListener('keydown', function (e) {
       if (
@@ -309,9 +213,31 @@
       }
     });
 
-    document.addEventListener('contextmenu', e => e.preventDefault());
-    document.addEventListener('selectstart', e => e.preventDefault());
-    document.addEventListener('copy', e => e.preventDefault());
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener('selectstart', function (e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener('copy', function (e) {
+      e.preventDefault();
+    });
+  </script>
+
+  <!-- Tarayıcı Bazlı Ziyaretçi Sayacı -->
+  <script>
+    const localStorageKey = 'oldgeneration-visited';
+    const visitorKey = 'oldgeneration-total-visits';
+
+    if (!localStorage.getItem(localStorageKey)) {
+      localStorage.setItem(localStorageKey, 'true');
+      let count = parseInt(localStorage.getItem(visitorKey) || '0', 10);
+      localStorage.setItem(visitorKey, count + 1);
+    }
+
+    document.getElementById('visitorCount').innerText = localStorage.getItem(visitorKey) || '1';
   </script>
 </body>
 </html>
