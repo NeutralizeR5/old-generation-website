@@ -2,86 +2,152 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>OLD GENERATION – NEVER GIVE UP</title>
   <link rel="icon" href="images/logo.png" type="image/png">
 
-  <!-- SEO & Social Meta -->
-  <meta name="description" content="OLD GENERATION: A distinguished guild in Lords Mobile, uniting champions since 2016.">
+  <!-- SEO / Social -->
+  <meta name="description" content="OLD GENERATION: A distinguished guild in Lords Mobile, uniting champions since 2016.">
   <meta property="og:title" content="OLD GENERATION – NEVER GIVE UP">
-  <meta property="og:description" content="OLD GENERATION: A distinguished guild in Lords Mobile, uniting champions since 2016.">
+  <meta property="og:description" content="OLD GENERATION: A distinguished guild in Lords Mobile, uniting champions since 2016.">
   <meta property="og:image" content="images/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
   <style>
     :root {
-      --bg: url('https://i.hizliresim.com/f7vsoke.jpg') center/cover fixed no-repeat;
-      --overlay: rgba(0,0,0,0.4);
+      --bg-image: url('https://i.hizliresim.com/f7vsoke.jpg') center/cover fixed no-repeat;
+      --overlay: rgba(0, 0, 0, 0.2);
       --primary: #ff4444;
       --text: #ffffff;
     }
-    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-    html{scroll-behavior:smooth;}
-    body{
-      min-height:100vh;
-      background:var(--bg);
-      color:var(--text);
-      font-family:'Oswald',sans-serif;
-      user-select:none;
-      display:flex;
-      flex-direction:column;
-    }
-    header,main,footer{width:90%;max-width:1000px;margin:0 auto;padding:20px;text-align:center;}
-    header{background:var(--overlay);backdrop-filter:blur(4px);}
-    #logo img{width:200px;height:auto;margin:0 auto;display:block;filter:drop-shadow(0 0 10px var(--primary));}
-    header h1{font-size:3rem;color:var(--primary);margin:15px 0;}
-    header p{font-size:1.2rem;opacity:0.9;}
-
-    .section{background:var(--overlay);margin:40px 0;border-radius:8px;padding:30px;}
-    .section h2{font-size:2rem;color:var(--primary);margin-bottom:15px;}
-    .section p{font-size:1rem;line-height:1.6;opacity:0.95;}
-
-    form{display:flex;flex-direction:column;text-align:left;}
-    form input,form textarea{padding:10px;margin:10px 0;border:none;border-radius:5px;font-size:1rem;}
-    form button{
-      padding:10px 20px;align-self:flex-start;
-      background:var(--primary);color:#fff;border:none;border-radius:5px;
-      cursor:pointer;font-size:1rem;
-    }
-    form button:hover{background:#cc0000;}
-
-    .social-buttons{
-      position:fixed;bottom:20px;right:20px;
-      display:flex;gap:10px;z-index:1000;
-    }
-    .social-buttons a img{
-      width:32px;height:32px;border-radius:50%;
-      box-shadow:0 0 8px rgba(0,0,0,0.4);
-      transition:transform .2s;
-    }
-    .social-buttons a img:hover{transform:scale(1.1);}
-
-    footer{
-      background:var(--overlay);
-      padding:15px 0;
-      position:fixed;bottom:0;left:0;
-      width:100%;
-      font-size:0.9rem;
-      backdrop-filter:blur(4px);
+    *, *::before, *::after {box-sizing:border-box; margin:0; padding:0;}
+    html {scroll-behavior: smooth;}
+    body {
+      background: var(--bg-image);
+      color: var(--text);
+      font-family: 'Oswald', sans-serif;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding-bottom: 100px; /* footer yüksekliği kadar */
     }
 
-    @media(max-width:600px){
-      header h1{font-size:2.2rem;}
-      .section{padding:20px;margin:20px 0;}
-      #logo img{width:160px;}
-      .social-buttons img{width:28px;height:28px;}
+    header, main, footer {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+    header {
+      background: var(--overlay);
+      padding: 30px 0;
+      backdrop-filter: blur(4px);
+    }
+    #logo img {
+      width: 200px;
+      filter: drop-shadow(0 0 10px var(--primary));
+    }
+    header h1 {
+      font-size: 3rem;
+      color: var(--primary);
+      margin: 15px 0;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .section {
+      background: var(--overlay);
+      margin: 40px 0;
+      padding: 30px;
+      border-radius: 8px;
+    }
+    .section h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    .section p {
+      font-size: 1rem;
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    form input, form textarea {
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      background: rgba(255,255,255,0.9);
+      color: #111;
+    }
+    form button {
+      width: fit-content;
+      padding: 10px 20px;
+      margin-top: 10px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      align-self: flex-start;
+    }
+    form button:hover { background: #cc0000; }
+
+    .social-buttons {
+      position: fixed;
+      bottom: 120px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 1000;
+    }
+    .social-buttons a img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(0,0,0,0.4);
+      transition: transform .2s;
+    }
+    .social-buttons a img:hover {
+      transform: scale(1.1);
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--overlay);
+      backdrop-filter: blur(4px);
+      padding: 15px 0;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width:600px) {
+      header h1 { font-size:2.2rem; }
+      .section { margin:20px 0; padding:20px; }
+      #logo img { width:160px; }
+      .social-buttons { bottom: 140px; right:15px; }
+      .social-buttons a img { width:28px; height:28px; }
     }
   </style>
 </head>
-<body oncontextmenu="return false">
+<body oncontextmenu="return false" onkeydown="(e=>{if(e.ctrlKey&&['u','c','s','a','p'].includes(e.key.toLowerCase())||e.key==='F12'||e.key==='PrintScreen'||(e.ctrlKey&&e.shiftKey&&['i','c','j'].includes(e.key.toLowerCase()))){e.preventDefault();alert('Action disabled for content protection.');}})()">
 
   <header>
-    <div id="logo"><img src="images/logo.png" alt="OLD GENERATION Logo" loading="lazy"></div>
+    <div id="logo">
+      <img src="images/logo.png" alt="OLD GENERATION Logo" loading="lazy">
+    </div>
     <h1>OLD GENERATION</h1>
     <p>PRESERVING LEGACY, DEFYING FATE</p>
   </header>
@@ -89,7 +155,7 @@
   <main>
     <section id="news" class="section">
       <h2>Latest Announcements &amp; Updates</h2>
-      <p><strong>Recruitment Open:</strong> Dedicated champions are invited to join our ranks. Reach out via Telegram or Line to apply.</p>
+      <p><strong>Recruitment Open:</strong> Dedicated champions are invited to join our ranks. Contact us via Telegram or Line to apply.</p>
       <p><strong>Upcoming Tournament:</strong> Prepare your alliances and tactics for this weekend's guild clash.</p>
     </section>
 
@@ -105,8 +171,8 @@
   </main>
 
   <footer>
-    <p>OLD GENERATION is a distinguished guild in Lords Mobile, uniting champions since 2016.</p>
-    <p>&copy; 2016–2025 OLD GENERATION. All rights reserved. Designed by NeutralizeR</p>
+    <p>OLD GENERATION is a distinguished guild in Lords Mobile, uniting champions since 2016.</p>
+    <p>&copy; 2016–2025 OLD GENERATION. All rights reserved. Designed by NeutralizeR</p>
   </footer>
 
   <!-- Social Buttons -->
@@ -118,17 +184,5 @@
       <img src="images/line.png" alt="Line">
     </a>
   </div>
-
-  <!-- Copy Protection -->
-  <script>
-    document.addEventListener('keydown', e => {
-      if (e.ctrlKey && ['u','c','s','a'].includes(e.key.toLowerCase()) || e.key==='F12') {
-        e.preventDefault(); alert('Content copying is disabled.');
-      }
-    });
-    document.addEventListener('contextmenu', e => e.preventDefault());
-    document.addEventListener('selectstart', e => e.preventDefault());
-    document.addEventListener('copy', e => e.preventDefault());
-  </script>
 </body>
 </html>
