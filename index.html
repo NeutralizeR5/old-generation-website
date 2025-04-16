@@ -1,273 +1,115 @@
 <!DOCTYPE html>
-<html lang="tr" data-theme="dark">
+<html lang="en">
 <head>
-  <!-- Temel Meta -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover">
-  <title>OLD GENERATION – NEVER GIVE UP</title>
-  <link rel="icon" href="images/logo.jpg" type="image/jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OLD GENERATION – NEVER GIVE UP</title>
+  <link rel="icon" href="images/logo.png" type="image/png">
 
-  <!-- Security -->
-  <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self' https://i.hizliresim.com; 
-             script-src 'self'; 
-             style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
-             img-src 'self' data: https://i.hizliresim.com;
-             font-src 'self' https://fonts.gstatic.com;">
-  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
-  <meta name="referrer" content="no-referrer-when-downgrade">
-
-  <!-- SEO & Social -->
-  <meta name="description" content="Lords Mobile'da efsanevi OLD GENERATION loncası. Asla pes etmeyenlerin topluluğu.">
-  <meta property="og:title" content="OLD GENERATION – NEVER GIVE UP">
-  <meta property="og:description" content="Lords Mobile'da efsanevi OLD GENERATION loncası.">
+  <!-- SEO & Social Meta -->
+  <meta name="description" content="OLD GENERATION: A distinguished guild in Lords Mobile, uniting champions since 2016.">
+  <meta property="og:title" content="OLD GENERATION – NEVER GIVE UP">
+  <meta property="og:description" content="OLD GENERATION: A distinguished guild in Lords Mobile, uniting champions since 2016.">
   <meta property="og:image" content="images/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Font Preconnect & Preload -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" as="style" onload="this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap">
-  </noscript>
-
-  <!-- Critical CSS + Variables -->
   <style>
     :root {
-      --bg-image: url('https://i.hizliresim.com/f7vsoke.jpg');
-      --bg-overlay: rgba(0,0,0,0.7);
-      --text-color: #fff;
+      --bg: url('https://i.hizliresim.com/f7vsoke.jpg') center/cover fixed no-repeat;
+      --overlay: rgba(0,0,0,0.4);
       --primary: #ff4444;
+      --text: #ffffff;
     }
-    html[data-theme="light"] {
-      --bg-overlay: rgba(255,255,255,0.85);
-      --text-color: #111;
-      --primary: #333;
-      /* dilersen light tema için farklı resim: */
-      /* --bg-image: url('images/light-bg.jpg'); */
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
-    html { scroll-behavior: smooth; }
-    body {
-      min-height: 100vh;
-      font-family: 'Oswald', sans-serif;
-      color: var(--text-color);
-      background: var(--bg-image) center/cover fixed no-repeat;
-      user-select: none;
-      display: flex;
-      flex-direction: column;
-    }
-
-    header, main, section, footer {
-      width: 90%; max-width: 1000px; margin: auto;
-    }
-    header {
-      padding: 30px 0;
-      background: var(--bg-overlay);
-      text-align: center;
-      backdrop-filter: blur(4px);
-      position: relative;
-    }
-    #logo img {
-      width: 200px;
-      filter: drop-shadow(0 0 10px var(--primary));
-    }
-    header h1 {
-      font-size: 3rem;
-      color: var(--primary);
-      margin-top: 15px;
-      animation: fadeIn 1.2s ease-out;
-    }
-    header p.tagline {
-      margin-top: 8px;
-      font-size: 1.1rem;
-      color: var(--text-color);
-    }
-    .cta {
-      margin: 20px 0;
-    }
-    .cta a {
-      display: inline-block;
-      padding: 12px 24px;
-      background: var(--primary);
-      color: #fff;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: background .3s;
-    }
-    .cta a:hover { background: darken(var(--primary),10%); }
-
-    /* Tema Toggle Butonu */
-    #theme-toggle {
-      position: absolute; top: 20px; right: 20px;
-      padding: 6px 10px;
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      border-radius:4px;
-      cursor: pointer;
-      font-size: 0.9rem;
-    }
-
-    main {
-      flex: 1;
-    }
-    section {
-      margin: 40px 0;
-      background: var(--bg-overlay);
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
-    section.reveal {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    section h2 {
-      color: var(--primary);
-      margin-bottom: 15px;
-      font-size: 1.8rem;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-    }
-    .gallery img {
-      width: 150px;
-      border-radius:8px;
-      cursor:pointer;
-      transition: transform .3s;
-      loading: lazy;
-    }
-    .gallery img:hover { transform: scale(1.05); }
-
-    .news .item { margin-bottom:15px; }
-    .news .item h3 { margin-bottom:5px; font-size:1.2rem; }
-    .news .item p { font-size:1rem; }
-
-    form {
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      min-height:100vh;
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Oswald',sans-serif;
+      user-select:none;
       display:flex;
       flex-direction:column;
     }
-    form input, form textarea {
-      padding:10px;
-      margin:8px 0;
-      border:none;
-      border-radius:5px;
-      font-size:1rem;
-    }
-    form button {
-      align-self:flex-start;
-      padding:10px 20px;
-      background: var(--primary);
-      color:#fff;
-      border:none;
-      border-radius:5px;
-      cursor:pointer;
-      margin-top: 10px;
-    }
-    form button:hover { background: darken(var(--primary),10%); }
+    header,main,footer{width:90%;max-width:1000px;margin:0 auto;padding:20px;text-align:center;}
+    header{background:var(--overlay);backdrop-filter:blur(4px);}
+    #logo img{width:200px;height:auto;margin:0 auto;display:block;filter:drop-shadow(0 0 10px var(--primary));}
+    header h1{font-size:3rem;color:var(--primary);margin:15px 0;}
+    header p{font-size:1.2rem;opacity:0.9;}
 
-    footer {
-      background: var(--bg-overlay);
-      text-align:center;
-      padding:20px 0;
-      font-size:0.9rem;
-      margin-top:auto;
-    }
+    .section{background:var(--overlay);margin:40px 0;border-radius:8px;padding:30px;}
+    .section h2{font-size:2rem;color:var(--primary);margin-bottom:15px;}
+    .section p{font-size:1rem;line-height:1.6;opacity:0.95;}
 
-    .social-buttons {
-      position:fixed;
-      bottom:20px; right:20px;
-      display:flex; flex-direction:column; gap:10px;
-      z-index:1000;
+    form{display:flex;flex-direction:column;text-align:left;}
+    form input,form textarea{padding:10px;margin:10px 0;border:none;border-radius:5px;font-size:1rem;}
+    form button{
+      padding:10px 20px;align-self:flex-start;
+      background:var(--primary);color:#fff;border:none;border-radius:5px;
+      cursor:pointer;font-size:1rem;
     }
-    .social-buttons a img {
-      width:32px; height:32px;
-      border-radius:50%;
+    form button:hover{background:#cc0000;}
+
+    .social-buttons{
+      position:fixed;bottom:20px;right:20px;
+      display:flex;gap:10px;z-index:1000;
+    }
+    .social-buttons a img{
+      width:32px;height:32px;border-radius:50%;
       box-shadow:0 0 8px rgba(0,0,0,0.4);
       transition:transform .2s;
     }
-    .social-buttons a img:hover { transform: scale(1.1); }
+    .social-buttons a img:hover{transform:scale(1.1);}
 
-    /* Responsive */
-    @media(max-width:600px){
-      header h1 { font-size:2.2rem; }
-      .gallery img { width:100px; }
-      .social-buttons { bottom:15px; right:15px; }
-      .social-buttons a img { width:28px; height:28px; }
+    footer{
+      background:var(--overlay);
+      padding:15px 0;
+      position:fixed;bottom:0;left:0;
+      width:100%;
+      font-size:0.9rem;
+      backdrop-filter:blur(4px);
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
+    @media(max-width:600px){
+      header h1{font-size:2.2rem;}
+      .section{padding:20px;margin:20px 0;}
+      #logo img{width:160px;}
+      .social-buttons img{width:28px;height:28px;}
     }
   </style>
 </head>
 <body oncontextmenu="return false">
 
   <header>
-    <div id="logo">
-      <img src="images/logo.jpg" alt="OLD GENERATION Logosu" loading="lazy">
-    </div>
+    <div id="logo"><img src="images/logo.png" alt="OLD GENERATION Logo" loading="lazy"></div>
     <h1>OLD GENERATION</h1>
-    <p class="tagline">NEVER GIVE UP</p>
-    <div class="cta">
-      <a href="#contact">Katılmak İçin Tıkla</a>
-    </div>
-    <button id="theme-toggle" aria-label="Tema Değiştir">Toggle Theme</button>
+    <p>PRESERVING LEGACY, DEFYING FATE</p>
   </header>
 
   <main>
-    <section class="gallery reveal" id="gallery">
-      <h2>Karakter Görselleri</h2>
-      <div class="gallery">
-        <img src="https://i.hizliresim.com/lords-character1.jpg" alt="Karakter 1" loading="lazy">
-        <img src="https://i.hizliresim.com/lords-character2.jpg" alt="Karakter 2" loading="lazy">
-        <img src="https://i.hizliresim.com/lords-character3.jpg" alt="Karakter 3" loading="lazy">
-      </div>
+    <section id="news" class="section">
+      <h2>Latest Announcements &amp; Updates</h2>
+      <p><strong>Recruitment Open:</strong> Dedicated champions are invited to join our ranks. Reach out via Telegram or Line to apply.</p>
+      <p><strong>Upcoming Tournament:</strong> Prepare your alliances and tactics for this weekend's guild clash.</p>
     </section>
 
-    <section class="news reveal" id="news">
-      <h2>Son Haberler & Duyurular</h2>
-      <div class="item">
-        <h3>Yeni Üyeler Alınıyor!</h3>
-        <p>Loncamız aktif oyunculara açık! Başvuru için iletişim kanallarımızı kullanabilirsiniz.</p>
-      </div>
-      <div class="item">
-        <h3>Yeni Turnuva Başlıyor</h3>
-        <p>Bu hafta sonu gerçekleşecek olan lonca savaşlarına katılmayı unutmayın.</p>
-      </div>
-    </section>
-
-    <section class="reveal" id="contact">
-      <h2>Contact</h2>
-      <form action="https://formspree.io/f/myzeveog" method="POST" aria-label="İletişim Formu">
-        <input type="text" name="name" placeholder="Name" required aria-required="true">
-        <input type="email" name="email" placeholder="Email" required aria-required="true">
-        <textarea name="message" rows="4" placeholder="Message" required aria-required="true"></textarea>
-        <button type="submit">Submit</button>
+    <section id="contact" class="section">
+      <h2>Get in Touch</h2>
+      <form action="https://formspree.io/f/myzeveog" method="POST" aria-label="Contact Form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
       </form>
-    </section>
-
-    <section class="reveal" id="about">
-      <h2>About Us</h2>
-      <p>LORDS MOBILE not just a game .. OLD GENERATION not just a clan .. powered by NeutralizeR</p>
     </section>
   </main>
 
   <footer>
-    © 2016-2025 OLD GENERATION | Tüm Hakları Saklıdır. designed by NeutralizeR
+    <p>OLD GENERATION is a distinguished guild in Lords Mobile, uniting champions since 2016.</p>
+    <p>&copy; 2016–2025 OLD GENERATION. All rights reserved. Designed by NeutralizeR</p>
   </footer>
 
-  <!-- Sosyal Butonlar -->
+  <!-- Social Buttons -->
   <div class="social-buttons">
     <a href="https://t.me/+tUKdRu2diKtlM2Vk" target="_blank" aria-label="Telegram">
       <img src="images/telegram.png" alt="Telegram">
@@ -277,25 +119,16 @@
     </a>
   </div>
 
-  <!-- Scroll‑Reveal & Theme Toggle Script -->
+  <!-- Copy Protection -->
   <script>
-    // Section reveal
-    const revealElems = document.querySelectorAll('section.reveal');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) {
-          entry.target.classList.add('reveal');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-    revealElems.forEach(el => observer.observe(el));
-
-    // Theme toggle
-    document.getElementById('theme-toggle').addEventListener('click', () => {
-      const html = document.documentElement;
-      html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.addEventListener('keydown', e => {
+      if (e.ctrlKey && ['u','c','s','a'].includes(e.key.toLowerCase()) || e.key==='F12') {
+        e.preventDefault(); alert('Content copying is disabled.');
+      }
     });
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('selectstart', e => e.preventDefault());
+    document.addEventListener('copy', e => e.preventDefault());
   </script>
 </body>
 </html>
