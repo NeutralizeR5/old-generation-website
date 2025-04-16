@@ -1,294 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>OLD GENERATION – NEVER GIVE UP</title>
-  <link rel="icon" href="images/logo.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OLD GENERATION - NEVER GIVE UP</title>
+  <link rel="icon" href="images/logo.png" type="image/png" />
 
-  <!-- Security -->
-  <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self' https://i.hizliresim.com https://cdn.jsdelivr.net; 
-             script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; 
-             style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
-             img-src 'self' data: https://i.hizliresim.com; 
-             font-src 'self' https://fonts.gstatic.com;">
-  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
-  <meta name="referrer" content="no-referrer-when-downgrade">
+  <!-- SEO -->
+  <meta name="description" content="Legendary OLD GENERATION guild in Lords Mobile. The community of those who never surrender." />
+  <meta name="keywords" content="Lords Mobile, OLD GENERATION, guild, mobile game, clan, strategy" />
+  <meta name="author" content="NeutralizeR" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:;" />
 
-  <!-- SEO & Social -->
-  <meta name="description" content="OLD GENERATION: A distinguished guild in Lords Mobile, uniting champions since 2016.">
-  <meta property="og:title" content="OLD GENERATION – NEVER GIVE UP">
-  <meta property="og:description" content="OLD GENERATION: A distinguished guild in Lords Mobile, uniting champions since 2016.">
-  <meta property="og:image" content="images/og-image.jpg">
-  <meta name="twitter:card" content="summary_large_image">
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet" />
 
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "OLD GENERATION",
-    "url": "https://oldgeneration.com.tr",
-    "logo": "https://oldgeneration.com.tr/images/logo.png"
-  }
-  </script>
-
-  <!-- Font preload -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" as="style" onload="this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap">
-  </noscript>
-
-  <!-- Critical CSS -->
   <style>
     :root {
-      --bg: url('https://i.hizliresim.com/f7vsoke.jpg') center/cover fixed no-repeat;
-      --overlay: rgba(0,0,0,0.3);
       --primary: #ff3333;
-      --text: #fff;
-      --radius: 8px;
-    }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    html{scroll-behavior:smooth;}
-    body {
-      min-height:100vh;
-      background:var(--bg);
-      color:var(--text);
-      font-family:'Oswald',sans-serif;
-      user-select:none;
-    }
-    .wrapper {
-      max-width:1000px;
-      margin:0 auto;
-      padding:20px;
-      display:flex;flex-direction:column;
-    }
-    header {
-      background:var(--overlay);
-      padding:30px;
-      border-radius:var(--radius);
-      text-align:center;
-      backdrop-filter:blur(3px);
-    }
-    /* Logo WebP + PNG fallback */
-    #logo picture, #logo img { margin:0 auto; display:block; }
-    #logo img { width:180px; filter:drop-shadow(0 0 8px var(--primary)); }
-    header h1 {
-      font-size:2.8rem;
-      color:var(--primary);
-      margin:15px 0;
-    }
-    header p { font-size:1.1rem; opacity:0.9; }
-
-    /* Breadcrumb */
-    nav[aria-label="Breadcrumb"] {
-      margin:20px 0; font-size:0.9rem;
-    }
-    nav ol { list-style:none; display:flex; gap:5px; justify-content:center;}
-    nav li+li::before { content:'> '; }
-
-    /* Sections */
-    main section {
-      background:var(--overlay);
-      margin:30px 0;
-      padding:25px;
-      border-radius:var(--radius);
-      line-height:1.6;
-    }
-    main section h2 {
-      color:var(--primary);
-      font-size:1.8rem;
-      margin-bottom:12px;
-    }
-    main section p { font-size:1rem; }
-
-    /* Placeholders */
-    #live-stats,#profiles,#terminology,#countdown {
-      min-height:120px;
-      opacity:0.7;
-      text-align:center;
-      font-style:italic;
+      --text: #ffffff;
     }
 
-    /* Countdown styling */
-    #countdown { font-size:1.2rem; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    /* Contact */
-    #contact form { display:flex; flex-direction:column; }
-    #contact label {
-      margin-top:10px; font-weight:bold;
+    html, body {
+      height: 100%;
+      font-family: 'Oswald', sans-serif;
+      background: url('https://i.hizliresim.com/f7vsoke.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text);
+      overflow-x: hidden;
     }
-    #contact input, #contact textarea {
-      background:rgba(255,255,255,0.9);
-      color:#111;
-      border:none;
-      border-radius:5px;
-      padding:10px;
-      margin-top:5px;
-      font-size:1rem;
-    }
-    /* Honeypot */
-    .honeypot { display:none; }
-    #contact button {
-      align-self:flex-start;
-      margin-top:10px;
-      padding:10px 20px;
-      background:var(--primary);
-      color:#fff; border:none; border-radius:5px; cursor:pointer;
-      font-size:1rem;
-    }
-    #contact button:disabled { opacity:0.6; cursor:not-allowed; }
 
-    /* Footer */
+    .overlay {
+      min-height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 100px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    #logo img {
+      width: 220px;
+      margin-top: 30px;
+      filter: drop-shadow(0 0 10px rgba(255,0,0,0.5));
+    }
+
+    h1 {
+      font-size: 50px;
+      margin-top: 20px;
+      color: var(--primary);
+    }
+
+    p.tagline {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: #ffdddd;
+      letter-spacing: 2px;
+    }
+
+    .section {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 30px;
+      margin-top: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    }
+
+    .section h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #ff6666;
+    }
+
+    .section p, form input, form textarea {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    form button {
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
     footer {
-      background:var(--overlay);
-      padding:15px;
-      border-radius:var(--radius);
-      text-align:center;
-      backdrop-filter:blur(3px);
-      margin-top:auto;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px 20px 20px;
+      font-size: 14px;
+      text-align: center;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
     }
-    footer p { font-size:0.9rem; }
 
-    /* Social in footer */
-    .social-buttons {
-      margin-top:12px;
-      display:flex; justify-content:center; gap:12px;
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
     }
-    .social-buttons img {
-      width:32px;height:32px;border-radius:50%;
-      box-shadow:0 0 8px rgba(0,0,0,0.4);
-      transition:transform .2s;
-    }
-    .social-buttons img:hover { transform:scale(1.1); }
 
-    @media(max-width:600px){
-      header h1{font-size:2.2rem;}
-      main section{padding:15px;margin:20px 0;}
-      #logo img{width:140px;}
-      .social-buttons img{width:28px;height:28px;}
+    .footer-content p {
+      margin: 0;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .social-icons a img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 36px; }
+      .section { padding: 20px; }
+      #logo img { width: 160px; }
+      .social-icons a img {
+        width: 32px;
+        height: 32px;
+      }
     }
   </style>
 </head>
-
 <body oncontextmenu="return false">
-  <div class="wrapper">
-    <header>
+  <div class="overlay">
+    <div class="container">
       <div id="logo">
-        <picture>
-          <source srcset="images/logo.webp" type="image/webp">
-          <img src="images/logo.png" alt="OLD GENERATION Logo" loading="lazy">
-        </picture>
+        <img src="images/logo.png" alt="OLD GENERATION Logo" />
       </div>
       <h1>OLD GENERATION</h1>
-      <p>PRESERVING LEGACY, DEFYING FATE</p>
-    </header>
+      <p class="tagline">NEVER GIVE UP</p>
 
-    <!-- Breadcrumb -->
-    <nav aria-label="Breadcrumb">
-      <ol>
-        <li><a href="#live-stats">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ol>
-    </nav>
-
-    <main>
-      <section id="live-stats">
-        <h2>Live Guild Statistics</h2>
-        <p>Real‑time game data integration forthcoming.</p>
-      </section>
-
-      <section id="profiles">
-        <h2>Member Spotlight</h2>
-        <p>Profile grid under development.</p>
-      </section>
-
-      <section id="terminology">
-        <h2>Game Terminology</h2>
-        <p>Key Lords Mobile terms will be detailed here.</p>
-      </section>
-
-      <section id="countdown">
-        <h2>Next Guild War Countdown</h2>
-        <p>00d 00h 00m 00s</p>
-      </section>
-
-      <section id="news">
-        <h2>Latest Announcements &amp; Updates</h2>
-        <p><strong>Recruitment:</strong> Champions are invited to join. Apply via Telegram or Line.</p>
-        <p><strong>Tournament:</strong> Gear up for this weekend’s clash.</p>
-      </section>
-
-      <section id="contact">
-        <h2>Get in Touch</h2>
-        <form id="contact-form" action="https://formspree.io/f/myzeveog" method="POST">
+      <div class="section" id="contact">
+        <h2>Contact Us</h2>
+        <form action="https://formspree.io/f/myzeveog" method="POST">
           <label for="name">Name</label>
-          <input id="name" name="name" type="text" required aria-required="true">
+          <input type="text" id="name" name="name" required />
           <label for="email">Email</label>
-          <input id="email" name="email" type="email" required aria-required="true">
+          <input type="email" id="email" name="email" required />
           <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
-          <!-- Honeypot -->
-          <input class="honeypot" type="text" name="botcheck" tabindex="-1" autocomplete="off">
+          <textarea id="message" name="message" rows="4" required></textarea>
           <button type="submit">Send Message</button>
         </form>
-      </section>
-    </main>
-
-    <footer itemscope itemtype="https://schema.org/Organization">
-      <p itemprop="description">OLD GENERATION is a distinguished guild in Lords Mobile, uniting champions since 2016.</p>
-      <p>&copy; 2016–2025 OLD GENERATION. All rights reserved. Designed by NeutralizeR</p>
-      <div class="social-buttons">
-        <a href="https://t.me/+tUKdRu2diKtlM2Vk" target="_blank" aria-label="Telegram">
-          <picture>
-            <source srcset="images/telegram.webp" type="image/webp">
-            <img src="images/telegram.png" alt="Telegram" loading="lazy">
-          </picture>
-        </a>
-        <a href="https://line.me/R/ti/g/AtkvcNSP6B" target="_blank" aria-label="Line">
-          <picture>
-            <source srcset="images/line.webp" type="image/webp">
-            <img src="images/line.png" alt="Line" loading="lazy">
-          </picture>
-        </a>
       </div>
-    </footer>
+    </div>
   </div>
 
-  <!-- DOMPurify for XSS sanitization -->
-  <script src="https://cdn.jsdelivr.net/npm/dompurify@2.4.0/dist/purify.min.js"></script>
-  <!-- Service Worker registration -->
+  <footer>
+    <div class="footer-content">
+      <div class="social-icons">
+        <a href="https://t.me/+tUKdRu2diKtlM2Vk" target="_blank">
+          <img src="images/telegram.png" alt="Telegram">
+        </a>
+        <a href="https://line.me/R/ti/g/AtkvcNSP6B" target="_blank">
+          <img src="images/line.png" alt="Line">
+        </a>
+      </div>
+      <p>LORDS MOBILE is more than a game. OLD GENERATION is more than a guild. Powered by NeutralizeR.</p>
+      <p>© 2016-2025 OLD GENERATION | All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Gelişmiş Kopya Koruması -->
   <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js');
-    }
-    // Countdown placeholder logic
-    // Copy & DevTools protection
-    document.addEventListener('keydown', e => {
-      const blocked = ['u','c','s','a','p'];
-      if ((e.ctrlKey && blocked.includes(e.key.toLowerCase())) ||
-          e.key==='F12' || e.key==='PrintScreen' ||
-          (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(e.key.toLowerCase()))
+    document.addEventListener('keydown', function (e) {
+      if (
+        e.key === 'PrintScreen' ||
+        (e.ctrlKey && ['u', 'c', 's', 'a', 'x'].includes(e.key.toLowerCase())) ||
+        e.key === 'F12'
       ) {
         e.preventDefault();
-        alert('Action disabled for content protection.');
+        alert("This content is protected!");
       }
     });
-    document.addEventListener('contextmenu', e => e.preventDefault());
-    document.addEventListener('selectstart', e => e.preventDefault());
-    document.addEventListener('copy', e => e.preventDefault());
 
-    // Form sanitization
-    document.getElementById('contact-form').addEventListener('submit', e => {
-      const form = e.target;
-      ['name','email','message'].forEach(id => {
-        const field = form.querySelector('#'+id);
-        field.value = DOMPurify.sanitize(field.value);
-      });
-    });
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('copy', e => e.preventDefault());
+    document.addEventListener('cut', e => e.preventDefault());
+    document.addEventListener('selectstart', e => e.preventDefault());
+
+    // Print screen koruması
+    setInterval(() => {
+      navigator.clipboard.writeText('');
+    }, 1000);
   </script>
 </body>
 </html>
