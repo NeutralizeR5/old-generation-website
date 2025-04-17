@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover">
   <title>OLD GENERATION – NEVER GIVE UP</title>
   <link rel="icon" href="images/logo.png" type="image/png">
   <link rel="canonical" href="https://oldgeneration.com.tr/">
 
-  <!-- SEO & Security -->
+  <!-- Google Search Console -->
   <meta name="google-site-verification" content="jB41wmhFa02GAg08stdBYj5X0nsuIWAqcvX_tIUZ984">
+
+  <!-- SEO -->
   <meta name="robots" content="index, follow">
   <meta name="description" content="OLD GENERATION: A top-tier guild in Lords Mobile, forging legends since 2016.">
   <meta name="keywords" content="Lords Mobile, guild, OLD GENERATION, clan, mobile game, strategy">
@@ -21,281 +23,270 @@
   <meta property="og:description" content="Join one of Lords Mobile’s elite guilds. We fight together, grow stronger, and never give up.">
   <meta property="og:image" content="images/og-image.jpg">
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OLD GENERATION – NEVER GIVE UP">
+  <meta name="twitter:description" content="OLD GENERATION Guild – Uniting champions since 2016.">
+  <meta name="twitter:image" content="images/og-image.jpg">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OLD GENERATION",
+    "url": "https://oldgeneration.com.tr",
+    "logo": "https://oldgeneration.com.tr/images/logo.png",
+    "description": "A top-tier guild in Lords Mobile since 2016.",
+    "sameAs": [
+      "https://t.me/+tUKdRu2diKtlM2Vk",
+      "https://line.me/R/ti/g/AtkvcNSP6B"
+    ]
+  }
+  </script>
+
   <!-- CSP -->
   <meta http-equiv="Content-Security-Policy"
     content="
-      default-src 'self';
-      script-src 'self' 'unsafe-inline' https://formspree.io;
+      default-src 'self' https://i.hizliresim.com;
+      script-src 'self' 'unsafe-inline';
       style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
       img-src 'self' data: https://i.hizliresim.com;
       font-src 'self' https://fonts.gstatic.com;
-      media-src 'self';
-      form-action 'self' https://formspree.io;">
+    ">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap"
-    integrity="sha384-EXAMPLE-INTEGRITY-HASH" crossorigin="anonymous">
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" 
+    integrity="sha384-PLACE_YOUR_INTEGRITY_HASH" crossorigin="anonymous">
 
   <!-- Inline Critical CSS -->
   <style>
     :root {
-      --bg: linear-gradient(rgba(0,0,0,0.85), url('https://i.hizliresim.com/f7vsoke.jpg') center/cover fixed;
+      --bg: url('https://i.hizliresim.com/f7vsoke.jpg') center/cover fixed no-repeat;
+      --overlay: rgba(0,0,0,0.3);
       --primary: #ff3333;
       --text: #fff;
-      --radius: 10px;
-      --shadow: 0 4px 15px rgba(0,0,0,0.3);
+      --radius: 8px;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+    html { scroll-behavior: smooth; }
     body {
       min-height: 100vh;
       background: var(--bg);
       color: var(--text);
       font-family: 'Oswald', sans-serif;
-      line-height: 1.6;
-      display: flex;
-      flex-direction: column;
+      user-select: none;
     }
-
-    /* Language Switch */
-    .lang-switch {
+    .skip-link {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: -40px; left: 0;
+      background: #000; color: #fff;
+      padding: 8px 16px;
       z-index: 100;
+      text-decoration: none;
+      transition: top .3s;
     }
-    .lang-btn {
-      background: rgba(255,255,255,0.1);
-      border: 2px solid var(--primary);
-      color: var(--text);
-      padding: 8px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    .lang-btn:hover {
-      background: var(--primary);
-    }
+    .skip-link:focus { top: 0; }
 
-    /* Header */
+    .wrapper {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      display: flex; flex-direction: column;
+    }
     header {
-      padding: 2rem 1rem;
+      background: var(--overlay);
+      padding: 30px;
+      border-radius: var(--radius);
       text-align: center;
-      position: relative;
+      backdrop-filter: blur(3px);
     }
-
     #logo img {
-      width: min(200px, 50vw);
-      filter: drop-shadow(0 0 15px var(--primary));
+      width: 180px;
+      filter: drop-shadow(0 0 8px var(--primary));
     }
-
-    /* Main Content */
-    .content-wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-      flex: 1;
+    header h1 {
+      font-size: 2.8rem;
+      color: var(--primary);
+      margin: 15px 0;
     }
-
-    .card {
-      background: rgba(0,0,0,0.6);
-      padding: 2rem;
+    header p {
+      font-size: 1.1rem;
+      opacity: .9;
+    }
+    main section {
+      background: var(--overlay);
+      margin: 30px 0;
+      padding: 25px;
       border-radius: var(--radius);
-      margin: 2rem 0;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(5px);
+      line-height: 1.6;
+      backdrop-filter: blur(2px);
     }
-
-    /* Video Section */
-    .video-container {
-      position: relative;
-      padding-top: 56.25%;
-      border-radius: var(--radius);
-      overflow: hidden;
+    main section h2 {
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-bottom: 12px;
     }
-    .video-container video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    /* Form */
-    .contact-form {
-      display: grid;
-      gap: 1.5rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .form-group {
-      display: grid;
-      gap: 0.8rem;
-    }
-    input, textarea {
-      padding: 1rem;
-      border: 2px solid var(--primary);
-      border-radius: 8px;
-      background: rgba(255,255,255,0.1);
-      color: var(--text);
+    main section p {
       font-size: 1rem;
     }
-    button {
-      background: var(--primary);
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-    button:hover {
-      transform: translateY(-2px);
-    }
 
-    /* Footer */
+    /* Live stats, profiles, terminology şimdilik placeholder */
+    #live-stats, #profiles, #terminology { min-height:150px; opacity:.8; font-style:italic; }
+
+    #contact form {
+      display: flex; flex-direction: column;
+    }
+    #contact label {
+      margin: 8px 0 4px;
+      font-weight: bold;
+    }
+    #contact input, #contact textarea {
+      background: rgba(255,255,255,0.9);
+      color: #111;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    /* Honeypot */
+    .honeypot { display: none !important; }
+
+    #contact button {
+      align-self: flex-start;
+      padding: 10px 20px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    #contact button:hover { background: #cc0000; }
+
     footer {
-      background: rgba(0,0,0,0.8);
-      padding: 2rem 1rem;
+      background: var(--overlay);
+      padding: 20px;
+      border-radius: var(--radius);
       text-align: center;
+      backdrop-filter: blur(3px);
       margin-top: auto;
     }
+    footer p {
+      font-size: .9rem;
+      margin: 4px 0;
+    }
+    .social-buttons {
+      margin-top: 12px;
+      display: flex; justify-content: center; gap: 15px;
+    }
+    .social-buttons img {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(0,0,0,0.4);
+      transition: transform .2s;
+    }
+    .social-buttons img:hover { transform: scale(1.1); }
 
-    @media (max-width: 768px) {
-      html { font-size: 14px; }
-      .content-wrapper { padding: 1rem; }
-      .card { padding: 1.5rem; }
+    @media(max-width: 600px){
+      header h1 { font-size: 2.2rem; }
+      #logo img { width: 140px; }
+      .social-buttons img { width: 28px; height: 28px; }
     }
   </style>
 </head>
 
 <body oncontextmenu="return false">
   <a href="#main-content" class="skip-link">Skip to content</a>
-  <div class="lang-switch">
-    <button class="lang-btn" onclick="toggleLanguage()">TR/EN</button>
+  <div class="wrapper">
+    <header>
+      <div id="logo">
+        <img src="images/logo.png" alt="OLD GENERATION Logo" loading="lazy">
+      </div>
+      <h1>OLD GENERATION</h1>
+      <p>PRESERVING LEGACY, DEFYING FATE</p>
+    </header>
+
+    <main id="main-content">
+      <section id="live-stats">
+        <h2>Live Guild Statistics</h2>
+        <p>Real-time game data integration coming soon.</p>
+      </section>
+
+      <section id="profiles">
+        <h2>Member Spotlight</h2>
+        <p>Showcase of elite guild members under development.</p>
+      </section>
+
+      <section id="terminology">
+        <h2>Game Terminology</h2>
+        <p>Glossary of key Lords Mobile terms will be added here.</p>
+      </section>
+
+      <section id="news">
+        <h2>Announcements &amp; Updates</h2>
+        <p><strong>Recruitment:</strong> Skilled and active players are welcome. Contact us via Telegram or Line.</p>
+        <p><strong>Next Tournament:</strong> Gear up for the upcoming guild war.</p>
+      </section>
+
+  <!-- ✅ Guild Short Film -->
+      <section id="shortfilm">
+        <h2>Guild Short Film</h2>
+        <video controls width="100%" style="border-radius: 10px; margin-top: 15px;" poster="images/og-image.jpg">
+          <source src="videos/shortfilm.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </section>
+      
+      <section id="contact">
+        <h2>Get in Touch</h2>
+        <form action="https://formspree.io/f/myzeveog" method="POST" aria-label="Contact Form">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <!-- Honeypot spam koruması -->
+          <input class="honeypot" type="text" name="botcheck" tabindex="-1" autocomplete="off">
+
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>OLD GENERATION is a distinguished guild in Lords Mobile, uniting champions since 2016.</p>
+      <p>&copy; 2016–2025 OLD GENERATION. Designed by NeutralizeR</p>
+      <div class="social-buttons">
+        <a href="https://t.me/+tUKdRu2diKtlM2Vk" target="_blank" aria-label="Telegram">
+          <img src="images/telegram.png" alt="Telegram" loading="lazy">
+        </a>
+        <a href="https://line.me/R/ti/g/AtkvcNSP6B" target="_blank" aria-label="Line">
+          <img src="images/line.png" alt="Line" loading="lazy">
+        </a>
+      </div>
+    </footer>
   </div>
 
-  <header>
-    <div id="logo">
-      <picture>
-        <source srcset="images/logo.webp" type="image/webp">
-        <img src="images/logo.png" alt="OLD GENERATION Logo" 
-             loading="lazy" decoding="async" width="200" height="200">
-      </picture>
-    </div>
-    <h1 data-lang="en">OLD GENERATION</h1>
-    <h1 data-lang="tr" style="display:none">ESKİ NESİL</h1>
-    <p data-lang="en">PRESERVING LEGACY, DEFYING FATE</p>
-    <p data-lang="tr" style="display:none">MİRASI YAŞATIYORUZ, KADERİ REDDEDİYORUZ</p>
-  </header>
-
-  <main class="content-wrapper" id="main-content">
-    <section class="card">
-      <h2 data-lang="en">Latest Announcements</h2>
-      <h2 data-lang="tr" style="display:none">Son Duyurular</h2>
-      <article>
-        <h3 data-lang="en">Recruitment Open</h3>
-        <h3 data-lang="tr" style="display:none">Yeni Üye Alımı</h3>
-        <p data-lang="en">Experienced players contact us via Telegram or Line.</p>
-        <p data-lang="tr" style="display:none">Deneyimli oyuncular Telegram veya Line üzerinden başvurabilir.</p>
-      </article>
-    </section>
-
-    <section class="card">
-      <h2 data-lang="en">Guild Short Film</h2>
-      <h2 data-lang="tr" style="display:none">Lonca Tanıtım Filmi</h2>
-      <div class="video-container">
-        <video controls preload="metadata" poster="images/og-image.jpg"
-               aria-label="Guild promotional video">
-          <source src="videos/shortfilm.mp4" type="video/mp4">
-          <track kind="captions" src="videos/captions.vtt" srclang="en" label="English">
-        </video>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2 data-lang="en">Contact Us</h2>
-      <h2 data-lang="tr" style="display:none">İletişim</h2>
-      <form class="contact-form" action="https://formspree.io/f/myzeveog" method="POST">
-        <div class="form-group">
-          <label for="name" data-lang="en">Name</label>
-          <label for="name" data-lang="tr" style="display:none">İsim</label>
-          <input id="name" name="name" type="text" required>
-        </div>
-        <div class="form-group">
-          <label for="email" data-lang="en">Email</label>
-          <label for="email" data-lang="tr" style="display:none">E-posta</label>
-          <input id="email" name="email" type="email" required>
-        </div>
-        <div class="form-group">
-          <label for="message" data-lang="en">Message</label>
-          <label for="message" data-lang="tr" style="display:none">Mesaj</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <input class="honeypot" type="text" name="botcheck" tabindex="-1" autocomplete="off">
-        <button type="submit" data-lang="en">Send Message</button>
-        <button type="submit" data-lang="tr" style="display:none">Gönder</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <p data-lang="en">© 2016-2025 OLD GENERATION. All rights reserved.</p>
-    <p data-lang="tr" style="display:none">© 2016-2025 ESKİ NESİL. Tüm hakları saklıdır.</p>
-    <div class="social-links">
-      <a href="https://t.me/+tUKdRu2diKtlM2Vk" target="_blank" rel="noopener" aria-label="Telegram">
-        <img src="images/telegram.png" alt="Telegram" loading="lazy">
-      </a>
-      <a href="https://line.me/R/ti/g/AtkvcNSP6B" target="_blank" rel="noopener" aria-label="Line">
-        <img src="images/line.png" alt="Line" loading="lazy">
-      </a>
-    </div>
-  </footer>
-
-  <!-- Language Switch Script -->
-  <script>
-    let currentLang = localStorage.getItem('lang') || 'en';
-    
-    function toggleLanguage() {
-      currentLang = currentLang === 'en' ? 'tr' : 'en';
-      localStorage.setItem('lang', currentLang);
-      updateLanguage();
-    }
-
-    function updateLanguage() {
-      document.querySelectorAll('[data-lang]').forEach(el => {
-        el.style.display = el.getAttribute('data-lang') === currentLang ? 
-          'block' : 'none';
-      });
-    }
-
-    // Initial language setup
-    document.addEventListener('DOMContentLoaded', updateLanguage);
-  </script>
-
-  <!-- Security Script -->
+  <!-- DevTools & Copy Protection -->
   <script>
     document.addEventListener('keydown', e => {
-      const blocked = ['u','c','s','a','p','F12'];
-      if ((e.ctrlKey && blocked.includes(e.key.toLowerCase())) ||
-          (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(e.key.toLowerCase()))) {
+      const block = ['u','c','s','a','p','F12'];
+      if ((e.ctrlKey && block.includes(e.key.toLowerCase())) ||
+          (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(e.key.toLowerCase())) ||
+          e.key==='PrintScreen') {
         e.preventDefault();
-        alert('Action disabled for security reasons.');
+        alert('Action disabled for content protection.');
       }
     });
-    ['contextmenu', 'selectstart', 'copy'].forEach(ev => {
+    ['contextmenu','selectstart','copy'].forEach(ev => {
       document.addEventListener(ev, e => e.preventDefault());
     });
   </script>
