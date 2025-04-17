@@ -302,7 +302,12 @@
         contact_button: "Send Message",
         footer_text1: "OLD GENERATION is a distinguished guild in Lords Mobile, uniting champions since 2016.",
         footer_text2: "© 2016–2025 OLD GENERATION. Designed by NeutralizeR",
-        meta_description: "OLD GENERATION: A top-tier guild in Lords Mobile, forging legends since 2016."
+        meta_description: "OLD GENERATION: A top-tier guild in Lords Mobile, forging legends since 2016.",
+        og_title: "OLD GENERATION – NEVER GIVE UP",
+        og_description: "Join one of Lords Mobile’s elite guilds. We fight together, grow stronger, and never give up.",
+        twitter_title: "OLD GENERATION – NEVER GIVE UP",
+        twitter_description: "OLD GENERATION Guild – Uniting champions since 2016.",
+        skip_link: "Skip to content"
       },
       tr: {
         title: "OLD GENERATION – ASLA PES ETME",
@@ -324,39 +329,79 @@
         contact_button: "Mesaj Gönder",
         footer_text1: "OLD GENERATION, Lords Mobile’da 2016’dan beri şampiyonları bir araya getiren seçkin bir loncadır.",
         footer_text2: "© 2016–2025 OLD GENERATION. NeutralizeR tarafından tasarlandı.",
-        meta_description: "OLD GENERATION: Lords Mobile’da 2016’dan beri efsaneler yaratan üst düzey bir lonca."
+        meta_description: "OLD GENERATION: Lords Mobile’da 2016’dan beri efsaneler yaratan üst düzey bir lonca.",
+        og_title: "OLD GENERATION – ASLA PES ETME",
+        og_description: "Lords Mobile’ın seçkin loncalarından birine katılın. Birlikte savaşır, güçlenir ve asla pes etmeyiz.",
+        twitter_title: "OLD GENERATION – ASLA PES ETME",
+        twitter_description: "OLD GENERATION Lonca – 2016’dan beri şampiyonları bir araya getiriyor.",
+        skip_link: "İçeriğe atla"
       }
     };
 
     // Dil değiştirme fonksiyonu
     function updateLanguage(lang) {
-      document.title = translations[lang].title;
-      document.querySelector("meta[name='description']").setAttribute("content", translations[lang].meta_description);
-      document.querySelector("header h1").textContent = "OLD GENERATION";
-      document.querySelector("header p").innerHTML = translations[lang].header_subtitle;
-      document.querySelector("#live-stats h2").textContent = translations[lang].stats_title;
-      document.querySelector("#live-stats p").textContent = translations[lang].stats_text;
-      document.querySelector("#profiles h2").textContent = translations[lang].profiles_title;
-      document.querySelector("#profiles p").textContent = translations[lang].profiles_text;
-      document.querySelector("#terminology h2").textContent = translations[lang].terminology_title;
-      document.querySelector("#terminology p").textContent = translations[lang].terminology_text;
-      document.querySelector("#news h2").textContent = translations[lang].news_title;
-      document.querySelector("#news p:nth-child(1)").innerHTML = translations[lang].news_recruitment;
-      document.querySelector("#news p:nth-child(2)").innerHTML = translations[lang].news_tournament;
-      document.querySelector("#shortfilm h2").textContent = translations[lang].shortfilm_title;
-      document.querySelector("#contact h2").textContent = translations[lang].contact_title;
-      document.querySelector("#contact label[for='name']").textContent = translations[lang].contact_name;
-      document.querySelector("#contact label[for='email']").textContent = translations[lang].contact_email;
-      document.querySelector("#contact label[for='message']").textContent = translations[lang].contact_message;
-      document.querySelector("#contact button").textContent = translations[lang].contact_button;
-      document.querySelector("footer p:nth-child(1)").textContent = translations[lang].footer_text1;
-      document.querySelector("footer p:nth-child(2)").textContent = translations[lang].footer_text2;
+      try {
+        // Başlık ve meta etiketler
+        document.title = translations[lang].title;
+        document.querySelector("meta[name='description']").setAttribute("content", translations[lang].meta_description);
+        document.querySelector("meta[property='og:title']").setAttribute("content", translations[lang].og_title);
+        document.querySelector("meta[property='og:description']").setAttribute("content", translations[lang].og_description);
+        document.querySelector("meta[name='twitter:title']").setAttribute("content", translations[lang].twitter_title);
+        document.querySelector("meta[name='twitter:description']").setAttribute("content", translations[lang].twitter_description);
 
-      // HTML lang özelliğini güncelle
-      document.documentElement.lang = lang;
+        // Header
+        document.querySelector("header h1").textContent = "OLD GENERATION";
+        document.querySelector("header p").innerHTML = translations[lang].header_subtitle;
 
-      // Dil tercihini sakla
-      localStorage.setItem("language", lang);
+        // Main bölümleri
+        document.querySelector("#live-stats h2").textContent = translations[lang].stats_title;
+        document.querySelector("#live-stats p").textContent = translations[lang].stats_text;
+        document.querySelector("#profiles h2").textContent = translations[lang].profiles_title;
+        document.querySelector("#profiles p").textContent = translations[lang].profiles_text;
+        document.querySelector("#terminology h2").textContent = translations[lang].terminology_title;
+        document.querySelector("#terminology p").textContent = translations[lang].terminology_text;
+
+        // Duyurular ve Güncellemeler (#news)
+        const newsSection = document.querySelector("#news");
+        if (newsSection) {
+          newsSection.querySelector("h2").textContent = translations[lang].news_title;
+          const newsParagraphs = newsSection.querySelectorAll("p");
+          if (newsParagraphs[0]) newsParagraphs[0].innerHTML = translations[lang].news_recruitment;
+          if (newsParagraphs[1]) newsParagraphs[1].innerHTML = translations[lang].news_tournament;
+        }
+
+        // Kısa Film
+        document.querySelector("#shortfilm h2").textContent = translations[lang].shortfilm_title;
+
+        // İletişim (#contact)
+        const contactSection = document.querySelector("#contact");
+        if (contactSection) {
+          contactSection.querySelector("h2").textContent = translations[lang].contact_title;
+          contactSection.querySelector("label[for='name']").textContent = translations[lang].contact_name;
+          contactSection.querySelector("label[for='email']").textContent = translations[lang].contact_email;
+          contactSection.querySelector("label[for='message']").textContent = translations[lang].contact_message;
+          contactSection.querySelector("button[type='submit']").textContent = translations[lang].contact_button;
+        }
+
+        // Footer
+        const footer = document.querySelector("footer");
+        if (footer) {
+          const footerParagraphs = footer.querySelectorAll("p");
+          if (footerParagraphs[0]) footerParagraphs[0].textContent = translations[lang].footer_text1;
+          if (footerParagraphs[1]) footerParagraphs[1].textContent = translations[lang].footer_text2;
+        }
+
+        // Skip link
+        document.querySelector(".skip-link").textContent = translations[lang].skip_link;
+
+        // HTML lang özelliği
+        document.documentElement.lang = lang;
+
+        // Dil tercihini sakla
+        localStorage.setItem("language", lang);
+      } catch (error) {
+        console.error("Dil güncelleme hatası:", error);
+      }
     }
 
     // Dil değiştirme olay dinleyicisi
