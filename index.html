@@ -208,6 +208,10 @@
       </div>
       <h1>OLD GENERATION</h1>
       <p>PRESERVING LEGACY, DEFYING FATE</p>
+      <select id="language-switcher" style="margin-top: 15px; padding: 5px;">
+        <option value="en">English</option>
+        <option value="tr">Türkçe</option>
+      </select>
     </header>
 
     <main id="main-content">
@@ -227,12 +231,11 @@
       </section>
 
       <section id="news">
-        <h2>Announcements &amp; Updates</h2>
+        <h2>Announcements & Updates</h2>
         <p><strong>Recruitment:</strong> Skilled and active players are welcome. Contact us via Telegram or Line.</p>
         <p><strong>Next Tournament:</strong> Gear up for the upcoming guild war.</p>
       </section>
 
-  <!-- ✅ Guild Short Film -->
       <section id="shortfilm">
         <h2>Guild Short Film</h2>
         <video controls width="100%" style="border-radius: 10px; margin-top: 15px;" poster="images/og-image.jpg">
@@ -263,7 +266,7 @@
 
     <footer>
       <p>OLD GENERATION is a distinguished guild in Lords Mobile, uniting champions since 2016.</p>
-      <p>&copy; 2016–2025 OLD GENERATION. Designed by NeutralizeR</p>
+      <p>© 2016–2025 OLD GENERATION. Designed by NeutralizeR</p>
       <div class="social-buttons">
         <a href="https://t.me/+tUKdRu2diKtlM2Vk" target="_blank" aria-label="Telegram">
           <img src="images/telegram.png" alt="Telegram" loading="lazy">
@@ -275,8 +278,100 @@
     </footer>
   </div>
 
-  <!-- DevTools & Copy Protection -->
+  <!-- DevTools & Copy Protection & Language Switcher -->
   <script>
+    // Çeviriler
+    const translations = {
+      en: {
+        title: "OLD GENERATION – NEVER GIVE UP",
+        header_subtitle: "PRESERVING LEGACY, DEFYING FATE",
+        stats_title: "Live Guild Statistics",
+        stats_text: "Real-time game data integration coming soon.",
+        profiles_title: "Member Spotlight",
+        profiles_text: "Showcase of elite guild members under development.",
+        terminology_title: "Game Terminology",
+        terminology_text: "Glossary of key Lords Mobile terms will be added here.",
+        news_title: "Announcements & Updates",
+        news_recruitment: "<strong>Recruitment:</strong> Skilled and active players are welcome. Contact us via Telegram or Line.",
+        news_tournament: "<strong>Next Tournament:</strong> Gear up for the upcoming guild war.",
+        shortfilm_title: "Guild Short Film",
+        contact_title: "Get in Touch",
+        contact_name: "Name",
+        contact_email: "Email",
+        contact_message: "Message",
+        contact_button: "Send Message",
+        footer_text1: "OLD GENERATION is a distinguished guild in Lords Mobile, uniting champions since 2016.",
+        footer_text2: "© 2016–2025 OLD GENERATION. Designed by NeutralizeR",
+        meta_description: "OLD GENERATION: A top-tier guild in Lords Mobile, forging legends since 2016."
+      },
+      tr: {
+        title: "OLD GENERATION – ASLA PES ETME",
+        header_subtitle: "MİRASI KORUYOR, KADERİ YENİYORUZ",
+        stats_title: "Canlı Lonca İstatistikleri",
+        stats_text: "Gerçek zamanlı oyun verisi entegrasyonu yakında geliyor.",
+        profiles_title: "Üye Tanıtımı",
+        profiles_text: "Seçkin lonca üyelerinin tanıtımı geliştirme aşamasında.",
+        terminology_title: "Oyun Terimleri",
+        terminology_text: "Lords Mobile için temel terimlerin sözlüğü buraya eklenecek.",
+        news_title: "Duyurular ve Güncellemeler",
+        news_recruitment: "<strong>Üye Alımı:</strong> Yetkin ve aktif oyuncular arıyoruz. Telegram veya Line üzerinden bizimle iletişime geçin.",
+        news_tournament: "<strong>Sonraki Turnuva:</strong> Yaklaşan lonca savaşına hazırlanın.",
+        shortfilm_title: "Lonca Kısa Filmi",
+        contact_title: "Bizimle İletişime Geçin",
+        contact_name: "İsim",
+        contact_email: "E-posta",
+        contact_message: "Mesaj",
+        contact_button: "Mesaj Gönder",
+        footer_text1: "OLD GENERATION, Lords Mobile’da 2016’dan beri şampiyonları bir araya getiren seçkin bir loncadır.",
+        footer_text2: "© 2016–2025 OLD GENERATION. NeutralizeR tarafından tasarlandı.",
+        meta_description: "OLD GENERATION: Lords Mobile’da 2016’dan beri efsaneler yaratan üst düzey bir lonca."
+      }
+    };
+
+    // Dil değiştirme fonksiyonu
+    function updateLanguage(lang) {
+      document.title = translations[lang].title;
+      document.querySelector("meta[name='description']").setAttribute("content", translations[lang].meta_description);
+      document.querySelector("header h1").textContent = "OLD GENERATION";
+      document.querySelector("header p").innerHTML = translations[lang].header_subtitle;
+      document.querySelector("#live-stats h2").textContent = translations[lang].stats_title;
+      document.querySelector("#live-stats p").textContent = translations[lang].stats_text;
+      document.querySelector("#profiles h2").textContent = translations[lang].profiles_title;
+      document.querySelector("#profiles p").textContent = translations[lang].profiles_text;
+      document.querySelector("#terminology h2").textContent = translations[lang].terminology_title;
+      document.querySelector("#terminology p").textContent = translations[lang].terminology_text;
+      document.querySelector("#news h2").textContent = translations[lang].news_title;
+      document.querySelector("#news p:nth-child(1)").innerHTML = translations[lang].news_recruitment;
+      document.querySelector("#news p:nth-child(2)").innerHTML = translations[lang].news_tournament;
+      document.querySelector("#shortfilm h2").textContent = translations[lang].shortfilm_title;
+      document.querySelector("#contact h2").textContent = translations[lang].contact_title;
+      document.querySelector("#contact label[for='name']").textContent = translations[lang].contact_name;
+      document.querySelector("#contact label[for='email']").textContent = translations[lang].contact_email;
+      document.querySelector("#contact label[for='message']").textContent = translations[lang].contact_message;
+      document.querySelector("#contact button").textContent = translations[lang].contact_button;
+      document.querySelector("footer p:nth-child(1)").textContent = translations[lang].footer_text1;
+      document.querySelector("footer p:nth-child(2)").textContent = translations[lang].footer_text2;
+
+      // HTML lang özelliğini güncelle
+      document.documentElement.lang = lang;
+
+      // Dil tercihini sakla
+      localStorage.setItem("language", lang);
+    }
+
+    // Dil değiştirme olay dinleyicisi
+    document.getElementById("language-switcher").addEventListener("change", (e) => {
+      updateLanguage(e.target.value);
+    });
+
+    // Sayfa yüklendiğinde varsayılan dili kontrol et
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang = localStorage.getItem("language") || "en";
+      document.getElementById("language-switcher").value = savedLang;
+      updateLanguage(savedLang);
+    });
+
+    // DevTools & Copy Protection
     document.addEventListener('keydown', e => {
       const block = ['u','c','s','a','p','F12'];
       if ((e.ctrlKey && block.includes(e.key.toLowerCase())) ||
