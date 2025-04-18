@@ -2,24 +2,23 @@ name: CI/CD Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-      - name: Install dependencies # eğer varsa
-        run: npm install
-      - name: Build static assets  # eğer CSS/JS minify burada
-        run: npm run build
-      - name: Deploy to Pages
+      # 1) Repo’yu klonla
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      # 2) GitHub Pages’a deploy et
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
-          folder: ./  # proje kök
+          branch: gh-pages       # sayfanın yayınlanacağı branch
+          folder: ./             # deploy edilecek klasör (kök)
+
+      # Sonuç: npm kurulumu veya build aşaması yok
