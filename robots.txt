@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://oldgeneration.com.tr/sitemap.xml
