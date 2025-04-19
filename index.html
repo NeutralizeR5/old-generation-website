@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title id="meta-title">OLD GENERATION – NEVER GIVE UP</title>
+  <title id="meta-title">OLD GENERATION – NEVER GIVE UP</title>
   <link rel="canonical" href="https://oldgeneration.com.tr/">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#ff3333">
@@ -12,20 +12,20 @@
   <!-- SEO -->
   <meta name="robots" content="index,follow">
   <meta name="description" content="OLD GENERATION: A top‑tier guild in Lords Mobile, forging legends since 2016." id="meta-desc">
-  <meta name="keywords"    content="Lords Mobile, guild, OLD GENERATION, clan, mobile game, strategy">
+  <meta name="keywords" content="Lords Mobile, guild, OLD GENERATION, clan, mobile game, strategy">
 
   <!-- Open Graph -->
-  <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://oldgeneration.com.tr/">
-  <meta property="og:title"       content="OLD GENERATION – NEVER GIVE UP">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://oldgeneration.com.tr/">
+  <meta property="og:title" content="OLD GENERATION – NEVER GIVE UP">
   <meta property="og:description" content="Join one of Lords Mobile’s elite guilds. We fight together, grow stronger, and never give up.">
-  <meta property="og:image"       content="https://oldgeneration.com.tr/images/og-image.jpg">
+  <meta property="og:image" content="https://oldgeneration.com.tr/images/og-image.jpg">
 
   <!-- Twitter Card -->
-  <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="OLD GENERATION – NEVER GIVE UP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OLD GENERATION – NEVER GIVE UP">
   <meta name="twitter:description" content="OLD GENERATION Guild – Uniting champions since 2016.">
-  <meta name="twitter:image"       content="https://oldgeneration.com.tr/images/og-image.jpg">
+  <meta name="twitter:image" content="https://oldgeneration.com.tr/images/og-image.jpg">
 
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -51,9 +51,9 @@
         ">
 
   <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap">
 
   <!-- Inline Critical CSS -->
   <style>
@@ -107,26 +107,6 @@
       transition: background .3s;
     }
     body.light header { background:var(--overlay-light); }
-
-    .banner {
-      position:relative;
-      width:100%; height:200px;
-      overflow:hidden;
-      border-radius:var(--radius);
-      margin-bottom:20px;
-    }
-    .banner img {
-      width:100%; height:100%;
-      object-fit:cover;
-      filter:brightness(0.7);
-    }
-    .banner-text {
-      position:absolute;
-      top:50%; left:50%;
-      transform:translate(-50%,-50%);
-      text-align:center;
-      color:var(--text-dark);
-    }
 
     #logo {
       margin-top:20px; text-align:center;
@@ -224,18 +204,11 @@
   <a href="#main-content" class="skip-link">Skip to content</a>
   <div class="wrapper">
     <header>
-      <div class="banner" role="img" aria-label="Guild Banner">
-        <img src="https://oldgeneration.com.tr/images/banner.jpg" alt="Guild Banner">
-        <div class="banner-text">
-          <h1>OLD GENERATION</h1>
-          <p id="header-subtitle">PRESERVING LEGACY, DEFYING FATE</p>
-        </div>
-      </div>
-
       <div id="logo">
-        <img src="https://oldgeneration.com.tr/images/logo.png" alt="OLD GENERATION Logo">
+        <img src="https://oldgeneration.com.tr/images/logo.png" alt="OLD GENERATION Logo" width="140" height="140">
       </div>
-
+      <h1>OLD GENERATION</h1>
+      <p id="header-subtitle">PRESERVING LEGACY, DEFYING FATE</p>
       <div style="margin-top:15px;">
         <button aria-label="Language: English" onclick="setLang('en')">EN</button>
         <button aria-label="Language: Turkish" onclick="setLang('tr')">TR</button>
@@ -244,12 +217,12 @@
     </header>
 
     <nav aria-label="Main Navigation">
-      <a href="#live-stats"    id="nav-stats">Stats</a>
-      <a href="#profiles"      id="nav-profiles">Profiles</a>
-      <a href="#terminology"   id="nav-terminology">Terminology</a>
-      <a href="#news"          id="nav-news">News</a>
-      <a href="#shortfilm"     id="nav-shortfilm">Short Film</a>
-      <a href="#contact"       id="nav-contact">Contact</a>
+      <a href="#live-stats" id="nav-stats">Stats</a>
+      <a href="#profiles" id="nav-profiles">Profiles</a>
+      <a href="#terminology" id="nav-terminology">Terminology</a>
+      <a href="#news" id="nav-news">News</a>
+      <a href="#shortfilm" id="nav-shortfilm">Short Film</a>
+      <a href="#contact" id="nav-contact">Contact</a>
     </nav>
 
     <main id="main-content">
@@ -277,7 +250,7 @@
 
       <section id="shortfilm">
         <h2 id="shortfilm-title">Guild Short Film</h2>
-        <video controls preload="metadata" poster="https://oldgeneration.com.tr/images/og-image.jpg">
+        <video controls preload="metadata" poster="https://oldgeneration.com.tr/images/og-image.jpg" loading="lazy">
           <source src="https://oldgeneration.com.tr/videos/shortfilm.mp4" type="video/mp4">
           <track kind="captions" src="https://oldgeneration.com.tr/videos/captions.vtt" srclang="en" label="English captions">
           Your browser does not support the video tag.
@@ -287,10 +260,10 @@
       <section id="contact">
         <h2 id="contact-title">Get in Touch</h2>
         <form action="https://formspree.io/f/myzeveog" method="POST" aria-label="Contact Form">
-          <label for="name"    id="label-name">Name</label>
-          <input id="name"     name="name"    type="text" required>
-          <label for="email"   id="label-email">Email</label>
-          <input id="email"    name="email"   type="email" required>
+          <label for="name" id="label-name">Name</label>
+          <input id="name" name="name" type="text" required>
+          <label for="email" id="label-email">Email</label>
+          <input id="email" name="email" type="email" required>
           <label for="message" id="label-message">Message</label>
           <textarea id="message" name="message" rows="4" required></textarea>
           <input class="honeypot" type="text" name="botcheck" tabindex="-1" autocomplete="off">
@@ -300,14 +273,14 @@
     </main>
 
     <footer>
-      <p id="footer-text1">OLD GENERATION is a distinguished guild in Lords Mobile since 2016.</p>
-      <p id="footer-text2">© 2016–2025 OLD GENERATION. Designed by NeutralizeR</p>
+      <p id="footer-text1">OLD GENERATION is a distinguished guild in Lords Mobile since 2016.</p>
+      <p id="footer-text2">© 2016–2025 OLD GENERATION. Designed by NeutralizeR</p>
       <div class="social-buttons">
         <a href="https://t.me/+tUKdRu2diKtlM2Vk" target="_blank" aria-label="Telegram">
-          <img src="https://oldgeneration.com.tr/images/telegram.png" alt="Telegram">
+          <img src="https://oldgeneration.com.tr/images/telegram.png" alt="Telegram" width="32" height="32" loading="lazy">
         </a>
         <a href="https://line.me/R/ti/g/AtkvcNSP6B" target="_blank" aria-label="Line">
-          <img src="https://oldgeneration.com.tr/images/line.png" alt="Line">
+          <img src="https://oldgeneration.com.tr/images/line.png" alt="Line" width="32" height="32" loading="lazy">
         </a>
       </div>
     </footer>
@@ -342,8 +315,8 @@
         contact_title:    "Get in Touch",
         label_name:       "Name",   label_email:   "Email",
         label_message:    "Message", contact_button:"Send Message",
-        footer1:          "OLD GENERATION is a distinguished guild in Lords Mobile since 2016.",
-        footer2:          "© 2016–2025 OLD GENERATION. Designed by NeutralizeR"
+        footer1:          "OLD GENERATION is a distinguished guild in Lords Mobile since 2016.",
+        footer2:          "© 2016–2025 OLD GENERATION. Designed by NeutralizeR"
       },
       tr: {
         title:            "OLD GENERATION – ASLA PES ETME",
@@ -362,8 +335,8 @@
         contact_title:    "Bizimle İletişime Geçin",
         label_name:       "İsim",       label_email:       "E‑posta",
         label_message:    "Mesaj",      contact_button:     "Mesaj Gönder",
-        footer1:          "OLD GENERATION, Lords Mobile’da 2016’dan beri şampiyonları bir araya getiren seçkin bir loncadır.",
-        footer2:          "© 2016–2025 OLD GENERATION. NeutralizeR tarafından tasarlandı."
+        footer1:          "OLD GENERATION, Lords Mobile’da 2016’dan beri şampiyonları bir araya getiren seçkin bir loncadır.",
+        footer2:          "© 2016–2025 OLD GENERATION. NeutralizeR tarafından tasarlandı."
       }
     };
 
@@ -395,11 +368,9 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      // Theme & Lang restore
       document.body.classList.toggle('light', localStorage.getItem('theme')==='light');
       setLang(localStorage.getItem('lang')||'en');
 
-      // Fetch stats safely
       fetch('https://api.example.com/guild/stats')
         .then(r=>r.json())
         .then(data=>{
@@ -412,7 +383,6 @@
         });
     });
 
-    // DevTools & Copy Protection
     document.addEventListener('keydown', e=>{
       if((e.ctrlKey&&['u','c','s','a','p'].includes(e.key.toLowerCase()))||e.key==='F12'||e.key==='PrintScreen'){
         e.preventDefault(); alert('Action disabled.');
