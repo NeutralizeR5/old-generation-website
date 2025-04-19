@@ -1,0 +1,46 @@
+:root {
+  --bg-dark: url('/images/banner.webp') center/cover fixed no-repeat;
+  --bg-light: #f4f4f4;
+  --overlay-dark: rgba(0,0,0,0.4);
+  --overlay-light: rgba(255,255,255,0.9);
+  --primary: #ff3333;
+  --text-dark: #fff;
+  --text-light: #111;
+  --radius: 8px;
+}
+*,
+*::before,
+*::after { box-sizing: border-box; margin:0; padding:0; }
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100vh;
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  font-family: 'Oswald', sans-serif;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  transition: background .3s, color .3s;
+}
+body.light {
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+/* Kopya Koruma CSS */
+body, * { -webkit-touch-callout: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; }
+img { pointer-events: none; }
+
+.skip-link {
+  position: absolute; top: -40px; left: 0;
+  background: #000; color: #fff; padding: 8px 16px;
+  z-index: 100; text-decoration: none; transition: top .3s;
+}
+.skip-link:focus { top: 0; }
+
+/* ... header, nav, main, footer stilleri yukarıdaki index.html içindeki yorumla aynı ... */
+
+@media(max-width:600px){
+  header h1 { font-size: 2.2rem; }
+  #logo img { width: 120px; }
+  .social-buttons img { width: 28px; height: 28px; }
+}
