@@ -61,11 +61,6 @@
     upgrade-insecure-requests;
   " />
   
-// PWA: register service worker
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js');
-    }
-
   <!-- Google Analytics (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
@@ -74,8 +69,7 @@
     gtag('js', new Date());
     gtag('config', 'G-NSJQ1WV5N1'); // <-- Buraya kendi GA ölçüm kimliğini gir!
   </script>
-
-  !-- CSS -->
+  
   <link rel="stylesheet" href="/styles.css" />
 </head>
   
