@@ -7,7 +7,7 @@
   <link rel="canonical" href="https://oldgeneration.com.tr/">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#ff3333">
-  <link rel="preload" href="https://oldgeneration.com.tr/images/logo.png" as="image">>
+  <link rel="preload" href="https://oldgeneration.com.tr/images/logo.png" as="image">
 
   <!-- SEO -->
   <meta name="robots" content="index,follow">
@@ -392,3 +392,58 @@
   </script>
 </body>
 </html>
+
+<script>
+  function setLang(lang) {
+    const t = translations[lang];
+    if (!t) return;
+
+    document.documentElement.lang = lang;
+    document.title = t.title;
+    document.getElementById("meta-title").textContent = t.title;
+    document.getElementById("meta-desc").setAttribute("content", t.meta_description);
+    document.getElementById("header-subtitle").textContent = t.header_subtitle;
+
+    // Navigation
+    document.getElementById("nav-stats").textContent = t.nav_stats;
+    document.getElementById("nav-profiles").textContent = t.nav_profiles;
+    document.getElementById("nav-terminology").textContent = t.nav_terminology;
+    document.getElementById("nav-news").textContent = t.nav_news;
+    document.getElementById("nav-shortfilm").textContent = t.nav_shortfilm;
+    document.getElementById("nav-contact").textContent = t.nav_contact;
+
+    // Sections
+    document.getElementById("stats-title").textContent = t.stats_title;
+    document.getElementById("stats-text").textContent = t.stats_text;
+
+    document.getElementById("profiles-title").textContent = t.profiles_title;
+    document.getElementById("profiles-text").textContent = t.profiles_text;
+
+    document.getElementById("terminology-title").textContent = t.terminology_title;
+    document.getElementById("terminology-text").textContent = t.terminology_text;
+
+    document.getElementById("news-title").textContent = t.news_title;
+    document.getElementById("news-recruitment").innerHTML = t.news_recruitment;
+    document.getElementById("news-tournament").innerHTML = t.news_tournament;
+
+    document.getElementById("shortfilm-title").textContent = t.shortfilm_title;
+
+    // Contact Form
+    document.getElementById("contact-title").textContent = t.contact_title;
+    document.getElementById("label-name").textContent = t.label_name;
+    document.getElementById("label-email").textContent = t.label_email;
+    document.getElementById("label-message").textContent = t.label_message;
+    document.getElementById("contact-button").textContent = t.contact_button;
+
+    // Footer
+    document.getElementById("footer-text1").textContent = t.footer1;
+    document.getElementById("footer-text2").textContent = t.footer2;
+  }
+</script>
+
+<script>
+  function toggleTheme() {
+    document.body.classList.toggle('light');
+  }
+</script>
+
