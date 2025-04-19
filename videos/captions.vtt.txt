@@ -1,0 +1,10 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.000
+Welcome to OLD GENERATION!
+
+00:00:04.500 --> 00:00:08.000
+Preserving legacy, defying fate.
+
+00:00:08.500 --> 00:00:12.000
+Join us in the battle for glory.
