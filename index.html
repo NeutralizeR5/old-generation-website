@@ -1,40 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title id="meta-title">OLD GENERATION – NEVER GIVE UP</title>
-  <link rel="canonical" href="https://oldgeneration.com.tr/" />
-  <link rel="manifest" href="/manifest.json" />
-  <meta name="theme-color" content="#ff3333" />
-  <meta name="robots" content="index,follow" />
-  <meta name="description" content="OLD GENERATION: A top‑tier guild in Lords Mobile, forging legends since 2016." id="meta-desc" />
-  <meta name="keywords" content="Lords Mobile, guild, OLD GENERATION, clan, mobile game, strategy" />
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff3333">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="canonical" href="https://oldgeneration.com.tr/">
 
-  <!-- Preload LCP Logo -->
-  <link rel="preload" as="image" href="images/logo.webp" type="image/webp" />
+  <!-- Yerel Font: Oswald 500 & 700 -->
+  <style>
+    @font-face {
+      font-family: 'Oswald';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url('fonts/Oswald-500.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Oswald';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url('fonts/Oswald-700.woff2') format('woff2');
+    }
+  </style>
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://oldgeneration.com.tr/" />
-  <meta property="og:title" content="OLD GENERATION – NEVER GIVE UP" />
-  <meta property="og:description" content="Join one of Lords Mobile’s elite guilds. We fight together, grow stronger, and never give up." />
-  <meta property="og:image" content="https://oldgeneration.com.tr/images/og-image.jpg" />
+  <!-- Meta SEO -->
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="OLD GENERATION: A top‑tier guild in Lords Mobile, forging legends since 2016." id="meta-desc">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://oldgeneration.com.tr/">
+  <meta property="og:title" content="OLD GENERATION – NEVER GIVE UP">
+  <meta property="og:description" content="Join one of Lords Mobile’s elite guilds. We fight together, grow stronger, and never give up.">
+  <meta property="og:image" content="https://oldgeneration.com.tr/images/og-image.jpg">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="OLD GENERATION – NEVER GIVE UP" />
-  <meta name="twitter:description" content="OLD GENERATION Guild – Uniting champions since 2016." />
-  <meta name="twitter:image" content="https://oldgeneration.com.tr/images/og-image.jpg" />
-
-  <!-- Web Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" rel="stylesheet" />
-
+  <!-- CSP -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' https://oldgeneration.com.tr https://i.hizliresim.com; 
+                 connect-src 'self'; 
+                 script-src 'self' 'unsafe-inline'; 
+                 style-src 'self' 'unsafe-inline'; 
+                 img-src 'self' https://oldgeneration.com.tr https://i.hizliresim.com data:; 
+                 font-src 'self';">
+  
+  <!-- Critical CSS -->
   <style>
     :root {
-      --bg-dark: url('images/banner.webp') center/cover no-repeat fixed;
+      --bg-dark: url('https://i.hizliresim.com/f7vsoke.jpg') center/cover fixed no-repeat;
       --bg-light: #f4f4f4;
       --overlay-dark: rgba(0, 0, 0, 0.4);
       --overlay-light: rgba(255, 255, 255, 0.9);
@@ -44,295 +58,183 @@
       --radius: 8px;
     }
 
-    html { scroll-behavior: smooth; }
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
       font-family: 'Oswald', sans-serif;
       background: var(--bg-dark);
       color: var(--text-dark);
-      display: flex;
-      flex-direction: column;
+      transition: background .3s, color .3s;
       min-height: 100vh;
-      transition: background 0.3s, color 0.3s;
     }
-
     body.light {
       background: var(--bg-light);
       color: var(--text-light);
     }
 
-    .wrapper {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-      flex: 1;
-    }
-
     header, main section, footer {
       background: var(--overlay-dark);
-      backdrop-filter: blur(4px);
       border-radius: var(--radius);
       padding: 20px;
-      margin: 20px 0;
+      margin: 20px auto;
+      max-width: 1000px;
+      backdrop-filter: blur(3px);
+      transition: background .3s;
     }
-
-    body.light header,
-    body.light section,
-    body.light footer {
+    body.light header, body.light section, body.light footer {
       background: var(--overlay-light);
-    }
-
-    header {
-      text-align: center;
     }
 
     #logo img {
       width: 140px;
-      height: auto;
+      display: block;
+      margin: auto;
       filter: drop-shadow(0 0 8px var(--primary));
     }
-
-    header h1 {
+    h1 {
+      text-align: center;
       color: var(--primary);
-      font-size: clamp(1.8rem, 6vw, 2.8rem);
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      margin-top: 10px;
     }
-
-    .lang-switch button, .theme-switch button {
-      margin: 5px;
-      padding: 8px 12px;
-      border: none;
-      background: var(--primary);
-      color: white;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
     nav {
       display: flex;
       justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
+      gap: 15px;
+      margin: 20px;
     }
-
     nav a {
       color: inherit;
       text-decoration: none;
       font-weight: bold;
     }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    #shortfilm video {
-      width: 100%;
-      border-radius: var(--radius);
-    }
-
     footer {
       text-align: center;
-    }
-
-    .social-buttons {
-      margin-top: 10px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .social-buttons img {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-    }
-
-    @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
+      font-size: 0.9rem;
     }
   </style>
 </head>
 
 <body>
-  <div class="wrapper">
-    <header>
-      <div id="logo">
-  <img src="images/logo.png" alt="OLD GENERATION Logo" width="140" height="140">
-      </div>
-      <h1>OLD GENERATION</h1>
-      <p id="header-subtitle">PRESERVING LEGACY, DEFYING FATE</p>
-      <div class="lang-switch">
-        <button onclick="setLang('en')" aria-label="Language: English">EN</button>
-        <button onclick="setLang('tr')" aria-label="Language: Turkish">TR</button>
-        <button onclick="toggleTheme()" aria-label="Toggle theme">🌓 Theme</button>
-      </div>
-    </header>
+  <header>
+    <div id="logo">
+      <picture>
+        <source srcset="images/logo.avif" type="image/avif">
+        <source srcset="images/logo.webp" type="image/webp">
+        <img src="images/logo.png" alt="OLD GENERATION Logo" width="140" height="140">
+      </picture>
+    </div>
+    <h1>OLD GENERATION</h1>
+    <p id="header-subtitle">PRESERVING LEGACY, DEFYING FATE</p>
+    <div style="text-align:center; margin-top: 15px;">
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('tr')">TR</button>
+      <button onclick="toggleTheme()">🌓 Theme</button>
+    </div>
+  </header>
 
-    <nav>
-      <a href="#live-stats" id="nav-stats">Stats</a>
-      <a href="#profiles" id="nav-profiles">Profiles</a>
-      <a href="#terminology" id="nav-terminology">Terminology</a>
-      <a href="#news" id="nav-news">News</a>
-      <a href="#shortfilm" id="nav-shortfilm">Short Film</a>
-      <a href="#contact" id="nav-contact">Contact</a>
-    </nav>
+  <nav>
+    <a href="#stats" id="nav-stats">Stats</a>
+    <a href="#profiles" id="nav-profiles">Profiles</a>
+    <a href="#news" id="nav-news">News</a>
+    <a href="#contact" id="nav-contact">Contact</a>
+  </nav>
 
-    <main>
-      <section id="live-stats">
-        <h2 id="stats-title">Live Guild Statistics</h2>
-        <p id="stats-text">Real‑time game data integration coming soon.</p>
-        <div id="stats-data">Loading…</div>
-      </section>
+  <main>
+    <section id="stats">
+      <h2 id="stats-title">Live Guild Statistics</h2>
+      <p id="stats-text">Real‑time game data integration coming soon.</p>
+      <div id="stats-data">Loading...</div>
+    </section>
 
-      <section id="profiles">
-        <h2 id="profiles-title">Member Spotlight</h2>
-        <p id="profiles-text">Showcase of elite guild members under development.</p>
-      </section>
+    <section id="profiles">
+      <h2 id="profiles-title">Member Spotlight</h2>
+      <p id="profiles-text">Coming soon...</p>
+    </section>
 
-      <section id="terminology">
-        <h2 id="terminology-title">Game Terminology</h2>
-        <p id="terminology-text">Glossary of key Lords Mobile terms will be added here.</p>
-      </section>
+    <section id="news">
+      <h2 id="news-title">Announcements</h2>
+      <p id="news-recruitment">Recruitment: Contact us via Telegram or Line.</p>
+    </section>
 
-      <section id="news">
-        <h2 id="news-title">Announcements & Updates</h2>
-        <p id="news-recruitment"><strong>Recruitment:</strong> Skilled and active players are welcome. Contact us via Telegram or Line.</p>
-        <p id="news-tournament"><strong>Next Tournament:</strong> Gear up for the upcoming guild war.</p>
-      </section>
+    <section id="contact">
+      <h2 id="contact-title">Contact</h2>
+      <form action="https://formspree.io/f/myzeveog" method="POST">
+        <label id="label-name">Name</label>
+        <input type="text" name="name" required>
+        <label id="label-email">Email</label>
+        <input type="email" name="email" required>
+        <label id="label-message">Message</label>
+        <textarea name="message" required></textarea>
+        <button type="submit" id="contact-button">Send</button>
+      </form>
+    </section>
+  </main>
 
-      <section id="shortfilm">
-        <h2 id="shortfilm-title">Guild Short Film</h2>
-        <video controls preload="metadata" poster="images/og-image.jpg">
-          <source src="videos/shortfilm.mp4" type="video/mp4" />
-          <track kind="captions" src="videos/captions.vtt" srclang="en" />
-          Your browser does not support the video tag.
-        </video>
-      </section>
-
-      <section id="contact">
-        <h2 id="contact-title">Get in Touch</h2>
-        <form action="https://formspree.io/f/myzeveog" method="POST">
-          <label for="name" id="label-name">Name</label>
-          <input id="name" name="name" type="text" required />
-          <label for="email" id="label-email">Email</label>
-          <input id="email" name="email" type="email" required />
-          <label for="message" id="label-message">Message</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-          <input type="text" name="botcheck" class="honeypot" />
-          <button type="submit" id="contact-button">Send Message</button>
-        </form>
-      </section>
-    </main>
-
-    <footer>
-      <p id="footer-text1">OLD GENERATION is a distinguished guild in Lords Mobile since 2016.</p>
-      <p id="footer-text2">© 2016–2025 OLD GENERATION. Designed by NeutralizeR</p>
-      <div class="social-buttons">
-        <a href="https://t.me/+tUKdRu2diKtlM2Vk" target="_blank">
-          <img src="images/telegram.png" alt="Telegram" />
-        </a>
-        <a href="https://line.me/R/ti/g/AtkvcNSP6B" target="_blank">
-          <img src="images/line.png" alt="Line" />
-        </a>
-      </div>
-    </footer>
-  </div>
+  <footer>
+    <p id="footer-text1">© 2016–2025 OLD GENERATION. Designed by NeutralizeR</p>
+  </footer>
 
   <script>
+    function toggleTheme() {
+      const isLight = document.body.classList.toggle('light');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    }
+
     const translations = {
       en: {
         header_subtitle: "PRESERVING LEGACY, DEFYING FATE",
-        nav_stats: "Stats",
-        nav_profiles: "Profiles",
-        nav_terminology: "Terminology",
-        nav_news: "News",
-        nav_shortfilm: "Short Film",
-        nav_contact: "Contact",
         stats_title: "Live Guild Statistics",
         stats_text: "Real‑time game data integration coming soon.",
         profiles_title: "Member Spotlight",
-        profiles_text: "Showcase of elite guild members under development.",
-        terminology_title: "Game Terminology",
-        terminology_text: "Glossary of key Lords Mobile terms will be added here.",
-        news_title: "Announcements & Updates",
-        news_recruitment: "<strong>Recruitment:</strong> Skilled and active players are welcome. Contact us via Telegram or Line.",
-        news_tournament: "<strong>Next Tournament:</strong> Gear up for the upcoming guild war.",
-        shortfilm_title: "Guild Short Film",
-        contact_title: "Get in Touch",
+        profiles_text: "Coming soon...",
+        news_title: "Announcements",
+        news_recruitment: "Recruitment: Contact us via Telegram or Line.",
+        contact_title: "Contact",
         label_name: "Name",
         label_email: "Email",
         label_message: "Message",
-        contact_button: "Send Message",
-        footer1: "OLD GENERATION is a distinguished guild in Lords Mobile since 2016.",
-        footer2: "© 2016–2025 OLD GENERATION. Designed by NeutralizeR"
+        contact_button: "Send",
+        footer1: "© 2016–2025 OLD GENERATION. Designed by NeutralizeR"
       },
       tr: {
         header_subtitle: "MİRASI KORUYOR, KADERİ YENİYORUZ",
-        nav_stats: "İstatistikler",
-        nav_profiles: "Üyeler",
-        nav_terminology: "Terimler",
-        nav_news: "Duyurular",
-        nav_shortfilm: "Kısa Film",
-        nav_contact: "İletişim",
         stats_title: "Canlı Lonca İstatistikleri",
-        stats_text: "Gerçek zamanlı oyun verisi entegrasyonu yakında geliyor.",
+        stats_text: "Gerçek zamanlı oyun verisi yakında.",
         profiles_title: "Üye Tanıtımı",
-        profiles_text: "Seçkin lonca üyelerinin tanıtımı geliştirme aşamasında.",
-        terminology_title: "Oyun Terimleri",
-        terminology_text: "Lords Mobile için temel terimlerin sözlüğü buraya eklenecek.",
-        news_title: "Duyurular & Güncellemeler",
-        news_recruitment: "<strong>Üye Alımı:</strong> Yetkin ve aktif oyuncular arıyoruz. Telegram veya Line üzerinden iletişime geçin.",
-        news_tournament: "<strong>Sonraki Turnuva:</strong> Yaklaşan lonca savaşına hazırlanın.",
-        shortfilm_title: "Lonca Kısa Filmi",
-        contact_title: "Bizimle İletişime Geçin",
+        profiles_text: "Yakında...",
+        news_title: "Duyurular",
+        news_recruitment: "Üye alımı: Telegram veya Line üzerinden iletişime geçin.",
+        contact_title: "İletişim",
         label_name: "İsim",
-        label_email: "E‑posta",
+        label_email: "E-posta",
         label_message: "Mesaj",
-        contact_button: "Mesaj Gönder",
-        footer1: "OLD GENERATION, Lords Mobile’da 2016’dan beri şampiyonları bir araya getiren seçkin bir loncadır.",
-        footer2: "© 2016–2025 OLD GENERATION. NeutralizeR tarafından tasarlandı."
+        contact_button: "Gönder",
+        footer1: "© 2016–2025 OLD GENERATION. NeutralizeR tarafından tasarlandı."
       }
     };
 
     function setLang(lang) {
-      localStorage.setItem("lang", lang);
+      localStorage.setItem('lang', lang);
       const t = translations[lang];
-      document.getElementById("header-subtitle").textContent = t.header_subtitle;
-      ["stats", "profiles", "terminology", "news", "shortfilm", "contact"].forEach((id) => {
-        document.getElementById("nav-" + id).textContent = t["nav_" + id];
-        const h = document.getElementById(id + "-title"); if (h) h.textContent = t[id + "_title"];
-        const p = document.getElementById(id + "-text");  if (p) p.textContent = t[id + "_text"];
-      });
-      document.getElementById("news-recruitment").innerHTML = t.news_recruitment;
-      document.getElementById("news-tournament").innerHTML = t.news_tournament;
-      document.getElementById("label-name").textContent = t.label_name;
-      document.getElementById("label-email").textContent = t.label_email;
-      document.getElementById("label-message").textContent = t.label_message;
-      document.getElementById("contact-button").textContent = t.contact_button;
-      document.getElementById("footer-text1").textContent = t.footer1;
-      document.getElementById("footer-text2").textContent = t.footer2;
+      document.getElementById('header-subtitle').textContent = t.header_subtitle;
+      document.getElementById('stats-title').textContent = t.stats_title;
+      document.getElementById('stats-text').textContent = t.stats_text;
+      document.getElementById('profiles-title').textContent = t.profiles_title;
+      document.getElementById('profiles-text').textContent = t.profiles_text;
+      document.getElementById('news-title').textContent = t.news_title;
+      document.getElementById('news-recruitment').textContent = t.news_recruitment;
+      document.getElementById('contact-title').textContent = t.contact_title;
+      document.getElementById('label-name').textContent = t.label_name;
+      document.getElementById('label-email').textContent = t.label_email;
+      document.getElementById('label-message').textContent = t.label_message;
+      document.getElementById('contact-button').textContent = t.contact_button;
+      document.getElementById('footer-text1').textContent = t.footer1;
     }
 
-    function toggleTheme() {
-      const light = document.body.classList.toggle("light");
-      localStorage.setItem("theme", light ? "light" : "dark");
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      setLang(localStorage.getItem("lang") || "en");
-      if (localStorage.getItem("theme") === "light") {
-        document.body.classList.add("light");
-      }
-
-      // API örneği
-      fetch("https://api.example.com/guild/stats")
-        .then(res => res.json())
-        .then(data => {
-          document.getElementById("stats-data").textContent = `Members: ${data.members} | Might: ${data.might}`;
-        })
-        .catch(() => {
-          document.getElementById("stats-data").textContent = "Veri yüklenemedi.";
-        });
+    document.addEventListener('DOMContentLoaded', () => {
+      setLang(localStorage.getItem('lang') || 'en');
+      if (localStorage.getItem('theme') === 'light') document.body.classList.add('light');
     });
   </script>
 </body>
