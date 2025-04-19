@@ -3,141 +3,163 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  
-  <!-- Title & Meta -->
-  <title id="meta-title">OLD GENERATION – NEVER GIVE UP</title>
+  <title id="meta-title">OLD GENERATION – NEVER GIVE UP</title>
   <link rel="canonical" href="https://oldgeneration.com.tr/">
-  <meta name="description" content="OLD GENERATION: A top‑tier guild in Lords Mobile, forging legends since 2016." id="meta-desc">
-  <meta name="keywords" content="Lords Mobile, guild, OLD GENERATION, clan, mobile game, strategy">
+  <meta name="description" id="meta-desc" content="OLD GENERATION: A top‑tier guild in Lords Mobile, forging legends since 2016.">
   <meta name="robots" content="index,follow">
   
-  <!-- Preload LCP Görselleri -->
-  <link rel="preload" as="image" href="/images/logo.avif" type="image/avif">
-  <link rel="preload" as="image" href="/images/banner.avif" type="image/avif">
-  <link rel="preload" as="image" href="/images/logo.webp" type="image/webp">
-  <link rel="preload" as="image" href="/images/banner.webp" type="image/webp">
+  <!-- Preload logo & banner for LCP -->
+  <link rel="preload" as="image" href="/images/logo.png">
+  <link rel="preload" as="image" href="/images/banner.webp">
   
   <!-- Manifest & Theme Color -->
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#ff3333">
   
-  <!-- Favicon -->
-  <link rel="icon" href="/images/logo.png" type="image/png">
+  <!-- CSP: sadece kendi kaynağımız izinli -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data: https://i.hizliresim.com;
+    connect-src 'self';
+    font-src 'self';
+    base-uri 'self';
+  ">
 
-  <!-- Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy"
-        content="
-          default-src 'self';
-          script-src 'self';
-          style-src 'self' 'unsafe-inline';
-          img-src 'self' data: https://i.hizliresim.com;
-          connect-src 'self';
-          font-src 'self';
-          frame-ancestors 'none';
-          base-uri 'self';
-        ">
-  
   <!-- Inline Critical CSS -->
   <style>
     :root {
-      --bg-dark:    url('/images/banner.avif') center/cover no-repeat;
-      --bg-fallback:url('/images/banner.webp') center/cover no-repeat;
-      --overlay:    rgba(0,0,0,0.4);
-      --primary:    #ff3333;
-      --text:       #fff;
-      --radius:     8px;
+      --bg-url: url('https://i.hizliresim.com/f7vsoke.jpg') center/cover fixed no-repeat;
+      --overlay: rgba(0,0,0,0.4);
+      --primary: #ff3333;
+      --text: #fff;
+      --text-light: #111;
+      --radius: 8px;
     }
     *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
-    html { scroll-behavior:smooth; }
+    html { scroll-behavior: smooth; }
     body {
       min-height:100vh;
-      background: var(--bg-dark) center/cover fixed no-repeat;
-      /* fallback */
-      background-image: var(--bg-dark);
-      background-image: var(--bg-fallback);
+      background: var(--bg-url);
       color: var(--text);
       font-family: 'Oswald',sans-serif;
       transition: background .3s, color .3s;
-      display: flex; flex-direction: column;
+      display:flex; flex-direction:column;
     }
     body.light {
-      background: #f4f4f4; color: #111;
+      background: #fafafa;
+      color: var(--text-light);
     }
     header, main section, footer {
       background: var(--overlay);
       backdrop-filter: blur(4px);
       border-radius: var(--radius);
-      margin: 20px auto;
-      max-width: 1000px;
-      padding: 20px;
+      max-width:1000px;
+      margin:20px auto;
+      padding:20px;
     }
     body.light header,
     body.light main section,
     body.light footer {
       background: rgba(255,255,255,0.9);
     }
-    /* Logo */
     #logo img {
-      width: 140px; height: 140px;
-      display:block; margin: auto;
+      display:block; margin:0 auto 10px;
+      width:140px; height:140px;
       filter: drop-shadow(0 0 8px var(--primary));
     }
-    h1 {
-      text-align: center;
+    header h1 {
+      text-align:center;
       color: var(--primary);
-      font-size: clamp(1.8rem, 5vw, 2.8rem);
-      margin: .5em 0;
+      font-size: clamp(1.8rem,6vw,2.8rem);
+      margin-bottom: 5px;
+    }
+    header p {
+      text-align:center;
+      font-size:1.1rem;
+      opacity:.9;
+    }
+    header .controls {
+      text-align:center;
+      margin-top:12px;
+    }
+    header .controls button {
+      margin:0 5px;
+      padding:6px 12px;
+      background: var(--primary);
+      color:#fff;
+      border:none;
+      border-radius:4px;
+      cursor:pointer;
     }
     nav {
-      display: flex; justify-content: center; gap: 15px;
-      flex-wrap: wrap; margin: 15px 0;
+      display:flex; justify-content:center; gap:15px;
+      flex-wrap:wrap;
+      max-width:1000px;
+      margin:10px auto;
     }
     nav a {
-      color: inherit; text-decoration: none; font-weight: bold;
+      color:inherit; text-decoration:none; font-weight:500;
+    }
+    nav a:hover {
+      text-decoration:underline;
     }
     main section h2 {
-      text-align: center; color: var(--primary);
-      margin-bottom: 12px; font-size: 1.8rem;
+      text-align:center;
+      color: var(--primary);
+      margin-bottom:12px;
+      font-size:1.8rem;
     }
-    section p { line-height: 1.6; }
+    main section p {
+      line-height:1.6;
+    }
     #shortfilm video {
-      width:100%; border-radius: var(--radius);
-      box-shadow: 0 0 10px rgba(0,0,0,.5);
+      width:100%;
+      border-radius: var(--radius);
+      box-shadow:0 0 10px rgba(0,0,0,.5);
+      margin-top:10px;
+    }
+    #contact label {
+      display:block; margin:8px 0 4px; font-weight:bold;
     }
     #contact input,#contact textarea {
-      width:100%; padding:10px; margin:8px 0;
+      width:100%; padding:10px; margin-bottom:12px;
       border:none; border-radius:5px; font-size:1rem;
     }
     #contact button {
-      background: var(--primary); color:#fff;
-      padding:10px 20px; border:none; border-radius:5px;
+      background: var(--primary);
+      color:#fff;
+      padding:10px 20px;
+      border:none; border-radius:5px;
       cursor:pointer;
     }
-    footer { text-align:center; font-size:.9rem; }
-    .social-buttons { display:flex; justify-content:center; gap:12px; margin-top:12px; }
+    footer {
+      text-align:center; font-size:.9rem; margin-top:auto;
+    }
+    .social-buttons {
+      display:flex; justify-content:center; gap:12px; margin-top:12px;
+    }
     .social-buttons img {
       width:32px; height:32px; border-radius:50%;
       box-shadow:0 0 6px rgba(0,0,0,.4);
     }
     @media(max-width:600px){
-      header h1{font-size:2.2rem;}
-      #logo img{width:120px;height:120px;}
-      .social-buttons img{width:28px;height:28px;}
+      #logo img { width:120px; height:120px; }
+      header h1 { font-size:2.2rem; }
+      .social-buttons img { width:28px; height:28px; }
     }
   </style>
 </head>
-<body>
+
+<body oncontextmenu="return false">
   <header>
     <div id="logo">
-      <picture>
-        <source srcset="/images/logo.avif" type="image/avif">
-        <source srcset="/images/logo.webp" type="image/webp">
-        <img src="/images/logo.png" alt="OLD GENERATION Logo" width="140" height="140" loading="eager">
-      </picture>
+      <img src="/images/logo.png" alt="OLD GENERATION Logo" loading="eager">
     </div>
     <h1>OLD GENERATION</h1>
     <p id="header-subtitle">PRESERVING LEGACY, DEFYING FATE</p>
-    <div style="text-align:center; margin-top:10px;">
+    <div class="controls">
       <button onclick="setLang('en')">EN</button>
       <button onclick="setLang('tr')">TR</button>
       <button onclick="toggleTheme()">🌓 Theme</button>
@@ -160,20 +182,31 @@
 
     <section id="profiles">
       <h2 id="profiles-title">Member Spotlight</h2>
-      <p id="profiles-text">Coming soon…</p>
+      <p id="profiles-text">Showcase under development.</p>
     </section>
 
     <section id="news">
       <h2 id="news-title">Announcements</h2>
-      <p id="news-recruitment">Recruitment: Contact us via Telegram or Line.</p>
+      <p id="news-recruitment"><strong>Recruitment:</strong> Contact us via Telegram or Line.</p>
+    </section>
+
+    <section id="shortfilm">
+      <h2 id="shortfilm-title">Guild Short Film</h2>
+      <video controls preload="metadata" poster="/images/banner.webp">
+        <source src="/videos/shortfilm.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </section>
 
     <section id="contact">
       <h2 id="contact-title">Contact</h2>
       <form action="https://formspree.io/f/myzeveog" method="POST">
-        <label id="label-name">Name</label><input name="name" required>
-        <label id="label-email">Email</label><input name="email" type="email" required>
-        <label id="label-message">Message</label><textarea name="message" required></textarea>
+        <label id="label-name">Name</label>
+        <input name="name" required>
+        <label id="label-email">Email</label>
+        <input name="email" type="email" required>
+        <label id="label-message">Message</label>
+        <textarea name="message" rows="4" required></textarea>
         <button type="submit" id="contact-button">Send</button>
       </form>
     </section>
@@ -182,49 +215,79 @@
   <footer>
     <p id="footer-text1">© 2016–2025 OLD GENERATION. Designed by NeutralizeR</p>
     <div class="social-buttons">
-      <a href="https://t.me/+tUKdRu2diKtlM2Vk"><img src="/images/telegram.png" alt="Telegram"></a>
-      <a href="https://line.me/R/ti/g/AtkvcNSP6B"><img src="/images/line.png" alt="Line"></a>
+      <a href="https://t.me/+tUKdRu2diKtlM2Vk" aria-label="Telegram">
+        <img src="/images/telegram.png" alt="Telegram">
+      </a>
+      <a href="https://line.me/R/ti/g/AtkvcNSP6B" aria-label="Line">
+        <img src="/images/line.png" alt="Line">
+      </a>
     </div>
   </footer>
 
-  <!-- Service Worker -->
+  <!-- Service Worker Registration -->
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js').catch(()=>{});
     }
   </script>
 
-  <!-- Theme & i18n + Stats Fetch -->
+  <!-- Theme Toggle, i18n & Stats Fetch -->
   <script>
     const T = {
-      en:{subtitle:"PRESERVING LEGACY, DEFYING FATE", stats:"Live Guild Statistics", text:"Real‑time game data coming soon.", profiles:"Member Spotlight", ptext:"Coming soon…", news:"Announcements", recruit:"Recruitment: Contact us via Telegram or Line.", contact:"Contact", name:"Name", email:"Email", message:"Message", send:"Send", footer:"© 2016–2025 OLD GENERATION. Designed by NeutralizeR"},
-      tr:{subtitle:"MİRASI KORUYOR, KADERİ YENİYORUZ", stats:"Canlı İstatistikler", text:"Veriler yakında.", profiles:"Üye Tanıtımı", ptext:"Yakında…", news:"Duyurular", recruit:"Üye alımı: Telegram veya Line.", contact:"İletişim", name:"İsim", email:"E‑posta", message:"Mesaj", send:"Gönder", footer:"© 2016–2025 OLD GENERATION. NeutralizeR tarafından"}
+      en: {
+        subtitle: "PRESERVING LEGACY, DEFYING FATE",
+        stats: "Live Guild Statistics", text: "Real‑time game data coming soon.",
+        profiles: "Member Spotlight", ptext: "Showcase under development.",
+        news: "Announcements", recruit: "Recruitment: Contact us via Telegram or Line.",
+        shortfilm: "Guild Short Film",
+        contact: "Contact", send: "Send",
+        name: "Name", email: "Email", message: "Message",
+        footer: "© 2016–2025 OLD GENERATION. Designed by NeutralizeR"
+      },
+      tr: {
+        subtitle: "MİRASI KORUYOR, KADERİ YENİYORUZ",
+        stats: "Canlı İstatistikler", text: "Yakında veriler yükleniyor.",
+        profiles: "Üye Tanıtımı", ptext: "Geliştirme aşamasında.",
+        news: "Duyurular", recruit: "Üye alımı: Telegram veya Line üzerinden.",
+        shortfilm: "Lonca Kısa Filmi",
+        contact: "İletişim", send: "Gönder",
+        name: "İsim", email: "E‑posta", message: "Mesaj",
+        footer: "© 2016–2025 OLD GENERATION. NeutralizeR tarafından"
+      }
     };
-    function setLang(l){
-      const t=T[l]; document.getElementById('header-subtitle').textContent=t.subtitle;
-      ['stats','profiles','news','contact'].forEach(id=>{
-        document.getElementById(id+'-title').textContent=t[id];
+    function setLang(lang) {
+      localStorage.setItem('lang', lang);
+      const t = T[lang];
+      document.getElementById('header-subtitle').textContent = t.subtitle;
+      ['stats','profiles','news','shortfilm','contact'].forEach(id=>{
+        const el = document.getElementById(id+'-title');
+        const txt = id==='news' ? t.news : t[id];
+        if(el) el.textContent = txt;
       });
-      document.getElementById('stats-text').textContent=t.text;
-      document.getElementById('profiles-text').textContent=t.ptext;
-      document.getElementById('news-recruitment').textContent=t.recruit;
-      document.getElementById('contact-button').textContent=t.send;
-      document.getElementById('label-name').textContent=t.name;
-      document.getElementById('label-email').textContent=t.email;
-      document.getElementById('label-message').textContent=t.message;
-      document.getElementById('footer-text1').textContent=t.footer;
-      localStorage.setItem('lang',l);
+      document.getElementById('stats-text').textContent = T[lang].text;
+      document.getElementById('profiles-text').textContent = T[lang].ptext;
+      document.getElementById('news-recruitment').textContent = T[lang].recruit;
+      document.getElementById('contact-button').textContent = T[lang].send;
+      document.getElementById('label-name').textContent = T[lang].name;
+      document.getElementById('label-email').textContent = T[lang].email;
+      document.getElementById('label-message').textContent = T[lang].message;
+      document.getElementById('footer-text1').textContent = T[lang].footer;
+      document.documentElement.lang = lang;
     }
-    function toggleTheme(){
-      const on= document.body.classList.toggle('light');
+    function toggleTheme() {
+      const on = document.body.classList.toggle('light');
       localStorage.setItem('theme', on?'light':'dark');
     }
-    window.addEventListener('DOMContentLoaded',()=>{
+    document.addEventListener('DOMContentLoaded', ()=>{
       setLang(localStorage.getItem('lang')||'en');
-      if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
-      fetch('/api/guild/stats').then(r=>r.json()).then(d=>{
-        document.getElementById('stats-data').textContent=`Members:${d.members}|Might:${d.might}`;
-      }).catch(()=> document.getElementById('stats-data').textContent='Error');
+      if(localStorage.getItem('theme')==='light'){
+        document.body.classList.add('light');
+      }
+      // Örnek API: /api/guild/stats
+      fetch('/api/guild/stats')
+        .then(r=>r.json())
+        .then(d=>document.getElementById('stats-data').textContent=`Members:${d.members} | Might:${d.might}`)
+        .catch(()=>document.getElementById('stats-data').textContent='Error');
     });
   </script>
 </body>
