@@ -52,7 +52,11 @@
           img-src 'self' data: https://i.hizliresim.com https://oldgeneration.com.tr;
           font-src 'self' https://fonts.gstatic.com;
         ">
-
+// PWA: register service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
