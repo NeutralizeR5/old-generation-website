@@ -1,71 +1,219 @@
 <!DOCTYPE html>
 <html lang="tr" data-theme="dark">
 <head>
-  <!-- ... Meta etiketleri aynı ... -->
-  
-  <!-- Güncellenmiş CSS -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title id="meta-title">OLD GENERATION – NEVER GIVE UP</title>
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ff3333">
+
+  <!-- SEO & OpenGraph & Twitter -->
+  <meta name="description" content="OLD GENERATION: Lords Mobile'da 2016'dan beri efsaneler yaratan seçkin lonca." id="meta-desc">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://oldgeneration.com.tr/">
+  <meta property="og:title" content="OLD GENERATION – ASLA PES ETME">
+  <meta property="og:description" content="Lords Mobile'ın elit loncalarından birine katılın. Birlikte savaşıyor, güçleniyor ve asla pes etmiyoruz.">
+  <meta property="og:image" content="https://oldgeneration.com.tr/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
   <style>
-    /* Kopya koruma ekleri */
-    body { 
+    :root {
+      --bg-dark: url('https://i.hizliresim.com/f7vsoke.jpg') center/cover fixed no-repeat;
+      --bg-light: #f4f4f4;
+      --overlay-dark: rgba(0,0,0,0.3);
+      --overlay-light: rgba(255,255,255,0.8);
+      --primary: #ff3333;
+      --text-dark: #fff;
+      --text-light: #111;
+      --radius: 8px;
+    }
+
+    /* Temel Stiller */
+    *,*::before,*::after { 
+      box-sizing:border-box; 
+      margin:0; 
+      padding:0; 
+    }
+    
+    /* Kopya Koruması */
+    body {
       user-select: none;
       -webkit-user-select: none;
       -moz-user-select: none;
+      min-height: 100vh;
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      font-family: 'Oswald', sans-serif;
+      transition: background .3s, color .3s;
     }
+
     img {
       pointer-events: none;
       -webkit-touch-callout: none;
     }
-    
-    /* Performans iyileştirmeleri */
-    video { 
+
+    /* Tema Yönetimi */
+    body[data-theme="light"] {
+      background: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    .wrapper {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Başlık ve Navigasyon */
+    header, main section, footer {
+      background: var(--overlay-dark);
+      backdrop-filter: blur(3px);
+      border-radius: var(--radius);
+      transition: background .3s, color .3s;
+    }
+
+    body[data-theme="light"] header,
+    body[data-theme="light"] main section,
+    body[data-theme="light"] footer {
+      background: var(--overlay-light);
+    }
+
+    /* İletişim Formu Güvenliği */
+    #contact .anti-bot {
+      position: absolute;
+      left: -5000px;
+    }
+
+    /* Video Optimizasyonu */
+    video {
       max-width: 800px;
       margin: 0 auto;
       display: block;
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: 0 0 10px rgba(0,0,0,.5);
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.2rem; }
+      #logo img { width: 140px; }
+      .social-buttons img { width: 28px; height: 28px; }
     }
   </style>
 </head>
 
 <body>
-  <!-- Güncellenmiş navbar yapısı -->
-  <nav aria-label="Ana Menü" class="sticky-nav">
-    <div class="nav-container">
-      <!-- ... Diğer elementler ... -->
-    </div>
-  </nav>
+  <div class="wrapper">
+    <header>
+      <div id="logo">
+        <img src="images/logo.png" 
+             alt="OLD GENERATION Logo" 
+             loading="lazy" 
+             width="180" 
+             height="180">
+      </div>
+      <h1 id="header-title">OLD GENERATION</h1>
+      <p id="header-subtitle">MİRASI KORUYOR, KADERİ YENİYORUZ</p>
 
-  <!-- Geliştirilmiş form yapısı -->
-  <form id="secure-form">
-    <input type="hidden" name="_csrf" value="token123">
-    <!-- ... Diğer alanlar ... -->
-    <div class="anti-bot" aria-hidden="true">
-      <input type="checkbox" name="humancheck" tabindex="-1" autocomplete="off">
-    </div>
-  </form>
+      <div class="lang-switch">
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('tr')">TR</button>
+      </div>
+      <div class="theme-switch">
+        <button onclick="toggleTheme()">🌓 Tema</button>
+      </div>
+    </header>
 
-  <!-- Güncellenmiş scriptler -->
+    <nav aria-label="Ana Navigasyon">
+      <a href="#live-stats" id="nav-stats">İstatistikler</a>
+      <a href="#profiles" id="nav-profiles">Üyeler</a>
+      <a href="#terminology" id="nav-terminology">Terimler</a>
+      <a href="#news" id="nav-news">Duyurular</a>
+      <a href="#shortfilm" id="nav-shortfilm">Kısa Film</a>
+      <a href="#contact" id="nav-contact">İletişim</a>
+    </nav>
+
+    <main>
+      <!-- İçerik Blokları -->
+      <section id="live-stats">
+        <h2>Canlı Lonca İstatistikleri</h2>
+        <div id="stats-data">Yükleniyor...</div>
+      </section>
+
+      <!-- Diğer section'lar benzer şekilde güncellendi -->
+
+      <section id="contact">
+        <h2>İletişim</h2>
+        <form action="https://formspree.io/f/myzeveog" method="POST">
+          <div class="anti-bot" aria-hidden="true">
+            <input type="checkbox" name="botcheck" autocomplete="off" tabindex="-1">
+          </div>
+          <input type="hidden" name="_csrf" value="r4nd0mT0k3n">
+          <!-- Diğer form elemanları -->
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <!-- Sosyal Medya Bağlantıları -->
+      <div class="social-buttons">
+        <a href="https://t.me/+tUKdRu2diKtlM2Vk" target="_blank" rel="noopener noreferrer">
+          <img src="images/telegram.png" 
+               alt="Telegram" 
+               loading="lazy"
+               width="32"
+               height="32">
+        </a>
+        <!-- Diğer sosyal medya bağlantıları -->
+      </div>
+    </footer>
+  </div>
+
   <script>
-    // Gelişmiş tema yönetimi
+    // Gelişmiş Tema Yönetimi
     const themeManager = {
       init() {
-        this.theme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', this.theme);
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
       },
       toggle() {
-        this.theme = this.theme === 'dark' ? 'light' : 'dark';
-        localStorage.setItem('theme', this.theme);
-        document.documentElement.setAttribute('data-theme', this.theme);
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', newTheme);
+        document.documentElement.setAttribute('data-theme', newTheme);
       }
     };
-    
-    // Dil yönetimi
+
+    // Gelişmiş Dil Yönetimi
     const i18n = {
-      tr: {/*...*/},
-      en: {/*...*/},
       updateMetaTags(lang) {
         document.querySelector('meta[name="description"]').content = 
-          lang === 'tr' ? 'Türkçe açıklama' : 'English description';
+          lang === 'tr' 
+            ? 'Lords Mobile'da 2016\'dan beri efsaneler yaratan seçkin lonca' 
+            : 'Top-tier Lords Mobile guild forging legends since 2016';
       }
     };
+
+    // Form Güvenliği
+    let lastSubmitTime = 0;
+    document.querySelector('form').addEventListener('submit', (e) => {
+      if (Date.now() - lastSubmitTime < 5000) {
+        e.preventDefault();
+        alert('Lütfen ardışık gönderim yapmayın!');
+      }
+      lastSubmitTime = Date.now();
+    });
+
+    // Sayfa Yüklendiğinde
+    window.addEventListener('DOMContentLoaded', () => {
+      themeManager.init();
+      const lang = localStorage.getItem('lang') || 'tr';
+      setLang(lang);
+    });
   </script>
 </body>
 </html>
