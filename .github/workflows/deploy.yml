@@ -1,24 +1,20 @@
-name: CI/CD Deploy to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write  # Bu satırı ekleyin!
+      
     steps:
-      # 1) Repo’yu klonla
-      - name: Checkout Repo
-        uses: actions/checkout@v3
-
-      # 2) GitHub Pages’a deploy et
+      - uses: actions/checkout@v4
+      
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages       # sayfanın yayınlanacağı branch
-          folder: ./             # deploy edilecek klasör (kök)
-
-      # Sonuç: npm kurulumu veya build aşaması yok
+          github_token: ${{ secrets.DEPLOY_TOKEN }}  # Veya secrets.DEPLOY_TOKEN
+          publish_dir: ./
