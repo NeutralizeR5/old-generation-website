@@ -8,6 +8,9 @@
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#ff3333">
   <link rel="preload" href="https://oldgeneration.com.tr/images/logo.png" as="image">
+  <link rel="preload" href="https://i.hizliresim.com/f7vsoke.jpg" as="image">
+  <link rel="preload" href="/styles.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" as="style">
 
   <!-- Google Search Console -->
   <meta name="google-site-verification" content="jB41wmhFa02GAg08stdBYj5X0nsuIWAqcvX_tIUZ984">
@@ -43,41 +46,40 @@
   </script>
 
   <!-- Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy"
-       default-src 'none';
-    script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com;
-    style-src 'self';
-    img-src 'self' data: https://web.whatsapp.com https://telegram.org https://t.me https://line.me;
-    font-src 'self';
-    connect-src 'self' https://www.google-analytics.com;
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'none';
+    script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline';
+    style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+    img-src 'self' data: https://i.hizliresim.com https://oldgeneration.com.tr https://web.whatsapp.com https://telegram.org https://t.me https://line.me;
+    font-src 'self' https://fonts.gstatic.com;
+    connect-src 'self' https://api.example.com https://www.google-analytics.com;
     frame-src https://web.whatsapp.com https://telegram.org https://line.me;
     base-uri 'self';
     form-action 'self';
     manifest-src 'self';
     media-src 'self';
     object-src 'none';
-    child-src 'self';
     frame-ancestors 'none';
     upgrade-insecure-requests;
   " />
-  
+
   <!-- Google Analytics (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
+  <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-NSJQ1WV5N1"></script>
+  <script defer>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-NSJQ1WV5N1'); // <-- Buraya kendi GA ölçüm kimliğini gir!
+    gtag('config', 'G-NSJQ1WV5N1');
   </script>
-  
-  <link rel="stylesheet" href="/styles.css" />
-</head>
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap">
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" />
+  
   <!-- Inline Critical CSS -->
   <style>
     :root {
@@ -228,7 +230,7 @@
   <div class="wrapper">
     <header>
       <div id="logo">
-        <img src="https://oldgeneration.com.tr/images/logo.png" alt="OLD GENERATION Logo" width="140" height="140">
+        <img src="https://oldgeneration.com.tr/images/logo.png" alt="OLD GENERATION Logo" width="140" height="140" loading="eager">
       </div>
       <h1>OLD GENERATION</h1>
       <p id="header-subtitle">PRESERVING LEGACY, DEFYING FATE</p>
@@ -252,7 +254,7 @@
       <section id="live-stats">
         <h2 id="stats-title">Live Guild Statistics</h2>
         <p id="stats-text">Real‑time game data integration coming soon.</p>
-        <div id="stats-data">Loading ..</div>
+        <div id="stats-data">Loading…</div>
       </section>
 
       <section id="profiles">
@@ -273,7 +275,7 @@
 
       <section id="shortfilm">
         <h2 id="shortfilm-title">Guild Short Film</h2>
-        <video controls preload="metadata" poster="https://oldgeneration.com.tr/images/og-image.jpg" loading="lazy">
+        <video controls controlsList="nodownload nofullscreen noremoteplayback" preload="metadata" poster="https://oldgeneration.com.tr/images/og-image.jpg" loading="lazy">
           <source src="https://oldgeneration.com.tr/videos/shortfilm.mp4" type="video/mp4">
           <track kind="captions" src="https://oldgeneration.com.tr/videos/captions.vtt" srclang="en" label="English captions">
           Your browser does not support the video tag.
@@ -310,7 +312,7 @@
   </div>
 
   <!-- Service Worker Registration -->
-  <script>
+  <script defer>
     if ('serviceWorker' in navigator) {
       fetch('/sw.js', { method:'HEAD' })
         .then(res => res.ok && navigator.serviceWorker.register('/sw.js'))
@@ -319,7 +321,7 @@
   </script>
 
   <!-- Theme, Language & Stats Fetch -->
-  <script>
+  <script defer>
     const translations = {
       en: {
         title:            "OLD GENERATION – NEVER GIVE UP",
@@ -393,17 +395,10 @@
     document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.toggle('light', localStorage.getItem('theme')==='light');
       setLang(localStorage.getItem('lang')||'en');
-
       fetch('https://api.example.com/guild/stats')
         .then(r=>r.json())
-        .then(data=>{
-          document.getElementById('stats-data').textContent =
-            `Members: ${data.members} | Might: ${data.might}`;
-        })
-        .catch(err=>{
-          console.error('API Error:', err);
-          document.getElementById('stats-data').textContent = 'Veri yüklenemedi';
-        });
+        .then(data=>{ document.getElementById('stats-data').textContent = `Members: ${data.members} | Might: ${data.might}`; })
+        .catch(err=>{ console.error('API Error:', err); document.getElementById('stats-data').textContent = 'Veri yüklenemedi'; });
     });
 
     document.addEventListener('keydown', e=>{
@@ -415,58 +410,3 @@
   </script>
 </body>
 </html>
-
-<script>
-  function setLang(lang) {
-    const t = translations[lang];
-    if (!t) return;
-
-    document.documentElement.lang = lang;
-    document.title = t.title;
-    document.getElementById("meta-title").textContent = t.title;
-    document.getElementById("meta-desc").setAttribute("content", t.meta_description);
-    document.getElementById("header-subtitle").textContent = t.header_subtitle;
-
-    // Navigation
-    document.getElementById("nav-stats").textContent = t.nav_stats;
-    document.getElementById("nav-profiles").textContent = t.nav_profiles;
-    document.getElementById("nav-terminology").textContent = t.nav_terminology;
-    document.getElementById("nav-news").textContent = t.nav_news;
-    document.getElementById("nav-shortfilm").textContent = t.nav_shortfilm;
-    document.getElementById("nav-contact").textContent = t.nav_contact;
-
-    // Sections
-    document.getElementById("stats-title").textContent = t.stats_title;
-    document.getElementById("stats-text").textContent = t.stats_text;
-
-    document.getElementById("profiles-title").textContent = t.profiles_title;
-    document.getElementById("profiles-text").textContent = t.profiles_text;
-
-    document.getElementById("terminology-title").textContent = t.terminology_title;
-    document.getElementById("terminology-text").textContent = t.terminology_text;
-
-    document.getElementById("news-title").textContent = t.news_title;
-    document.getElementById("news-recruitment").innerHTML = t.news_recruitment;
-    document.getElementById("news-tournament").innerHTML = t.news_tournament;
-
-    document.getElementById("shortfilm-title").textContent = t.shortfilm_title;
-
-    // Contact Form
-    document.getElementById("contact-title").textContent = t.contact_title;
-    document.getElementById("label-name").textContent = t.label_name;
-    document.getElementById("label-email").textContent = t.label_email;
-    document.getElementById("label-message").textContent = t.label_message;
-    document.getElementById("contact-button").textContent = t.contact_button;
-
-    // Footer
-    document.getElementById("footer-text1").textContent = t.footer1;
-    document.getElementById("footer-text2").textContent = t.footer2;
-  }
-</script>
-
-<script>
-  function toggleTheme() {
-    document.body.classList.toggle('light');
-  }
-</script>
-
