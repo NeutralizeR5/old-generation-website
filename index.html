@@ -19,11 +19,7 @@
   <meta name="robots" content="index,follow">
   <meta name="description" content="OLD GENERATION: A top‑tier guild in Lords Mobile, forging legends since 2016." id="meta-desc">
   <meta name="keywords" content="Lords Mobile, guild, OLD GENERATION, clan, mobile game, strategy">
-  <link rel="alternate" hreflang="en" href="https://oldgeneration.com.tr/en/">
-  <link rel="alternate" hreflang="tr" href="https://oldgeneration.com.tr/">
-  <link rel="alternate" hreflang="x-default" href="https://oldgeneration.com.tr/">
 
-  
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://oldgeneration.com.tr/">
@@ -53,7 +49,7 @@
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'none';
     script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline';
-    style-src 'self' https://fonts.googleapis.com
+    style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
     img-src 'self' data: https://i.hizliresim.com https://oldgeneration.com.tr https://web.whatsapp.com https://telegram.org https://t.me https://line.me;
     font-src 'self' https://fonts.gstatic.com;
     connect-src 'self' https://api.example.com https://www.google-analytics.com;
@@ -234,7 +230,7 @@
   <div class="wrapper">
     <header>
       <div id="logo">
-        <img src="https://oldgeneration.com.tr/images/logo.png" alt="Logo" width="140" height="140" loading="eager">
+        <img src="https://oldgeneration.com.tr/images/logo.png" alt="OLD GENERATION Logo" width="140" height="140" loading="eager">
       </div>
       <h1>OLD GENERATION</h1>
       <p id="header-subtitle">PRESERVING LEGACY, DEFYING FATE</p>
@@ -279,7 +275,7 @@
 
       <section id="shortfilm">
         <h2 id="shortfilm-title">Guild Short Film</h2>
-        <video controls controlsList="nodownload nofullscreen noremoteplayback" preload="metadata" poster="https://oldgeneration.com.tr/images/og-image.jpg"
+        <video controls controlsList="nodownload nofullscreen noremoteplayback" preload="metadata" poster="https://oldgeneration.com.tr/images/og-image.jpg" loading="lazy">
           <source src="https://oldgeneration.com.tr/videos/shortfilm.mp4" type="video/mp4">
           <track kind="captions" src="https://oldgeneration.com.tr/videos/captions.vtt" srclang="en" label="English captions">
           Your browser does not support the video tag.
@@ -403,15 +399,6 @@
         .then(r=>r.json())
         .then(data=>{ document.getElementById('stats-data').textContent = `Members: ${data.members} | Might: ${data.might}`; })
         .catch(err=>{ console.error('API Error:', err); document.getElementById('stats-data').textContent = 'Veri yüklenemedi'; });
-         const translations = {
-         en: { error_stats: 'Data failed to load.' /*…*/ },
-         tr: { error_stats: 'Veri yüklenemedi.' /*…*/ }
-};
-…
-.catch(err => {
-  document.getElementById('stats-data').textContent = translations[lang].error_stats;
-});
-
     });
 
     document.addEventListener('keydown', e=>{
