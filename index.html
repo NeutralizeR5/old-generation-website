@@ -47,11 +47,11 @@
   }
   </script>
   
-  <!-- Content Security Policy for external files -->
+  <!-- Content Security Policy for GitHub Pages -->
 <meta http-equiv="Content-Security-Policy" content="
   default-src 'none';
-  script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com;
-  style-src 'self' https://fonts.googleapis.com;
+  script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline';
+  style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
   img-src 'self' data: https://i.hizliresim.com https://oldgeneration.com.tr https://web.whatsapp.com https://telegram.org https://t.me https://line.me;
   font-src 'self' https://fonts.gstatic.com;
   connect-src 'self' https://api.example.com https://www.google-analytics.com;
@@ -162,6 +162,6 @@
   </div>
   
   <!-- Scripts -->
-  <script src="/scripts.js" defer></script>
+<script src="/old-generation-website/scripts.js" defer></script>
 </body>
 </html>
