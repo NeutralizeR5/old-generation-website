@@ -118,7 +118,7 @@ section h2 {
   text-align:center; font-size:1.8rem;
   color:var(--primary); margin-bottom:12px;
 }
-section p { font-size:1rem; line-height:1.6; }
+section p { font-size:1rem; line-height:1.6; text-align: left; }
 
 #shortfilm video {
   width:100%; border-radius:var(--radius);
@@ -133,4 +133,74 @@ section p { font-size:1rem; line-height:1.6; }
   width:100%; padding:10px; margin-bottom:12px;
   border:none; border-radius:5px; font-size:1rem;
 }
-.honeypot { display
+.honeypot { display:none!important; }
+#contact button {
+  padding:10px 20px; background:var(--primary);
+  color:#fff; border:none; border-radius:5px;
+  cursor:pointer; font-size:1rem;
+  transition: background 0.3s;
+}
+#contact button:hover { background:#cc0000; }
+
+footer {
+  background:var(--overlay-dark);
+  backdrop-filter:blur(3px);
+  text-align:center; padding:20px; margin-top:auto;
+  transition:background .3s;
+  border-radius:var(--radius);
+}
+body.light footer { background:var(--overlay-light); }
+footer p { font-size:.9rem; margin:4px 0; text-align: center; }
+
+.social-buttons {
+  display:flex; justify-content:center; gap:15px;
+  margin-top:12px;
+}
+.social-buttons img {
+  width:32px; height:32px; border-radius:50%;
+  box-shadow:0 0 8px rgba(0,0,0,0.4);
+  transition:transform .2s;
+}
+.social-buttons img:hover { transform:scale(1.1); }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.stat-card {
+  background: rgba(0,0,0,0.2);
+  padding: 15px;
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.stat-card h3 {
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+body.light .stat-card {
+  background: rgba(255,255,255,0.2);
+}
+
+@supports not (backdrop-filter: blur(3px)) {
+  header, main section, footer {
+    background:rgba(0,0,0,0.5) !important;
+  }
+  body.light header, 
+  body.light main section, 
+  body.light footer {
+    background:rgba(255,255,255,0.9) !important;
+  }
+}
+
+@media(max-width:600px) {
+  header h1 { font-size:2.2rem; }
+  #logo img { width:120px; }
+  .social-buttons img { width:28px; height:28px; }
+  nav { flex-direction: column; align-items: center; gap: 10px; }
+  nav a { width: 100%; text-align: center; }
+}
