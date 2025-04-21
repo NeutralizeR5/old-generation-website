@@ -1,53 +1,186 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title id="meta-title">OLD GENERATION – NEVER GIVE UP</title>
-  <meta name="description" content="OLD GENERATION: Lords Mobile’da 2016’dan beri efsaneler yaratan üst düzey bir lonca.">
-  <meta name="keywords" content="Lords Mobile, guild, OLD GENERATION, clan, mobile game, strategy">
+
+  <!-- SEO -->
   <link rel="canonical" href="https://oldgeneration.com.tr/">
   <link rel="alternate" hreflang="tr" href="https://oldgeneration.com.tr/">
   <link rel="alternate" hreflang="en" href="https://oldgeneration.com.tr/en/">
-  <link rel="stylesheet" href="/styles.css">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="OLD GENERATION: Lords Mobile’da 2016’dan beri efsaneler yaratan üst düzey bir lonca." id="meta-desc">
+  <meta name="keywords" content="Lords Mobile, guild, OLD GENERATION, clan, mobile game, strategy">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://oldgeneration.com.tr/">
+  <meta property="og:title" content="OLD GENERATION – NEVER GIVE UP">
+  <meta property="og:description" content="Join one of Lords Mobile’s elite guilds. We fight together, grow stronger, and never give up.">
+  <meta property="og:image" content="https://oldgeneration.com.tr/images/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OLD GENERATION – NEVER GIVE UP">
+  <meta name="twitter:description" content="OLD GENERATION Guild – Uniting champions since 2016.">
+  <meta name="twitter:image" content="https://oldgeneration.com.tr/images/og-image.jpg">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OLD GENERATION",
+    "url": "https://oldgeneration.com.tr",
+    "logo": "https://oldgeneration.com.tr/images/logo.png",
+    "description": "A top‑tier guild in Lords Mobile since 2016."
+  }
+  </script>
+
+  <!-- Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com;
+    style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+    img-src 'self' data: https://i.hizliresim.com https://oldgeneration.com.tr;
+    font-src 'self' https://fonts.gstatic.com;
+    connect-src 'self' https://api.oldgeneration.com.tr https://www.google-analytics.com;
+    frame-src 'self' https://web.whatsapp.com https://telegram.org https://line.me;
+    base-uri 'self';
+    form-action 'self';
+    object-src 'none';
+    upgrade-insecure-requests;
+  ">
+
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://oldgeneration.com.tr/images/logo.png" as="image">
+  <link rel="preload" href="https://i.hizliresim.com/f7vsoke.jpg" as="image">
+  <link rel="preload" href="/styles.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" as="style">
+  <link rel="preload" href="https://fonts.gstatic.com/s/oswald/v36/TK3iWkUHHAIjg752FD8GTDDu.ttf" as="font" type="font/ttf" crossorigin>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/styles.css"></noscript>
+
+  <!-- Inline Critical CSS -->
   <style>
-    :root { --bg-dark:#111;--fg-dark:#fff;--bg-light:#f4f4f4;--fg-light:#111;--accent:#ff3333;--radius:8px; }
-    [data-theme="light"] { background:var(--bg-light);color:var(--fg-light); }
-    body { margin:0;font-family:'Oswald',sans-serif;background:var(--bg-dark);color:var(--fg-dark);display:flex;flex-direction:column;min-height:100vh;transition:background .3s,color .3s;scroll-behavior:smooth; }
-    a { color:var(--accent);text-decoration:none; }
-    header, footer { background:var(--accent);color:#fff;text-align:center;padding:1rem; }
-    nav a { margin:0 1rem;color:#fff; }
-    nav a[aria-current="page"] { font-weight:bold;text-decoration:underline; }
-    .controls { background:none;border:none;color:#fff;cursor:pointer;font-size:1rem;margin-left:1rem; }
-    .wrapper { flex:1;max-width:1000px;margin:0 auto;padding:1rem; }
-    section { margin:2rem 0; }
-    #shortfilm video { width:100%;border-radius:var(--radius); }
-    form input, form textarea { width:100%;padding:.75rem;margin:.5rem 0;border:1px solid #ccc;border-radius:4px;font-family:inherit; }
-    form button { padding:.75rem 1.5rem;background:var(--accent);color:#fff;border:none;border-radius:4px;cursor:pointer; }
-    .social { display:flex;justify-content:center;gap:1rem;margin-top:1rem; }
-    .social img { width:32px;height:32px;border-radius:50%; }
+    :root {
+      --bg-dark: url('https://i.hizliresim.com/f7vsoke.jpg') center/cover fixed no-repeat;
+      --bg-light: #f4f4f4;
+      --overlay-dark: rgba(0,0,0,0.4);
+      --overlay-light: rgba(255,255,255,0.9);
+      --primary: #ff3333;
+      --text-dark: #fff;
+      --text-light: #111;
+      --radius: 8px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      font-family: 'Oswald', sans-serif;
+      display: flex;
+      flex-direction: column;
+      transition: background .3s, color .3s;
+    }
+    body.light {
+      background: var(--bg-light);
+      color: var(--text-light);
+    }
+    a { color: var(--primary); text-decoration: none; }
+    header, footer {
+      background: var(--overlay-dark);
+      backdrop-filter: blur(4px);
+      text-align: center;
+      padding: 1rem;
+    }
+    body.light header, body.light footer {
+      background: var(--overlay-light);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    nav a { font-weight: 500; transition: color .3s; }
+    nav a:hover, nav a[aria-current="page"] { text-decoration: underline; }
+    .wrapper {
+      flex: 1;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    section { margin: 2rem 0; padding: 1rem; background: var(--overlay-dark); border-radius: var(--radius); }
+    body.light section { background: var(--overlay-light); }
+    section h2 { color: var(--primary); margin-bottom: .5rem; text-align: center; }
+    #shortfilm video { width: 100%; border-radius: var(--radius); }
+    form input, form textarea {
+      width: 100%;
+      padding: .75rem;
+      margin: .5rem 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    form button {
+      padding: .75rem 1.5rem;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    form button:hover { background: #cc0000; }
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .social-buttons img {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(0,0,0,0.4);
+    }
   </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSJQ1WV5N1"></script>
+  <script defer>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NSJQ1WV5N1');
+  </script>
 </head>
-<body data-theme="dark" oncontextmenu="return false">
+<body oncontextmenu="return false">
   <header>
     <h1>OLD GENERATION</h1>
-    <p>NEVER GIVE UP!</p>
+    <p id="header-subtitle">PRESERVING LEGACY, DEFYING FATE</p>
     <nav>
       <a href="/" aria-current="page">Ana Sayfa</a>
       <a href="#stats">İstatistikler</a>
       <a href="#shortfilm">Kısa Film</a>
       <a href="#contact">İletişim</a>
-      <button class="controls" onclick="toggleLanguage()">🌐</button>
-      <button class="controls" onclick="toggleTheme()">🌓</button>
+      <button onclick="toggleLanguage()">🌐</button>
+      <button onclick="toggleTheme()">🌓</button>
     </nav>
   </header>
-  <div class="wrapper">
+
+  <div class="wrapper" id="main-content">
     <section id="stats">
-      <h2 id="stats-title">Lonca İstatistikleri</h2>
+      <h2 id="stats-title">Canlı Lonca İstatistikleri</h2>
       <div id="stats-data">Yükleniyor…</div>
     </section>
+
     <section id="shortfilm">
-      <h2 id="shortfilm-title">Guild Short Film</h2>
+      <h2 id="shortfilm-title">Lonca Kısa Filmi</h2>
       <video controls playsinline controlsList="nodownload nofullscreen noremoteplayback" poster="https://oldgeneration.com.tr/images/og-image.jpg">
         <source src="https://oldgeneration.com.tr/videos/shortfilm.mp4" type="video/mp4">
         <track src="https://oldgeneration.com.tr/videos/captions-tr.vtt" kind="subtitles" srclang="tr" label="Türkçe" default>
@@ -55,10 +188,10 @@
         Tarayıcınız video etiketini desteklemiyor.
       </video>
     </section>
+
     <section id="contact">
-      <h2 id="contact-title">İletişim Formu</h2>
+      <h2 id="contact-title">Bize Ulaşın</h2>
       <form action="https://formspree.io/f/myzeveog" method="POST">
-        <!-- Replace CSRF_TOKEN_HERE with your actual CSRF token -->
         <input type="hidden" name="_csrf" value="CSRF_TOKEN_HERE">
         <label for="name">İsim</label>
         <input id="name" name="name" type="text" required>
@@ -68,41 +201,46 @@
         <textarea id="message" name="message" rows="4" required></textarea>
         <button type="submit" id="contact-button">Gönder</button>
       </form>
-      <div class="social">
+
+      <div class="social-buttons">
         <a href="https://t.me/+tUKdRu2diKtlM2Vk" target="_blank" rel="noopener"><img src="https://oldgeneration.com.tr/images/telegram.png" alt="Telegram"></a>
         <a href="https://line.me/R/ti/g/AtkvcNSP6B" target="_blank" rel="noopener"><img src="https://oldgeneration.com.tr/images/line.png" alt="Line"></a>
         <a href="https://wa.me/905010829293" target="_blank" rel="noopener"><img src="https://oldgeneration.com.tr/images/whatsapp.png" alt="WhatsApp"></a>
       </div>
     </section>
   </div>
+
   <footer>
-    <p>© 2016–2025 OLD GENERATION. Tüm Hakları Saklıdır.</p>
+    <p>© 2016–2025 OLD GENERATION. Tüm hakları saklıdır.</p>
   </footer>
-  <script>
+
+  <script defer>
+    // Tema değiştirme
     function toggleTheme() {
-      const t = document.body.dataset.theme === "dark" ? "light" : "dark";
-      document.body.dataset.theme = t;
-      localStorage.setItem("theme", t);
+      document.body.classList.toggle('light');
+      localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
     }
+    // Dil değiştirme
     function toggleLanguage() {
-      const next = document.documentElement.lang === "tr" ? "en" : "tr";
-      window.location.href = next === "tr" ? "/" : "/en/";
+      const lang = document.documentElement.lang === 'tr' ? 'en' : 'tr';
+      window.location.href = lang === 'tr' ? '/' : '/en/';
     }
-    fetch("https://api.oldgeneration.com.tr/guild/stats")
+    // İstatistikleri API'den al
+    fetch('https://api.oldgeneration.com.tr/guild/stats')
       .then(r => r.ok ? r.json() : Promise.reject())
-      .then(d => {
-        const txt = document.documentElement.lang === "tr"
-          ? `Üyeler: ${d.members} | Güç: ${d.power}`
-          : `Members: ${d.members} | Might: ${d.power}`;
-        document.getElementById("stats-data").textContent = txt;
+      .then(data => {
+        document.getElementById('stats-data').textContent =
+          `${document.documentElement.lang === 'tr' ? 'Üyeler' : 'Members'}: ${data.members} | ${document.documentElement.lang === 'tr' ? 'Güç' : 'Might'}: ${data.power}`;
       })
       .catch(() => {
-        const err = document.documentElement.lang === "tr"
-          ? "İstatistikler yüklenemedi."
-          : "Stats could not be loaded.";
-        document.getElementById("stats-data").textContent = err;
+        document.getElementById('stats-data').textContent =
+          document.documentElement.lang === 'tr' ? 'İstatistikler yüklenemedi.' : 'Stats could not be loaded.';
       });
-    (function(){ const t = localStorage.getItem("theme"); if(t) document.body.dataset.theme = t; })();
+    // Önceki tema tercihini uygula
+    (function(){
+      const t = localStorage.getItem('theme');
+      if (t === 'light') document.body.classList.add('light');
+    })();
   </script>
 </body>
 </html>
