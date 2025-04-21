@@ -259,3 +259,48 @@
       .social-buttons img { width: 28px; height: 28px; }
     }
   </style>
+
+    <!-- Ana JavaScript -->
+  <script defer>
+  (() => {
+    const translations = { /* önceki çeviri nesneleri */ };
+    let lang = localStorage.getItem('lang') || 'en';
+
+    function setLang(l) { /* dil değiştirme kodu */ }
+    function toggleTheme() { /* tema değiştir kodu */ }
+    function fetchStats() { /* istatistik çekme kodu */ }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Başlangıç ayarları
+      document.body.classList.toggle('light', localStorage.getItem('theme') === 'light');
+      document.getElementById('btn-en').addEventListener('click', () => setLang('en'));
+      document.getElementById('btn-tr').addEventListener('click', () => setLang('tr'));
+      document.getElementById('btn-theme').addEventListener('click', toggleTheme);
+      document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          document.querySelectorAll('nav a').forEach(l => l.removeAttribute('aria-current'));
+          link.setAttribute('aria-current', 'page');
+        });
+      });
+
+      setLang(lang);
+      fetchStats();
+
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }
+
+      // Kısayol ve sağ tık engelleme
+      document.addEventListener('keydown', e => {
+        if ((e.ctrlKey && ['u','c','s','a','p'].includes(e.key.toLowerCase())) || e.key === 'F12' || e.key === 'PrintScreen') {
+          e.preventDefault();
+        }
+      });
+      ['contextmenu','selectstart','copy'].forEach(ev => {
+        document.addEventListener(ev, e => e.preventDefault());
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
