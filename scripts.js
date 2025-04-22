@@ -151,10 +151,10 @@ if ('serviceWorker' in navigator) {
   fetch('/sw.js', { method: 'HEAD' })
     .then(res => res.ok
 
-          nav {
+         nav {
   display: flex;
   justify-content: center;
-  background-color: #111;
+  background-color: #222;
   padding: 15px 0;
 }
 
@@ -163,20 +163,34 @@ nav a {
   text-decoration: none;
   margin: 0 15px;
   padding: 8px 15px;
+  position: relative;
   transition: all 0.3s ease;
-  text-shadow: 0 0 0 transparent;
+}
+
+nav a::before, nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #ff3333;
+  transition: width 0.3s ease;
+}
+
+nav a::before {
+  top: 0;
+  left: 0;
+}
+
+nav a::after {
+  bottom: 0;
+  right: 0;
+}
+
+nav a:hover::before, nav a:hover::after,
+nav a.active::before, nav a.active::after {
+  width: 100%;
 }
 
 nav a:hover {
   color: #ff3333;
-  text-shadow: 0 0 10px rgba(255, 51, 51, 0.8),
-               0 0 20px rgba(255, 51, 51, 0.5),
-               0 0 30px rgba(255, 51, 51, 0.3);
-}
-
-nav a.active {
-  color: #ff3333;
-  text-shadow: 0 0 10px rgba(255, 51, 51, 0.8),
-               0 0 20px rgba(255, 51, 51, 0.5),
-               0 0 30px rgba(255, 51, 51, 0.3);
 }
