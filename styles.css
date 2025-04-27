@@ -205,45 +205,30 @@ body.light .stat-card {
   nav a { width: 100%; text-align: center; }
 }
 
+/* Sadece Navigasyon Barı */
 nav {
   display: flex;
-  justify-content: center;
-  background-color: #222;
-  padding: 15px 0;
+  justify-content: center; /* Yatayda ortalar */
+  align-items: center;     /* Dikeyde ortalar */
+  gap: 20px;                /* Menü öğeleri arası boşluk */
+  padding: 15px 0;          /* Üst-alt boşluk */
+  background: transparent;  /* Eğer arka plan varsa kaldırabilirsiniz */
 }
 
 nav a {
-  color: #fff;
+  display: inline-block;
+  margin: 0;                /* Gereksiz boşlukları sıfırlar */
+  padding: 8px 15px;        /* Dilerseniz ayarlayın */
   text-decoration: none;
-  margin: 0 15px;
-  padding: 8px 15px;
-  position: relative;
-  transition: all 0.3s ease;
+  color: inherit;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
-nav a::before, nav a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background-color: #ff3333;
-  transition: width 0.3s ease;
+nav a:hover {
+  color: var(--primary);    /* Ana renge geçiş */
 }
 
-nav a::before {
-  top: 0;
-  left: 0;
-}
-
-nav a::after {
-  bottom: 0;
-  right: 0;
-}
-
-nav a:hover::before, nav a:hover::after,
-nav a.active::before, nav a.active::after {
-  width: 100%;
-}
 
 nav a:hover {
   color: #ff3333;
