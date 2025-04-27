@@ -43,6 +43,8 @@ body.light {
 }
 
 header {
+  position: relative;
+  padding-top: 60px; /* space for nav */
   background:var(--overlay-dark);
   backdrop-filter:blur(4px);
   border-radius:var(--radius);
@@ -90,25 +92,26 @@ header p { font-size:1.1rem; opacity:.9; }
   background: rgba(255,51,51,0.4);
 }
 
-/* NAVIGATION */
+/* NAVIGATION - Top Centered */
 nav {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  margin-top: 20px; /* Add space below the header */
   background-color: transparent;
-  padding: 0;
+  padding: 10px 0;
+  z-index: 1000;
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
   padding: 8px 15px;
-  position: relative;
-  transition: all 0.3s ease;
-  background-color: var(--primary);
-  border-radius: 4px;
+  transition: color .3s;
 }
 
 nav a::before, nav a::after {
