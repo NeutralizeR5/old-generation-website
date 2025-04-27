@@ -7,6 +7,17 @@
   <link rel="canonical" href="https://oldgeneration.com.tr/">
   <meta name="theme-color" content="#ff3333">
 
+  <!-- 1. FOUC/FOIT önleyici tema scripti -->
+  <script>
+    (function(){
+      try {
+        const t = localStorage.getItem('theme') ||
+                  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (t === 'dark') document.documentElement.classList.add('dark');
+      } catch(e){}
+    })();
+  </script>
+
   <!-- PWA Icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
@@ -16,23 +27,33 @@
   <meta name="msapplication-TileImage" content="/icons/mstile-150x150.png">
   <link rel="manifest" href="/manifest.json">
 
-  <!-- Preconnect & Preload -->
+  <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- 2. Kritik font preload -->
+  <link rel="preload" href="https://fonts.gstatic.com/s/oswald/v36/TK3iWkUHHAIjg752GT8G.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- CSS preload & noscript fallback -->
   <link rel="preload" href="/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/styles.css"></noscript>
+
+  <!-- Görsel preload -->
   <link rel="preload" href="https://oldgeneration.com.tr/images/logo.png" as="image">
   <link rel="preload" href="https://i.hizliresim.com/f7vsoke.jpg" as="image">
 
-  <!-- Google Search Console -->
-  <meta name="google-site-verification" content="jB41wmhFa02GAg08stdBYj5X0nsuIWAqcvX_tIUZ984">
+  <!-- 3. Inline kritik CSS -->
+  <style>
+    body { margin: 0; font-family: 'Oswald', sans-serif; }
+    a.skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    a.skip-link:focus { left: 0; top: 0; width: auto; height: auto; }
+  </style>
 
-  <!-- SEO -->
+  <!-- Google Search Console, SEO, Open Graph, Twitter Card, Schema.org, CSP, Analytics… -->
+  <meta name="google-site-verification" content="jB41wmhFa02GAg08stdBYj5X0nsuIWAqcvX_tIUZ984">
   <meta name="robots" content="index,follow">
   <meta name="description" content="OLD GENERATION: A top-tier guild in Lords Mobile, forging legends since 2016." id="meta-desc">
   <meta name="keywords" content="Lords Mobile, guild, OLD GENERATION, clan, mobile game, strategy">
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://oldgeneration.com.tr/">
   <meta property="og:title" content="OLD GENERATION – NEVER GIVE UP" id="og-title">
@@ -40,27 +61,21 @@
   <meta property="og:image" content="https://oldgeneration.com.tr/images/og-image.jpg" id="og-image">
   <meta property="og:locale" content="en_US">
   <link rel="alternate" hreflang="tr" href="https://oldgeneration.com.tr/tr/">
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@OldGenGuild">
   <meta name="twitter:title" content="OLD GENERATION – NEVER GIVE UP" id="tw-title">
   <meta name="twitter:description" content="OLD GENERATION Guild – Uniting champions since 2016." id="tw-desc">
   <meta name="twitter:image" content="https://oldgeneration.com.tr/images/og-image.jpg" id="tw-image">
-
-  <!-- Schema.org -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "OLD GENERATION",
-    "url": "https://oldgeneration.com.tr",
-    "logo": "https://oldgeneration.com.tr/images/logo.png",
-    "description": "A top-tier guild in Lords Mobile since 2016."
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"OLD GENERATION",
+    "url":"https://oldgeneration.com.tr",
+    "logo":"https://oldgeneration.com.tr/images/logo.png",
+    "description":"A top-tier guild in Lords Mobile since 2016."
   }
   </script>
-
-  <!-- Content Security Policy -->
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'none';
     script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline';
@@ -78,8 +93,6 @@
     upgrade-insecure-requests;
     block-all-mixed-content;
   ">
-
-  <!-- Google Analytics -->
   <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-NSJQ1WV5N1"></script>
   <script defer>
     window.dataLayer = window.dataLayer || [];
@@ -87,8 +100,6 @@
     gtag('js', new Date());
     gtag('config', 'G-NSJQ1WV5N1');
   </script>
-
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" rel="stylesheet">
 </head>
 
@@ -145,7 +156,14 @@
 
       <section id="shortfilm">
         <h2 id="shortfilm-title">Guild Short Film</h2>
-        <video controls controlsList="nodownload nofullscreen noremoteplayback" preload="metadata" poster="https://oldgeneration.com.tr/images/og-image.jpg">
+        <!-- 4. Video boyut rezervasyonu ve lazy loading -->
+        <video
+          controls
+          preload="metadata"
+          poster="https://oldgeneration.com.tr/images/og-image.jpg"
+          width="640" height="360"
+          loading="lazy"
+          style="aspect-ratio:16/9; display:block;">
           <source src="https://oldgeneration.com.tr/videos/shortfilm.mp4" type="video/mp4">
           <track kind="captions" src="https://oldgeneration.com.tr/videos/captions.vtt" srclang="en" label="English captions">
           Your browser does not support the video tag.
@@ -182,12 +200,11 @@
 
   </div>
 
-  <!-- Dışa Bağlı Script -->
+  <!-- 5. Ana script defer ile -->
   <script src="/old-generation-website/scripts.js" defer></script>
 
-  <!-- Inline Kontroller -->
+  <!-- Inline kontrol ve çeviri fonksiyonları -->
   <script>
-    // Tam çeviri verisi:
     const translations = {
       en: {
         title: "OLD GENERATION – NEVER GIVE UP",
@@ -249,7 +266,6 @@
       }
     };
 
-    // Meta güncelleme fonksiyonu
     function updateMetaTags(t) {
       document.title = t.title;
       document.getElementById('meta-desc').setAttribute('content', t.meta_description);
@@ -259,11 +275,9 @@
       document.getElementById('tw-desc').setAttribute('content', t.meta_description);
     }
 
-    // Dil ayarı
     function setLang(lang) {
       const t = translations[lang] || translations.en;
       document.documentElement.lang = lang;
-      // Metin güncellemeleri
       document.getElementById('header-subtitle').textContent = t.header_subtitle;
       document.getElementById('nav-stats').textContent = t.nav_stats;
       document.getElementById('nav-profiles').textContent = t.nav_profiles;
@@ -288,25 +302,20 @@
       document.getElementById('contact-button').textContent = t.contact_button;
       document.getElementById('footer-text1').textContent = t.footer1;
       document.getElementById('footer-text2').textContent = t.footer2;
-      // Meta güncelle
       updateMetaTags(t);
-      // Hata metni
       const statsDiv = document.getElementById('stats-data');
       if (statsDiv.textContent.includes('could not be loaded') || statsDiv.textContent.includes('yüklenemedi')) {
         statsDiv.textContent = t.data_error;
       }
-      // Veriyi tekrar al
       fetchStatsData(lang);
       localStorage.setItem('lang', lang);
     }
 
-    // Tema ayarı
     function toggleTheme() {
       const isLight = document.body.classList.toggle('light');
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
     }
 
-    // Canlı istatistikleri çek
     function fetchStatsData(lang) {
       fetch('/api/guild/stats')
         .then(resp => resp.ok ? resp.json() : Promise.reject(resp))
@@ -318,7 +327,6 @@
         });
     }
 
-    // Service Worker kaydı
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/service-worker.js')
@@ -326,11 +334,9 @@
       });
     }
 
-    // Başlangıçta çalıştır
     document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.toggle('light', localStorage.getItem('theme') === 'light');
       setLang(localStorage.getItem('lang') || 'en');
-      // Opsiyonel: sağ klik, seçme ve kopyayı engelleme
       ['contextmenu', 'selectstart', 'copy'].forEach(ev =>
         document.addEventListener(ev, e => e.preventDefault())
       );
