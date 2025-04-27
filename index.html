@@ -6,7 +6,6 @@
   <title>OLD GENERATION – NEVER GIVE UP</title>
   <link rel="canonical" href="https://oldgeneration.com.tr/">
   <meta name="theme-color" content="#ff3333">
-
   <!-- PWA Icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
@@ -15,7 +14,6 @@
   <meta name="msapplication-TileColor" content="#ff3333">
   <meta name="msapplication-TileImage" content="/icons/mstile-150x150.png">
   <link rel="manifest" href="/manifest.json">
-
   <!-- Preconnect & Preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,15 +21,12 @@
   <noscript><link rel="stylesheet" href="/styles.css"></noscript>
   <link rel="preload" href="https://oldgeneration.com.tr/images/logo.png" as="image">
   <link rel="preload" href="https://i.hizliresim.com/f7vsoke.jpg" as="image">
-
   <!-- Google Search Console -->
   <meta name="google-site-verification" content="jB41wmhFa02GAg08stdBYj5X0nsuIWAqcvX_tIUZ984">
-
   <!-- SEO -->
   <meta name="robots" content="index,follow">
   <meta name="description" content="OLD GENERATION: A top-tier guild in Lords Mobile, forging legends since 2016." id="meta-desc">
   <meta name="keywords" content="Lords Mobile, guild, OLD GENERATION, clan, mobile game, strategy">
-
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://oldgeneration.com.tr/">
@@ -40,14 +35,12 @@
   <meta property="og:image" content="https://oldgeneration.com.tr/images/og-image.jpg" id="og-image">
   <meta property="og:locale" content="en_US">
   <link rel="alternate" hreflang="tr" href="https://oldgeneration.com.tr/tr/">
-
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@OldGenGuild">
   <meta name="twitter:title" content="OLD GENERATION – NEVER GIVE UP" id="tw-title">
   <meta name="twitter:description" content="OLD GENERATION Guild – Uniting champions since 2016." id="tw-desc">
   <meta name="twitter:image" content="https://oldgeneration.com.tr/images/og-image.jpg" id="tw-image">
-
   <!-- Schema.org -->
   <script type="application/ld+json">
   {
@@ -59,7 +52,6 @@
     "description": "A top-tier guild in Lords Mobile since 2016."
   }
   </script>
-
   <!-- Content Security Policy -->
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'none';
@@ -78,7 +70,6 @@
     upgrade-insecure-requests;
     block-all-mixed-content;
   ">
-
   <!-- Google Analytics -->
   <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-NSJQ1WV5N1"></script>
   <script defer>
@@ -87,15 +78,101 @@
     gtag('js', new Date());
     gtag('config', 'G-NSJQ1WV5N1');
   </script>
-
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Navigasyon menüsü için ek stil */
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background-color: rgba(34, 34, 34, 0.9);
+      padding: 15px 0;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    nav li {
+      margin: 0 10px;
+    }
+    
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 15px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    nav a::before, nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #ff3333;
+      transition: width 0.3s ease;
+    }
+    
+    nav a::before {
+      top: 0;
+      left: 0;
+    }
+    
+    nav a::after {
+      bottom: 0;
+      right: 0;
+    }
+    
+    nav a:hover::before, nav a:hover::after,
+    nav a.active::before, nav a.active::after {
+      width: 100%;
+    }
+    
+    nav a:hover {
+      color: #ff3333;
+    }
+    
+    @media(max-width: 600px) {
+      nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      
+      nav li {
+        margin: 5px;
+      }
+      
+      nav a {
+        padding: 6px 10px;
+      }
+    }
+  </style>
 </head>
-
 <body>
   <a href="#main-content" class="skip-link">Skip to content</a>
+  
+  <!-- Navigasyon menüsü sayfanın en üstünde -->
+  <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="#live-stats" id="nav-stats">Stats</a></li>
+      <li><a href="#profiles" id="nav-profiles">Profiles</a></li>
+      <li><a href="#terminology" id="nav-terminology">Terminology</a></li>
+      <li><a href="#news" id="nav-news">News</a></li>
+      <li><a href="#shortfilm" id="nav-shortfilm">Short Film</a></li>
+      <li><a href="#contact" id="nav-contact">Contact</a></li>
+    </ul>
+  </nav>
+  
   <div class="wrapper">
-
     <header>
       <div id="logo">
         <img src="https://oldgeneration.com.tr/images/logo.png" alt="OLD GENERATION Logo" width="140" height="140" loading="eager">
@@ -108,41 +185,26 @@
         <button aria-label="Toggle theme" onclick="toggleTheme()" class="theme-button">🌓 Theme</button>
       </div>
     </header>
-
-    <nav aria-label="Main Navigation">
-      <ul>
-        <li><a href="#live-stats" id="nav-stats">Stats</a></li>
-        <li><a href="#profiles" id="nav-profiles">Profiles</a></li>
-        <li><a href="#terminology" id="nav-terminology">Terminology</a></li>
-        <li><a href="#news" id="nav-news">News</a></li>
-        <li><a href="#shortfilm" id="nav-shortfilm">Short Film</a></li>
-        <li><a href="#contact" id="nav-contact">Contact</a></li>
-      </ul>
-    </nav>
-
+    
     <main id="main-content">
       <section id="live-stats" aria-live="polite">
         <h2 id="stats-title">Live Guild Statistics</h2>
         <p id="stats-text">Real-time game data integration coming soon.</p>
         <div id="stats-data">Loading…</div>
       </section>
-
       <section id="profiles">
         <h2 id="profiles-title">Member Spotlight</h2>
         <p id="profiles-text">Showcase of elite guild members under development.</p>
       </section>
-
       <section id="terminology">
         <h2 id="terminology-title">Game Terminology</h2>
         <p id="terminology-text">Glossary of key Lords Mobile terms will be added here.</p>
       </section>
-
       <section id="news">
         <h2 id="news-title">Announcements & Updates</h2>
         <p id="news-recruitment"><strong>Recruitment:</strong> Skilled and active players are welcome. Contact us via Telegram or Line.</p>
         <p id="news-tournament"><strong>Next Tournament:</strong> Gear up for the upcoming guild war.</p>
       </section>
-
       <section id="shortfilm">
         <h2 id="shortfilm-title">Guild Short Film</h2>
         <video controls controlsList="nodownload nofullscreen noremoteplayback" preload="metadata" poster="https://oldgeneration.com.tr/images/og-image.jpg">
@@ -151,7 +213,6 @@
           Your browser does not support the video tag.
         </video>
       </section>
-
       <section id="contact">
         <h2 id="contact-title">Get in Touch</h2>
         <form action="https://formspree.io/f/myzeveog" method="POST" aria-label="Contact Form">
@@ -166,7 +227,6 @@
         </form>
       </section>
     </main>
-
     <footer>
       <p id="footer-text1">OLD GENERATION is a distinguished guild in Lords Mobile since 2016.</p>
       <p id="footer-text2">© 2016–2025 OLD GENERATION. Designed by NeutralizeR</p>
@@ -179,12 +239,9 @@
         </a>
       </div>
     </footer>
-
   </div>
-
   <!-- Dışa Bağlı Script -->
   <script src="/old-generation-website/scripts.js" defer></script>
-
   <!-- Inline Kontroller -->
   <script>
     // Tam çeviri verisi:
@@ -248,7 +305,6 @@
         footer2: "© 2016–2025 OLD GENERATION. NeutralizeR tarafından tasarlandı."
       }
     };
-
     // Meta güncelleme fonksiyonu
     function updateMetaTags(t) {
       document.title = t.title;
@@ -258,7 +314,6 @@
       document.getElementById('tw-title').setAttribute('content', t.title);
       document.getElementById('tw-desc').setAttribute('content', t.meta_description);
     }
-
     // Dil ayarı
     function setLang(lang) {
       const t = translations[lang] || translations.en;
@@ -299,13 +354,11 @@
       fetchStatsData(lang);
       localStorage.setItem('lang', lang);
     }
-
     // Tema ayarı
     function toggleTheme() {
       const isLight = document.body.classList.toggle('light');
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
     }
-
     // Canlı istatistikleri çek
     function fetchStatsData(lang) {
       fetch('/api/guild/stats')
@@ -317,7 +370,6 @@
           document.getElementById('stats-data').textContent = (translations[lang] || translations.en).data_error;
         });
     }
-
     // Service Worker kaydı
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
@@ -325,7 +377,6 @@
           .catch(err => console.error('SW registration failed:', err));
       });
     }
-
     // Başlangıçta çalıştır
     document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.toggle('light', localStorage.getItem('theme') === 'light');
