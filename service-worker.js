@@ -1,9 +1,14 @@
-const CACHE_NAME = 'oldgeneration-v1';
+const CACHE_NAME = 'oldgeneration-v2';
 const ASSETS = [
   '/',
   '/index.html',
   '/styles.css',
   '/manifest.json',
+  '/scripts.js',
+  '/icons/apple-touch-icon.png',
+  '/icons/favicon-32x32.png',
+  '/icons/favicon-16x16.png',
+  '/icons/mstile-150x150.png',
   '/images/logo.png',
   '/images/og-image.jpg',
   '/images/telegram.png',
@@ -12,7 +17,7 @@ const ASSETS = [
   '/videos/captions.vtt'
 ];
 
-// Install event - cache assets
+// Install event
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -21,39 +26,34 @@ self.addEventListener('install', event => {
   );
 });
 
-// Activate event - clean old caches
+// Activate event
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(cacheNames => {
+    caches.keys().then(keys => {
       return Promise.all(
-        cacheNames.filter(name => name !== CACHE_NAME)
-          .map(name => caches.delete(name))
+        keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
       );
     }).then(() => self.clients.claim())
   );
 });
 
-// Fetch event - serve from cache, fall back to network
+// Fetch event
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request)
-      .then(cachedResponse => {
-        return cachedResponse || fetch(event.request).then(response => {
-          // Cache dynamic content except for API calls
-          if (event.request.url.includes('/api/')) {
-            return response;
-          }
-          
-          return caches.open(CACHE_NAME).then(cache => {
-            cache.put(event.request, response.clone());
-            return response;
-          });
-        });
-      }).catch(() => {
-        // Offline fallback for HTML requests
-        if (event.request.headers.get('Accept').includes('text/html')) {
-          return caches.match('/');
+    caches.match(event.request).then(cachedResponse => {
+      return cachedResponse || fetch(event.request).then(response => {
+        if (event.request.url.includes('/api/')) {
+          return response;
         }
-      })
+        return caches.open(CACHE_NAME).then(cache => {
+          cache.put(event.request, response.clone());
+          return response;
+        });
+      });
+    }).catch(() => {
+      if (event.request.headers.get('Accept').includes('text/html')) {
+        return caches.match('/');
+      }
+    })
   );
 });
