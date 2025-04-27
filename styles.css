@@ -28,6 +28,7 @@ body {
   font-family: 'Oswald', sans-serif;
   user-select: none;
   transition: background 0.3s, color 0.3s;
+  padding-bottom: 80px; /* space for fixed footer */
 }
 body.light {
   background: var(--bg-light);
@@ -234,13 +235,17 @@ section p {
   background: #cc0000;
 }
 
-/* Transparent Footer */
+/* Footer - Full-Width Transparent & Fixed */
 footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background: transparent;
-  padding: 20px;
+  padding: 20px 0;
   text-align: center;
-  margin-top: auto;
   color: var(--text-dark);
+  z-index: 100;
 }
 body.light footer {
   color: var(--text-light);
