@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://oldgeneration.com.tr/images/logo.png" as="image" fetchpriority="high">
   <link rel="preload" href="https://i.hizliresim.com/f7vsoke.jpg" as="image"> {/* CSS Arka Plan Resmi */}
-  <link rel="preload" href="https://oldgeneration.com.tr/images/og-image.jpg" as="image"> {/* Video Posteri (above-the-fold ise) */}
+  <link rel="preload" href="https://oldgeneration.com.tr/images/og-image.jpg" as="image"> {/* Video Posteri */}
 
 
   <meta name="google-site-verification" content="jB41wmhFa02GAg08stdBYj5X0nsuIWAqcvX_tIUZ984">
@@ -32,7 +32,7 @@
   <meta property="og:url" content="https://oldgeneration.com.tr/">
   <meta property="og:title" content="OLD GENERATION – NEVER GIVE UP" id="og-title">
   <meta property="og:description" content="Join one of Lords Mobile's elite guilds. We fight together, grow stronger, and never give up." id="og-desc">
-  <meta property="og:image" content="https://oldgeneration.com.tr/images/og-image.jpg">
+  <meta property="og:image" content="https://oldgeneration.com.tr/images/og-image.jpg" id="og-image-meta"> {/* ID değiştirildi çakışmayı önlemek için, eğer JS kullanmıyorsa ID gereksiz */}
   <meta property="og:locale" content="en_US">
   <link rel="alternate" hreflang="tr" href="https://oldgeneration.com.tr/tr/">
 
@@ -40,7 +40,7 @@
   <meta name="twitter:site" content="@OldGenGuild">
   <meta name="twitter:title" content="OLD GENERATION – NEVER GIVE UP" id="tw-title">
   <meta name="twitter:description" content="OLD GENERATION Guild – Uniting champions since 2016." id="tw-desc">
-  <meta name="twitter:image" content="https://oldgeneration.com.tr/images/og-image.jpg">
+  <meta name="twitter:image" content="https://oldgeneration.com.tr/images/og-image.jpg" id="tw-image-meta"> {/* ID değiştirildi çakışmayı önlemek için, eğer JS kullanmıyorsa ID gereksiz */}
 
   <script type="application/ld+json">
   {
@@ -136,24 +136,24 @@
       width: 100%;
       display: flex;
       justify-content: center;
-      align-items: center; /* Dikey hizalama için */
+      align-items: center;
       background-color: rgba(34, 34, 34, 0.9);
-      padding: 10px 0; /* Padding azaltıldı */
+      padding: 10px 0;
       margin-bottom: 20px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-      flex-wrap: wrap; /* Mobil için */
+      flex-wrap: wrap;
     }
     body.light nav { background-color: rgba(230, 230, 230, 0.9); }
 
     nav a {
       color: var(--text-dark);
       text-decoration: none;
-      margin: 5px 10px; /* Margin azaltıldı */
-      padding: 8px 12px; /* Padding azaltıldı */
+      margin: 5px 10px;
+      padding: 8px 12px;
       position: relative;
       transition: all 0.3s ease;
       font-family: 'Oswald', sans-serif;
-      font-weight: 500; /* Font ağırlığı eklendi */
+      font-weight: 500;
     }
     body.light nav a { color: var(--text-light); }
 
@@ -175,7 +175,7 @@
       flex: 1;
       max-width: 1000px;
       margin: 0 auto 20px auto;
-      padding: 0 15px; /* Yan padding azaltıldı */
+      padding: 0 15px;
       display: flex;
       flex-direction: column;
     }
@@ -186,64 +186,62 @@
       -webkit-backdrop-filter: blur(4px);
       border-radius: var(--radius);
       text-align: center;
-      padding: clamp(15px, 4vw, 25px); /* Padding azaltıldı */
-      margin-top: 0; /* Navigasyon ile wrapper arası boşluk için */
+      padding: clamp(15px, 4vw, 25px);
+      margin-top: 0;
       transition: background .3s;
     }
     body.light header { background: var(--overlay-light); }
 
-    #logo { text-align: center; margin-bottom: 10px; /* Alt boşluk eklendi */ }
+    #logo { text-align: center; margin-bottom: 10px; }
     #logo img {
-      width: clamp(100px, 18vw, 120px); /* Boyut biraz küçültüldü */
+      width: clamp(100px, 18vw, 120px);
       height: auto;
-      filter: drop-shadow(0 0 6px var(--primary)); /* Gölge azaltıldı */
+      filter: drop-shadow(0 0 6px var(--primary));
     }
 
     header h1 {
-      font-size: clamp(1.6rem, 5vw, 2.5rem); /* Boyut biraz küçültüldü */
+      font-size: clamp(1.6rem, 5vw, 2.5rem);
       color: var(--primary);
-      margin: 0.3em 0; /* Margin azaltıldı */
+      margin: 0.3em 0;
     }
     #header-subtitle {
-      font-size: clamp(0.8rem, 2.2vw, 1rem); /* Boyut biraz küçültüldü */
+      font-size: clamp(0.8rem, 2.2vw, 1rem);
       opacity: .9;
-      margin-bottom: 15px; /* Alt boşluk eklendi */
+      margin-bottom: 15px;
     }
 
     .language-buttons {
       display: flex;
       justify-content: center;
-      gap: 8px; /* Boşluk azaltıldı */
-      margin-top: 10px; /* Margin azaltıldı */
+      gap: 8px;
+      margin-top: 10px;
     }
     .language-buttons button, .theme-button {
-      background: rgba(255,51,51,0.15); /* Arkaplan opaklığı azaltıldı */
+      background: rgba(255,51,51,0.15);
       color: inherit;
       border: 1px solid var(--primary);
       border-radius: 4px;
-      padding: 4px 8px; /* Padding azaltıldı */
+      padding: 4px 8px;
       cursor: pointer;
       transition: background 0.3s;
       font-family: 'Oswald', sans-serif;
-      font-size: 0.9rem; /* Font boyutu eklendi */
+      font-size: 0.9rem;
     }
     .language-buttons button:hover,
     .theme-button:hover { background: rgba(255,51,51,0.35); }
 
-    /* backdrop-filter desteklenmiyorsa */
+    /* backdrop-filter desteklenmiyorsa (header için) */
     @supports not ((-webkit-backdrop-filter: blur(3px)) or (backdrop-filter: blur(3px))) {
-      header, main section, footer { /* main section ve footer da eklendi */
+      header {
         background: rgba(0,0,0,0.85) !important;
       }
-      body.light header,
-      body.light main section,
-      body.light footer {
+      body.light header {
         background: rgba(240,240,240,0.95) !important;
       }
     }
     /* Mobil için temel stiller (Above the fold etkileyenler) */
     @media(max-width: 600px) {
-        nav { padding: 8px 0; } /* Mobil için padding */
+        nav { padding: 8px 0; }
         nav a { margin: 5px; padding: 6px 8px; font-size:0.9rem; }
         #logo img { width: clamp(80px, 15vw, 100px); }
         header h1 { font-size: clamp(1.4rem, 4.5vw, 2rem); }
@@ -287,7 +285,7 @@
         <h2 id="stats-title">Live Guild Statistics</h2>
         <p id="stats-text">Real-time game data integration coming soon.</p>
         <div id="stats-data">Loading…</div>
-      </section>
+        </section>
       <section id="profiles">
         <h2 id="profiles-title">Member Spotlight</h2>
         <p id="profiles-text">Showcase of elite guild members under development.</p>
@@ -303,8 +301,8 @@
       </section>
       <section id="shortfilm">
         <h2 id="shortfilm-title">Guild Short Film</h2>
-        <video controls controlsList="nodownload nofullscreen noremoteplayback" preload="metadata" poster="https://oldgeneration.com.tr/images/og-image.jpg" style="max-width:100%;height:auto;border-radius:var(--radius);display:block;margin-top:15px;">
-          {/* Stil display:block ve border-radius eklendi */}
+        {/* Video stili kritik olmayan CSS'e taşındı, buradan kaldırıldı. */}
+        <video controls controlsList="nodownload nofullscreen noremoteplayback" preload="metadata" poster="https://oldgeneration.com.tr/images/og-image.jpg">
           <source src="https://oldgeneration.com.tr/videos/shortfilm.mp4" type="video/mp4">
           <track kind="captions" src="https://oldgeneration.com.tr/videos/captions.vtt" srclang="en" label="English captions">
           Your browser does not support the video tag.
@@ -319,14 +317,14 @@
           <input id="email" name="email" type="email" required>
           <label for="message" id="label-message">Message</label>
           <textarea id="message" name="message" rows="4" required></textarea>
-          <input class="honeypot" type="text" name="botcheck" tabindex="-1" autocomplete="off">
+          <input class="honeypot" type="text" name="botcheck" tabindex="-1" autocomplete="off"> {/* CSS ile gizlenecek */ }
           <button type="submit" id="contact-button">Send Message</button>
         </form>
       </section>
     </main>
     <footer>
       <p id="footer-text1">OLD GENERATION is a distinguished guild in Lords Mobile since 2016.</p>
-      <p id="footer-text2">© 2016–<span id="current-year">2025</span> OLD GENERATION. Designed by NeutralizeR</p>
+      <p id="footer-text2">© 2016–<span id="current-year"></span> OLD GENERATION. Designed by NeutralizeR</p>
       <div class="social-buttons">
         <a href="https://t.me/trneutralizer" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
           <img src="https://oldgeneration.com.tr/images/telegram.png" alt="Telegram" width="32" height="32" loading="lazy">
@@ -354,9 +352,11 @@
         nav_shortfilm: "Short Film",
         nav_contact: "Contact",
         stats_title: "Live Guild Statistics",
-        stats_text: "Real-time game data integration coming soon.",
-        data_loading: "Loading…",
-        data_error: "Data could not be loaded",
+        stats_text: "Real-time game data integration coming soon. Below are the latest fetched stats:", // Metin güncellendi
+        stats_members_label: "Members", // İstatistikler için etiketler
+        stats_might_label: "Might",
+        data_loading: "Loading guild data…",
+        data_error: "Could not load guild data at this time.",
         profiles_title: "Member Spotlight",
         profiles_text: "Showcase of elite guild members under development.",
         terminology_title: "Game Terminology",
@@ -388,9 +388,11 @@
         nav_shortfilm: "Kısa Film",
         nav_contact: "İletişim",
         stats_title: "Canlı Lonca İstatistikleri",
-        stats_text: "Gerçek zamanlı oyun verisi entegrasyonu yakında geliyor.",
-        data_loading: "Yükleniyor…",
-        data_error: "Veri yüklenemedi",
+        stats_text: "Gerçek zamanlı oyun verisi entegrasyonu yakında geliyor. En son çekilen istatistikler aşağıdadır:", // Metin güncellendi
+        stats_members_label: "Üyeler", // İstatistikler için etiketler
+        stats_might_label: "Güç",
+        data_loading: "Lonca verileri yükleniyor…",
+        data_error: "Lonca verileri şu anda yüklenemedi.",
         profiles_title: "Üye Tanıtımı",
         profiles_text: "Seçkin lonca üyelerinin tanıtımı geliştirme aşamasında.",
         terminology_title: "Oyun Terimleri",
@@ -457,7 +459,7 @@
       updateTextContent('nav-shortfilm', t.nav_shortfilm);
       updateTextContent('nav-contact', t.nav_contact);
       updateTextContent('stats-title', t.stats_title);
-      updateTextContent('stats-text', t.stats_text);
+      updateTextContent('stats-text', t.stats_text); // stats-text güncellendi
       updateTextContent('profiles-title', t.profiles_title);
       updateTextContent('profiles-text', t.profiles_text);
       updateTextContent('terminology-title', t.terminology_title);
@@ -478,21 +480,27 @@
       if (footerText2El) {
           const yearSpanEl = footerText2El.querySelector('#current-year');
           if (yearSpanEl) yearSpanEl.textContent = currentYear;
-          footerText2El.innerHTML = t.footer2.replace('{CURRENT_YEAR}', currentYear);
+          // innerHTML'i sadece bir kere ayarla, span zaten içinde olacak
+          let footerText = t.footer2.replace('{CURRENT_YEAR}', currentYear);
+          if(!footerText2El.querySelector('#current-year') && t.footer2.includes('{CURRENT_YEAR}')) {
+             footerText = t.footer2.replace('{CURRENT_YEAR}', `<span id="current-year">${currentYear}</span>`);
+          } else if (footerText2El.querySelector('#current-year')) {
+             // Zaten span varsa, sadece metni güncelle, span'ı koru
+          }
+          footerText2El.innerHTML = footerText;
+
       }
+
 
       updateMetaTags(lang);
       updateThemeButtonText(lang, document.body.classList.contains('light'));
 
+      // fetchStatsData çağrılmadan önce stats-data içeriğini ayarla
       const statsDiv = document.getElementById('stats-data');
       if (statsDiv) {
-        const previousLang = localStorage.getItem('lang') || 'en';
-        const previousTranslations = translations[previousLang] || translations.en;
-        if (statsDiv.textContent === previousTranslations.data_error ||
-            statsDiv.textContent === previousTranslations.data_loading ||
-            statsDiv.textContent === "Loading…" || statsDiv.textContent === "Yükleniyor…") {
-          statsDiv.textContent = t.data_loading;
-        }
+        // Eğer stats-data içinde .stats-grid yapısı varsa, o da temizlenmeli veya güncellenmeli.
+        // Şimdilik basit metin için:
+        statsDiv.textContent = t.data_loading; // Her dil değişiminde yükleniyor mesajı
       }
       fetchStatsData(lang);
       localStorage.setItem('lang', lang);
@@ -507,35 +515,54 @@
 
     function fetchStatsData(lang) {
       const currentLang = lang || localStorage.getItem('lang') || 'en';
-      const currentTranslations = translations[currentLang] || translations.en;
-      const statsDiv = document.getElementById('stats-data');
+      const t = translations[currentLang] || translations.en;
+      const statsDataDiv = document.getElementById('stats-data');
 
-      if (!statsDiv) return;
-      statsDiv.textContent = currentTranslations.data_loading;
+      if (!statsDataDiv) return;
+      // Yükleniyor mesajı zaten setLang içinde ayarlandı.
+      // statsDataDiv.innerHTML = `<p>${t.data_loading}</p>`; // innerHTML kullanarak p etiketi ekleyebiliriz.
 
-      fetch('/api/guild/stats')
+      fetch('/api/guild/stats') // Bu URL'nin ve API'nin çalıştığından emin olun
         .then(resp => {
-          if (!resp.ok) return Promise.reject(new Error(`HTTP error ${resp.status}`));
+          if (!resp.ok) {
+            // API'den gelen özel bir hata mesajı varsa onu kullanabiliriz, yoksa genel hata.
+            return Promise.reject(new Error(`HTTP error ${resp.status}`));
+          }
           return resp.json();
         })
         .then(data => {
           if (data && data.members !== undefined && data.might !== undefined) {
-            statsDiv.textContent = `Members: ${data.members} | Might: ${data.might}`;
+            // stats-text'i burada tekrar çevirmeye gerek yok, setLang'de yapıldı.
+            // Sadece veri kısmını ekle.
+            // Eğer .stats-grid ve .stat-card yapısını kullanmak isterseniz:
+            statsDataDiv.innerHTML = `
+              <div class="stats-grid">
+                <div class="stat-card">
+                  <h3>${t.stats_members_label}</h3>
+                  <p>${data.members}</p>
+                </div>
+                <div class="stat-card">
+                  <h3>${t.stats_might_label}</h3>
+                  <p>${data.might}</p>
+                </div>
+              </div>`;
+            // Yukarıdaki HTML, kritik olmayan CSS'teki .stats-grid ve .stat-card stillerini kullanır.
+            // JavaScript ile dil değişiminde etiketler (t.stats_members_label) de güncellenir.
           } else {
-            statsDiv.textContent = currentTranslations.data_error;
+            statsDataDiv.innerHTML = `<p>${t.data_error}</p>`;
           }
         })
         .catch((error) => {
           console.error("Stats fetch error:", error);
-          statsDiv.textContent = currentTranslations.data_error;
+          statsDataDiv.innerHTML = `<p>${t.data_error}</p>`;
         });
     }
 
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then(reg => console.log('SW registered.', reg))
-          .catch(err => console.error('SW registration failed:', err));
+        navigator.serviceWorker.register('/service-worker.js') // Yolun doğru olduğundan emin olun
+          .then(reg => console.log('ServiceWorker registered successfully with scope:', reg.scope))
+          .catch(err => console.error('ServiceWorker registration failed:', err));
       });
     }
 
@@ -545,13 +572,24 @@
       if (yearSpanEl) yearSpanEl.textContent = currentYear;
 
       const savedTheme = localStorage.getItem('theme');
+      // Sistem tercihini sadece kayıtlı tema yoksa kullan
       const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      let initialThemeIsLight = savedTheme ? (savedTheme === 'light') : !prefersDark;
+      let initialThemeIsLight;
 
-      if (initialThemeIsLight) document.body.classList.add('light');
-      else document.body.classList.remove('light'); // Explicitly remove if dark
+      if (savedTheme !== null) { // Kayıtlı tema varsa onu kullan
+        initialThemeIsLight = (savedTheme === 'light');
+      } else { // Kayıtlı tema yoksa sistem tercihini kullan
+        initialThemeIsLight = !prefersDark;
+      }
+
+      if (initialThemeIsLight) {
+        document.body.classList.add('light');
+      } else {
+        document.body.classList.remove('light'); // Koyu tema için 'light' class'ını kaldır
+      }
 
       const initialLang = localStorage.getItem('lang') || navigator.language.split('-')[0] || 'en';
+      // setLang çağrısı tema butonu metnini de güncelleyecek
       setLang(initialLang);
     });
   </script>
