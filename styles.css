@@ -1,57 +1,56 @@
 :root {
-  --bg-dark: url('https://i.hizliresim.com/f7vsoke.jpg') center/cover fixed no-repeat;
+  --bg-dark: url('/images/hero-bg.webp') center/cover fixed no-repeat;
   --bg-light: #f4f4f4;
-  --overlay-dark: rgba(0,0,0,0.4);
-  --overlay-light: rgba(255,255,255,0.9);
+  --overlay-dark: rgba(0, 0, 0, 0.4);
+  --overlay-light: rgba(255, 255, 255, 0.9);
   --primary: #ff3333;
   --text-dark: #fff;
   --text-light: #111;
   --radius: 8px;
 }
 
-*,*::before,*::after { 
-  box-sizing:border-box; 
-  margin:0; 
-  padding:0; 
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html { 
-  scroll-behavior: smooth; 
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  min-height:100vh;
-  background:var(--bg-dark);
-  color:var(--text-dark);
-  font-family:'Oswald',sans-serif;
-  user-select:none;
-  transition: background .3s, color .3s;
-  display:flex; 
-  flex-direction:column;
+  min-height: 100vh;
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  font-family: 'Oswald', sans-serif;
+  user-select: none;
+  transition: background 0.3s, color 0.3s;
+  display: flex;
+  flex-direction: column;
 }
 
 body.light {
-  background:var(--bg-light);
-  color:var(--text-light);
+  background: var(--bg-light);
+  color: var(--text-light);
 }
 
 .skip-link {
-  position:absolute; 
-  top:-40px; 
-  left:0;
-  background:#000; 
-  color:#fff;
-  padding:8px 16px; 
-  z-index:100;
-  text-decoration:none; 
-  transition:top .3s;
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 100;
+  text-decoration: none;
+  transition: top 0.3s;
 }
 
-.skip-link:focus { 
-  top:0; 
+.skip-link:focus {
+  top: 0;
 }
 
-/* Menü stillerini güncellendi - sayfanın en üstünde */
 nav {
   width: 100%;
   display: flex;
@@ -60,6 +59,7 @@ nav {
   padding: 15px 0;
   margin-bottom: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -69,9 +69,11 @@ nav a {
   padding: 8px 15px;
   position: relative;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
-nav a::before, nav a::after {
+nav a::before,
+nav a::after {
   content: '';
   position: absolute;
   width: 0;
@@ -90,8 +92,10 @@ nav a::after {
   right: 0;
 }
 
-nav a:hover::before, nav a:hover::after,
-nav a.active::before, nav a.active::after {
+nav a:hover::before,
+nav a:hover::after,
+nav a.active::before,
+nav a.active::after {
   width: 100%;
 }
 
@@ -104,7 +108,7 @@ nav a:hover {
   max-width: 1000px;
   margin: auto;
   padding: 20px;
-  display: flex; 
+  display: flex;
   flex-direction: column;
 }
 
@@ -114,32 +118,35 @@ header {
   border-radius: var(--radius);
   text-align: center;
   padding: 30px;
-  transition: background .3s;
+  transition: background 0.3s;
 }
 
-body.light header { 
-  background: var(--overlay-light); 
+body.light header {
+  background: var(--overlay-light);
 }
 
 #logo {
-  margin-top: 20px; 
+  margin-top: 20px;
   text-align: center;
 }
 
 #logo img {
   width: 140px;
+  height: auto;
   filter: drop-shadow(0 0 8px var(--primary));
+  display: block;
+  margin: 0 auto;
 }
 
 header h1 {
   font-size: clamp(1.8rem, 6vw, 2.8rem);
   color: var(--primary);
-  margin: .5em 0;
+  margin: 0.5em 0;
 }
 
-header p { 
-  font-size: 1.1rem; 
-  opacity: .9; 
+header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
 }
 
 .language-buttons {
@@ -149,8 +156,9 @@ header p {
   margin-top: 15px;
 }
 
-.language-buttons button, .theme-button {
-  background: rgba(255,51,51,0.2);
+.language-buttons button,
+.theme-button {
+  background: rgba(255, 51, 51, 0.2);
   color: inherit;
   border: 1px solid var(--primary);
   border-radius: 4px;
@@ -161,114 +169,119 @@ header p {
 
 .language-buttons button:hover,
 .theme-button:hover {
-  background: rgba(255,51,51,0.4);
+  background: rgba(255, 51, 51, 0.4);
 }
 
 main section {
   background: var(--overlay-dark);
   backdrop-filter: blur(3px);
   border-radius: var(--radius);
-  margin: 30px 0; 
+  margin: 30px 0;
   padding: 25px;
-  transition: background .3s;
+  transition: background 0.3s;
 }
 
-body.light main section { 
-  background: var(--overlay-light); 
+body.light main section {
+  background: var(--overlay-light);
 }
 
 section h2 {
-  text-align: center; 
+  text-align: center;
   font-size: 1.8rem;
-  color: var(--primary); 
+  color: var(--primary);
   margin-bottom: 12px;
 }
 
-section p { 
-  font-size: 1rem; 
-  line-height: 1.6; 
-  text-align: left; 
+section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
 }
 
 #shortfilm video {
-  width: 100%; 
+  width: 100%;
   border-radius: var(--radius);
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   margin-top: 15px;
+  display: block;
+  max-height: 480px;
+  object-fit: contain;
 }
 
 #contact label {
-  display: block; 
-  font-weight: bold; 
+  display: block;
+  font-weight: bold;
   margin: 8px 0 4px;
 }
 
 #contact input,
 #contact textarea {
-  width: 100%; 
-  padding: 10px; 
+  width: 100%;
+  padding: 10px;
   margin-bottom: 12px;
-  border: none; 
-  border-radius: 5px; 
+  border: none;
+  border-radius: 5px;
   font-size: 1rem;
+  resize: vertical;
 }
 
-.honeypot { 
-  display: none!important; 
+.honeypot {
+  display: none !important;
 }
 
 #contact button {
-  padding: 10px 20px; 
+  padding: 10px 20px;
   background: var(--primary);
-  color: #fff; 
-  border: none; 
+  color: #fff;
+  border: none;
   border-radius: 5px;
-  cursor: pointer; 
+  cursor: pointer;
   font-size: 1rem;
   transition: background 0.3s;
 }
 
-#contact button:hover { 
-  background: #cc0000; 
+#contact button:hover {
+  background: #cc0000;
 }
 
 footer {
   background: var(--overlay-dark);
   backdrop-filter: blur(3px);
-  text-align: center; 
-  padding: 20px; 
+  text-align: center;
+  padding: 20px;
   margin-top: auto;
-  transition: background .3s;
+  transition: background 0.3s;
   border-radius: var(--radius);
 }
 
-body.light footer { 
-  background: var(--overlay-light); 
+body.light footer {
+  background: var(--overlay-light);
 }
 
-footer p { 
-  font-size: .9rem; 
-  margin: 4px 0; 
-  text-align: center; 
+footer p {
+  font-size: 0.9rem;
+  margin: 4px 0;
+  text-align: center;
 }
 
 .social-buttons {
-  display: flex; 
-  justify-content: center; 
+  display: flex;
+  justify-content: center;
   gap: 15px;
   margin-top: 12px;
 }
 
 .social-buttons img {
-  width: 32px; 
-  height: 32px; 
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  box-shadow: 0 0 8px rgba(0,0,0,0.4);
-  transition: transform .2s;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s;
+  display: block;
 }
 
-.social-buttons img:hover { 
-  transform: scale(1.1); 
+.social-buttons img:hover {
+  transform: scale(1.1);
 }
 
 .stats-grid {
@@ -279,7 +292,7 @@ footer p {
 }
 
 .stat-card {
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   padding: 15px;
   border-radius: var(--radius);
   text-align: center;
@@ -291,40 +304,43 @@ footer p {
 }
 
 body.light .stat-card {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 @supports not (backdrop-filter: blur(3px)) {
-  header, main section, footer {
-    background: rgba(0,0,0,0.5) !important;
+  header,
+  main section,
+  footer {
+    background: rgba(0, 0, 0, 0.5) !important;
   }
-  body.light header,   
-  body.light main section,   
+
+  body.light header,
+  body.light main section,
   body.light footer {
-    background: rgba(255,255,255,0.9) !important;
+    background: rgba(255, 255, 255, 0.9) !important;
   }
 }
 
-@media(max-width: 600px) {
-  header h1 { 
-    font-size: 2.2rem; 
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2.2rem;
   }
-  
-  #logo img { 
-    width: 120px; 
+
+  #logo img {
+    width: 120px;
   }
-  
-  .social-buttons img { 
-    width: 28px; 
-    height: 28px; 
+
+  .social-buttons img {
+    width: 28px;
+    height: 28px;
   }
-  
-  nav { 
+
+  nav {
     flex-wrap: wrap;
     padding: 10px 0;
   }
-  
-  nav a { 
+
+  nav a {
     margin: 5px;
     padding: 6px 10px;
   }
