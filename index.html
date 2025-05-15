@@ -1,166 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>OLD GENERATION – NEVER GIVE UP</title>
-  <link rel="canonical" href="https://oldgeneration.com.tr/">
-  <meta name="theme-color" content="#ff3333">
+  <link rel="canonical" href="https://oldgeneration.com.tr/" />
+  <meta name="theme-color" content="#ff3333" />
+
   <!-- PWA Icons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#ff3333">
-  <meta name="msapplication-TileColor" content="#ff3333">
-  <meta name="msapplication-TileImage" content="/icons/mstile-150x150.png">
-  <link rel="manifest" href="/manifest.json">
-  <!-- Preconnect & Preload -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/styles.css"></noscript>
-  <link rel="preload" href="https://oldgeneration.com.tr/images/logo.png" as="image">
-  <link rel="preload" href="https://i.hizliresim.com/f7vsoke.jpg" as="image">
-  <!-- Google Search Console -->
-  <meta name="google-site-verification" content="jB41wmhFa02GAg08stdBYj5X0nsuIWAqcvX_tIUZ984">
-  <!-- SEO -->
-  <meta name="robots" content="index,follow">
-  <meta name="description" content="OLD GENERATION: A top-tier guild in Lords Mobile, forging legends since 2016." id="meta-desc">
-  <meta name="keywords" content="Lords Mobile, guild, OLD GENERATION, clan, mobile game, strategy">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#ff3333" />
+  <meta name="msapplication-TileColor" content="#ff3333" />
+  <meta name="msapplication-TileImage" content="/icons/mstile-150x150.png" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- Preconnect for Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Google Fonts with font-display swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS with media=print preload trick to avoid render-blocking -->
+  <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/styles.css" /></noscript>
+
+  <!-- Preload only critical images -->
+  <link rel="preload" as="image" href="/images/logo.webp" />
+  <link rel="preload" as="image" href="/images/og-image.webp" />
+
+  <!-- Meta Tags for SEO -->
+  <meta name="description" content="OLD GENERATION: A top-tier guild in Lords Mobile, forging legends since 2016." />
+  <meta name="keywords" content="Lords Mobile, guild, OLD GENERATION, clan, mobile game, strategy" />
+
   <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://oldgeneration.com.tr/">
-  <meta property="og:title" content="OLD GENERATION – NEVER GIVE UP" id="og-title">
-  <meta property="og:description" content="Join one of Lords Mobile's elite guilds. We fight together, grow stronger, and never give up." id="og-desc">
-  <meta property="og:image" content="https://oldgeneration.com.tr/images/og-image.jpg" id="og-image">
-  <meta property="og:locale" content="en_US">
-  <link rel="alternate" hreflang="tr" href="https://oldgeneration.com.tr/tr/">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://oldgeneration.com.tr/" />
+  <meta property="og:title" content="OLD GENERATION – NEVER GIVE UP" />
+  <meta property="og:description" content="Join one of Lords Mobile's elite guilds. We fight together, grow stronger, and never give up." />
+  <meta property="og:image" content="/images/og-image.webp" />
+  <meta property="og:locale" content="en_US" />
+  <link rel="alternate" hreflang="tr" href="https://oldgeneration.com.tr/tr/" />
+
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@OldGenGuild">
-  <meta name="twitter:title" content="OLD GENERATION – NEVER GIVE UP" id="tw-title">
-  <meta name="twitter:description" content="OLD GENERATION Guild – Uniting champions since 2016." id="tw-desc">
-  <meta name="twitter:image" content="https://oldgeneration.com.tr/images/og-image.jpg" id="tw-image">
-  <!-- Schema.org -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@OldGenGuild" />
+  <meta name="twitter:title" content="OLD GENERATION – NEVER GIVE UP" />
+  <meta name="twitter:description" content="OLD GENERATION Guild – Uniting champions since 2016." />
+  <meta name="twitter:image" content="/images/og-image.webp" />
+
+  <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "OLD GENERATION",
     "url": "https://oldgeneration.com.tr",
-    "logo": "https://oldgeneration.com.tr/images/logo.png",
+    "logo": "/images/logo.webp",
     "description": "A top-tier guild in Lords Mobile since 2016."
   }
   </script>
+
   <!-- Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy" content="
-    default-src 'none';
-    script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline';
-    style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
-    img-src 'self' data: https://i.hizliresim.com https://oldgeneration.com.tr https://web.whatsapp.com https://telegram.org https://t.me https://line.me;
-    font-src 'self' https://fonts.gstatic.com;
-    connect-src 'self' https://www.google-analytics.com;
-    frame-src https://web.whatsapp.com https://telegram.org https://line.me;
-    form-action 'self' https://formspree.io;
-    manifest-src 'self';
-    media-src 'self';
-    object-src 'none';
-    base-uri 'self';
-    frame-ancestors 'none';
-    upgrade-insecure-requests;
-    block-all-mixed-content;
-  ">
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="
+      default-src 'none';
+      script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline';
+      style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+      img-src 'self' data: https://i.hizliresim.com https://oldgeneration.com.tr https://web.whatsapp.com https://telegram.org https://t.me https://line.me;
+      font-src 'self' https://fonts.gstatic.com;
+      connect-src 'self' https://www.google-analytics.com;
+      frame-src https://web.whatsapp.com https://telegram.org https://line.me;
+      form-action 'self' https://formspree.io;
+      manifest-src 'self';
+      media-src 'self';
+      object-src 'none';
+      base-uri 'self';
+      frame-ancestors 'none';
+      upgrade-insecure-requests;
+      block-all-mixed-content;
+    "
+  />
+
   <!-- Google Analytics -->
   <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-NSJQ1WV5N1"></script>
   <script defer>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-NSJQ1WV5N1');
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
+    gtag('config', 'G-NSJQ1WV5N1')
   </script>
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" rel="stylesheet">
-  <style>
-    /* Navigasyon menüsü için ek stil */
-    nav {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      background-color: rgba(34, 34, 34, 0.3);
-      padding: 15px 0;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-    
-    nav ul {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    
-    nav li {
-      margin: 0 10px;
-    }
-    
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      padding: 8px 15px;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-    
-    nav a::before, nav a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      background-color: #ff3333;
-      transition: width 0.3s ease;
-    }
-    
-    nav a::before {
-      top: 0;
-      left: 0;
-    }
-    
-    nav a::after {
-      bottom: 0;
-      right: 0;
-    }
-    
-    nav a:hover::before, nav a:hover::after,
-    nav a.active::before, nav a.active::after {
-      width: 100%;
-    }
-    
-    nav a:hover {
-      color: #ff3333;
-    }
-    
-    @media(max-width: 600px) {
-      nav ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-      
-      nav li {
-        margin: 5px;
-      }
-      
-      nav a {
-        padding: 6px 10px;
-      }
-    }
-  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to content</a>
-  
-  <!-- Navigasyon menüsü sayfanın en üstünde -->
+
+  <!-- Navigation -->
   <nav aria-label="Main Navigation">
     <ul>
       <li><a href="#live-stats" id="nav-stats">Stats</a></li>
@@ -171,80 +110,102 @@
       <li><a href="#contact" id="nav-contact">Contact</a></li>
     </ul>
   </nav>
-  
+
   <div class="wrapper">
     <header>
       <div id="logo">
-        <img src="https://oldgeneration.com.tr/images/logo.png" alt="OLD GENERATION Logo" width="140" height="140" loading="eager">
+        <img
+          src="/images/logo.webp"
+          alt="OLD GENERATION Logo"
+          width="140"
+          height="140"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        />
       </div>
       <h1>OLD GENERATION</h1>
       <p id="header-subtitle">PRESERVING LEGACY, DEFYING FATE</p>
       <div class="language-buttons">
-        <button aria-label="Language: English" onclick="setLang('en')">EN</button>
-        <button aria-label="Language: Turkish" onclick="setLang('tr')">TR</button>
+        <button aria-label="English language" onclick="setLang('en')">EN</button>
+        <button aria-label="Turkish language" onclick="setLang('tr')">TR</button>
         <button aria-label="Toggle theme" onclick="toggleTheme()" class="theme-button">🌓 Theme</button>
       </div>
     </header>
-    
+
     <main id="main-content">
       <section id="live-stats" aria-live="polite">
         <h2 id="stats-title">Live Guild Statistics</h2>
         <p id="stats-text">Real-time game data integration coming soon.</p>
         <div id="stats-data">Loading…</div>
       </section>
+
       <section id="profiles">
         <h2 id="profiles-title">Member Spotlight</h2>
         <p id="profiles-text">Showcase of elite guild members under development.</p>
       </section>
+
       <section id="terminology">
         <h2 id="terminology-title">Game Terminology</h2>
         <p id="terminology-text">Glossary of key Lords Mobile terms will be added here.</p>
       </section>
+
       <section id="news">
         <h2 id="news-title">Announcements & Updates</h2>
-        <p id="news-recruitment"><strong>Recruitment:</strong> Skilled and active players are welcome. Contact us via Telegram or Line.</p>
-        <p id="news-tournament"><strong>Next Tournament:</strong> Gear up for the upcoming guild war.</p>
+        <p id="news-recruitment">
+          <strong>Recruitment:</strong> Skilled and active players are welcome. Contact us via Telegram or Line.
+        </p>
+        <p id="news-tournament">
+          <strong>Next Tournament:</strong> Gear up for the upcoming guild war.
+        </p>
       </section>
+
       <section id="shortfilm">
         <h2 id="shortfilm-title">Guild Short Film</h2>
-        <video controls controlsList="nodownload nofullscreen noremoteplayback" preload="metadata" poster="https://oldgeneration.com.tr/images/og-image.jpg">
-          <source src="https://oldgeneration.com.tr/videos/shortfilm.mp4" type="video/mp4">
-          <track kind="captions" src="https://oldgeneration.com.tr/videos/captions.vtt" srclang="en" label="English captions">
+        <video
+          controls
+          controlsList="nodownload nofullscreen noremoteplayback"
+          preload="metadata"
+          poster="/images/og-image.webp"
+          width="100%"
+          height="auto"
+        >
+          <source src="/videos/shortfilm.mp4" type="video/mp4" />
+          <track kind="captions" src="/videos/captions.vtt" srclang="en" label="English captions" />
           Your browser does not support the video tag.
         </video>
       </section>
+
       <section id="contact">
         <h2 id="contact-title">Get in Touch</h2>
         <form action="https://formspree.io/f/myzeveog" method="POST" aria-label="Contact Form">
           <label for="name" id="label-name">Name</label>
-          <input id="name" name="name" type="text" required>
+          <input id="name" name="name" type="text" required />
           <label for="email" id="label-email">Email</label>
-          <input id="email" name="email" type="email" required>
+          <input id="email" name="email" type="email" required />
           <label for="message" id="label-message">Message</label>
           <textarea id="message" name="message" rows="4" required></textarea>
-          <input class="honeypot" type="text" name="botcheck" tabindex="-1" autocomplete="off">
+          <input class="honeypot" type="text" name="botcheck" tabindex="-1" autocomplete="off" />
           <button type="submit" id="contact-button">Send Message</button>
         </form>
       </section>
     </main>
+
     <footer>
       <p id="footer-text1">OLD GENERATION is a distinguished guild in Lords Mobile since 2016.</p>
       <p id="footer-text2">© 2016–2025 OLD GENERATION. Designed by NeutralizeR</p>
       <div class="social-buttons">
-        <a href="https://t.me/trneutralizer" target="_blank" aria-label="Telegram">
-          <img src="https://oldgeneration.com.tr/images/telegram.png" alt="Telegram" width="32" height="32" loading="lazy">
+        <a href="https://t.me/trneutralizer" target="_blank" rel="noopener" aria-label="Telegram">
+          <img src="/images/telegram.webp" alt="Telegram" width="32" height="32" loading="lazy" decoding="async" />
         </a>
-        <a href="https://line.me/ti/p/Tt3gWr3BDE" target="_blank" aria-label="Line">
-          <img src="https://oldgeneration.com.tr/images/line.png" alt="Line" width="32" height="32" loading="lazy">
+        <a href="https://line.me/ti/p/Tt3gWr3BDE" target="_blank" rel="noopener" aria-label="Line">
+          <img src="/images/line.webp" alt="Line" width="32" height="32" loading="lazy" decoding="async" />
         </a>
       </div>
     </footer>
-  </div>
-  <!-- Dışa Bağlı Script -->
-  <script src="/old-generation-website/scripts.js" defer></script>
-  <!-- Inline Kontroller -->
-  <script>
-    // Tam çeviri verisi:
+
+  <script defer>
+    // Translation data
     const translations = {
       en: {
         title: "OLD GENERATION – NEVER GIVE UP",
@@ -264,7 +225,8 @@
         terminology_title: "Game Terminology",
         terminology_text: "Glossary of key Lords Mobile terms will be added here.",
         news_title: "Announcements & Updates",
-        news_recruitment: "<strong>Recruitment:</strong> Skilled and active players are welcome. Contact us via Telegram or Line.",
+        news_recruitment:
+          "<strong>Recruitment:</strong> Skilled and active players are welcome. Contact us via Telegram or Line.",
         news_tournament: "<strong>Next Tournament:</strong> Gear up for the upcoming guild war.",
         shortfilm_title: "Guild Short Film",
         contact_title: "Get in Touch",
@@ -273,7 +235,7 @@
         label_message: "Message",
         contact_button: "Send Message",
         footer1: "OLD GENERATION is a distinguished guild in Lords Mobile since 2016.",
-        footer2: "© 2016–2025 OLD GENERATION. Designed by NeutralizeR"
+        footer2: "© 2016–2025 OLD GENERATION. Designed by NeutralizeR",
       },
       tr: {
         title: "OLD GENERATION – ASLA PES ETME",
@@ -293,97 +255,118 @@
         terminology_title: "Oyun Terimleri",
         terminology_text: "Lords Mobile için temel terimlerin sözlüğü buraya eklenecek.",
         news_title: "Duyurular & Güncellemeler",
-        news_recruitment: "<strong>Üye Alımı:</strong> Yetkin ve aktif oyuncular arıyoruz. Telegram veya Line üzerinden iletişime geçin.",
-        news_tournament: "<strong>Sonraki Turnuva:</strong> Yaklaşan lonca savaşına hazırlanın.",
+        news_recruitment:
+          "<strong>Üye Alımı:</strong> Yetkin ve aktif oyuncular arıyoruz. Telegram veya Line üzerinden iletişime geçin.",
+        news_tournament: " <strong>Sonraki Turnuva:</strong> Yaklaşan lonca savaşına hazırlanın.",
         shortfilm_title: "Lonca Kısa Filmi",
         contact_title: "Bizimle İletişime Geçin",
         label_name: "İsim",
         label_email: "E-posta",
         label_message: "Mesaj",
         contact_button: "Mesaj Gönder",
-        footer1: "OLD GENERATION, Lords Mobile'da 2016'dan beri şampiyonları bir araya getiren seçkin bir loncadır.",
-        footer2: "© 2016–2025 OLD GENERATION. NeutralizeR tarafından tasarlandı."
-      }
+        footer1:
+          "OLD GENERATION, Lords Mobile'da 2016'dan beri şampiyonları bir araya getiren seçkin bir loncadır.",
+        footer2: "© 2016–2025 OLD GENERATION. NeutralizeR tarafından tasarlandı.",
+      },
     };
-    // Meta güncelleme fonksiyonu
+
+    // Update meta tags dynamically
     function updateMetaTags(t) {
       document.title = t.title;
-      document.getElementById('meta-desc').setAttribute('content', t.meta_description);
-      document.getElementById('og-title').setAttribute('content', t.title);
-      document.getElementById('og-desc').setAttribute('content', t.meta_description);
-      document.getElementById('tw-title').setAttribute('content', t.title);
-      document.getElementById('tw-desc').setAttribute('content', t.meta_description);
+      document.querySelector('meta[name="description"]').setAttribute("content", t.meta_description);
+      document.querySelector('meta[property="og:title"]').setAttribute("content", t.title);
+      document.querySelector('meta[property="og:description"]').setAttribute("content", t.meta_description);
+      document.querySelector('meta[name="twitter:title"]').setAttribute("content", t.title);
+      document.querySelector('meta[name="twitter:description"]').setAttribute("content", t.meta_description);
     }
-    // Dil ayarı
+
+    // Set language and update texts
     function setLang(lang) {
       const t = translations[lang] || translations.en;
       document.documentElement.lang = lang;
-      // Metin güncellemeleri
-      document.getElementById('header-subtitle').textContent = t.header_subtitle;
-      document.getElementById('nav-stats').textContent = t.nav_stats;
-      document.getElementById('nav-profiles').textContent = t.nav_profiles;
-      document.getElementById('nav-terminology').textContent = t.nav_terminology;
-      document.getElementById('nav-news').textContent = t.nav_news;
-      document.getElementById('nav-shortfilm').textContent = t.nav_shortfilm;
-      document.getElementById('nav-contact').textContent = t.nav_contact;
-      document.getElementById('stats-title').textContent = t.stats_title;
-      document.getElementById('stats-text').textContent = t.stats_text;
-      document.getElementById('profiles-title').textContent = t.profiles_title;
-      document.getElementById('profiles-text').textContent = t.profiles_text;
-      document.getElementById('terminology-title').textContent = t.terminology_title;
-      document.getElementById('terminology-text').textContent = t.terminology_text;
-      document.getElementById('news-title').textContent = t.news_title;
-      document.getElementById('news-recruitment').innerHTML = t.news_recruitment;
-      document.getElementById('news-tournament').innerHTML = t.news_tournament;
-      document.getElementById('shortfilm-title').textContent = t.shortfilm_title;
-      document.getElementById('contact-title').textContent = t.contact_title;
-      document.getElementById('label-name').textContent = t.label_name;
-      document.getElementById('label-email').textContent = t.label_email;
-      document.getElementById('label-message').textContent = t.label_message;
-      document.getElementById('contact-button').textContent = t.contact_button;
-      document.getElementById('footer-text1').textContent = t.footer1;
-      document.getElementById('footer-text2').textContent = t.footer2;
-      // Meta güncelle
+
+      document.getElementById("header-subtitle").textContent = t.header_subtitle;
+      document.getElementById("nav-stats").textContent = t.nav_stats;
+      document.getElementById("nav-profiles").textContent = t.nav_profiles;
+      document.getElementById("nav-terminology").textContent = t.nav_terminology;
+      document.getElementById("nav-news").textContent = t.nav_news;
+      document.getElementById("nav-shortfilm").textContent = t.nav_shortfilm;
+      document.getElementById("nav-contact").textContent = t.nav_contact;
+
+      document.getElementById("stats-title").textContent = t.stats_title;
+      document.getElementById("stats-text").textContent = t.stats_text;
+
+      document.getElementById("profiles-title").textContent = t.profiles_title;
+      document.getElementById("profiles-text").textContent = t.profiles_text;
+
+      document.getElementById("terminology-title").textContent = t.terminology_title;
+      document.getElementById("terminology-text").textContent = t.terminology_text;
+
+      document.getElementById("news-title").textContent = t.news_title;
+      document.getElementById("news-recruitment").innerHTML = t.news_recruitment;
+      document.getElementById("news-tournament").innerHTML = t.news_tournament;
+
+      document.getElementById("shortfilm-title").textContent = t.shortfilm_title;
+
+      document.getElementById("contact-title").textContent = t.contact_title;
+      document.getElementById("label-name").textContent = t.label_name;
+      document.getElementById("label-email").textContent = t.label_email;
+      document.getElementById("label-message").textContent = t.label_message;
+      document.getElementById("contact-button").textContent = t.contact_button;
+
+      document.getElementById("footer-text1").textContent = t.footer1;
+      document.getElementById("footer-text2").textContent = t.footer2;
+
       updateMetaTags(t);
-      // Hata metni
-      const statsDiv = document.getElementById('stats-data');
-      if (statsDiv.textContent.includes('could not be loaded') || statsDiv.textContent.includes('yüklenemedi')) {
+
+      // If error in stats-data, update text accordingly
+      const statsDiv = document.getElementById("stats-data");
+      if (
+        statsDiv.textContent.includes("could not be loaded") ||
+        statsDiv.textContent.includes("yüklenemedi")
+      ) {
         statsDiv.textContent = t.data_error;
       }
-      // Veriyi tekrar al
+
       fetchStatsData(lang);
-      localStorage.setItem('lang', lang);
+      localStorage.setItem("lang", lang);
     }
-    // Tema ayarı
+
+    // Theme toggler
     function toggleTheme() {
-      const isLight = document.body.classList.toggle('light');
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      const isLight = document.body.classList.toggle("light");
+      localStorage.setItem("theme", isLight ? "light" : "dark");
     }
-    // Canlı istatistikleri çek
+
+    // Fetch stats data
     function fetchStatsData(lang) {
-      fetch('/api/guild/stats')
-        .then(resp => resp.ok ? resp.json() : Promise.reject(resp))
-        .then(data => {
-          document.getElementById('stats-data').textContent = `Members: ${data.members} | Might: ${data.might}`;
+      fetch("/api/guild/stats")
+        .then((resp) => (resp.ok ? resp.json() : Promise.reject(resp)))
+        .then((data) => {
+          document.getElementById("stats-data").textContent = `Members: ${data.members} | Might: ${data.might}`;
         })
         .catch(() => {
-          document.getElementById('stats-data').textContent = (translations[lang] || translations.en).data_error;
+          document.getElementById("stats-data").textContent = (translations[lang] || translations.en).data_error;
         });
     }
-    // Service Worker kaydı
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-          .catch(err => console.error('SW registration failed:', err));
+
+    // Service Worker registration
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/service-worker.js").catch((err) =>
+          console.error("SW registration failed:", err)
+        );
       });
     }
-    // Başlangıçta çalıştır
-    document.addEventListener('DOMContentLoaded', () => {
-      document.body.classList.toggle('light', localStorage.getItem('theme') === 'light');
-      setLang(localStorage.getItem('lang') || 'en');
-      // Opsiyonel: sağ klik, seçme ve kopyayı engelleme
-      ['contextmenu', 'selectstart', 'copy'].forEach(ev =>
-        document.addEventListener(ev, e => e.preventDefault())
+
+    // Initialization
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.toggle("light", localStorage.getItem("theme") === "light");
+      setLang(localStorage.getItem("lang") || "en");
+
+      // Optional: disable context menu, selection and copy (remove if undesired)
+      ["contextmenu", "selectstart", "copy"].forEach((ev) =>
+        document.addEventListener(ev, (e) => e.preventDefault())
       );
     });
   </script>
