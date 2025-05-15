@@ -9,15 +9,15 @@ const ASSETS = [
   '/icons/favicon-32x32.png',
   '/icons/favicon-16x16.png',
   '/icons/mstile-150x150.png',
-  '/images/logo.webp',         // WebP olarak güncelledim
-  '/images/og-image.webp',
-  '/images/telegram.webp',
-  '/images/line.webp',
+  '/images/logo.png',
+  '/images/og-image.jpg',
+  '/images/telegram.png',
+  '/images/line.png',
   '/videos/shortfilm.mp4',
   '/videos/captions.vtt'
 ];
 
-// Install event: öncelikle cache oluştur ve kaynakları ekle
+// Install event
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -26,54 +26,32 @@ self.addEventListener('install', event => {
   );
 });
 
-// Activate event: eski cache'leri temizle
+// Activate event
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(
-        keys.filter(key => key !== CACHE_NAME)
-            .map(key => caches.delete(key))
-      )
-    ).then(() => self.clients.claim())
+    caches.keys().then(keys => {
+      return Promise.all(
+        keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
+      );
+    }).then(() => self.clients.claim())
   );
 });
 
-// Fetch event: cache'den cevap ver veya ağdan çek ve cache'e ekle (API istekleri hariç)
+// Fetch event
 self.addEventListener('fetch', event => {
-  const request = event.request;
-
-  // API isteklerini cachelemiyoruz
-  if (request.url.includes('/api/')) {
-    event.respondWith(fetch(request).catch(() => {
-      // API hata durumunda uygun fallback yapılabilir
-      return new Response(JSON.stringify({ error: 'Offline or API error' }), {
-        status: 503,
-        headers: { 'Content-Type': 'application/json' }
-      });
-    }));
-    return;
-  }
-
   event.respondWith(
-    caches.match(request).then(cachedResponse => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-
-      return fetch(request).then(networkResponse => {
-        // Başarılı yanıtları cache'e ekle
-        if (!networkResponse || !networkResponse.ok) {
-          return networkResponse;
+    caches.match(event.request).then(cachedResponse => {
+      return cachedResponse || fetch(event.request).then(response => {
+        if (event.request.url.includes('/api/')) {
+          return response;
         }
-
         return caches.open(CACHE_NAME).then(cache => {
-          cache.put(request, networkResponse.clone());
-          return networkResponse;
+          cache.put(event.request, response.clone());
+          return response;
         });
       });
     }).catch(() => {
-      // Offline durumunda HTML isteği için fallback
-      if (request.headers.get('accept')?.includes('text/html')) {
+      if (event.request.headers.get('Accept').includes('text/html')) {
         return caches.match('/');
       }
     })
