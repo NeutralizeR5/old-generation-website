@@ -1,274 +1,331 @@
-/* styles.css - Kritik Olmayan Stiller */
+:root {
+  --bg-dark: url('https://i.hizliresim.com/f7vsoke.jpg') center/cover fixed no-repeat;
+  --bg-light: #f4f4f4;
+  --overlay-dark: rgba(0,0,0,0.4);
+  --overlay-light: rgba(255,255,255,0.9);
+  --primary: #ff3333;
+  --text-dark: #fff;
+  --text-light: #111;
+  --radius: 8px;
+}
 
-/*
-  NOT: Bu dosyada kalan stiller, HTML içine gömülen kritik stillerden SONRA yüklenir.
-  :root değişkenleri, temel resetler, ana gövde, navigasyon ve header stilleri
-  kritik CSS olarak HTML içine alınmıştır.
-*/
+*,*::before,*::after { 
+  box-sizing:border-box; 
+  margin:0; 
+  padding:0; 
+}
 
-/* Ana İçerik Bölümleri (Sections) */
-main section {
-  background: var(--overlay-dark); /* Kritik CSS'teki :root değişkenlerini kullanır */
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+html { 
+  scroll-behavior: smooth; 
+}
+
+body {
+  min-height:100vh;
+  background:var(--bg-dark);
+  color:var(--text-dark);
+  font-family:'Oswald',sans-serif;
+  user-select:none;
+  transition: background .3s, color .3s;
+  display:flex; 
+  flex-direction:column;
+}
+
+body.light {
+  background:var(--bg-light);
+  color:var(--text-light);
+}
+
+.skip-link {
+  position:absolute; 
+  top:-40px; 
+  left:0;
+  background:#000; 
+  color:#fff;
+  padding:8px 16px; 
+  z-index:100;
+  text-decoration:none; 
+  transition:top .3s;
+}
+
+.skip-link:focus { 
+  top:0; 
+}
+
+/* Menü stillerini güncellendi - sayfanın en üstünde */
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(34, 34, 34, 0.9);
+  padding: 15px 0;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  padding: 8px 15px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a::before, nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+nav a::before {
+  top: 0;
+  left: 0;
+}
+
+nav a::after {
+  bottom: 0;
+  right: 0;
+}
+
+nav a:hover::before, nav a:hover::after,
+nav a.active::before, nav a.active::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+.wrapper {
+  flex: 1;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  display: flex; 
+  flex-direction: column;
+}
+
+header {
+  background: var(--overlay-dark);
+  backdrop-filter: blur(4px);
   border-radius: var(--radius);
-  margin: 20px 0; /* Üst ve alt boşluklar ayarlandı */
-  padding: clamp(20px, 4vw, 25px); /* Responsive padding */
+  text-align: center;
+  padding: 30px;
   transition: background .3s;
 }
 
-body.light main section {
-  background: var(--overlay-light);
+body.light header { 
+  background: var(--overlay-light); 
+}
+
+#logo {
+  margin-top: 20px; 
+  text-align: center;
+}
+
+#logo img {
+  width: 140px;
+  filter: drop-shadow(0 0 8px var(--primary));
+}
+
+header h1 {
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  color: var(--primary);
+  margin: .5em 0;
+}
+
+header p { 
+  font-size: 1.1rem; 
+  opacity: .9; 
+}
+
+.language-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.language-buttons button, .theme-button {
+  background: rgba(255,51,51,0.2);
+  color: inherit;
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.language-buttons button:hover,
+.theme-button:hover {
+  background: rgba(255,51,51,0.4);
+}
+
+main section {
+  background: var(--overlay-dark);
+  backdrop-filter: blur(3px);
+  border-radius: var(--radius);
+  margin: 30px 0; 
+  padding: 25px;
+  transition: background .3s;
+}
+
+body.light main section { 
+  background: var(--overlay-light); 
 }
 
 section h2 {
-  text-align: center;
-  font-size: clamp(1.5rem, 3.5vw, 1.8rem); /* Responsive font boyutu */
-  color: var(--primary);
-  margin-bottom: 15px; /* Alt boşluk ayarlandı */
+  text-align: center; 
+  font-size: 1.8rem;
+  color: var(--primary); 
+  margin-bottom: 12px;
 }
 
-section p {
-  font-size: clamp(0.9rem, 2vw, 1rem); /* Responsive font boyutu */
-  line-height: 1.6;
-  text-align: left;
-  margin-bottom: 10px; /* Paragraflar arası boşluk */
-}
-section p:last-child {
-    margin-bottom: 0;
+section p { 
+  font-size: 1rem; 
+  line-height: 1.6; 
+  text-align: left; 
 }
 
-/* Kısa Film Bölümü */
 #shortfilm video {
-  /* HTML'e inline stil olarak eklenenler burada daha merkezi yönetilebilir
-     veya HTML'deki inline stiller yeterliyse bu blok kaldırılabilir/boş bırakılabilir.
-     Önceki HTML'de inline stil vardı, burada onu genişletebiliriz. */
-  width: 100%; /* Genişlik %100 */
-  max-width: 100%; /* Taşmayı önle */
-  height: auto; /* Oranı koru */
+  width: 100%; 
   border-radius: var(--radius);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* Daha belirgin gölge */
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
   margin-top: 15px;
-  display: block; /* Altında boşluk olmasını engellemek için */
 }
 
-/* İletişim Formu */
 #contact label {
-  display: block;
-  font-weight: 500; /* Kalınlık ayarlandı */
-  margin: 12px 0 6px; /* Boşluklar ayarlandı */
-  font-size: clamp(0.9rem, 2vw, 1rem);
+  display: block; 
+  font-weight: bold; 
+  margin: 8px 0 4px;
 }
 
-#contact input[type="text"],
-#contact input[type="email"],
+#contact input,
 #contact textarea {
-  width: 100%;
-  padding: 12px; /* Padding artırıldı */
-  margin-bottom: 15px; /* Boşluk artırıldı */
-  border: 1px solid rgba(128, 128, 128, 0.3); /* Hafif bir border eklendi */
-  background-color: rgba(255, 255, 255, 0.05); /* Koyu tema için hafif arkaplan */
-  color: var(--text-dark); /* Metin rengi */
-  border-radius: 5px;
-  font-size: clamp(0.9rem, 2vw, 1rem);
-  font-family: 'Oswald', sans-serif;
-  transition: background-color 0.3s, border-color 0.3s;
-}
-body.light #contact input[type="text"],
-body.light #contact input[type="email"],
-body.light #contact textarea {
-  background-color: rgba(0, 0, 0, 0.03);
-  color: var(--text-light);
-  border-color: rgba(0, 0, 0, 0.1);
+  width: 100%; 
+  padding: 10px; 
+  margin-bottom: 12px;
+  border: none; 
+  border-radius: 5px; 
+  font-size: 1rem;
 }
 
-#contact input[type="text"]:focus,
-#contact input[type="email"]:focus,
-#contact textarea:focus {
-  outline: none;
-  border-color: var(--primary);
-  background-color: rgba(255, 51, 51, 0.05); /* Odaklanınca hafif renk */
-}
-body.light #contact input[type="text"]:focus,
-body.light #contact input[type="email"]:focus,
-body.light #contact textarea:focus {
-    background-color: rgba(255, 51, 51, 0.05);
+.honeypot { 
+  display: none!important; 
 }
 
-
-.honeypot { /* Bu kural zaten HTML'de inline olarak da var, CSS'te olması daha iyi */
-  display: none !important;
-}
-
-#contact button[type="submit"] { /* Seçici daha spesifik hale getirildi */
-  padding: 12px 24px; /* Padding artırıldı */
+#contact button {
+  padding: 10px 20px; 
   background: var(--primary);
-  color: #fff;
-  border: none;
+  color: #fff; 
+  border: none; 
   border-radius: 5px;
-  cursor: pointer;
-  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
-  font-weight: 500;
-  transition: background-color 0.3s, transform 0.2s;
-  display: block; /* Tam genişlikte olması için veya margin: auto ile ortalamak için */
-  margin: 10px auto 0 auto; /* Üst boşluk ve ortalama */
+  cursor: pointer; 
+  font-size: 1rem;
+  transition: background 0.3s;
 }
 
-#contact button[type="submit"]:hover {
-  background: #cc0000; /* var(--primary)'nin daha koyu bir tonu */
-  transform: translateY(-2px); /* Hafif yukarı kalkma efekti */
+#contact button:hover { 
+  background: #cc0000; 
 }
 
-/* Footer */
 footer {
   background: var(--overlay-dark);
   backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  text-align: center;
-  padding: clamp(15px, 3vw, 20px); /* Responsive padding */
-  margin-top: auto; /* .wrapper flex:1 ile footer'ı aşağıda tutar */
+  text-align: center; 
+  padding: 20px; 
+  margin-top: auto;
   transition: background .3s;
-  border-radius: var(--radius); /* Köşe yuvarlaklığı eklendi */
+  border-radius: var(--radius);
 }
 
-body.light footer {
-  background: var(--overlay-light);
+body.light footer { 
+  background: var(--overlay-light); 
 }
 
-footer p {
-  font-size: clamp(0.8rem, 1.8vw, 0.9rem); /* Responsive font boyutu */
-  margin: 5px 0; /* Boşluk ayarlandı */
-  text-align: center;
-  line-height: 1.5;
+footer p { 
+  font-size: .9rem; 
+  margin: 4px 0; 
+  text-align: center; 
 }
 
-/* Sosyal Medya Butonları */
 .social-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px; /* İkonlar arası boşluk artırıldı */
-  margin-top: 15px; /* Üst boşluk artırıldı */
+  display: flex; 
+  justify-content: center; 
+  gap: 15px;
+  margin-top: 12px;
 }
 
 .social-buttons img {
-  width: 30px; /* Boyut ayarlandı */
-  height: 30px;
+  width: 32px; 
+  height: 32px; 
   border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25); /* Gölge ayarlandı */
-  transition: transform .2s ease-out, box-shadow .2s ease-out;
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+  transition: transform .2s;
 }
 
-.social-buttons img:hover {
-  transform: scale(1.15) translateY(-2px); /* Efekt geliştirildi */
-  box-shadow: 0 4px 10px rgba(var(--primary), 0.4); /* Ana renkle gölge */
+.social-buttons img:hover { 
+  transform: scale(1.1); 
 }
 
-/* İstatistik Kartları (Eğer varsa ve kritik CSS'e alınmadıysa) */
-#stats-data .stats-grid { /* #stats-data içindeki grid için daha spesifik */
+.stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Min boyut ayarlandı */
-  gap: 20px; /* Boşluk artırıldı */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
   margin-top: 20px;
 }
 
-#stats-data .stat-card {
-  background: rgba(0,0,0,0.25); /* Arkaplan opaklığı ayarlandı */
-  padding: 20px; /* Padding artırıldı */
+.stat-card {
+  background: rgba(0,0,0,0.2);
+  padding: 15px;
   border-radius: var(--radius);
   text-align: center;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2); /* Gölge eklendi */
-  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
-}
-#stats-data .stat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
-
-body.light #stats-data .stat-card {
-  background: rgba(255,255,255,0.6); /* Açık tema için arkaplan */
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-}
-body.light #stats-data .stat-card:hover {
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-
-#stats-data .stat-card h3 {
+.stat-card h3 {
   color: var(--primary);
-  margin-bottom: 8px; /* Alt boşluk ayarlandı */
-  font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font boyutu */
-}
-#stats-data .stat-card p { /* İstatistik değeri için */
-    font-size: clamp(1.1rem, 3vw, 1.4rem);
-    font-weight: 700; /* Kalın */
+  margin-bottom: 5px;
 }
 
+body.light .stat-card {
+  background: rgba(255,255,255,0.2);
+}
 
-/* backdrop-filter desteklenmiyorsa (main section ve footer için) */
-@supports not ((-webkit-backdrop-filter: blur(3px)) or (backdrop-filter: blur(3px))) {
-  main section, footer {
-    background: rgba(10,10,10,0.8) !important; /* Koyu tema için daha belirgin arkaplan */
+@supports not (backdrop-filter: blur(3px)) {
+  header, main section, footer {
+    background: rgba(0,0,0,0.5) !important;
   }
-  body.light main section,
+  body.light header,   
+  body.light main section,   
   body.light footer {
-    background: rgba(235,235,235,0.95) !important; /* Açık tema için daha belirgin arkaplan */
+    background: rgba(255,255,255,0.9) !important;
   }
 }
 
-/* Mobil Cihazlar için Ek Ayarlamalar (Kritik olmayanlar) */
 @media(max-width: 600px) {
-  main section {
-    margin: 15px 0;
-    padding: 15px;
+  header h1 { 
+    font-size: 2.2rem; 
   }
-  section h2 {
-    font-size: clamp(1.3rem, 3vw, 1.6rem);
-    margin-bottom: 10px;
+  
+  #logo img { 
+    width: 120px; 
   }
-  section p {
-    font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+  
+  .social-buttons img { 
+    width: 28px; 
+    height: 28px; 
   }
-
-  #contact label {
-    font-size: clamp(0.85rem, 1.8vw, 0.95rem);
-    margin: 10px 0 5px;
+  
+  nav { 
+    flex-wrap: wrap;
+    padding: 10px 0;
   }
-  #contact input[type="text"],
-  #contact input[type="email"],
-  #contact textarea {
-    padding: 10px;
-    margin-bottom: 12px;
-    font-size: clamp(0.85rem, 1.8vw, 0.95rem);
-  }
-  #contact button[type="submit"] {
-    padding: 10px 20px;
-    font-size: clamp(0.9rem, 2vw, 1rem);
-  }
-
-  footer p {
-    font-size: clamp(0.75rem, 1.6vw, 0.85rem);
-  }
-  .social-buttons {
-    gap: 15px;
-    margin-top: 10px;
-  }
-  .social-buttons img {
-    width: 28px;
-    height: 28px;
-  }
-
-  #stats-data .stats-grid {
-    grid-template-columns: 1fr; /* Tek sütun */
-    gap: 15px;
-  }
-  #stats-data .stat-card {
-    padding: 15px;
-  }
-  #stats-data .stat-card h3 {
-    font-size: clamp(0.9rem, 2.2vw, 1.1rem);
-  }
-  #stats-data .stat-card p {
-    font-size: clamp(1rem, 2.8vw, 1.3rem);
+  
+  nav a { 
+    margin: 5px;
+    padding: 6px 10px;
   }
 }
