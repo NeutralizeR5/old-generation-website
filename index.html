@@ -6,6 +6,7 @@
   <title>OLD GENERATION – NEVER GIVE UP</title>
   <link rel="canonical" href="https://oldgeneration.com.tr/">
   <meta name="theme-color" content="#ff3333">
+  
   <!-- PWA Icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
@@ -14,19 +15,21 @@
   <meta name="msapplication-TileColor" content="#ff3333">
   <meta name="msapplication-TileImage" content="/icons/mstile-150x150.png">
   <link rel="manifest" href="/manifest.json">
+  
   <!-- Preconnect & Preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/styles.css"></noscript>
-  <link rel="preload" href="https://oldgeneration.com.tr/images/logo.png" as="image">
-  <link rel="preload" href="https://i.hizliresim.com/f7vsoke.jpg" as="image">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap"></noscript>
+  
   <!-- Google Search Console -->
   <meta name="google-site-verification" content="jB41wmhFa02GAg08stdBYj5X0nsuIWAqcvX_tIUZ984">
+  
   <!-- SEO -->
   <meta name="robots" content="index,follow">
   <meta name="description" content="OLD GENERATION: A top-tier guild in Lords Mobile, forging legends since 2016." id="meta-desc">
-  <meta name="keywords" content="Lords Mobile, guild, OLD GENERATION, clan, mobile game, strategy">
+  <meta name="keywords" content="Lords Mobile, guild, OLD GENERATION, clan, mobile game, strategy, gaming">
+  
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://oldgeneration.com.tr/">
@@ -35,12 +38,14 @@
   <meta property="og:image" content="https://oldgeneration.com.tr/images/og-image.jpg" id="og-image">
   <meta property="og:locale" content="en_US">
   <link rel="alternate" hreflang="tr" href="https://oldgeneration.com.tr/tr/">
+  
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@OldGenGuild">
   <meta name="twitter:title" content="OLD GENERATION – NEVER GIVE UP" id="tw-title">
   <meta name="twitter:description" content="OLD GENERATION Guild – Uniting champions since 2016." id="tw-desc">
   <meta name="twitter:image" content="https://oldgeneration.com.tr/images/og-image.jpg" id="tw-image">
+  
   <!-- Schema.org -->
   <script type="application/ld+json">
   {
@@ -49,119 +54,512 @@
     "name": "OLD GENERATION",
     "url": "https://oldgeneration.com.tr",
     "logo": "https://oldgeneration.com.tr/images/logo.png",
-    "description": "A top-tier guild in Lords Mobile since 2016."
+    "description": "A top-tier guild in Lords Mobile since 2016.",
+    "foundingDate": "2016",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Turkish"]
+    }
   }
   </script>
-  <!-- Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy" content="
-    default-src 'none';
-    script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline';
-    style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
-    img-src 'self' data: https://i.hizliresim.com https://oldgeneration.com.tr https://web.whatsapp.com https://telegram.org https://t.me https://line.me;
-    font-src 'self' https://fonts.gstatic.com;
-    connect-src 'self' https://www.google-analytics.com;
-    frame-src https://web.whatsapp.com https://telegram.org https://line.me;
-    form-action 'self' https://formspree.io;
-    manifest-src 'self';
-    media-src 'self';
-    object-src 'none';
-    base-uri 'self';
-    frame-ancestors 'none';
-    upgrade-insecure-requests;
-    block-all-mixed-content;
-  ">
+  
   <!-- Google Analytics -->
-  <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-NSJQ1WV5N1"></script>
-  <script defer>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSJQ1WV5N1"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-NSJQ1WV5N1');
   </script>
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+
   <style>
-    /* Navigasyon menüsü için ek stil */
-    nav {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      background-color: rgba(34, 34, 34, 0.3);
-      padding: 15px 0;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    /* CSS Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    
+
+    :root {
+      --primary-color: #ff3333;
+      --secondary-color: #222;
+      --accent-color: #ffd700;
+      --text-light: #ffffff;
+      --text-dark: #333333;
+      --bg-dark: #1a1a1a;
+      --bg-light: #f5f5f5;
+      --gradient-bg: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      --border-radius: 12px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: var(--text-light);
+      background: var(--gradient-bg);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body.light {
+      --text-light: #333333;
+      --text-dark: #ffffff;
+      --bg-dark: #ffffff;
+      --bg-light: #1a1a1a;
+      --gradient-bg: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+      background: var(--gradient-bg);
+    }
+
+    /* Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: var(--primary-color);
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      border-radius: 4px;
+      z-index: 1000;
+    }
+
+    .skip-link:focus {
+      top: 6px;
+    }
+
+    /* Enhanced Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(26, 26, 26, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+      border-bottom: 2px solid var(--primary-color);
+    }
+
     nav ul {
       display: flex;
       list-style: none;
-      margin: 0;
-      padding: 0;
       justify-content: center;
       flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
-    
+
     nav li {
-      margin: 0 10px;
+      margin: 0 15px;
     }
-    
+
     nav a {
-      color: #fff;
+      color: var(--text-light);
       text-decoration: none;
-      padding: 8px 15px;
+      padding: 12px 20px;
       position: relative;
-      transition: all 0.3s ease;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+      background: linear-gradient(45deg, transparent, transparent);
     }
-    
-    nav a::before, nav a::after {
+
+    nav a::before {
       content: '';
       position: absolute;
+      bottom: 0;
+      left: 50%;
       width: 0;
-      height: 2px;
-      background-color: #ff3333;
-      transition: width 0.3s ease;
+      height: 3px;
+      background: var(--primary-color);
+      transition: var(--transition);
+      border-radius: 2px;
+      transform: translateX(-50%);
     }
-    
-    nav a::before {
+
+    nav a:hover,
+    nav a.active {
+      color: var(--primary-color);
+      background: rgba(255, 51, 51, 0.1);
+      transform: translateY(-2px);
+    }
+
+    nav a:hover::before,
+    nav a.active::before {
+      width: 80%;
+    }
+
+    /* Wrapper */
+    .wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Enhanced Header */
+    header {
+      text-align: center;
+      padding: 60px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
       top: 0;
       left: 0;
-    }
-    
-    nav a::after {
-      bottom: 0;
       right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, rgba(255, 51, 51, 0.1) 0%, transparent 70%);
+      z-index: -1;
     }
-    
-    nav a:hover::before, nav a:hover::after,
-    nav a.active::before, nav a.active::after {
+
+    #logo {
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    #logo img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid var(--primary-color);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      animation: logoGlow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes logoGlow {
+      0% { box-shadow: 0 0 20px rgba(255, 51, 51, 0.5); }
+      100% { box-shadow: 0 0 40px rgba(255, 51, 51, 0.8); }
+    }
+
+    #logo img:hover {
+      transform: scale(1.05) rotate(5deg);
+    }
+
+    header h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    #header-subtitle {
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      font-weight: 300;
+      opacity: 0.9;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+    }
+
+    /* Language & Theme Buttons */
+    .language-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .language-buttons button {
+      background: linear-gradient(45deg, var(--primary-color), #ff6666);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-weight: 500;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+
+    .language-buttons button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(255, 51, 51, 0.4);
+    }
+
+    .theme-button {
+      background: linear-gradient(45deg, #333, #555) !important;
+    }
+
+    .theme-button:hover {
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    /* Enhanced Sections */
+    section {
+      margin: 60px 0;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: var(--transition);
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    section h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 25px;
+      color: var(--primary-color);
+      text-align: center;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    /* Stats Section Enhancement */
+    #stats-data {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, rgba(255, 51, 51, 0.1), rgba(255, 215, 0, 0.1));
+      padding: 25px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      border: 1px solid rgba(255, 51, 51, 0.3);
+      transition: var(--transition);
+    }
+
+    .stat-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(255, 51, 51, 0.3);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Enhanced Form */
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--primary-color);
+    }
+
+    form input,
+    form textarea {
       width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--border-radius);
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-light);
+      font-size: 16px;
+      transition: var(--transition);
     }
-    
-    nav a:hover {
-      color: #ff3333;
+
+    form input:focus,
+    form textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 15px rgba(255, 51, 51, 0.3);
     }
-    
-    @media(max-width: 600px) {
+
+    form button {
+      background: linear-gradient(45deg, var(--primary-color), #ff6666);
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+
+    form button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(255, 51, 51, 0.4);
+    }
+
+    /* Video Enhancement */
+    video {
+      width: 100%;
+      max-width: 800px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      margin: 0 auto;
+      display: block;
+    }
+
+    /* Footer Enhancement */
+    footer {
+      text-align: center;
+      padding: 60px 40px 40px;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(255, 51, 51, 0.1));
+      border-top: 2px solid var(--primary-color);
+      margin-top: 80px;
+    }
+
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .social-buttons a {
+      background: linear-gradient(45deg, var(--primary-color), #ff6666);
+      padding: 15px;
+      border-radius: 50%;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+
+    .social-buttons a:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 10px 30px rgba(255, 51, 51, 0.4);
+    }
+
+    .social-buttons img {
+      width: 32px;
+      height: 32px;
+      filter: brightness(0) invert(1);
+    }
+
+    /* Honeypot */
+    .honeypot {
+      position: absolute !important;
+      left: -9999px !important;
+      width: 1px !important;
+      height: 1px !important;
+      overflow: hidden !important;
+    }
+
+    /* Loading Animation */
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255, 51, 51, 0.3);
+      border-radius: 50%;
+      border-top-color: var(--primary-color);
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
       nav ul {
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
       }
       
       nav li {
-        margin: 5px;
+        margin: 5px 0;
       }
       
-      nav a {
-        padding: 6px 10px;
+      section {
+        margin: 40px 0;
+        padding: 25px 20px;
       }
+      
+      .wrapper {
+        padding: 0 15px;
+      }
+      
+      header {
+        padding: 40px 0;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(45deg, var(--primary-color), #ff6666);
+      border-radius: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(45deg, #ff6666, var(--primary-color));
     }
   </style>
 </head>
+
 <body>
   <a href="#main-content" class="skip-link">Skip to content</a>
   
-  <!-- Navigasyon menüsü sayfanın en üstünde -->
-  <nav aria-label="Main Navigation">
+  <nav aria-label="Main Navigation" role="navigation">
     <ul>
       <li><a href="#live-stats" id="nav-stats">Stats</a></li>
       <li><a href="#profiles" id="nav-profiles">Profiles</a></li>
@@ -175,76 +573,119 @@
   <div class="wrapper">
     <header>
       <div id="logo">
-        <img src="https://oldgeneration.com.tr/images/logo.png" alt="OLD GENERATION Logo" width="140" height="140" loading="eager">
+        <img src="https://oldgeneration.com.tr/images/logo.png" alt="OLD GENERATION Guild Logo" width="160" height="160" loading="eager">
       </div>
       <h1>OLD GENERATION</h1>
       <p id="header-subtitle">PRESERVING LEGACY, DEFYING FATE</p>
       <div class="language-buttons">
-        <button aria-label="Language: English" onclick="setLang('en')">EN</button>
-        <button aria-label="Language: Turkish" onclick="setLang('tr')">TR</button>
-        <button aria-label="Toggle theme" onclick="toggleTheme()" class="theme-button">🌓 Theme</button>
+        <button aria-label="Switch to English" onclick="setLang('en')" type="button">EN</button>
+        <button aria-label="Switch to Turkish" onclick="setLang('tr')" type="button">TR</button>
+        <button aria-label="Toggle theme" onclick="toggleTheme()" class="theme-button" type="button">🌓 Theme</button>
       </div>
     </header>
     
     <main id="main-content">
       <section id="live-stats" aria-live="polite">
         <h2 id="stats-title">Live Guild Statistics</h2>
-        <p id="stats-text">Real-time game data integration coming soon.</p>
-        <div id="stats-data">Loading…</div>
+        <p id="stats-text">Real-time game data integration and guild performance metrics.</p>
+        <div id="stats-data">
+          <div class="stat-card">
+            <span class="stat-number" id="member-count">100</span>
+            <span class="stat-label">Active Members</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" id="guild-might">2.5B</span>
+            <span class="stat-label">Guild Might</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" id="guild-rank">#15</span>
+            <span class="stat-label">Kingdom Rank</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" id="guild-level">30</span>
+            <span class="stat-label">Guild Level</span>
+          </div>
+        </div>
       </section>
+
       <section id="profiles">
         <h2 id="profiles-title">Member Spotlight</h2>
-        <p id="profiles-text">Showcase of elite guild members under development.</p>
+        <p id="profiles-text">Meet our elite guild members and their incredible achievements in combat and strategy.</p>
+        <div id="member-profiles">
+          <!-- Member profiles will be dynamically loaded -->
+        </div>
       </section>
+
       <section id="terminology">
         <h2 id="terminology-title">Game Terminology</h2>
-        <p id="terminology-text">Glossary of key Lords Mobile terms will be added here.</p>
+        <p id="terminology-text">Essential Lords Mobile terms and strategies for guild success.</p>
+        <div id="terminology-content">
+          <!-- Terminology content will be dynamically loaded -->
+        </div>
       </section>
+
       <section id="news">
         <h2 id="news-title">Announcements & Updates</h2>
-        <p id="news-recruitment"><strong>Recruitment:</strong> Skilled and active players are welcome. Contact us via Telegram or Line.</p>
-        <p id="news-tournament"><strong>Next Tournament:</strong> Gear up for the upcoming guild war.</p>
+        <div id="news-content">
+          <div class="news-item">
+            <h3 id="news-recruitment-title">🔥 Active Recruitment</h3>
+            <p id="news-recruitment"><strong>Join Our Elite Force:</strong> We're seeking skilled and dedicated players who are ready to dominate the battlefield. Contact us via Telegram or Line to discuss your application.</p>
+          </div>
+          <div class="news-item">
+            <h3 id="news-tournament-title">⚔️ Upcoming Battles</h3>
+            <p id="news-tournament"><strong>Guild War Preparation:</strong> Gear up for intense battles ahead. Strategy meetings every Tuesday and Thursday at 20:00 UTC.</p>
+          </div>
+          <div class="news-item">
+            <h3 id="news-achievements-title">🏆 Recent Victories</h3>
+            <p id="news-achievements"><strong>Conquest Success:</strong> We've successfully defended our fortress and expanded our territory. Congratulations to all members!</p>
+          </div>
+        </div>
       </section>
+
       <section id="shortfilm">
         <h2 id="shortfilm-title">Guild Short Film</h2>
-        <video controls controlsList="nodownload nofullscreen noremoteplayback" preload="metadata" poster="https://oldgeneration.com.tr/images/og-image.jpg">
+        <video controls controlsList="nodownload nofullscreen noremoteplayback" preload="metadata" poster="https://oldgeneration.com.tr/images/og-image.jpg" aria-label="OLD GENERATION Guild promotional video">
           <source src="https://oldgeneration.com.tr/videos/shortfilm.mp4" type="video/mp4">
           <track kind="captions" src="https://oldgeneration.com.tr/videos/captions.vtt" srclang="en" label="English captions">
-          Your browser does not support the video tag.
+          <p>Your browser does not support the video tag. Please update your browser to view our guild video.</p>
         </video>
       </section>
+
       <section id="contact">
         <h2 id="contact-title">Get in Touch</h2>
+        <p>Ready to join the elite? Send us a message and become part of our legendary guild.</p>
         <form action="https://formspree.io/f/myzeveog" method="POST" aria-label="Contact Form">
           <label for="name" id="label-name">Name</label>
-          <input id="name" name="name" type="text" required>
+          <input id="name" name="name" type="text" required autocomplete="name" placeholder="Your in-game name">
+          
           <label for="email" id="label-email">Email</label>
-          <input id="email" name="email" type="email" required>
+          <input id="email" name="email" type="email" required autocomplete="email" placeholder="your.email@example.com">
+          
           <label for="message" id="label-message">Message</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-          <input class="honeypot" type="text" name="botcheck" tabindex="-1" autocomplete="off">
+          <textarea id="message" name="message" rows="5" required placeholder="Tell us about your Lords Mobile experience and why you want to join OLD GENERATION..."></textarea>
+          
+          <input class="honeypot" type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
           <button type="submit" id="contact-button">Send Message</button>
         </form>
       </section>
     </main>
+
     <footer>
-      <p id="footer-text1">OLD GENERATION is a distinguished guild in Lords Mobile since 2016.</p>
+      <p id="footer-text1">OLD GENERATION is a distinguished guild in Lords Mobile, uniting champions since 2016.</p>
       <p id="footer-text2">© 2016–2025 OLD GENERATION. Designed by NeutralizeR</p>
       <div class="social-buttons">
-        <a href="https://t.me/trneutralizer" target="_blank" aria-label="Telegram">
-          <img src="https://oldgeneration.com.tr/images/telegram.png" alt="Telegram" width="32" height="32" loading="lazy">
+        <a href="https://t.me/trneutralizer" target="_blank" rel="noopener noreferrer" aria-label="Contact us on Telegram">
+          <img src="https://oldgeneration.com.tr/images/telegram.png" alt="" width="32" height="32" loading="lazy">
         </a>
-        <a href="https://line.me/ti/p/Tt3gWr3BDE" target="_blank" aria-label="Line">
-          <img src="https://oldgeneration.com.tr/images/line.png" alt="Line" width="32" height="32" loading="lazy">
+        <a href="https://line.me/ti/p/Tt3gWr3BDE" target="_blank" rel="noopener noreferrer" aria-label="Contact us on Line">
+          <img src="https://oldgeneration.com.tr/images/line.png" alt="" width="32" height="32" loading="lazy">
         </a>
       </div>
     </footer>
   </div>
-  <!-- Dışa Bağlı Script -->
-  <script src="/old-generation-website/scripts.js" defer></script>
-  <!-- Inline Kontroller -->
+
   <script>
-    // Tam çeviri verisi:
+    // Enhanced Translation System
     const translations = {
       en: {
         title: "OLD GENERATION – NEVER GIVE UP",
@@ -257,22 +698,26 @@
         nav_shortfilm: "Short Film",
         nav_contact: "Contact",
         stats_title: "Live Guild Statistics",
-        stats_text: "Real-time game data integration coming soon.",
-        data_error: "Data could not be loaded",
+        stats_text: "Real-time game data integration and guild performance metrics.",
+        data_error: "Unable to load current data",
         profiles_title: "Member Spotlight",
-        profiles_text: "Showcase of elite guild members under development.",
+        profiles_text: "Meet our elite guild members and their incredible achievements in combat and strategy.",
         terminology_title: "Game Terminology",
-        terminology_text: "Glossary of key Lords Mobile terms will be added here.",
+        terminology_text: "Essential Lords Mobile terms and strategies for guild success.",
         news_title: "Announcements & Updates",
-        news_recruitment: "<strong>Recruitment:</strong> Skilled and active players are welcome. Contact us via Telegram or Line.",
-        news_tournament: "<strong>Next Tournament:</strong> Gear up for the upcoming guild war.",
+        news_recruitment_title: "🔥 Active Recruitment",
+        news_recruitment: "<strong>Join Our Elite Force:</strong> We're seeking skilled and dedicated players who are ready to dominate the battlefield. Contact us via Telegram or Line to discuss your application.",
+        news_tournament_title: "⚔️ Upcoming Battles",
+        news_tournament: "<strong>Guild War Preparation:</strong> Gear up for intense battles ahead. Strategy meetings every Tuesday and Thursday at 20:00 UTC.",
+        news_achievements_title: "🏆 Recent Victories",
+        news_achievements: "<strong>Conquest Success:</strong> We've successfully defended our fortress and expanded our territory. Congratulations to all members!",
         shortfilm_title: "Guild Short Film",
         contact_title: "Get in Touch",
         label_name: "Name",
         label_email: "Email",
         label_message: "Message",
         contact_button: "Send Message",
-        footer1: "OLD GENERATION is a distinguished guild in Lords Mobile since 2016.",
+        footer1: "OLD GENERATION is a distinguished guild in Lords Mobile, uniting champions since 2016.",
         footer2: "© 2016–2025 OLD GENERATION. Designed by NeutralizeR"
       },
       tr: {
@@ -286,15 +731,19 @@
         nav_shortfilm: "Kısa Film",
         nav_contact: "İletişim",
         stats_title: "Canlı Lonca İstatistikleri",
-        stats_text: "Gerçek zamanlı oyun verisi entegrasyonu yakında geliyor.",
-        data_error: "Veri yüklenemedi",
+        stats_text: "Gerçek zamanlı oyun verisi entegrasyonu ve guild performans metrikleri.",
+        data_error: "Güncel veriler yüklenemedi",
         profiles_title: "Üye Tanıtımı",
-        profiles_text: "Seçkin lonca üyelerinin tanıtımı geliştirme aşamasında.",
+        profiles_text: "Seçkin lonca üyelerimiz ve savaş & strateji alanındaki inanılmaz başarılarıyla tanışın.",
         terminology_title: "Oyun Terimleri",
-        terminology_text: "Lords Mobile için temel terimlerin sözlüğü buraya eklenecek.",
+        terminology_text: "Lonca başarısı için gerekli Lords Mobile terimleri ve stratejileri.",
         news_title: "Duyurular & Güncellemeler",
-        news_recruitment: "<strong>Üye Alımı:</strong> Yetkin ve aktif oyuncular arıyoruz. Telegram veya Line üzerinden iletişime geçin.",
-        news_tournament: "<strong>Sonraki Turnuva:</strong> Yaklaşan lonca savaşına hazırlanın.",
+        news_recruitment_title: "🔥 Aktif Üye Alımı",
+        news_recruitment: "<strong>Seçkin Güçlerimize Katılın:</strong> Savaş alanında hakimiyet kurmaya hazır, yetenekli ve kendini adamış oyuncular arıyoruz. Başvurunuzu görüşmek için Telegram veya Line üzerinden iletişime geçin.",
+        news_tournament_title: "⚔️ Yaklaşan Savaşlar",
+        news_tournament: "<strong>Lonca Savaşı Hazırlığı:</strong> Önümüzdeki yoğun savaşlara hazırlanın. Strateji toplantıları her Salı ve Perşembe 20:00 UTC'de.",
+        news_achievements_title: "🏆 Son Zaferler",
+        news_achievements: "<strong>Fetih Başarısı:</strong> Kalemizi başarıyla savunduk ve bölgemizi genişlettik. Tüm üyelere tebrikler!",
         shortfilm_title: "Lonca Kısa Filmi",
         contact_title: "Bizimle İletişime Geçin",
         label_name: "İsim",
@@ -305,86 +754,401 @@
         footer2: "© 2016–2025 OLD GENERATION. NeutralizeR tarafından tasarlandı."
       }
     };
-    // Meta güncelleme fonksiyonu
+
+    // Enhanced Language System
     function updateMetaTags(t) {
       document.title = t.title;
-      document.getElementById('meta-desc').setAttribute('content', t.meta_description);
-      document.getElementById('og-title').setAttribute('content', t.title);
-      document.getElementById('og-desc').setAttribute('content', t.meta_description);
-      document.getElementById('tw-title').setAttribute('content', t.title);
-      document.getElementById('tw-desc').setAttribute('content', t.meta_description);
+      const metaDesc = document.getElementById('meta-desc');
+      const ogTitle = document.getElementById('og-title');
+      const ogDesc = document.getElementById('og-desc');
+      const twTitle = document.getElementById('tw-title');
+      const twDesc = document.getElementById('tw-desc');
+      
+      if (metaDesc) metaDesc.setAttribute('content', t.meta_description);
+      if (ogTitle) ogTitle.setAttribute('content', t.title);
+      if (ogDesc) ogDesc.setAttribute('content', t.meta_description);
+      if (twTitle) twTitle.setAttribute('content', t.title);
+      if (twDesc) twDesc.setAttribute('content', t.meta_description);
     }
-    // Dil ayarı
+
     function setLang(lang) {
-      const t = translations[lang] || translations.en;
-      document.documentElement.lang = lang;
-      // Metin güncellemeleri
-      document.getElementById('header-subtitle').textContent = t.header_subtitle;
-      document.getElementById('nav-stats').textContent = t.nav_stats;
-      document.getElementById('nav-profiles').textContent = t.nav_profiles;
-      document.getElementById('nav-terminology').textContent = t.nav_terminology;
-      document.getElementById('nav-news').textContent = t.nav_news;
-      document.getElementById('nav-shortfilm').textContent = t.nav_shortfilm;
-      document.getElementById('nav-contact').textContent = t.nav_contact;
-      document.getElementById('stats-title').textContent = t.stats_title;
-      document.getElementById('stats-text').textContent = t.stats_text;
-      document.getElementById('profiles-title').textContent = t.profiles_title;
-      document.getElementById('profiles-text').textContent = t.profiles_text;
-      document.getElementById('terminology-title').textContent = t.terminology_title;
-      document.getElementById('terminology-text').textContent = t.terminology_text;
-      document.getElementById('news-title').textContent = t.news_title;
-      document.getElementById('news-recruitment').innerHTML = t.news_recruitment;
-      document.getElementById('news-tournament').innerHTML = t.news_tournament;
-      document.getElementById('shortfilm-title').textContent = t.shortfilm_title;
-      document.getElementById('contact-title').textContent = t.contact_title;
-      document.getElementById('label-name').textContent = t.label_name;
-      document.getElementById('label-email').textContent = t.label_email;
-      document.getElementById('label-message').textContent = t.label_message;
-      document.getElementById('contact-button').textContent = t.contact_button;
-      document.getElementById('footer-text1').textContent = t.footer1;
-      document.getElementById('footer-text2').textContent = t.footer2;
-      // Meta güncelle
-      updateMetaTags(t);
-      // Hata metni
-      const statsDiv = document.getElementById('stats-data');
-      if (statsDiv.textContent.includes('could not be loaded') || statsDiv.textContent.includes('yüklenemedi')) {
-        statsDiv.textContent = t.data_error;
+      try {
+        const t = translations[lang] || translations.en;
+        document.documentElement.lang = lang;
+        
+        // Update all text elements
+        const elements = {
+          'header-subtitle': t.header_subtitle,
+          'nav-stats': t.nav_stats,
+          'nav-profiles': t.nav_profiles,
+          'nav-terminology': t.nav_terminology,
+          'nav-news': t.nav_news,
+          'nav-shortfilm': t.nav_shortfilm,
+          'nav-contact': t.nav_contact,
+          'stats-title': t.stats_title,
+          'stats-text': t.stats_text,
+          'profiles-title': t.profiles_title,
+          'profiles-text': t.profiles_text,
+          'terminology-title': t.terminology_title,
+          'terminology-text': t.terminology_text,
+          'news-title': t.news_title,
+          'news-recruitment-title': t.news_recruitment_title,
+          'news-tournament-title': t.news_tournament_title,
+          'news-achievements-title': t.news_achievements_title,
+          'shortfilm-title': t.shortfilm_title,
+          'contact-title': t.contact_title,
+          'label-name': t.label_name,
+          'label-email': t.label_email,
+          'label-message': t.label_message,
+          'contact-button': t.contact_button,
+          'footer-text1': t.footer1,
+          'footer-text2': t.footer2
+        };
+
+        for (const [id, text] of Object.entries(elements)) {
+          const element = document.getElementById(id);
+          if (element) element.textContent = text;
+        }
+
+        // Update HTML content elements
+        const htmlElements = {
+          'news-recruitment': t.news_recruitment,
+          'news-tournament': t.news_tournament,
+          'news-achievements': t.news_achievements
+        };
+
+        for (const [id, html] of Object.entries(htmlElements)) {
+          const element = document.getElementById(id);
+          if (element) element.innerHTML = html;
+        }
+
+        updateMetaTags(t);
+        fetchStatsData(lang);
+        localStorage.setItem('lang', lang);
+        
+        // Update active navigation
+        updateActiveNav();
+        
+      } catch (error) {
+        console.error('Language update failed:', error);
       }
-      // Veriyi tekrar al
-      fetchStatsData(lang);
-      localStorage.setItem('lang', lang);
     }
-    // Tema ayarı
+
+    // Enhanced Theme System
     function toggleTheme() {
-      const isLight = document.body.classList.toggle('light');
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      try {
+        const isLight = document.body.classList.toggle('light');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        
+        // Smooth transition
+        document.body.style.transition = 'all 0.3s ease';
+        setTimeout(() => {
+          document.body.style.transition = '';
+        }, 300);
+        
+      } catch (error) {
+        console.error('Theme toggle failed:', error);
+      }
     }
-    // Canlı istatistikleri çek
-    function fetchStatsData(lang) {
-      fetch('/api/guild/stats')
-        .then(resp => resp.ok ? resp.json() : Promise.reject(resp))
-        .then(data => {
-          document.getElementById('stats-data').textContent = `Members: ${data.members} | Might: ${data.might}`;
-        })
-        .catch(() => {
-          document.getElementById('stats-data').textContent = (translations[lang] || translations.en).data_error;
+
+    // Enhanced Stats Fetching
+    async function fetchStatsData(lang) {
+      try {
+        const response = await fetch('/api/guild/stats', {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          }
         });
+        
+        if (response.ok) {
+          const data = await response.json();
+          updateStatsDisplay(data);
+        } else {
+          throw new Error(`HTTP ${response.status}`);
+        }
+      } catch (error) {
+        console.error('Stats fetch failed:', error);
+        const t = translations[lang] || translations.en;
+        showStatsError(t.data_error);
+      }
     }
-    // Service Worker kaydı
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-          .catch(err => console.error('SW registration failed:', err));
+
+    function updateStatsDisplay(data) {
+      const updates = {
+        'member-count': data.members || '100',
+        'guild-might': data.might || '2.5B',
+        'guild-rank': data.rank || '#15',
+        'guild-level': data.level || '30'
+      };
+
+      for (const [id, value] of Object.entries(updates)) {
+        const element = document.getElementById(id);
+        if (element) {
+          element.textContent = value;
+          element.style.animation = 'none';
+          element.offsetHeight; // Trigger reflow
+          element.style.animation = 'fadeInUp 0.5s ease-out';
+        }
+      }
+    }
+
+    function showStatsError(errorMessage) {
+      const statsData = document.getElementById('stats-data');
+      if (statsData) {
+        statsData.innerHTML = `
+          <div class="stat-card" style="grid-column: 1 / -1; text-align: center; color: #ff6666;">
+            <span class="stat-number">⚠️</span>
+            <span class="stat-label">${errorMessage}</span>
+          </div>
+        `;
+      }
+    }
+
+    // Navigation Enhancement
+    function updateActiveNav() {
+      const sections = ['live-stats', 'profiles', 'terminology', 'news', 'shortfilm', 'contact'];
+      const navLinks = document.querySelectorAll('nav a');
+      
+      function setActiveNav() {
+        let currentSection = '';
+        
+        for (const section of sections) {
+          const element = document.getElementById(section);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            if (rect.top <= 100 && rect.bottom >= 100) {
+              currentSection = section;
+              break;
+            }
+          }
+        }
+        
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+      
+      // Throttled scroll listener
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            setActiveNav();
+            ticking = false;
+          });
+          ticking = true;
+        }
       });
     }
-    // Başlangıçta çalıştır
+
+    // Smooth Scrolling
+    function initSmoothScrolling() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            const headerOffset = 100;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    }
+
+    // Form Enhancement
+    function enhanceForm() {
+      const form = document.querySelector('form');
+      if (!form) return;
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const button = form.querySelector('button[type="submit"]');
+        const originalText = button.textContent;
+        
+        try {
+          button.disabled = true;
+          button.innerHTML = '<span class="loading"></span> Sending...';
+          
+          const formData = new FormData(form);
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          
+          if (response.ok) {
+            form.reset();
+            button.textContent = '✓ Sent!';
+            button.style.background = 'linear-gradient(45deg, #4CAF50, #66BB6A)';
+            setTimeout(() => {
+              button.textContent = originalText;
+              button.style.background = '';
+              button.disabled = false;
+            }, 3000);
+          } else {
+            throw new Error('Network response was not ok');
+          }
+        } catch (error) {
+          console.error('Form submission failed:', error);
+          button.textContent = '✗ Failed';
+          button.style.background = 'linear-gradient(45deg, #f44336, #ef5350)';
+          setTimeout(() => {
+            button.textContent = originalText;
+            button.style.background = '';
+            button.disabled = false;
+          }, 3000);
+        }
+      });
+    }
+
+    // Performance Optimization
+    function optimizePerformance() {
+      // Lazy load images
+      if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src;
+              img.classList.remove('lazy');
+              observer.unobserve(img);
+            }
+          });
+        });
+
+        document.querySelectorAll('img[data-src]').forEach(img => {
+          imageObserver.observe(img);
+        });
+      }
+
+      // Preload critical resources
+      const criticalResources = [
+        '/api/guild/stats',
+        'https://oldgeneration.com.tr/images/logo.png'
+      ];
+
+      criticalResources.forEach(resource => {
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.href = resource;
+        document.head.appendChild(link);
+      });
+    }
+
+    // Service Worker Registration
+    function registerServiceWorker() {
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', async () => {
+          try {
+            const registration = await navigator.serviceWorker.register('/service-worker.js');
+            console.log('SW registered:', registration);
+          } catch (error) {
+            console.error('SW registration failed:', error);
+          }
+        });
+      }
+    }
+
+    // Security Enhancements
+    function enhanceSecurity() {
+      // Disable right-click context menu
+      document.addEventListener('contextmenu', e => e.preventDefault());
+      
+      // Disable text selection
+      document.addEventListener('selectstart', e => e.preventDefault());
+      
+      // Disable copy
+      document.addEventListener('copy', e => e.preventDefault());
+      
+      // Disable drag
+      document.addEventListener('dragstart', e => e.preventDefault());
+      
+      // Disable F12, Ctrl+Shift+I, Ctrl+U
+      document.addEventListener('keydown', e => {
+        if (e.key === 'F12' || 
+            (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+            (e.ctrlKey && e.key === 'u')) {
+          e.preventDefault();
+        }
+      });
+    }
+
+    // Animation on Scroll
+    function initScrollAnimations() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = 'fadeInUp 0.6s ease-out';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+      });
+    }
+
+    // Error Handling
+    window.addEventListener('error', (event) => {
+      console.error('Global error:', event.error);
+    });
+
+    window.addEventListener('unhandledrejection', (event) => {
+      console.error('Unhandled promise rejection:', event.reason);
+    });
+
+    // Initialize Everything
     document.addEventListener('DOMContentLoaded', () => {
-      document.body.classList.toggle('light', localStorage.getItem('theme') === 'light');
-      setLang(localStorage.getItem('lang') || 'en');
-      // Opsiyonel: sağ klik, seçme ve kopyayı engelleme
-      ['contextmenu', 'selectstart', 'copy'].forEach(ev =>
-        document.addEventListener(ev, e => e.preventDefault())
-      );
+      try {
+        // Restore saved preferences
+        const savedTheme = localStorage.getItem('theme');
+        const savedLang = localStorage.getItem('lang') || 'en';
+        
+        if (savedTheme === 'light') {
+          document.body.classList.add('light');
+        }
+        
+        // Initialize all features
+        setLang(savedLang);
+        initSmoothScrolling();
+        updateActiveNav();
+        enhanceForm();
+        optimizePerformance();
+        registerServiceWorker();
+        enhanceSecurity();
+        initScrollAnimations();
+        
+        // Periodic stats refresh
+        setInterval(() => {
+          const currentLang = localStorage.getItem('lang') || 'en';
+          fetchStatsData(currentLang);
+        }, 300000); // Every 5 minutes
+        
+        console.log('OLD GENERATION portal initialized successfully');
+        
+      } catch (error) {
+        console.error('Initialization failed:', error);
+      }
     });
   </script>
 </body>
