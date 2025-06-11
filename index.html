@@ -6,6 +6,7 @@
   <title>OLD GENERATION – NEVER GIVE UP</title>
   <link rel="canonical" href="https://oldgeneration.com.tr/">
   <meta name="theme-color" content="#ff3333">
+  
   <!-- PWA Icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
@@ -14,19 +15,20 @@
   <meta name="msapplication-TileColor" content="#ff3333">
   <meta name="msapplication-TileImage" content="/icons/mstile-150x150.png">
   <link rel="manifest" href="/manifest.json">
+  
   <!-- Preconnect & Preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/styles.css"></noscript>
   <link rel="preload" href="https://oldgeneration.com.tr/images/logo.png" as="image">
-  <link rel="preload" href="https://i.hizliresim.com/f7vsoke.jpg" as="image">
+  
   <!-- Google Search Console -->
   <meta name="google-site-verification" content="jB41wmhFa02GAg08stdBYj5X0nsuIWAqcvX_tIUZ984">
+  
   <!-- SEO -->
   <meta name="robots" content="index,follow">
-  <meta name="description" content="OLD GENERATION: A top-tier guild in Lords Mobile, forging legends since 2016." id="meta-desc">
-  <meta name="keywords" content="Lords Mobile, guild, OLD GENERATION, clan, mobile game, strategy">
+  <meta name="description" content="OLD GENERATION: Elite Lords Mobile guild since 2016. Join our legendary warriors in epic battles and forge your destiny!" id="meta-desc">
+  <meta name="keywords" content="Lords Mobile, guild, OLD GENERATION, clan, mobile game, strategy, war, castle, kingdom">
+  
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://oldgeneration.com.tr/">
@@ -34,13 +36,14 @@
   <meta property="og:description" content="Join one of Lords Mobile's elite guilds. We fight together, grow stronger, and never give up." id="og-desc">
   <meta property="og:image" content="https://oldgeneration.com.tr/images/og-image.jpg" id="og-image">
   <meta property="og:locale" content="en_US">
-  <link rel="alternate" hreflang="tr" href="https://oldgeneration.com.tr/tr/">
+  
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@OldGenGuild">
   <meta name="twitter:title" content="OLD GENERATION – NEVER GIVE UP" id="tw-title">
   <meta name="twitter:description" content="OLD GENERATION Guild – Uniting champions since 2016." id="tw-desc">
   <meta name="twitter:image" content="https://oldgeneration.com.tr/images/og-image.jpg" id="tw-image">
+  
   <!-- Schema.org -->
   <script type="application/ld+json">
   {
@@ -49,343 +52,776 @@
     "name": "OLD GENERATION",
     "url": "https://oldgeneration.com.tr",
     "logo": "https://oldgeneration.com.tr/images/logo.png",
-    "description": "A top-tier guild in Lords Mobile since 2016."
+    "description": "Elite Lords Mobile guild established in 2016",
+    "foundingDate": "2016",
+    "memberOf": {
+      "@type": "Game",
+      "name": "Lords Mobile"
+    }
   }
   </script>
-  <!-- Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy" content="
-    default-src 'none';
-    script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline';
-    style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
-    img-src 'self' data: https://i.hizliresim.com https://oldgeneration.com.tr https://web.whatsapp.com https://telegram.org https://t.me https://line.me;
-    font-src 'self' https://fonts.gstatic.com;
-    connect-src 'self' https://www.google-analytics.com;
-    frame-src https://web.whatsapp.com https://telegram.org https://line.me;
-    form-action 'self' https://formspree.io;
-    manifest-src 'self';
-    media-src 'self';
-    object-src 'none';
-    base-uri 'self';
-    frame-ancestors 'none';
-    upgrade-insecure-requests;
-    block-all-mixed-content;
-  ">
-  <!-- Google Analytics -->
-  <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-NSJQ1WV5N1"></script>
-  <script defer>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-NSJQ1WV5N1');
-  </script>
+  
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  
   <style>
-    /* Navigasyon menüsü için ek stil */
-    nav {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      background-color: rgba(34, 34, 34, 0.3);
-      padding: 15px 0;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    :root {
+      --primary-red: #ff3333;
+      --dark-red: #cc1a1a;
+      --gold: #ffd700;
+      --dark-gold: #b8860b;
+      --bg-dark: #0a0a0a;
+      --bg-card: #1a1a1a;
+      --text-light: #ffffff;
+      --text-gray: #cccccc;
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      --glow: 0 0 20px rgba(255, 51, 51, 0.3);
     }
-    
-    nav ul {
-      display: flex;
-      list-style: none;
+
+    * {
       margin: 0;
       padding: 0;
-      justify-content: center;
-      flex-wrap: wrap;
+      box-sizing: border-box;
     }
-    
-    nav li {
-      margin: 0 10px;
+
+    body {
+      font-family: 'Orbitron', monospace;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+      color: var(--text-light);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
-    
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      padding: 8px 15px;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-    
-    nav a::before, nav a::after {
+
+    body::before {
       content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      background-color: #ff3333;
-      transition: width 0.3s ease;
-    }
-    
-    nav a::before {
+      position: fixed;
       top: 0;
       left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23333" stroke-width="0.5" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      pointer-events: none;
+      z-index: -1;
     }
-    
-    nav a::after {
-      bottom: 0;
-      right: 0;
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: var(--primary-red);
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      border-radius: 4px;
+      z-index: 1000;
     }
-    
-    nav a:hover::before, nav a:hover::after,
-    nav a.active::before, nav a.active::after {
+
+    .skip-link:focus {
+      top: 6px;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--primary-red);
+      z-index: 999;
+      padding: 10px 0;
+      transition: all 0.3s ease;
+    }
+
+    nav.scrolled {
+      background: rgba(10, 10, 10, 0.98);
+      box-shadow: var(--shadow);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    nav li {
+      margin: 0 15px;
+    }
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      padding: 10px 20px;
+      position: relative;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      border-radius: 25px;
+    }
+
+    nav a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: linear-gradient(45deg, var(--primary-red), var(--gold));
+      border-radius: 25px;
+      transition: width 0.3s ease;
+      z-index: -1;
+    }
+
+    nav a:hover::before,
+    nav a.active::before {
       width: 100%;
     }
-    
+
     nav a:hover {
-      color: #ff3333;
+      color: var(--bg-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--glow);
     }
-    
-    @media(max-width: 600px) {
+
+    /* Main Container */
+    .wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+      padding-top: 80px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 60px 0 80px;
+      position: relative;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 51, 51, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    #logo {
+      margin-bottom: 30px;
+    }
+
+    #logo img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid var(--gold);
+      box-shadow: var(--shadow), var(--glow);
+      transition: transform 0.3s ease;
+    }
+
+    #logo img:hover {
+      transform: scale(1.05) rotate(5deg);
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 4rem;
+      font-weight: 700;
+      background: linear-gradient(45deg, var(--primary-red), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    #header-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-gray);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    .language-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .language-buttons button {
+      background: linear-gradient(45deg, var(--bg-card), var(--primary-red));
+      color: var(--text-light);
+      border: 2px solid var(--gold);
+      padding: 12px 24px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      font-family: 'Orbitron', monospace;
+    }
+
+    .language-buttons button:hover {
+      background: linear-gradient(45deg, var(--primary-red), var(--gold));
+      transform: translateY(-2px);
+      box-shadow: var(--glow);
+    }
+
+    /* Sections */
+    section {
+      background: rgba(26, 26, 26, 0.8);
+      margin: 40px 0;
+      padding: 40px;
+      border-radius: 20px;
+      border: 2px solid var(--primary-red);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 51, 51, 0.02), transparent);
+      animation: shimmer 4s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(0deg); }
+      50% { transform: translateX(0%) translateY(0%) rotate(180deg); }
+    }
+
+    section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Stats Section */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, var(--bg-card), rgba(255, 51, 51, 0.1));
+      padding: 30px;
+      border-radius: 15px;
+      border: 1px solid var(--primary-red);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--glow);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--gold);
+      display: block;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .stat-label {
+      color: var(--text-gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 10px;
+    }
+
+    /* Member Profiles */
+    .member-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .member-card {
+      background: linear-gradient(135deg, var(--bg-card), rgba(255, 215, 0, 0.05));
+      padding: 25px;
+      border-radius: 15px;
+      border: 1px solid var(--gold);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .member-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 40px rgba(255, 215, 0, 0.2);
+    }
+
+    .member-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      margin: 0 auto 15px;
+      background: linear-gradient(45deg, var(--primary-red), var(--gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .member-name {
+      font-size: 1.3rem;
+      color: var(--gold);
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .member-role {
+      color: var(--primary-red);
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    .member-might {
+      color: var(--text-gray);
+      margin-top: 10px;
+    }
+
+    /* Terminology */
+    .term-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .term-card {
+      background: rgba(26, 26, 26, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 4px solid var(--primary-red);
+    }
+
+    .term-title {
+      color: var(--gold);
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .term-desc {
+      color: var(--text-gray);
+      line-height: 1.5;
+    }
+
+    /* News & Updates */
+    .news-item {
+      background: rgba(26, 26, 26, 0.6);
+      padding: 25px;
+      border-radius: 10px;
+      border-left: 4px solid var(--gold);
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .news-item:hover {
+      transform: translateX(10px);
+      box-shadow: -5px 0 20px rgba(255, 215, 0, 0.2);
+    }
+
+    .news-date {
+      color: var(--primary-red);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .news-title {
+      color: var(--gold);
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    /* Video Section */
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 30px auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .video-container video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      max-width: 600px;
+      margin: 30px auto;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .contact-form label {
+      display: block;
+      color: var(--gold);
+      margin-bottom: 8px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid var(--primary-red);
+      border-radius: 10px;
+      background: rgba(26, 26, 26, 0.8);
+      color: var(--text-light);
+      font-family: 'Orbitron', monospace;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    }
+
+    .contact-form button {
+      background: linear-gradient(45deg, var(--primary-red), var(--gold));
+      color: var(--text-light);
+      border: none;
+      padding: 15px 40px;
+      border-radius: 30px;
+      font-family: 'Orbitron', monospace;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .contact-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--glow);
+    }
+
+    .honeypot {
+      position: absolute !important;
+      left: -9999px !important;
+      width: 1px !important;
+      height: 1px !important;
+      opacity: 0 !important;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 60px 0 40px;
+      border-top: 2px solid var(--primary-red);
+      margin-top: 60px;
+      background: rgba(10, 10, 10, 0.8);
+    }
+
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .social-buttons a {
+      display: inline-block;
+      padding: 15px;
+      background: linear-gradient(45deg, var(--bg-card), var(--primary-red));
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      transition: all 0.3s ease;
+    }
+
+    .social-buttons a:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: var(--glow);
+    }
+
+    .social-buttons img {
+      width: 32px;
+      height: 32px;
+      filter: brightness(1.2);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .wrapper {
+        padding: 0 15px;
+        padding-top: 70px;
+      }
+
       nav ul {
         flex-direction: row;
-        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 0 10px;
       }
-      
+
       nav li {
-        margin: 5px;
+        margin: 0 5px;
       }
-      
+
       nav a {
-        padding: 6px 10px;
+        padding: 8px 12px;
+        font-size: 0.8rem;
       }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      section {
+        padding: 25px 20px;
+        margin: 20px 0;
+      }
+
+      section h2 {
+        font-size: 2rem;
+      }
+
+      .stats-grid,
+      .member-grid,
+      .term-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #header-subtitle {
+        font-size: 1rem;
+        letter-spacing: 2px;
+      }
+
+      .language-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .language-buttons button {
+        width: 120px;
+      }
+    }
+
+    /* Light Theme */
+    body.light {
+      --bg-dark: #f5f5f5;
+      --bg-card: #ffffff;
+      --text-light: #333333;
+      --text-gray: #666666;
+      background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 50%, #f5f5f5 100%);
+    }
+
+    body.light::before {
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ddd" stroke-width="0.5" opacity="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    }
+
+    body.light nav {
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom-color: var(--primary-red);
+    }
+
+    body.light section {
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    /* Loading Animation */
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255, 215, 0, 0.3);
+      border-radius: 50%;
+      border-top-color: var(--gold);
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Success/Error Messages */
+    .message {
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .message.success {
+      background: rgba(0, 255, 0, 0.1);
+      border: 2px solid #00ff00;
+      color: #00ff00;
+    }
+
+    .message.error {
+      background: rgba(255, 0, 0, 0.1);
+      border: 2px solid #ff0000;
+      color: #ff0000;
     }
   </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to content</a>
   
-  <!-- Navigasyon menüsü sayfanın en üstünde -->
-  <nav aria-label="Main Navigation">
+  <nav aria-label="Main Navigation" id="main-nav">
     <ul>
       <li><a href="#live-stats" id="nav-stats">Stats</a></li>
-      <li><a href="#profiles" id="nav-profiles">Profiles</a></li>
+      <li><a href="#profiles" id="nav-profiles">Members</a></li>
       <li><a href="#terminology" id="nav-terminology">Terminology</a></li>
       <li><a href="#news" id="nav-news">News</a></li>
-      <li><a href="#shortfilm" id="nav-shortfilm">Short Film</a></li>
+      <li><a href="#shortfilm" id="nav-shortfilm">Media</a></li>
       <li><a href="#contact" id="nav-contact">Contact</a></li>
     </ul>
   </nav>
   
   <div class="wrapper">
-    <header>
+    <header class="fade-in">
       <div id="logo">
-        <img src="https://oldgeneration.com.tr/images/logo.png" alt="OLD GENERATION Logo" width="140" height="140" loading="eager">
+        <img src="https://oldgeneration.com.tr/images/logo.png" alt="OLD GENERATION Logo" width="180" height="180" loading="eager">
       </div>
       <h1>OLD GENERATION</h1>
       <p id="header-subtitle">PRESERVING LEGACY, DEFYING FATE</p>
       <div class="language-buttons">
-        <button aria-label="Language: English" onclick="setLang('en')">EN</button>
-        <button aria-label="Language: Turkish" onclick="setLang('tr')">TR</button>
+        <button aria-label="Language: English" onclick="setLang('en')">🇺🇸 EN</button>
+        <button aria-label="Language: Turkish" onclick="setLang('tr')">🇹🇷 TR</button>
         <button aria-label="Toggle theme" onclick="toggleTheme()" class="theme-button">🌓 Theme</button>
       </div>
     </header>
     
     <main id="main-content">
-      <section id="live-stats" aria-live="polite">
-        <h2 id="stats-title">Live Guild Statistics</h2>
-        <p id="stats-text">Real-time game data integration coming soon.</p>
-        <div id="stats-data">Loading…</div>
+      <section id="live-stats" class="fade-in" aria-live="polite">
+        <h2 id="stats-title">Guild Statistics</h2>
+        <p id="stats-text">Real-time guild performance metrics</p>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-number" id="member-count">100</span>
+            <div class="stat-label" id="members-label">Active Members</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" id="guild-might">100B+</span>
+            <div class="stat-label" id="might-label">Total Might</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" id="guild-level">29</span>
+            <div class="stat-label" id="level-label">Guild Level</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" id="war-wins">10B+</span>
+            <div class="stat-label" id="wins-label">Guild Wars Won</div>
+          </div>
+        </div>
       </section>
-      <section id="profiles">
-        <h2 id="profiles-title">Member Spotlight</h2>
-        <p id="profiles-text">Showcase of elite guild members under development.</p>
+
+      <section id="profiles" class="fade-in">
+        <h2 id="profiles-title">Elite Members</h2>
+        <p id="profiles-text">Meet our legendary warriors and leaders</p>
+        <div class="member-grid">
+          <div class="member-card">
+            <div class="member-avatar">👑</div>
+            <div class="member-name">Guild Master</div>
+            <div class="member-role">Supreme Leader</div>
+            <div class="member-might">Might: 2B+</div>
+          </div>
+          <div class="member-card">
+            <div class="member-avatar">⚔️</div>
+            <div class="member-name">War General</div>
+            <div class="member-role">Battle Commander</div>
+            <div class="member-might">Might: 1B+</div>
+          </div>
+          <div class="member-card">
+            <div class="member-avatar">🛡️</div>
+            <div class="member-name">Shield Master</div>
+            <div class="member-role">Defense Strategist</div>
+            <div class="member-might">Might: 500M+</div>
+          </div>
+          <div class="member-card">
+            <div class="member-avatar">🏰</div>
+            <div class="member-name">Castle Guardian</div>
+            <div class="member-role">Territory Protector</div>
+            <div class="member-might">Might: 300M+</div>
+          </div>
+        </div>
       </section>
-      <section id="terminology">
-        <h2 id="terminology-title">Game Terminology</h2>
-        <p id="terminology-text">Glossary of key Lords Mobile terms will be added here.</p>
-      </section>
-      <section id="news">
-        <h2 id="news-title">Announcements & Updates</h2>
-        <p id="news-recruitment"><strong>Recruitment:</strong> Skilled and active players are welcome. Contact us via Telegram or Line.</p>
-        <p id="news-tournament"><strong>Next Tournament:</strong> Gear up for the upcoming guild war.</p>
-      </section>
-      <section id="shortfilm">
-        <h2 id="shortfilm-title">Guild Short Film</h2>
-        <video controls controlsList="nodownload nofullscreen noremoteplayback" preload="metadata" poster="https://oldgeneration.com.tr/images/og-image.jpg">
-          <source src="https://oldgeneration.com.tr/videos/shortfilm.mp4" type="video/mp4">
-          <track kind="captions" src="https://oldgeneration.com.tr/videos/captions.vtt" srclang="en" label="English captions">
-          Your browser does not support the video tag.
-        </video>
-      </section>
-      <section id="contact">
-        <h2 id="contact-title">Get in Touch</h2>
-        <form action="https://formspree.io/f/myzeveog" method="POST" aria-label="Contact Form">
-          <label for="name" id="label-name">Name</label>
-          <input id="name" name="name" type="text" required>
-          <label for="email" id="label-email">Email</label>
-          <input id="email" name="email" type="email" required>
-          <label for="message" id="label-message">Message</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-          <input class="honeypot" type="text" name="botcheck" tabindex="-1" autocomplete="off">
-          <button type="submit" id="contact-button">Send Message</button>
-        </form>
-      </section>
-    </main>
-    <footer>
-      <p id="footer-text1">OLD GENERATION is a distinguished guild in Lords Mobile since 2016.</p>
-      <p id="footer-text2">© 2016–2025 OLD GENERATION. Designed by NeutralizeR</p>
-      <div class="social-buttons">
-        <a href="https://t.me/trneutralizer" target="_blank" aria-label="Telegram">
-          <img src="https://oldgeneration.com.tr/images/telegram.png" alt="Telegram" width="32" height="32" loading="lazy">
-        </a>
-        <a href="https://line.me/ti/p/Tt3gWr3BDE" target="_blank" aria-label="Line">
-          <img src="https://oldgeneration.com.tr/images/line.png" alt="Line" width="32" height="32" loading="lazy">
-        </a>
-      </div>
-    </footer>
-  </div>
-  <!-- Dışa Bağlı Script -->
-  <script src="/old-generation-website/scripts.js" defer></script>
-  <!-- Inline Kontroller -->
-  <script>
-    // Tam çeviri verisi:
-    const translations = {
-      en: {
-        title: "OLD GENERATION – NEVER GIVE UP",
-        meta_description: "OLD GENERATION: A top-tier guild in Lords Mobile, forging legends since 2016.",
-        header_subtitle: "PRESERVING LEGACY, DEFYING FATE",
-        nav_stats: "Stats",
-        nav_profiles: "Profiles",
-        nav_terminology: "Terminology",
-        nav_news: "News",
-        nav_shortfilm: "Short Film",
-        nav_contact: "Contact",
-        stats_title: "Live Guild Statistics",
-        stats_text: "Real-time game data integration coming soon.",
-        data_error: "Data could not be loaded",
-        profiles_title: "Member Spotlight",
-        profiles_text: "Showcase of elite guild members under development.",
-        terminology_title: "Game Terminology",
-        terminology_text: "Glossary of key Lords Mobile terms will be added here.",
-        news_title: "Announcements & Updates",
-        news_recruitment: "<strong>Recruitment:</strong> Skilled and active players are welcome. Contact us via Telegram or Line.",
-        news_tournament: "<strong>Next Tournament:</strong> Gear up for the upcoming guild war.",
-        shortfilm_title: "Guild Short Film",
-        contact_title: "Get in Touch",
-        label_name: "Name",
-        label_email: "Email",
-        label_message: "Message",
-        contact_button: "Send Message",
-        footer1: "OLD GENERATION is a distinguished guild in Lords Mobile since 2016.",
-        footer2: "© 2016–2025 OLD GENERATION. Designed by NeutralizeR"
-      },
-      tr: {
-        title: "OLD GENERATION – ASLA PES ETME",
-        meta_description: "OLD GENERATION: Lords Mobile'da 2016'dan beri efsaneler yaratan üst düzey bir lonca.",
-        header_subtitle: "MİRASI KORUYOR, KADERİ YENİYORUZ",
-        nav_stats: "İstatistikler",
-        nav_profiles: "Üyeler",
-        nav_terminology: "Terimler",
-        nav_news: "Duyurular",
-        nav_shortfilm: "Kısa Film",
-        nav_contact: "İletişim",
-        stats_title: "Canlı Lonca İstatistikleri",
-        stats_text: "Gerçek zamanlı oyun verisi entegrasyonu yakında geliyor.",
-        data_error: "Veri yüklenemedi",
-        profiles_title: "Üye Tanıtımı",
-        profiles_text: "Seçkin lonca üyelerinin tanıtımı geliştirme aşamasında.",
-        terminology_title: "Oyun Terimleri",
-        terminology_text: "Lords Mobile için temel terimlerin sözlüğü buraya eklenecek.",
-        news_title: "Duyurular & Güncellemeler",
-        news_recruitment: "<strong>Üye Alımı:</strong> Yetkin ve aktif oyuncular arıyoruz. Telegram veya Line üzerinden iletişime geçin.",
-        news_tournament: "<strong>Sonraki Turnuva:</strong> Yaklaşan lonca savaşına hazırlanın.",
-        shortfilm_title: "Lonca Kısa Filmi",
-        contact_title: "Bizimle İletişime Geçin",
-        label_name: "İsim",
-        label_email: "E-posta",
-        label_message: "Mesaj",
-        contact_button: "Mesaj Gönder",
-        footer1: "OLD GENERATION, Lords Mobile'da 2016'dan beri şampiyonları bir araya getiren seçkin bir loncadır.",
-        footer2: "© 2016–2025 OLD GENERATION. NeutralizeR tarafından tasarlandı."
-      }
-    };
-    // Meta güncelleme fonksiyonu
-    function updateMetaTags(t) {
-      document.title = t.title;
-      document.getElementById('meta-desc').setAttribute('content', t.meta_description);
-      document.getElementById('og-title').setAttribute('content', t.title);
-      document.getElementById('og-desc').setAttribute('content', t.meta_description);
-      document.getElementById('tw-title').setAttribute('content', t.title);
-      document.getElementById('tw-desc').setAttribute('content', t.meta_description);
-    }
-    // Dil ayarı
-    function setLang(lang) {
-      const t = translations[lang] || translations.en;
-      document.documentElement.lang = lang;
-      // Metin güncellemeleri
-      document.getElementById('header-subtitle').textContent = t.header_subtitle;
-      document.getElementById('nav-stats').textContent = t.nav_stats;
-      document.getElementById('nav-profiles').textContent = t.nav_profiles;
-      document.getElementById('nav-terminology').textContent = t.nav_terminology;
-      document.getElementById('nav-news').textContent = t.nav_news;
-      document.getElementById('nav-shortfilm').textContent = t.nav_shortfilm;
-      document.getElementById('nav-contact').textContent = t.nav_contact;
-      document.getElementById('stats-title').textContent = t.stats_title;
-      document.getElementById('stats-text').textContent = t.stats_text;
-      document.getElementById('profiles-title').textContent = t.profiles_title;
-      document.getElementById('profiles-text').textContent = t.profiles_text;
-      document.getElementById('terminology-title').textContent = t.terminology_title;
-      document.getElementById('terminology-text').textContent = t.terminology_text;
-      document.getElementById('news-title').textContent = t.news_title;
-      document.getElementById('news-recruitment').innerHTML = t.news_recruitment;
-      document.getElementById('news-tournament').innerHTML = t.news_tournament;
-      document.getElementById('shortfilm-title').textContent = t.shortfilm_title;
-      document.getElementById('contact-title').textContent = t.contact_title;
-      document.getElementById('label-name').textContent = t.label_name;
-      document.getElementById('label-email').textContent = t.label_email;
-      document.getElementById('label-message').textContent = t.label_message;
-      document.getElementById('contact-button').textContent = t.contact_button;
-      document.getElementById('footer-text1').textContent = t.footer1;
-      document.getElementById('footer-text2').textContent = t.footer2;
-      // Meta güncelle
-      updateMetaTags(t);
-      // Hata metni
-      const statsDiv = document.getElementById('stats-data');
-      if (statsDiv.textContent.includes('could not be loaded') || statsDiv.textContent.includes('yüklenemedi')) {
-        statsDiv.textContent = t.data_error;
-      }
-      // Veriyi tekrar al
-      fetchStatsData(lang);
-      localStorage.setItem('lang', lang);
-    }
-    // Tema ayarı
-    function toggleTheme() {
-      const isLight = document.body.classList.toggle('light');
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    }
-    // Canlı istatistikleri çek
-    function fetchStatsData(lang) {
-      fetch('/api/guild/stats')
-        .then(resp => resp.ok ? resp.json() : Promise.reject(resp))
-        .then(data => {
-          document.getElementById('stats-data').textContent = `Members: ${data.members} | Might: ${data.might}`;
-        })
-        .catch(() => {
-          document.getElementById('stats-data').textContent = (translations[lang] || translations.en).data_error;
-        });
-    }
-    // Service Worker kaydı
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-          .catch(err => console.error('SW registration failed:', err));
-      });
-    }
-    // Başlangıçta çalıştır
-    document.addEventListener('DOMContentLoaded', () => {
-      document.body.classList.toggle('light', localStorage.getItem('theme') === 'light');
-      setLang(localStorage.getItem('lang') || 'en');
-      // Opsiyonel: sağ klik, seçme ve kopyayı engelleme
-      ['contextmenu', 'selectstart', 'copy'].forEach(ev =>
-        document.addEventListener(ev, e => e.preventDefault())
-      );
-    });
-  </script>
-</body>
-</html>
+
+      <section id="terminology" class="fade-in">
+        <h2 id="terminology-title">Lords Mobile Guide</h2>
+        <p id="terminology-text">Essential terms and strategies for guild success</p>
+        <div class="term-grid">
+          <div class="term-card">
+            <div class="term-title">Might</div>
+            <div class="term-desc">Total power measurement combining troops, buildings, research, and hero levels.</div>
+          </div>
+          <div class="term-card">
+            <div class="term-title">Guild War</div>
+            <div class="term-desc">Competitive battles between guilds for territory control and rewards.</div>
+          </div>
+          <div class="term-card">
+            <div class="term-title">Familiar</div>
+            <div class="term-desc">Magical creatures that provide combat and economic bonuses to your castle.</div>
+          </div>
+          <div class="term-card">
+            <div class="term-title">Colosseum</div>
+            <div class="term-desc">Arena where heroes battle for ranking and exclusive rewards.</div>
+          </div>
+          <div class="term-card">
+            <div class="term-title">Rally</div>
+            <div class="term-desc">Coordinated group attack led by one player with others joining forces.</div>
