@@ -803,8 +803,31 @@
       border: 2px solid #ff0000;
       color: #ff0000;
     }
+  
   </style>
+/* Ortak stil: pencere görünümü */
+.scroll-section {
+  background-color: var(--bg-card);
+  border: 2px solid var(--primary-red);
+  border-radius: 12px;
+  padding: 20px;
+  height: 400px;
+  overflow-y: auto;
+  margin: 40px auto;
+  box-shadow: var(--shadow);
+  max-width: 1200px;
+}
 
+/* Başlık stilleri (isteğe bağlı) */
+.scroll-section h2 {
+  color: var(--gold);
+  margin-bottom: 16px;
+  font-size: 24px;
+  border-bottom: 1px solid var(--primary-red);
+  padding-bottom: 8px;
+}
+</style>
+  
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to content</a>
