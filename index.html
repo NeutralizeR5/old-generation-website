@@ -389,3 +389,210 @@
   </script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Old Generation Guild - Live Stats & Members</title>
+  <style>
+    /* Basit stil örneği */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #121212;
+      color: #eee;
+      line-height: 1.5;
+    }
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.25rem;
+      color: #f0a500;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: #ccc;
+    }
+    .fade-in {
+      animation: fadeIn ease 1.2s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+    @keyframes fadeIn {
+      0% {opacity:0;}
+      100% {opacity:1;}
+    }
+    .stats-grid, .member-grid, .term-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    .stats-grid {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: #222;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 8px #f0a500aa;
+    }
+    .stat-number {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #f0a500;
+    }
+    .stat-label {
+      margin-top: 0.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .member-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      margin-bottom: 2rem;
+    }
+    .member-card {
+      background: #222;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 0 8px #f0a500aa;
+      text-align: center;
+    }
+    .member-avatar {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      user-select: none;
+    }
+    .member-name {
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 0.25rem;
+      color: #f0a500;
+    }
+    .member-role {
+      font-style: italic;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+      color: #ccc;
+    }
+    .member-might {
+      font-weight: 600;
+      color: #bbb;
+    }
+    .term-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 4rem;
+    }
+    .term-card {
+      background: #222;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 0 8px #f0a500aa;
+    }
+    .term-title {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #f0a500;
+    }
+    .term-desc {
+      font-size: 1rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <main id="main-content">
+
+    <section id="live-stats" class="fade-in" role="region" aria-labelledby="stats-title" aria-live="polite">
+      <h2 id="stats-title">Guild Statistics</h2>
+      <p id="stats-text">Real-time guild performance metrics</p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-number" id="member-count">100</span>
+          <div class="stat-label" id="members-label">Active Members</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" id="guild-might">100B+</span>
+          <div class="stat-label" id="might-label">Total Might</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" id="guild-level">29</span>
+          <div class="stat-label" id="level-label">Guild Level</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" id="war-wins">10B+</span>
+          <div class="stat-label" id="wins-label">Guild Wars Won</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="profiles" class="fade-in" role="region" aria-labelledby="profiles-title">
+      <h2 id="profiles-title">Elite Members</h2>
+      <p id="profiles-text">Meet our legendary warriors and leaders</p>
+      <div class="member-grid">
+        <article class="member-card" role="group" aria-labelledby="guild-master-name">
+          <div class="member-avatar" aria-hidden="true">👑</div>
+          <div id="guild-master-name" class="member-name">Guild Master</div>
+          <div class="member-role">Supreme Leader</div>
+          <div class="member-might">Might: 2B+</div>
+        </article>
+        <article class="member-card" role="group" aria-labelledby="war-general-name">
+          <div class="member-avatar" aria-hidden="true">⚔️</div>
+          <div id="war-general-name" class="member-name">War General</div>
+          <div class="member-role">Battle Commander</div>
+          <div class="member-might">Might: 1B+</div>
+        </article>
+        <article class="member-card" role="group" aria-labelledby="shield-master-name">
+          <div class="member-avatar" aria-hidden="true">🛡️</div>
+          <div id="shield-master-name" class="member-name">Shield Master</div>
+          <div class="member-role">Defense Strategist</div>
+          <div class="member-might">Might: 500M+</div>
+        </article>
+        <article class="member-card" role="group" aria-labelledby="castle-guardian-name">
+          <div class="member-avatar" aria-hidden="true">🏰</div>
+          <div id="castle-guardian-name" class="member-name">Castle Guardian</div>
+          <div class="member-role">Territory Protector</div>
+          <div class="member-might">Might: 300M+</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="terminology" class="fade-in" role="region" aria-labelledby="terminology-title">
+      <h2 id="terminology-title">Lords Mobile Guide</h2>
+      <p id="terminology-text">Essential terms and strategies for guild success</p>
+      <div class="term-grid">
+        <div class="term-card" role="region" aria-labelledby="term-might-title">
+          <div id="term-might-title" class="term-title">Might</div>
+          <div class="term-desc">Total power measurement combining troops, buildings, research, and hero levels.</div>
+        </div>
+        <div class="term-card" role="region" aria-labelledby="term-guild-war-title">
+          <div id="term-guild-war-title" class="term-title">Guild War</div>
+          <div class="term-desc">Competitive battles between guilds for territory control and rewards.</div>
+        </div>
+        <div class="term-card" role="region" aria-labelledby="term-familiar-title">
+          <div id="term-familiar-title" class="term-title">Familiar</div>
+          <div class="term-desc">Magical creatures that provide combat and economic bonuses to your castle.</div>
+        </div>
+        <div class="term-card" role="region" aria-labelledby="term-colosseum-title">
+          <div id="term-colosseum-title" class="term-title">Colosseum</div>
+          <div class="term-desc">Arena where heroes battle for ranking and exclusive rewards.</div>
+        </div>
+        <div class="term-card" role="region" aria-labelledby="term-rally-title">
+          <div id="term-rally-title" class="term-title">Rally</div>
+          <div class="term-desc">Coordinated group attack led by one player with others joining forces.</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
