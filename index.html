@@ -26,8 +26,8 @@
   
   <!-- SEO -->
   <meta name="robots" content="index,follow">
-  <meta name="description" content="OLD GENERATION: A top-tier guild in Lords Mobile, forging legends since 2016." id="meta-desc">
-  <meta name="keywords" content="Lords Mobile, guild, OLD GENERATION, clan, mobile game, strategy">
+  <meta name="description" content="OLD GENERATION: Elite Lords Mobile guild since 2016. Join our legendary warriors in epic battles and forge your destiny!" id="meta-desc">
+  <meta name="keywords" content="Lords Mobile, guild, OLD GENERATION, clan, mobile game, strategy, war, castle, kingdom">
   
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -36,7 +36,6 @@
   <meta property="og:description" content="Join one of Lords Mobile's elite guilds. We fight together, grow stronger, and never give up." id="og-desc">
   <meta property="og:image" content="https://oldgeneration.com.tr/images/og-image.jpg" id="og-image">
   <meta property="og:locale" content="en_US">
-  <link rel="alternate" hreflang="tr" href="https://oldgeneration.com.tr/tr/">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -53,41 +52,13 @@
     "name": "OLD GENERATION",
     "url": "https://oldgeneration.com.tr",
     "logo": "https://oldgeneration.com.tr/images/logo.png",
-    "description": "A top-tier guild in Lords Mobile since 2016.",
+    "description": "Elite Lords Mobile guild established in 2016",
     "foundingDate": "2016",
     "memberOf": {
       "@type": "Game",
       "name": "Lords Mobile"
     }
   }
-  </script>
-  
-  <!-- Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy" content="
-    default-src 'none';
-    script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline';
-    style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
-    img-src 'self' data: https://i.hizliresim.com https://oldgeneration.com.tr https://web.whatsapp.com https://telegram.org https://t.me https://line.me;
-    font-src 'self' https://fonts.gstatic.com;
-    connect-src 'self' https://www.google-analytics.com;
-    frame-src https://web.whatsapp.com https://telegram.org https://line.me;
-    form-action 'self' https://formspree.io;
-    manifest-src 'self';
-    media-src 'self';
-    object-src 'none';
-    base-uri 'self';
-    frame-ancestors 'none';
-    upgrade-insecure-requests;
-    block-all-mixed-content;
-  ">
-  
-  <!-- Google Analytics -->
-  <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-NSJQ1WV5N1"></script>
-  <script defer>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-NSJQ1WV5N1');
   </script>
   
   <!-- Fonts -->
@@ -119,6 +90,7 @@
       color: var(--text-light);
       line-height: 1.6;
       overflow-x: hidden;
+      min-height: 100vh;
     }
 
     body::before {
@@ -174,6 +146,7 @@
       flex-wrap: wrap;
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 20px;
     }
 
     nav li {
@@ -190,6 +163,7 @@
       letter-spacing: 1px;
       transition: all 0.3s ease;
       border-radius: 25px;
+      display: block;
     }
 
     nav a::before {
@@ -452,12 +426,6 @@
       padding: 20px;
       border-radius: 10px;
       border-left: 4px solid var(--primary-red);
-      transition: all 0.3s ease;
-    }
-
-    .term-card:hover {
-      transform: translateX(5px);
-      box-shadow: -5px 0 20px rgba(255, 51, 51, 0.2);
     }
 
     .term-title {
@@ -500,11 +468,6 @@
       font-size: 1.2rem;
       font-weight: bold;
       margin-bottom: 10px;
-    }
-
-    .news-content {
-      color: var(--text-gray);
-      line-height: 1.6;
     }
 
     /* Video Section */
@@ -628,6 +591,62 @@
       filter: brightness(1.2);
     }
 
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .wrapper {
+        padding: 0 15px;
+        padding-top: 70px;
+      }
+
+      nav ul {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0 10px;
+      }
+
+      nav li {
+        margin: 0 5px;
+      }
+
+      nav a {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      section {
+        padding: 25px 20px;
+        margin: 20px 0;
+      }
+
+      section h2 {
+        font-size: 2rem;
+      }
+
+      .stats-grid,
+      .member-grid,
+      .term-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #header-subtitle {
+        font-size: 1rem;
+        letter-spacing: 2px;
+      }
+
+      .language-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .language-buttons button {
+        width: 120px;
+      }
+    }
+
     /* Light Theme */
     body.light {
       --bg-dark: #f5f5f5;
@@ -702,66 +721,6 @@
       border: 2px solid #ff0000;
       color: #ff0000;
     }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .wrapper {
-        padding: 0 15px;
-        padding-top: 70px;
-      }
-
-      nav ul {
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 0 10px;
-      }
-
-      nav li {
-        margin: 0 5px;
-      }
-
-      nav a {
-        padding: 8px 12px;
-        font-size: 0.8rem;
-      }
-
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      section {
-        padding: 25px 20px;
-        margin: 20px 0;
-      }
-
-      section h2 {
-        font-size: 2rem;
-      }
-
-      .stats-grid,
-      .member-grid,
-      .term-grid {
-        grid-template-columns: 1fr;
-      }
-
-      #header-subtitle {
-        font-size: 1rem;
-        letter-spacing: 2px;
-      }
-
-      .language-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .language-buttons button {
-        width: 140px;
-      }
-
-      .social-buttons {
-        gap: 15px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -810,7 +769,7 @@
             <div class="stat-label" id="level-label">Guild Level</div>
           </div>
           <div class="stat-card">
-            <span class="stat-number" id="war-wins">10B+</span>
+            <span class="stat-number" id="war-wins">10K+</span>
             <div class="stat-label" id="wins-label">Guild Wars Won</div>
           </div>
         </div>
@@ -831,7 +790,7 @@
             <div class="member-name">War General</div>
             <div class="member-role">Battle Commander</div>
             <div class="member-might">Might: 1B+</div>
-          </div
+          </div>
           <div class="member-card">
             <div class="member-avatar">🛡️</div>
             <div class="member-name">Shield Master</div>
@@ -869,7 +828,7 @@
           </div>
           <div class="term-card">
             <div class="term-title">Rally</div>
-            <div class="term-desc">Coordinated group attack led by one player with others joining forces.</div>
+            <div class="term-desc">Coordinated group attack led by one player with others joining forces.
       <section id="shortfilm">
         <h2 id="shortfilm-title">Guild Short Film</h2>
         <video controls controlsList="nodownload nofullscreen noremoteplayback" preload="metadata" poster="https://oldgeneration.com.tr/images/og-image.jpg">
