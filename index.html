@@ -95,17 +95,18 @@
     }
     body {
       font-family: 'Orbitron', monospace;
-      /* ARKA PLAN DÜZELTMESİ: İstenen görsel eklendi ve ayarlandı */
       background-image: url('https://i.hizliresim.com/f7vsoke.jpg');
       background-size: cover;
       background-position: center center;
       background-attachment: fixed;
-      background-color: #0a0a0a; /* Resim yüklenemezse görünecek renk */
+      background-color: #0a0a0a;
       color: var(--text-light);
       line-height: 1.6;
       overflow-x: hidden;
+      /* YAZI BELİRGİNLEŞTİRME: Tüm yazılara gölge eklendi */
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
     }
-    /* SVG deseni için kullanılan ::before kaldırıldı */
+    /* KARELİ ÇİZGİLER KALDIRILDI: body::before kuralı tamamen silindi. */
     .skip-link {
       position: absolute;
       top: -40px;
@@ -157,6 +158,8 @@
       letter-spacing: 1px;
       transition: all 0.3s ease;
       border-radius: 25px;
+      /* Navigasyon linklerinin kendi gölgesi daha belirgin olabilir */
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     }
     nav a::before {
       content: '';
@@ -178,6 +181,7 @@
       color: var(--bg-dark);
       transform: translateY(-2px);
       box-shadow: var(--glow);
+      text-shadow: none; /* Arka plan gelince gölgeye gerek yok */
     }
     .wrapper {
       max-width: 1400px;
@@ -233,6 +237,8 @@
       letter-spacing: 3px;
       text-transform: uppercase;
       margin-bottom: 30px;
+      /* YAZI BELİRGİNLEŞTİRME: Sloganın gölgesi artırıldı */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
     }
     .language-buttons {
       display: flex;
@@ -252,6 +258,7 @@
       letter-spacing: 1px;
       transition: all 0.3s ease;
       font-family: 'Orbitron', monospace;
+      text-shadow: none; /* Butonların kendi gölgesi olmasın */
     }
     .language-buttons button:hover {
       background: linear-gradient(45deg, var(--primary-red), var(--gold));
@@ -268,6 +275,13 @@
       backdrop-filter: blur(10px);
       position: relative;
       overflow: hidden;
+    }
+    /* YAZI BELİRGİNLEŞTİRME: Bölüm açıklamaları */
+    section > p {
+        color: var(--text-gray);
+        text-align: center;
+        margin-bottom: 20px;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     }
     section::before {
       content: '';
@@ -318,10 +332,12 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
     .stat-label {
-      color: var(--text-gray);
+      /* YAZI BELİRGİNLEŞTİRME: Renk ve gölge eklendi */
+      color: #ede086; /* Açık altın rengi */
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-top: 10px;
+      text-shadow: 1px 1px 2px #000;
     }
     .member-grid {
       display: grid;
@@ -353,6 +369,7 @@
       justify-content: center;
       font-size: 2rem;
       font-weight: bold;
+      text-shadow: none;
     }
     .member-name {
       font-size: 1.3rem;
@@ -480,6 +497,7 @@
       transition: all 0.3s ease;
       display: block;
       margin: 0 auto;
+      text-shadow: none;
     }
     .contact-form button:hover {
       transform: translateY(-2px);
@@ -576,7 +594,6 @@
       --text-light: #333333;
       --text-gray: #666666;
     }
-    /* Light tema için arka plan deseni kaldırıldı, ana body stili geçerli olacak */
     body.light nav {
       background: rgba(255, 255, 255, 0.95);
       border-bottom-color: var(--primary-red);
@@ -778,7 +795,7 @@
     </main>
     <footer>
       <p id="footer-text1">OLD GENERATION is a distinguished guild in Lords Mobile since 2016.</p>
-      <p id="footer-text2">© 2016 – ∞ OLD GENERATION. Designed by NeutralizeR</p>
+      <p id="footer-text2">© 2016–2025 OLD GENERATION. Designed by NeutralizeR</p>
       <div class="social-buttons">
         <a href="https://t.me/trneutralizer" target="_blank" aria-label="Telegram">
           <img src="https://oldgeneration.com.tr/images/telegram.png" alt="Telegram" width="32" height="32" loading="lazy">
