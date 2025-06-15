@@ -107,7 +107,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><pattern id='grid' width='10' height='10' patternUnits='userSpaceOnUse'><path d='M 10 0 L 0 0 0 10' fill='none' stroke='%23333' stroke-width='0.5' opacity='0.3'/></pattern></defs><rect width='100' height='100' fill='url(%23grid)'/></svg>");
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e%3cdefs%3e%3cpattern id='grid' width='10' height='10' patternUnits='userSpaceOnUse'%3e%3cpath d='M 10 0 L 0 0 0 10' fill='none' stroke='%23333' stroke-width='0.5' opacity='0.3'/%3e%3c/pattern%3e%3c/defs%3e%3crect width='100' height='100' fill='url(%23grid)'/%3e%3c/svg%3e");
       pointer-events: none;
       z-index: -1;
     }
@@ -583,7 +583,7 @@
       background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 50%, #f5f5f5 100%);
     }
     body.light::before {
-      background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><pattern id='grid' width='10' height='10' patternUnits='userSpaceOnUse'><path d='M 10 0 L 0 0 0 10' fill='none' stroke='%23ddd' stroke-width='0.5' opacity='0.5'/></pattern></defs><rect width='100' height='100' fill='url(%23grid)'/></svg>");
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e%3cdefs%3e%3cpattern id='grid' width='10' height='10' patternUnits='userSpaceOnUse'%3e%3cpath d='M 10 0 L 0 0 0 10' fill='none' stroke='%23ddd' stroke-width='0.5' opacity='0.5'/%3e%3c/pattern%3e%3c/defs%3e%3crect width='100' height='100' fill='url(%23grid)'/%3e%3c/svg%3e");
     }
     body.light nav {
       background: rgba(255, 255, 255, 0.95);
@@ -873,23 +873,31 @@
       const t = translations[lang] || translations.en;
       document.documentElement.lang = lang;
       
-      const elementsToUpdate = {
-        'header-subtitle': 'textContent', 'nav-stats': 'textContent', 'nav-profiles': 'textContent',
-        'nav-terminology': 'textContent', 'nav-news': 'textContent', 'nav-shortfilm': 'textContent',
-        'nav-contact': 'textContent', 'stats-title': 'textContent', 'stats-text': 'textContent',
-        'profiles-title': 'textContent', 'profiles-text': 'textContent', 'terminology-title': 'textContent',
-        'terminology-text': 'textContent', 'news-title': 'textContent', 'news-recruitment': 'innerHTML',
-        'news-tournament': 'innerHTML', 'shortfilm-title': 'textContent', 'contact-title': 'textContent',
-        'label-name': 'textContent', 'label-email': 'textContent', 'label-message': 'textContent',
-        'contact-button': 'textContent', 'footer-text1': 'textContent', 'footer-text2': 'textContent'
-      };
-
-      for (const id in elementsToUpdate) {
-        const element = document.getElementById(id);
-        if (element) {
-          element[elementsToUpdate[id]] = t[id.replace(/-/g, '_')];
-        }
-      }
+      // Update text content for all elements
+      document.getElementById('header-subtitle').textContent = t.header_subtitle;
+      document.getElementById('nav-stats').textContent = t.nav_stats;
+      document.getElementById('nav-profiles').textContent = t.nav_profiles;
+      document.getElementById('nav-terminology').textContent = t.nav_terminology;
+      document.getElementById('nav-news').textContent = t.nav_news;
+      document.getElementById('nav-shortfilm').textContent = t.nav_shortfilm;
+      document.getElementById('nav-contact').textContent = t.nav_contact;
+      document.getElementById('stats-title').textContent = t.stats_title;
+      document.getElementById('stats-text').textContent = t.stats_text;
+      document.getElementById('profiles-title').textContent = t.profiles_title;
+      document.getElementById('profiles-text').textContent = t.profiles_text;
+      document.getElementById('terminology-title').textContent = t.terminology_title;
+      document.getElementById('terminology-text').textContent = t.terminology_text;
+      document.getElementById('news-title').textContent = t.news_title;
+      document.getElementById('news-recruitment').innerHTML = t.news_recruitment;
+      document.getElementById('news-tournament').innerHTML = t.news_tournament;
+      document.getElementById('shortfilm-title').textContent = t.shortfilm_title;
+      document.getElementById('contact-title').textContent = t.contact_title;
+      document.getElementById('label-name').textContent = t.label_name;
+      document.getElementById('label-email').textContent = t.label_email;
+      document.getElementById('label-message').textContent = t.label_message;
+      document.getElementById('contact-button').textContent = t.contact_button;
+      document.getElementById('footer-text1').textContent = t.footer1;
+      document.getElementById('footer-text2').textContent = t.footer2;
       
       updateMetaTags(t);
       fetchStatsData(lang);
@@ -900,30 +908,7 @@
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
     }
     function fetchStatsData(lang) {
-      // Bu URL'yi kendi API endpoint'inize göre güncelleyin.
-      // Örnek: '/api/guild/stats'
-      const apiUrl = '#'; // Geçici olarak devre dışı bırakıldı.
-      
-      if (apiUrl === '#') {
-          console.warn('API URL not configured. Using placeholder data.');
-          return;
-      }
-
-      fetch(apiUrl)
-        .then(resp => resp.ok ? resp.json() : Promise.reject(resp))
-        .then(data => {
-            document.getElementById('member-count').textContent = data.members || 'N/A';
-            document.getElementById('guild-might').textContent = data.might || 'N/A';
-            document.getElementById('guild-level').textContent = data.level || 'N/A';
-            document.getElementById('war-wins').textContent = data.warWins || 'N/A';
-        })
-        .catch(() => {
-          const errorText = (translations[lang] || translations.en).data_error;
-          document.getElementById('member-count').textContent = errorText;
-          document.getElementById('guild-might').textContent = '';
-          document.getElementById('guild-level').textContent = '';
-          document.getElementById('war-wins').textContent = '';
-        });
+        // Placeholder for API call
     }
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
