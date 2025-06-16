@@ -109,24 +109,14 @@
 
     body {
       font-family: 'Orbitron', monospace;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+      background: var(--bg-dark); /* Solid dark background */
       color: var(--text-light);
       line-height: 1.6;
       overflow-x: hidden;
       touch-action: manipulation;
     }
 
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23333" stroke-width="0.5" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-      pointer-events: none;
-      z-index: -1;
-    }
+    /* Removed grid background pattern */
 
     .skip-link {
       position: absolute;
@@ -495,6 +485,11 @@
       margin-bottom: 10px;
     }
 
+    .news-desc {
+      color: var(--text-gray);
+      line-height: 1.5;
+    }
+
     /* Video Section */
     .video-container {
       position: relative;
@@ -840,9 +835,9 @@
   <!-- Copy Protection Overlay -->
   <div class="copy-protection-overlay" id="copy-protection">
     <div class="copy-protection-message">
-      <h3>İçerik Koruması</h3>
-      <p>Bu web sitesinin içeriği kopyalanamaz. OLD GENERATION loncasının içerikleri özel olarak korunmaktadır.</p>
-      <button onclick="document.getElementById('copy-protection').style.opacity = '0'">Tamam</button>
+      <h3 id="copy-title">İçerik Koruması</h3>
+      <p id="copy-message">Bu web sitesinin içeriği kopyalanamaz. OLD GENERATION loncasının içerikleri özel olarak korunmaktadır.</p>
+      <button id="copy-button" onclick="document.getElementById('copy-protection').style.opacity = '0'">Tamam</button>
     </div>
   </div>
   
@@ -901,27 +896,27 @@
         <div class="member-grid">
           <div class="member-card">
             <div class="member-avatar">👑</div>
-            <div class="member-name">Lonca Lideri</div>
-            <div class="member-role">Yüce Lider</div>
-            <div class="member-might">Güç: 2B+</div>
+            <div class="member-name" id="member1-name">Lonca Lideri</div>
+            <div class="member-role" id="member1-role">Yüce Lider</div>
+            <div class="member-might" id="member1-might">Güç: 2B+</div>
           </div>
           <div class="member-card">
             <div class="member-avatar">⚔️</div>
-            <div class="member-name">Savaş Generali</div>
-            <div class="member-role">Savaş Komutanı</div>
-            <div class="member-might">Güç: 1B+</div>
+            <div class="member-name" id="member2-name">Savaş Generali</div>
+            <div class="member-role" id="member2-role">Savaş Komutanı</div>
+            <div class="member-might" id="member2-might">Güç: 1B+</div>
           </div>
           <div class="member-card">
             <div class="member-avatar">🛡️</div>
-            <div class="member-name">Kalkan Ustası</div>
-            <div class="member-role">Savunma Stratejisti</div>
-            <div class="member-might">Güç: 500M+</div>
+            <div class="member-name" id="member3-name">Kalkan Ustası</div>
+            <div class="member-role" id="member3-role">Savunma Stratejisti</div>
+            <div class="member-might" id="member3-might">Güç: 500M+</div>
           </div>
           <div class="member-card">
             <div class="member-avatar">🏰</div>
-            <div class="member-name">Kale Koruyucusu</div>
-            <div class="member-role">Bölge Koruyucusu</div>
-            <div class="member-might">Güç: 300M+</div>
+            <div class="member-name" id="member4-name">Kale Koruyucusu</div>
+            <div class="member-role" id="member4-role">Bölge Koruyucusu</div>
+            <div class="member-might" id="member4-might">Güç: 300M+</div>
           </div>
         </div>
       </section>
@@ -967,12 +962,14 @@
       <section id="news" class="fade-in">
         <h2 id="news-title">Duyurular & Güncellemeler</h2>
         <div class="news-item">
-          <div class="news-date">1 Haziran 2025</div>
+          <div class="news-date" id="news-date1">1 Haziran 2025</div>
           <div class="news-title" id="news-recruitment">Üye Alımı Açık</div>
+          <div class="news-desc" id="news-recruitment-desc">Aktif üyeler arıyoruz! Başvurun.</div>
         </div>
         <div class="news-item">
-          <div class="news-date">28 Mayıs 2025</div>
+          <div class="news-date" id="news-date2">28 Mayıs 2025</div>
           <div class="news-title" id="news-tournament">Lonca Turnuvası</div>
+          <div class="news-desc" id="news-tournament-desc">Lonca turnuvamız gelecek hafta başlıyor. Birliklerinizi hazırlayın!</div>
         </div>
       </section>
       
@@ -1037,8 +1034,12 @@
         terminology_title: "Lords Mobile Guide",
         terminology_text: "Essential terms and strategies for guild success",
         news_title: "News & Updates",
+        news_date1: "June 1, 2025",
         news_recruitment: "Recruitment Open",
+        news_recruitment_desc: "We are recruiting active members! Apply now.",
+        news_date2: "May 28, 2025",
         news_tournament: "Guild Tournament",
+        news_tournament_desc: "Our guild tournament starts next week. Prepare your troops!",
         shortfilm_title: "Guild Short Film",
         contact_title: "Get in Touch",
         label_name: "Name",
@@ -1046,7 +1047,24 @@
         label_message: "Message",
         contact_button: "Send Message",
         footer1: "OLD GENERATION is a distinguished guild in Lords Mobile since 2016.",
-        footer2: "© 2016–∞ OLD GENERATION. Designed by NeutralizeR"
+        footer2: "© 2016–∞ OLD GENERATION. Designed by NeutralizeR",
+        // Member translations
+        member1_name: "Guild Leader",
+        member1_role: "Supreme Leader",
+        member1_might: "Might: 2B+",
+        member2_name: "War General",
+        member2_role: "Battle Commander",
+        member2_might: "Might: 1B+",
+        member3_name: "Shield Master",
+        member3_role: "Defense Strategist",
+        member3_might: "Might: 500M+",
+        member4_name: "Castle Guardian",
+        member4_role: "Territory Protector",
+        member4_might: "Might: 300M+",
+        // Copy protection translations
+        copy_title: "Content Protection",
+        copy_message: "The content of this website cannot be copied. The content of OLD GENERATION guild is protected.",
+        copy_button: "OK"
       },
       tr: {
         title: "OLD GENERATION – ASLA PES ETME",
@@ -1069,8 +1087,12 @@
         terminology_title: "Lords Mobile Rehberi",
         terminology_text: "Lonca başarısı için temel terimler ve stratejiler",
         news_title: "Duyurular & Güncellemeler",
+        news_date1: "1 Haziran 2025",
         news_recruitment: "Üye Alımı Açık",
+        news_recruitment_desc: "Aktif üyeler arıyoruz! Başvurun.",
+        news_date2: "28 Mayıs 2025",
         news_tournament: "Lonca Turnuvası",
+        news_tournament_desc: "Lonca turnuvamız gelecek hafta başlıyor. Birliklerinizi hazırlayın!",
         shortfilm_title: "Lonca Kısa Filmi",
         contact_title: "İletişime Geçin",
         label_name: "İsim",
@@ -1078,7 +1100,24 @@
         label_message: "Mesaj",
         contact_button: "Mesaj Gönder",
         footer1: "OLD GENERATION, Lords Mobile'da 2016'dan beri şampiyonları bir araya getiren seçkin bir loncadır.",
-        footer2: "© 2016–∞ OLD GENERATION. Tasarım: NeutralizeR"
+        footer2: "© 2016–∞ OLD GENERATION. Tasarım: NeutralizeR",
+        // Member translations
+        member1_name: "Lonca Lideri",
+        member1_role: "Yüce Lider",
+        member1_might: "Güç: 2B+",
+        member2_name: "Savaş Generali",
+        member2_role: "Savaş Komutanı",
+        member2_might: "Güç: 1B+",
+        member3_name: "Kalkan Ustası",
+        member3_role: "Savunma Stratejisti",
+        member3_might: "Güç: 500M+",
+        member4_name: "Kale Koruyucusu",
+        member4_role: "Bölge Koruyucusu",
+        member4_might: "Güç: 300M+",
+        // Copy protection translations
+        copy_title: "İçerik Koruması",
+        copy_message: "Bu web sitesinin içeriği kopyalanamaz. OLD GENERATION loncasının içerikleri özel olarak korunmaktadır.",
+        copy_button: "Tamam"
       }
     };
 
@@ -1116,8 +1155,12 @@
       document.getElementById('terminology-title').textContent = t.terminology_title;
       document.getElementById('terminology-text').textContent = t.terminology_text;
       document.getElementById('news-title').textContent = t.news_title;
+      document.getElementById('news-date1').textContent = t.news_date1;
       document.getElementById('news-recruitment').textContent = t.news_recruitment;
+      document.getElementById('news-recruitment-desc').textContent = t.news_recruitment_desc;
+      document.getElementById('news-date2').textContent = t.news_date2;
       document.getElementById('news-tournament').textContent = t.news_tournament;
+      document.getElementById('news-tournament-desc').textContent = t.news_tournament_desc;
       document.getElementById('shortfilm-title').textContent = t.shortfilm_title;
       document.getElementById('contact-title').textContent = t.contact_title;
       document.getElementById('label-name').textContent = t.label_name;
@@ -1126,6 +1169,25 @@
       document.getElementById('contact-button').textContent = t.contact_button;
       document.getElementById('footer-text1').textContent = t.footer1;
       document.getElementById('footer-text2').textContent = t.footer2;
+      
+      // Üye bilgilerini güncelle
+      document.getElementById('member1-name').textContent = t.member1_name;
+      document.getElementById('member1-role').textContent = t.member1_role;
+      document.getElementById('member1-might').textContent = t.member1_might;
+      document.getElementById('member2-name').textContent = t.member2_name;
+      document.getElementById('member2-role').textContent = t.member2_role;
+      document.getElementById('member2-might').textContent = t.member2_might;
+      document.getElementById('member3-name').textContent = t.member3_name;
+      document.getElementById('member3-role').textContent = t.member3_role;
+      document.getElementById('member3-might').textContent = t.member3_might;
+      document.getElementById('member4-name').textContent = t.member4_name;
+      document.getElementById('member4-role').textContent = t.member4_role;
+      document.getElementById('member4-might').textContent = t.member4_might;
+      
+      // Kopya koruma mesajını güncelle
+      document.getElementById('copy-title').textContent = t.copy_title;
+      document.getElementById('copy-message').textContent = t.copy_message;
+      document.getElementById('copy-button').textContent = t.copy_button;
       
       // Meta etiketlerini güncelle
       updateMetaTags(t);
