@@ -621,14 +621,15 @@
     }
 
     /* Footer */
-    footer {
-      text-align: center;
-      padding: 60px 0 40px;
-      border-top: 2px solid var(--primary-red);
-      margin-top: 60px;
-      background: rgba(10, 10, 10, 0.8);
-    }
-
+footer {
+  text-align: center;
+  padding: 60px 20px 40px;           /* Yatayda biraz boşluk ekledik */
+  border: 2px solid var(--primary-red);  /* Tüm kenarları kırmızıya boyadık */
+  border-radius: 8px;                  /* Köşeleri hafif yuvarladık (opsiyonel) */
+  margin: 60px auto 0;                 /* Üstten boşluk, ortalama için auto yan margin */
+  background: rgba(10, 10, 10, 0.8);
+  max-width: 1200px;                   /* İsteğe bağlı: genişliği kısıtlayıp ortala */
+}
     .social-buttons {
       display: flex;
       justify-content: center;
