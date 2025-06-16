@@ -130,19 +130,19 @@
     
     /* Diğer stiller aynı kalacak şekilde... */
     
-    /* Dark tema değişkenleri */
-:root {
-  --primary-red: #ff3333;
-  --dark-red: #cc1a1a;
-  --gold: #ffd700;
-  --dark-gold: #b8860b;
-  --bg-dark: #0a0a0a;
-  --bg-card: #1a1a1a;
-  --text-light: #ffffff;
-  --text-gray: #cccccc;
-  --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  --glow: 0 0 20px rgba(255, 51, 51, 0.3);
-}
+    :root {
+      --primary-red: #ff3333;
+      --dark-red: #cc1a1a;
+      --gold: #ffd700;
+      --dark-gold: #b8860b;
+      --bg-dark: #0a0a0a;
+      --bg-card: #1a1a1a;
+      --text-light: #ffffff;
+      --text-gray: #cccccc;
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      --glow: 0 0 20px rgba(255, 51, 51, 0.3);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -902,6 +902,7 @@ section::before {
       <div class="language-buttons">
         <button aria-label="Language: English" onclick="setLang('en')">EN</button>
         <button aria-label="Language: Turkish" onclick="setLang('tr')">TR</button>
+        <button aria-label="Toggle theme" onclick="toggleTheme()" class="theme-button">🌓 Theme</button>
       </div>
     </header>
     
