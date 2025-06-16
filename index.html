@@ -988,19 +988,33 @@ section::before {
         </div>
       </section>
       
-      <section id="contact" class="fade-in">
-        <h2 id="contact-title">Get in Touch</h2>
-        <form action="https://formspree.io/f/myzeveog" method="POST" aria-label="Contact Form">
-          <label for="name" id="label-name">Name</label>
-          <input id="name" name="name" type="text" required>
-          <label for="email" id="label-email">Email</label>
-          <input id="email" name="email" type="email" required>
-          <label for="message" id="label-message">Message</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-          <input class="honeypot" type="text" name="botcheck" tabindex="-1" autocomplete="off">
-          <button type="submit" id="contact-button">Send Message</button>
-        </form>
-      </section>
+     <section id="contact" class="fade-in">
+  <h2 id="contact-title">Get in Touch</h2>
+  <form class="contact-form" action="https://formspree.io/f/myzeveog" method="POST" aria-label="Contact Form">
+    
+    <div class="form-group">
+      <label for="name" id="label-name">Name</label>
+      <input id="name" name="name" type="text" required placeholder="Your name">
+    </div>
+
+    <div class="form-group">
+      <label for="email" id="label-email">Email</label>
+      <input id="email" name="email" type="email" required placeholder="you@example.com">
+    </div>
+
+    <div class="form-group">
+      <label for="message" id="label-message">Message</label>
+      <textarea id="message" name="message" rows="4" required placeholder="Type your message here..."></textarea>
+    </div>
+
+    <div class="form-group" style="display: none;">
+      <input class="honeypot" type="text" name="botcheck" tabindex="-1" autocomplete="off">
+    </div>
+
+    <button type="submit" id="contact-button">Send Message</button>
+  </form>
+</section>
+
     </main>
     <footer>
       <p id="footer-text1">OLD GENERATION is a distinguished guild in Lords Mobile since 2016.</p>
