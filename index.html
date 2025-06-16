@@ -553,65 +553,87 @@
       display: block;
     }
 
-    /* Contact Form */
-    .contact-form {
-      max-width: 600px;
-      margin: 30px auto;
-    }
+   /* Contact Form */
+.contact-form {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
 
-    .form-group {
-      margin-bottom: 25px;
-    }
+.form-group {
+  margin-bottom: 25px;
+}
 
-    .contact-form label {
-      display: block;
-      color: var(--gold);
-      margin-bottom: 8px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+.contact-form label {
+  display: block;
+  color: var(--gold);
+  margin-bottom: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 15px;
-      border: 2px solid var(--primary-red);
-      border-radius: 10px;
-      background: rgba(26, 26, 26, 0.8);
-      color: var(--text-light);
-      font-family: 'Orbitron', monospace;
-      transition: all 0.3s ease;
-    }
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid var(--primary-red);
+  border-radius: 10px;
+  background: rgba(26, 26, 26, 0.8);
+  color: var(--text-light);
+  font-family: 'Orbitron', monospace;
+  transition: all 0.3s ease;
+}
 
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      outline: none;
-      border-color: var(--gold);
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-    }
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--text-gray);
+  opacity: 0.7;
+}
 
-    .contact-form button {
-      background: linear-gradient(45deg, var(--primary-red), var(--gold));
-      color: var(--text-light);
-      border: none;
-      padding: 15px 40px;
-      border-radius: 30px;
-      font-family: 'Orbitron', monospace;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: block;
-      margin: 0 auto;
-    }
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
 
-    .contact-form button:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--glow);
-    }
+.contact-form button {
+  background: linear-gradient(45deg, var(--primary-red), var(--gold));
+  color: var(--text-light);
+  border: none;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-family: 'Orbitron', monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
 
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow);
+}
+
+.contact-form button:active {
+  transform: scale(0.98);
+  box-shadow: none;
+}
+
+@media (max-width: 480px) {
+  .contact-form {
+    padding: 0 10px;
+  }
+
+  .contact-form button {
+    width: 100%;
+    padding: 15px 0;
+  }
+}
     .honeypot {
       position: absolute !important;
       left: -9999px !important;
