@@ -642,36 +642,27 @@
       opacity: 0 !important;
     }
 
-   footer {
-  position: relative;
-  text-align: center;
-  padding: 60px 20px 40px;
-  border: 2px solid var(--primary-red);
-  border-radius: 8px;
-  margin: 60px auto 0;
-  background: rgba(10, 10, 10, 0.8);
-  max-width: 1200px;
-  overflow: hidden; /* Taşmaları önlemek için */
-}
-
-footer::before {
+   footer::before {
   content: "";
   position: absolute;
-  top: 10px; /* Border'ın içinden biraz boşluk bırak */
+  top: 10px;
   left: 10px;
   right: 10px;
   bottom: 10px;
   background: url('https://i.hizliresim.com/ilf7so9.jpg') no-repeat center center;
-  background-size: contain;
-  opacity: 0.3; /* Şeffaflık buradan kontrol edilir */
-  pointer-events: none; /* Footer içeriğine tıklanmayı engelleme */
-  border-radius: 6px; /* Border radius ile uyumlu */
+  background-size: cover; /* veya 100% auto */
+  opacity: 0.3;
+  pointer-events: none;
+  border-radius: 6px;
   z-index: 0;
 }
 
-footer > * {
-  position: relative; /* İçerik üstte gözükür */
-  z-index: 1;
+/* Mobil uyum */
+@media (max-width: 768px) {
+  footer::before {
+    background-size: cover;
+    opacity: 0.2;
+  }
 }
     .social-buttons {
       display: flex;
