@@ -642,27 +642,15 @@
       opacity: 0 !important;
     }
 
-   footer::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  background: url('https://i.hizliresim.com/ilf7so9.jpg') no-repeat center center;
-  background-size: cover; /* veya 100% auto */
-  opacity: 0.3;
-  pointer-events: none;
-  border-radius: 6px;
-  z-index: 0;
-}
-
-/* Mobil uyum */
-@media (max-width: 768px) {
-  footer::before {
-    background-size: cover;
-    opacity: 0.2;
-  }
+    /* Footer */
+footer {
+  text-align: center;
+  padding: 60px 20px 40px;           /* Yatayda biraz boşluk ekledik */
+  border: 2px solid var(--primary-red);  /* Tüm kenarları kırmızıya boyadık */
+  border-radius: 8px;                  /* Köşeleri hafif yuvarladık (opsiyonel) */
+  margin: 60px auto 0;                 /* Üstten boşluk, ortalama için auto yan margin */
+  background: rgba(10, 10, 10, 0.8);
+  max-width: 1200px;                   /* İsteğe bağlı: genişliği kısıtlayıp ortala */
 }
     .social-buttons {
       display: flex;
