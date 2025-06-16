@@ -130,19 +130,33 @@
     
     /* Diğer stiller aynı kalacak şekilde... */
     
-    :root {
-      --primary-red: #ff3333;
-      --dark-red: #cc1a1a;
-      --gold: #ffd700;
-      --dark-gold: #b8860b;
-      --bg-dark: #0a0a0a;
-      --bg-card: #1a1a1a;
-      --text-light: #ffffff;
-      --text-gray: #cccccc;
-      --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-      --glow: 0 0 20px rgba(255, 51, 51, 0.3);
-    }
+    /* Dark tema değişkenleri */
+:root {
+  --primary-red: #ff3333;
+  --dark-red: #cc1a1a;
+  --gold: #ffd700;
+  --dark-gold: #b8860b;
+  --bg-dark: #0a0a0a;
+  --bg-card: #1a1a1a;
+  --text-light: #ffffff;
+  --text-gray: #cccccc;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --glow: 0 0 20px rgba(255, 51, 51, 0.3);
+}
 
+/* Light tema için ayrı değişkenler */
+[data-theme="light"] {
+  --primary-red: #cc0000; /* istersen biraz daha yumuşak kırmızı */
+  --dark-red: #990000;
+  --gold: #bfa700;
+  --dark-gold: #7f6200;
+  --bg-dark: #f5f5f5;     /* Açık arka plan */
+  --bg-card: #ffffff;     /* Kart arka planı açık */
+  --text-light: #111111;  /* Yazı rengi koyu */
+  --text-gray: #555555;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --glow: 0 0 15px rgba(204, 0, 0, 0.2);
+}
     * {
       margin: 0;
       padding: 0;
