@@ -642,16 +642,52 @@
       opacity: 0 !important;
     }
 
-    /* Footer */
+   /* Footer - Shimmer Efektli */
 footer {
+  position: relative;
+  overflow: hidden;
   text-align: center;
-  padding: 60px 20px 40px;           /* Yatayda biraz boşluk ekledik */
-  border: 2px solid var(--primary-red);  /* Tüm kenarları kırmızıya boyadık */
-  border-radius: 8px;                  /* Köşeleri hafif yuvarladık (opsiyonel) */
-  margin: 60px auto 0;                 /* Üstten boşluk, ortalama için auto yan margin */
+  padding: 60px 20px 40px;
+  border: 2px solid var(--primary-red);
+  border-radius: 8px;
+  margin: 60px auto 0;
   color: var(--text-light);
-  max-width: 1200px;                   /* İsteğe bağlı: genişliği kısıtlayıp ortala */
+  max-width: 1200px;
 }
+
+/* Footer shimmer efekti */
+footer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 300%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%
+  );
+  animation: shimmer 2.5s infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Footer içeriği üstte kalır */
+footer > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Shimmer animasyonu */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
     .social-buttons {
       display: flex;
       justify-content: center;
