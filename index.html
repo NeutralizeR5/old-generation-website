@@ -644,6 +644,14 @@
       border: 2px solid #ff0000;
       color: #ff0000;
     }
+    /* Tüm pseudo‑elementleri kapat */
+body::before,
+body.light::before,
+section::before {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+}
   </style>
 </head>
 <body>
