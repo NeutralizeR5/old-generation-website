@@ -116,8 +116,6 @@
       touch-action: manipulation;
     }
 
-    /* Removed grid background pattern */
-
     .skip-link {
       position: absolute;
       top: -40px;
@@ -926,24 +924,24 @@
         <p id="terminology-text">Lonca başarısı için temel terimler ve stratejiler</p>
         <div class="term-grid">
           <div class="term-card">
-            <div class="term-title">Güç (Might)</div>
-            <div class="term-desc">Askerler, binalar, araştırma ve kahraman seviyelerini birleştiren toplam güç ölçümü.</div>
+            <div class="term-title" id="term1-title">Güç (Might)</div>
+            <div class="term-desc" id="term1-desc">Askerler, binalar, araştırma ve kahraman seviyelerini birleştiren toplam güç ölçümü.</div>
           </div>
           <div class="term-card">
-            <div class="term-title">Lonca Savaşı</div>
-            <div class="term-desc">Bölge kontrolü ve ödüller için loncalar arasındaki rekabetçi savaşlar.</div>
+            <div class="term-title" id="term2-title">Lonca Savaşı</div>
+            <div class="term-desc" id="term2-desc">Bölge kontrolü ve ödüller için loncalar arasındaki rekabetçi savaşlar.</div>
           </div>
           <div class="term-card">
-            <div class="term-title">Familiar</div>
-            <div class="term-desc">Şatosuna savaş ve ekonomik bonuslar sağlayan büyülü yaratıklar.</div>
+            <div class="term-title" id="term3-title">Familiar</div>
+            <div class="term-desc" id="term3-desc">Şatosuna savaş ve ekonomik bonuslar sağlayan büyülü yaratıklar.</div>
           </div>
           <div class="term-card">
-            <div class="term-title">Colosseum</div>
-            <div class="term-desc">Kahramanların sıralama ve özel ödüller için savaştığı arena.</div>
+            <div class="term-title" id="term4-title">Colosseum</div>
+            <div class="term-desc" id="term4-desc">Kahramanların sıralama ve özel ödüller için savaştığı arena.</div>
           </div>
           <div class="term-card">
-            <div class="term-title">Rally</div>
-            <div class="term-desc">Bir oyuncunun liderliğinde diğerlerinin güçlerini birleştirdiği koordineli grup saldırısı.</div>
+            <div class="term-title" id="term5-title">Rally</div>
+            <div class="term-desc" id="term5-desc">Bir oyuncunun liderliğinde diğerlerinin güçlerini birleştirdiği koordineli grup saldırısı.</div>
           </div>
         </div>
       </section>
@@ -978,15 +976,15 @@
         <form class="contact-form" action="https://formspree.io/f/myzeveog" method="POST" aria-label="İletişim Formu">
           <div class="form-group">
             <label for="name" id="label-name">İsim</label>
-            <input id="name" name="name" type="text" required placeholder="Adınız">
+            <input id="name" name="name" type="text" required placeholder="Adınız" id="input-name">
           </div>
           <div class="form-group">
             <label for="email" id="label-email">E-posta</label>
-            <input id="email" name="email" type="email" required placeholder="email@ornek.com">
+            <input id="email" name="email" type="email" required placeholder="email@ornek.com" id="input-email">
           </div>
           <div class="form-group">
             <label for="message" id="label-message">Mesaj</label>
-            <textarea id="message" name="message" rows="4" required placeholder="Mesajınızı buraya yazın..."></textarea>
+            <textarea id="message" name="message" rows="4" required placeholder="Mesajınızı buraya yazın..." id="input-message"></textarea>
           </div>
           <div class="form-group" style="display: none;">
             <input class="honeypot" type="text" name="botcheck" tabindex="-1" autocomplete="off">
@@ -1046,6 +1044,9 @@
         label_email: "Email",
         label_message: "Message",
         contact_button: "Send Message",
+        input_name: "Your Name",
+        input_email: "email@example.com",
+        input_message: "Type your message here...",
         footer1: "OLD GENERATION is a distinguished guild in Lords Mobile since 2016.",
         footer2: "© 2016–∞ OLD GENERATION. Designed by NeutralizeR",
         // Member translations
@@ -1061,6 +1062,17 @@
         member4_name: "Castle Guardian",
         member4_role: "Territory Protector",
         member4_might: "Might: 300M+",
+        // Terminology translations
+        term1_title: "Might",
+        term1_desc: "Total power measurement combining troops, buildings, research, and hero levels.",
+        term2_title: "Guild War",
+        term2_desc: "Competitive battles between guilds for territory control and rewards.",
+        term3_title: "Familiar",
+        term3_desc: "Magical creatures that provide combat and economic bonuses to your castle.",
+        term4_title: "Colosseum",
+        term4_desc: "Arena where heroes battle for rankings and special rewards.",
+        term5_title: "Rally",
+        term5_desc: "Coordinated group attack led by one player where others combine forces.",
         // Copy protection translations
         copy_title: "Content Protection",
         copy_message: "The content of this website cannot be copied. The content of OLD GENERATION guild is protected.",
@@ -1099,6 +1111,9 @@
         label_email: "E-posta",
         label_message: "Mesaj",
         contact_button: "Mesaj Gönder",
+        input_name: "Adınız",
+        input_email: "email@ornek.com",
+        input_message: "Mesajınızı buraya yazın...",
         footer1: "OLD GENERATION, Lords Mobile'da 2016'dan beri şampiyonları bir araya getiren seçkin bir loncadır.",
         footer2: "© 2016–∞ OLD GENERATION. Tasarım: NeutralizeR",
         // Member translations
@@ -1114,6 +1129,17 @@
         member4_name: "Kale Koruyucusu",
         member4_role: "Bölge Koruyucusu",
         member4_might: "Güç: 300M+",
+        // Terminology translations
+        term1_title: "Güç (Might)",
+        term1_desc: "Askerler, binalar, araştırma ve kahraman seviyelerini birleştiren toplam güç ölçümü.",
+        term2_title: "Lonca Savaşı",
+        term2_desc: "Bölge kontrolü ve ödüller için loncalar arasındaki rekabetçi savaşlar.",
+        term3_title: "Familiar",
+        term3_desc: "Şatosuna savaş ve ekonomik bonuslar sağlayan büyülü yaratıklar.",
+        term4_title: "Colosseum",
+        term4_desc: "Kahramanların sıralama ve özel ödüller için savaştığı arena.",
+        term5_title: "Rally",
+        term5_desc: "Bir oyuncunun liderliğinde diğerlerinin güçlerini birleştirdiği koordineli grup saldırısı.",
         // Copy protection translations
         copy_title: "İçerik Koruması",
         copy_message: "Bu web sitesinin içeriği kopyalanamaz. OLD GENERATION loncasının içerikleri özel olarak korunmaktadır.",
@@ -1170,6 +1196,11 @@
       document.getElementById('footer-text1').textContent = t.footer1;
       document.getElementById('footer-text2').textContent = t.footer2;
       
+      // Placeholder'ları güncelle
+      document.getElementById('name').placeholder = t.input_name;
+      document.getElementById('email').placeholder = t.input_email;
+      document.getElementById('message').placeholder = t.input_message;
+      
       // Üye bilgilerini güncelle
       document.getElementById('member1-name').textContent = t.member1_name;
       document.getElementById('member1-role').textContent = t.member1_role;
@@ -1183,6 +1214,18 @@
       document.getElementById('member4-name').textContent = t.member4_name;
       document.getElementById('member4-role').textContent = t.member4_role;
       document.getElementById('member4-might').textContent = t.member4_might;
+      
+      // Terim bilgilerini güncelle
+      document.getElementById('term1-title').textContent = t.term1_title;
+      document.getElementById('term1-desc').textContent = t.term1_desc;
+      document.getElementById('term2-title').textContent = t.term2_title;
+      document.getElementById('term2-desc').textContent = t.term2_desc;
+      document.getElementById('term3-title').textContent = t.term3_title;
+      document.getElementById('term3-desc').textContent = t.term3_desc;
+      document.getElementById('term4-title').textContent = t.term4_title;
+      document.getElementById('term4-desc').textContent = t.term4_desc;
+      document.getElementById('term5-title').textContent = t.term5_title;
+      document.getElementById('term5-desc').textContent = t.term5_desc;
       
       // Kopya koruma mesajını güncelle
       document.getElementById('copy-title').textContent = t.copy_title;
