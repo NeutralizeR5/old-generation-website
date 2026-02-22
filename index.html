@@ -12,6 +12,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
   <link rel="manifest" href="/manifest.json">
 
+  <link rel="preload" as="image" href="/images/logo.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbitron:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
@@ -39,7 +41,7 @@
   <div class="wrapper">
     <header>
       <div id="logo">
-        <img src="/images/logo.png" alt="OLD GENERATION Official Emblem" width="150" height="150">
+        <img src="/images/logo.png" alt="OLD GENERATION Official Emblem" width="150" height="150" fetchpriority="high">
       </div>
       <h1>OLD GENERATION</h1>
       <p id="header-subtitle">PRESERVING LEGACY, COMMANDING DESTINY</p>
@@ -145,6 +147,8 @@
             </div>
             <button class="btn-nav" id="btn-copy" onclick="copyResults()" style="margin-top:20px; width:100%; background: #222; border: 1px solid var(--gold);">Copy to Clipboard</button>
           </div>
+        </div>
+      </section>
 
       <section id="contact">
         <h2 id="contact-title">The Inquisitorial Protocol</h2>
