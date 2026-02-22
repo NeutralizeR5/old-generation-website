@@ -93,14 +93,56 @@
 
       <section id="terminology">
         <h2 id="terminology-title">Tactical Compendium</h2>
-        <div class="term-grid">
-          <div class="term-card">
-            <h4 id="term1-title">Martial Stature</h4>
-            <p id="term1-desc">A comprehensive evaluation of sovereignty: military assets, structural progress, and arcane research.</p>
+        
+        <div class="calculator-container">
+          <h3 id="calc-title" class="calc-header">Deployment Calculator</h3>
+          <div class="calc-inputs">
+            <div class="form-group">
+              <label id="calc-label-total" for="total-troops">Total Deployment Size</label>
+              <input type="number" id="total-troops" value="250000" min="1000">
+            </div>
+            <div class="form-group">
+              <label id="calc-label-split" for="t5-split">T5 / T4 Ratio Integration</label>
+              <select id="t5-split">
+                <option value="40" id="calc-split-40">40% T5 / 60% T4 (Standard Vanguard)</option>
+                <option value="50" id="calc-split-50">50% T5 / 50% T4 (Equilibrium)</option>
+                <option value="60" id="calc-split-60">60% T5 / 40% T4 (Heavy Assault)</option>
+                <option value="0" id="calc-split-100">100% T4 (Pure T4 Vanguard)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label id="calc-label-comp" for="comp-type">Formation Strategy</label>
+              <select id="comp-type">
+                <option value="inf-blast" id="comp-inf">Infantry Blast</option>
+                <option value="rng-blast" id="comp-rng">Ranged Blast</option>
+                <option value="cav-blast" id="comp-cav">Cavalry Blast</option>
+                <option value="442" id="comp-442">Mixed 4-4-2 (Inf/Rng Focus)</option>
+                <option value="424" id="comp-424">Mixed 4-2-4 (Inf/Cav Focus)</option>
+                <option value="244" id="comp-244">Mixed 2-4-4 (Rng/Cav Focus)</option>
+              </select>
+            </div>
+            <button class="btn-nav" id="btn-calculate" onclick="calculateTroops()" style="margin-top:10px; width:100%;">Compute Matrix</button>
           </div>
-          <div class="term-card">
-            <h4 id="term2-title">Coordinated Rally</h4>
-            <p id="term2-desc">A synchronised offensive where legionnaires unite under a singular command to overwhelm opposition.</p>
+          
+          <div class="calc-results" id="calc-results" style="display:none;">
+            <h3 id="calc-result-title" style="color: var(--gold); margin-top: 30px; margin-bottom: 15px; text-align: center;">Deployment Matrix Overview</h3>
+            <div class="result-grid">
+              <div class="res-box inf">
+                <h4 id="res-inf-title">Infantry</h4>
+                <p>T5: <span id="res-t5-inf" class="res-number">0</span></p>
+                <p>T4: <span id="res-t4-inf" class="res-number">0</span></p>
+              </div>
+              <div class="res-box rng">
+                <h4 id="res-rng-title">Ranged</h4>
+                <p>T5: <span id="res-t5-rng" class="res-number">0</span></p>
+                <p>T4: <span id="res-t4-rng" class="res-number">0</span></p>
+              </div>
+              <div class="res-box cav">
+                <h4 id="res-cav-title">Cavalry</h4>
+                <p>T5: <span id="res-t5-cav" class="res-number">0</span></p>
+                <p>T4: <span id="res-t4-cav" class="res-number">0</span></p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -110,7 +152,6 @@
         <div class="progress-container"><div class="progress-bar" id="p-bar"></div></div>
         
         <form id="recruitment-form" action="https://formspree.io/f/myzeveog" method="POST">
-          
           <div class="form-step active" data-step="1">
             <div class="form-group">
               <label id="label-name" for="name">In-Game Name</label>
@@ -149,7 +190,6 @@
             <button type="button" class="btn-nav" id="nextBtn">Proceed</button>
             <button type="submit" class="btn-nav" id="submitBtn" style="display:none;">Formalise Enlistment</button>
           </div>
-
         </form>
       </section>
     </main>
@@ -158,10 +198,10 @@
       <p id="footer-text1">OLD GENERATION: Cultivating martial excellence and strategic dominance since 2016.</p>
       <div class="social-buttons">
         <a href="https://t.me/trneutralizer" target="_blank" rel="noopener" aria-label="Join our Telegram Headquarters">
-          <img src="/images/telegram.png" alt="Telegram Icon" width="30" height="30">
+          <img src="/images/telegram.png" alt="Telegram Icon">
         </a>
         <a href="https://line.me/ti/p/Tt3gWr3BDE" target="_blank" rel="noopener" aria-label="Contact us via Line Messenger">
-          <img src="/images/line.png" alt="Line Icon" width="30" height="30">
+          <img src="/images/line.png" alt="Line Icon">
         </a>
       </div>
       <p class="copyright">© 2016–2026 OLD GENERATION. Designed by NeutralizeR</p>
