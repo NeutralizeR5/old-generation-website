@@ -14,10 +14,10 @@ const translations = {
     btn_calculate: "Compute Matrix", calc_result_title: "Deployment Matrix Overview", res_inf_title: "Infantry", res_rng_title: "Ranged", res_cav_title: "Cavalry",
     btn_copy: "Copy to Clipboard", msg_copied: "Matrix Copied!",
     contact_title: "The Inquisitorial Protocol", label_name: "In Game Name", label_iggid: "Unique IGG ID", label_might: "Might Stature",
-    label_role: "Specialisation", label_message: "Statement of Intent", form_disclaimer: "* Submission is a formal pledge of loyalty.",
+    label_role: "Specialisation", label_message: "Statement of Intent", form_disclaimer: "Submission is a formal pledge of loyalty.",
     prev_btn: "Back", next_btn: "Proceed", submit_btn: "Formalise Enlistment",
     footer1: "OLD GENERATION: Cultivating martial excellence since 2016.", copy_title: "SOVEREIGN PROTECTION", copy_message: "This property belongs to OLD GENERATION.",
-    ph_name: "State your exact player alias", ph_iggid: "Numeric Identity", ph_might: "e.g., 2.5bn", ph_message: "Detail your purpose for joining our ranks..."
+    ph_name: "State your exact player alias", ph_iggid: "Numeric Identity", ph_might: "e.g. 2.5bn", ph_message: "Detail your purpose for joining our ranks..."
   },
   tr: {
     title: "OLD GENERATION ASLA PES ETME",
@@ -34,7 +34,7 @@ const translations = {
     btn_calculate: "Matrisi Hesapla", calc_result_title: "Dağılım Matrisi Özeti", res_inf_title: "Piyade", res_rng_title: "Menzilli", res_cav_title: "Süvari",
     btn_copy: "Panoya Kopyala", msg_copied: "Matris Kopyalandı!",
     contact_title: "Üyelik Sorgulama Protokolü", label_name: "Oyun İçi İsim", label_iggid: "Benzersiz IGG ID", label_might: "Kudret Seviyesi",
-    label_role: "Uzmanlık Alanı", label_message: "Niyet Beyanı", form_disclaimer: "* Gönderim, resmi bir sadakat yemini teşkil eder.",
+    label_role: "Uzmanlık Alanı", label_message: "Niyet Beyanı", form_disclaimer: "Gönderim resmi bir sadakat yemini teşkil eder.",
     prev_btn: "Geri", next_btn: "Devam Et", submit_btn: "Kaydı Resmileştir",
     footer1: "OLD GENERATION: 2016'dan beri askeri mükemmellik inşa ediyoruz.", copy_title: "İÇERİK KORUMASI", copy_message: "Bu mülkiyet OLD GENERATION'a aittir.",
     ph_name: "Askeri künyenizi beyan edin", ph_iggid: "Sayısal Kimliğiniz", ph_might: "Örn. 2.5mr", ph_message: "Saflarımıza katılma amacınızı detaylandırın..."
@@ -54,7 +54,7 @@ const translations = {
     btn_calculate: "Calcola Matrice", calc_result_title: "Panoramica Matrice", res_inf_title: "Fanteria", res_rng_title: "Archi", res_cav_title: "Cavalleria",
     btn_copy: "Copia negli Appunti", msg_copied: "Matrice Copiata!",
     contact_title: "Il Protocollo Inquisitorio", label_name: "Nome In Game", label_iggid: "ID IGG Univoco", label_might: "Potenza Attuale",
-    label_role: "Specializzazione", label_message: "Dichiarazione d'Intenti", form_disclaimer: "* L'invio costituisce un impegno di lealtà.",
+    label_role: "Specializzazione", label_message: "Dichiarazione d'Intenti", form_disclaimer: "L'invio costituisce un impegno di lealtà.",
     prev_btn: "Indietro", next_btn: "Procedi", submit_btn: "Formalizza l'Arruolamento",
     footer1: "OLD GENERATION: Coltiviamo l'eccellenza marziale dal 2016.", copy_title: "PROTEZIONE SOVRANA", copy_message: "Questa proprietà appartiene a OLD GENERATION.",
     ph_name: "Dichiara il tuo alias di battaglia", ph_iggid: "Identità Numerica", ph_might: "es. 2.5mld", ph_message: "Dettaglia il tuo scopo per unirti ai nostri ranghi..."
@@ -167,6 +167,8 @@ document.addEventListener('DOMContentLoaded', () => {
     progressBar.style.width = (currentStep / 3 * 100) + '%';
   };
 
+  updateUI();
+
   document.getElementById('nextBtn').addEventListener('click', () => { if (currentStep < 3) { currentStep++; updateUI(); } });
   document.getElementById('prevBtn').addEventListener('click', () => { if (currentStep > 1) { currentStep--; updateUI(); } });
 
@@ -179,5 +181,3 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('/service-worker.js');
-
-
