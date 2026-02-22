@@ -49,9 +49,9 @@ const translations = {
     terminology_title: "Compendio Tattico",
     calc_title: "Calcolatore di Schieramento", calc_label_total: "Capacità Totale", calc_label_split: "Integrazione Rapporto",
     calc_split_40: "40% T5 60% T4 (Avanguardia Standard)", calc_split_50: "50% T5 50% T4 (Equilibrio)", calc_split_60: "60% T5 40% T4 (Assalto Pesante)", calc_split_100: "100% T4 (Pura Avanguardia)",
-    calc_label_comp: "Strategia di Formazione", comp_inf: "Fanteria (Blast)", comp_rng: "Tiro (Blast)", comp_cav: "Cavalleria (Blast)",
-    comp_442: "Misto 4 4 2 (Focus Fan Tir)", comp_424: "Misto 4 2 4 (Focus Fan Cav)", comp_244: "Misto 2 4 4 (Focus Tir Cav)",
-    btn_calculate: "Calcola Matrice", calc_result_title: "Panoramica Matrice", res_inf_title: "Fanteria", res_rng_title: "Tiro", res_cav_title: "Cavalleria",
+    calc_label_comp: "Strategia di Formazione", comp_inf: "Fanteria (Blast)", comp_rng: "Archi (Blast)", comp_cav: "Cavalleria (Blast)",
+    comp_442: "Misto 4 4 2 (Focus Fan Arc)", comp_424: "Misto 4 2 4 (Focus Fan Cav)", comp_244: "Misto 2 4 4 (Focus Arc Cav)",
+    btn_calculate: "Calcola Matrice", calc_result_title: "Panoramica Matrice", res_inf_title: "Fanteria", res_rng_title: "Archi", res_cav_title: "Cavalleria",
     btn_copy: "Copia negli Appunti", msg_copied: "Matrice Copiata!",
     contact_title: "Il Protocollo Inquisitorio", label_name: "Nome In Game", label_iggid: "ID IGG Univoco", label_might: "Potenza Attuale",
     label_role: "Specializzazione", label_message: "Dichiarazione d'Intenti", form_disclaimer: "* L'invio costituisce un impegno di lealtà.",
@@ -179,3 +179,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('/service-worker.js');
+
