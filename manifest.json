@@ -1,11 +1,13 @@
 {
-  "name": "OLD GENERATION Guild",
+  "name": "OLD GENERATION Sovereign Portal",
   "short_name": "OLD GEN",
-  "description": "A top-tier guild in Lords Mobile since 2016",
+  "description": "The official archives and enlistment portal for the Old Generation guild, presiding over Lords Mobile since 2016.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ff3333",
+  "background_color": "#0a0a0a",
   "theme_color": "#ff3333",
+  "orientation": "portrait",
+  "scope": "/",
   "icons": [
     {
       "src": "/icons/apple-touch-icon.png",
@@ -26,6 +28,12 @@
       "src": "/icons/mstile-150x150.png",
       "sizes": "150x150",
       "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
