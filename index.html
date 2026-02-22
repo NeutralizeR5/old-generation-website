@@ -178,9 +178,21 @@
       <section id="profiles">
         <h2 id="profiles-title">High Council</h2>
         <div class="member-grid">
-          <div class="member-card"><div style="font-size:3rem;">👑</div><div id="member1-name" style="color:var(--gold); margin-top:10px;">Supreme Leader</div><div style="color:var(--primary-red); font-size:0.8rem;">GRAND MARSHAL</div></div>
-          <div class="member-card"><div style="font-size:3rem;">⚔️</div><div id="member2-name" style="color:var(--gold); margin-top:10px;">War General</div><div style="color:var(--primary-red); font-size:0.8rem;">BATTLE COMMANDER</div></div>
-          <div class="member-card"><div style="font-size:3rem;">🛡️</div><div id="member3-name" style="color:var(--gold); margin-top:10px;">Shield Master</div><div style="color:var(--primary-red); font-size:0.8rem;">DEFENCE STRATEGIST</div></div>
+          <div class="member-card">
+            <div style="font-size:3rem;">👑</div>
+            <div id="member1-name" style="color:var(--gold); margin-top:10px;">Supreme Leader</div>
+            <div id="member1-role" style="color:var(--primary-red); font-size:0.8rem;">GRAND MARSHAL</div>
+          </div>
+          <div class="member-card">
+            <div style="font-size:3rem;">⚔️</div>
+            <div id="member2-name" style="color:var(--gold); margin-top:10px;">War General</div>
+            <div id="member2-role" style="color:var(--primary-red); font-size:0.8rem;">BATTLE COMMANDER</div>
+          </div>
+          <div class="member-card">
+            <div style="font-size:3rem;">🛡️</div>
+            <div id="member3-name" style="color:var(--gold); margin-top:10px;">Shield Master</div>
+            <div id="member3-role" style="color:var(--primary-red); font-size:0.8rem;">DEFENCE STRATEGIST</div>
+          </div>
         </div>
       </section>
 
@@ -202,7 +214,7 @@
         <h2 id="contact-title">The Inquisitorial Protocol</h2>
         <div class="progress-container"><div class="progress-bar" id="p-bar"></div></div>
         
-        <form id="recruitment-form" action="https://formspree.io/f/myzeveog" method="POST" enctype="multipart/form-data">
+        <form id="recruitment-form" action="https://formspree.io/f/myzeveog" method="POST">
           
           <div class="form-step active" data-step="1">
             <div class="form-group">
@@ -210,26 +222,22 @@
               <input type="text" name="name" id="name" required placeholder="Reveal your identity">
             </div>
             <div class="form-group">
-              <label>Unique IGG ID</label>
+              <label id="label-iggid">Unique IGG ID</label>
               <input type="number" name="iggid" required placeholder="Numeric Identifier">
             </div>
           </div>
 
           <div class="form-step" data-step="2">
             <div class="form-group">
-              <label>Current Might Stature</label>
+              <label id="label-might">Current Might Stature</label>
               <input type="text" name="might" required placeholder="e.g. 2.5bn">
             </div>
             <div class="form-group">
-              <label>Specialisation</label>
+              <label id="label-specialisation">Specialisation</label>
               <select name="role">
                 <option value="filler">Elite Vanguard (Filler)</option>
                 <option value="rally-lead">High-Tier Rally Lead</option>
               </select>
-            </div>
-            <div class="form-group">
-              <label>Evidence of Arsenal (Screenshot)</label>
-              <input type="file" name="evidence" accept="image/*">
             </div>
           </div>
 
@@ -238,7 +246,7 @@
               <label id="label-message">Statement of Intent</label>
               <textarea name="message" id="message" rows="4" placeholder="Articulate your purpose for joining our banner..."></textarea>
             </div>
-            <p style="font-size: 0.75rem; color: var(--primary-red); text-align: center;">Submission constitutes a formal pledge of loyalty to the Old Generation Council.</p>
+            <p style="font-size: 0.75rem; color: var(--primary-red); text-align: center;" id="form-disclaimer">Submission constitutes a formal pledge of loyalty to the Old Generation Council.</p>
           </div>
 
           <div class="form-navigation">
@@ -276,10 +284,30 @@
         might_label: "Collective Potency",
         level_label: "Sovereign Level",
         profiles_title: "High Council",
+        member1_name: "Supreme Leader",
+        member1_role: "GRAND MARSHAL",
+        member2_name: "War General",
+        member2_role: "BATTLE COMMANDER",
+        member3_name: "Shield Master",
+        member3_role: "DEFENCE STRATEGIST",
         terminology_title: "Tactical Compendium",
+        term1_title: "Martial Stature",
+        term1_desc: "A comprehensive evaluation of one's sovereignty, encompassing military assets, structural progress, and arcane research.",
+        term2_title: "Coordinated Rally",
+        term2_desc: "A masterfully synchronised offensive where legionnaires unite under a singular command to overwhelm the opposition.",
         contact_title: "The Inquisitorial Protocol",
         label_name: "In-Game Moniker",
+        input_name_placeholder: "Reveal your identity",
+        label_iggid: "Unique IGG ID",
+        input_iggid_placeholder: "Numeric Identifier",
+        label_might: "Current Might Stature",
+        label_specialisation: "Specialisation",
         label_message: "Statement of Intent",
+        input_message_placeholder: "Articulate your purpose for joining our banner...",
+        form_disclaimer: "Submission constitutes a formal pledge of loyalty to the Old Generation Council.",
+        prev_btn: "Back",
+        next_btn: "Proceed",
+        submit_btn: "Formalise Enlistment",
         footer1: "OLD GENERATION: Cultivating martial excellence and strategic dominance since 2016.",
         copy_title: "SOVEREIGN PROTECTION",
         copy_message: "This intellectual property is the exclusive domain of OLD GENERATION."
@@ -296,10 +324,30 @@
         might_label: "Toplam Kudret",
         level_label: "Lonca Kademesi",
         profiles_title: "Yüksek Konsey",
+        member1_name: "Yüce Lider",
+        member1_role: "BAŞ MARŞAL",
+        member2_name: "Savaş Generali",
+        member2_role: "MUHAREBE KOMUTANI",
+        member3_name: "Kalkan Ustası",
+        member3_role: "SAVUNMA STRATEJİSTİ",
         terminology_title: "Taktik Rehber",
+        term1_title: "Askeri Kudret",
+        term1_desc: "Askeri varlıkları, yapısal ilerlemeyi ve gizemli araştırmaları kapsayan, kişinin egemenliğinin kapsamlı bir değerlendirmesi.",
+        term2_title: "Koordineli Miting",
+        term2_desc: "Lejyonerlerin muhalefeti ezmek için tek bir komuta altında birleştiği, ustaca senkronize edilmiş bir saldırı.",
         contact_title: "Üyelik Sorgulama Protokolü",
         label_name: "Oyun İçi Takma Ad",
+        input_name_placeholder: "Kimliğinizi açıklayın",
+        label_iggid: "Benzersiz IGG ID",
+        input_iggid_placeholder: "Sayısal Tanımlayıcı",
+        label_might: "Mevcut Kudret Seviyesi",
+        label_specialisation: "Uzmanlık Alanı",
         label_message: "Niyet Beyanı",
+        input_message_placeholder: "Sancağımıza katılma amacınızı belirtin...",
+        form_disclaimer: "Gönderim, Old Generation Konseyi'ne resmi bir sadakat yemini teşkil eder.",
+        prev_btn: "Geri",
+        next_btn: "Devam Et",
+        submit_btn: "Kaydı Resmileştir",
         footer1: "OLD GENERATION: 2016'dan beri askeri mükemmellik ve stratejik hakimiyet inşa ediyoruz.",
         copy_title: "İÇERİK KORUMASI",
         copy_message: "Bu fikri mülkiyet OLD GENERATION loncasının münhasır alanıdır."
@@ -312,6 +360,7 @@
 
     function setLang(lang) {
       const t = translations[lang];
+      document.documentElement.lang = lang;
       document.title = t.title;
       document.getElementById('header-subtitle').textContent = t.header_subtitle;
       document.getElementById('nav-stats').textContent = t.nav_stats;
@@ -323,10 +372,36 @@
       document.getElementById('might-label').textContent = t.might_label;
       document.getElementById('level-label').textContent = t.level_label;
       document.getElementById('profiles-title').textContent = t.profiles_title;
+      
+      // Member names and roles
+      document.getElementById('member1-name').textContent = t.member1_name;
+      document.getElementById('member1-role').textContent = t.member1_role;
+      document.getElementById('member2-name').textContent = t.member2_name;
+      document.getElementById('member2-role').textContent = t.member2_role;
+      document.getElementById('member3-name').textContent = t.member3_name;
+      document.getElementById('member3-role').textContent = t.member3_role;
+
+      // Terminology content
       document.getElementById('terminology-title').textContent = t.terminology_title;
+      document.getElementById('term1-title').textContent = t.term1_title;
+      document.getElementById('term1-desc').textContent = t.term1_desc;
+      document.getElementById('term2-title').textContent = t.term2_title;
+      document.getElementById('term2-desc').textContent = t.term2_desc;
+
+      // Contact form
       document.getElementById('contact-title').textContent = t.contact_title;
       document.getElementById('label-name').textContent = t.label_name;
+      document.getElementById('name').placeholder = t.input_name_placeholder;
+      document.getElementById('label-iggid').textContent = t.label_iggid;
+      document.getElementById('label-might').textContent = t.label_might;
+      document.getElementById('label-specialisation').textContent = t.label_specialisation;
       document.getElementById('label-message').textContent = t.label_message;
+      document.getElementById('message').placeholder = t.input_message_placeholder;
+      document.getElementById('form-disclaimer').textContent = t.form_disclaimer;
+      document.getElementById('prevBtn').textContent = t.prev_btn;
+      document.getElementById('nextBtn').textContent = t.next_btn;
+      document.getElementById('submitBtn').textContent = t.submit_btn;
+
       document.getElementById('footer-text1').textContent = t.footer1;
       document.getElementById('copy-title').textContent = t.copy_title;
       document.getElementById('copy-message').textContent = t.copy_message;
@@ -352,13 +427,17 @@
     });
 
     function updateNavigation() {
-      document.getElementById('prevBtn').style.visibility = currentStep === 1 ? 'hidden' : 'visible';
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const submitBtn = document.getElementById('submitBtn');
+
+      prevBtn.style.visibility = currentStep === 1 ? 'hidden' : 'visible';
       if (currentStep === 3) {
-        document.getElementById('nextBtn').style.display = 'none';
-        document.getElementById('submitBtn').style.display = 'block';
+        nextBtn.style.display = 'none';
+        submitBtn.style.display = 'block';
       } else {
-        document.getElementById('nextBtn').style.display = 'block';
-        document.getElementById('submitBtn').style.display = 'none';
+        nextBtn.style.display = 'block';
+        submitBtn.style.display = 'none';
       }
       progressBar.style.width = (currentStep / 3 * 100) + '%';
     }
