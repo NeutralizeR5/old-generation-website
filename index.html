@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbitron:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,11 +23,11 @@
   <div id="copy-protection">
     <div class="protection-box">
       <h3 id="copy-title">SOVEREIGN PROTECTION</h3>
-      <p id="copy-message">This intellectual property belongs to OLD GENERATION.</p>
+      <p id="copy-message">This intellectual property belongs exclusively to OLD GENERATION.</p>
     </div>
   </div>
 
-  <nav>
+  <nav aria-label="Global Navigation">
     <ul>
       <li><a href="#live-stats" id="nav-stats">Intelligence</a></li>
       <li><a href="#profiles" id="nav-profiles">Legion</a></li>
@@ -37,32 +38,56 @@
 
   <div class="wrapper">
     <header>
-      <div id="logo"><img src="/images/logo.png" alt="OLD GENERATION"></div>
+      <div id="logo">
+        <img src="/images/logo.png" alt="OLD GENERATION Official Emblem" width="150" height="150">
+      </div>
       <h1>OLD GENERATION</h1>
       <p id="header-subtitle">PRESERVING LEGACY, COMMANDING DESTINY</p>
       <div class="language-buttons">
-        <button onclick="setLang('tr')">TR</button>
-        <button onclick="setLang('en')">EN</button>
-        <button onclick="setLang('it')">IT</button>
+        <button onclick="setLang('tr')" aria-label="Switch to Turkish">TR</button>
+        <button onclick="setLang('en')" aria-label="Switch to English">EN</button>
+        <button onclick="setLang('it')" aria-label="Switch to Italian">IT</button>
       </div>
     </header>
 
     <main id="main-content">
+      
       <section id="live-stats">
         <h2 id="stats-title">Strategic Metrics</h2>
         <div class="stats-grid">
-          <div class="stat-card"><span class="stat-number">100</span><div id="members-label">Elite Combatants</div></div>
-          <div class="stat-card"><span class="stat-number">100B+</span><div id="might-label">Collective Potency</div></div>
-          <div class="stat-card"><span class="stat-number">29</span><div id="level-label">Sovereign Level</div></div>
+          <div class="stat-card">
+            <span class="stat-number">100</span>
+            <div id="members-label">Elite Combatants</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">100B+</span>
+            <div id="might-label">Collective Potency</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">29</span>
+            <div id="level-label">Sovereign Level</div>
+          </div>
         </div>
       </section>
 
       <section id="profiles">
         <h2 id="profiles-title">High Council</h2>
         <div class="member-grid">
-          <div class="member-card"><div>👑</div><div id="member1-name">Supreme Leader</div><div id="member1-role" class="role-text">GRAND MARSHAL</div></div>
-          <div class="member-card"><div>⚔️</div><div id="member2-name">War General</div><div id="member2-role" class="role-text">BATTLE COMMANDER</div></div>
-          <div class="member-card"><div>🛡️</div><div id="member3-name">Shield Master</div><div id="member3-role" class="role-text">DEFENCE STRATEGIST</div></div>
+          <div class="member-card">
+            <div class="avatar-icon" role="img" aria-label="Supreme Leader Icon">👑</div>
+            <div id="member1-name">Supreme Leader</div>
+            <div id="member1-role" class="role-text">GRAND MARSHAL</div>
+          </div>
+          <div class="member-card">
+            <div class="avatar-icon" role="img" aria-label="War General Icon">⚔️</div>
+            <div id="member2-name">War General</div>
+            <div id="member2-role" class="role-text">BATTLE COMMANDER</div>
+          </div>
+          <div class="member-card">
+            <div class="avatar-icon" role="img" aria-label="Shield Master Icon">🛡️</div>
+            <div id="member3-name">Shield Master</div>
+            <div id="member3-role" class="role-text">DEFENCE STRATEGIST</div>
+          </div>
         </div>
       </section>
 
@@ -71,11 +96,11 @@
         <div class="term-grid">
           <div class="term-card">
             <h4 id="term1-title">Martial Stature</h4>
-            <p id="term1-desc">Comprehensive sovereignty evaluation: military, structural, and arcane research.</p>
+            <p id="term1-desc">A comprehensive evaluation of sovereignty: military assets, structural progress, and arcane research.</p>
           </div>
           <div class="term-card">
             <h4 id="term2-title">Coordinated Rally</h4>
-            <p id="term2-desc">Synchronised offensive where legionnaires unite under a singular command.</p>
+            <p id="term2-desc">A synchronised offensive where legionnaires unite under a singular command to overwhelm opposition.</p>
           </div>
         </div>
       </section>
@@ -83,36 +108,66 @@
       <section id="contact">
         <h2 id="contact-title">The Inquisitorial Protocol</h2>
         <div class="progress-container"><div class="progress-bar" id="p-bar"></div></div>
+        
         <form id="recruitment-form" action="https://formspree.io/f/myzeveog" method="POST">
+          
           <div class="form-step active" data-step="1">
-            <div class="form-group"><label id="label-name">In-Game Name</label><input type="text" name="name" id="name" required></div>
-            <div class="form-group"><label id="label-iggid">Unique IGG ID</label><input type="number" name="iggid" required></div>
+            <div class="form-group">
+              <label id="label-name" for="name">In-Game Name</label>
+              <input type="text" name="name" id="name" required placeholder="Reveal your moniker">
+            </div>
+            <div class="form-group">
+              <label id="label-iggid" for="iggid">Unique IGG ID</label>
+              <input type="number" name="iggid" id="iggid" required placeholder="Numeric Identity">
+            </div>
           </div>
+
           <div class="form-step" data-step="2">
-            <div class="form-group"><label id="label-might">Might Stature</label><input type="text" name="might" required></div>
-            <div class="form-group"><label id="label-role">Specialisation</label><select name="role"><option value="filler">Elite Vanguard (Filler)</option><option value="rally-lead">High-Tier Rally Lead</option></select></div>
+            <div class="form-group">
+              <label id="label-might" for="might">Current Might Stature</label>
+              <input type="text" name="might" id="might" required placeholder="e.g., 2.5bn">
+            </div>
+            <div class="form-group">
+              <label id="label-role" for="role">Specialisation</label>
+              <select name="role" id="role">
+                <option value="filler">Elite Vanguard (Filler)</option>
+                <option value="rally-lead">High-Tier Rally Lead</option>
+              </select>
+            </div>
           </div>
+
           <div class="form-step" data-step="3">
-            <div class="form-group"><label id="label-message">Statement of Intent</label><textarea name="message" id="message" rows="4"></textarea></div>
-            <p id="form-disclaimer" class="disclaimer">* Submission is a formal pledge of loyalty.</p>
+            <div class="form-group">
+              <label id="label-message" for="message">Statement of Intent</label>
+              <textarea name="message" id="message" rows="4" placeholder="Detail your purpose for joining our ranks..."></textarea>
+            </div>
+            <p id="form-disclaimer" class="disclaimer">* Submission constitutes a formal pledge of loyalty to the Old Generation Council.</p>
           </div>
+
           <div class="form-navigation">
             <button type="button" class="btn-nav" id="prevBtn" style="visibility:hidden;">Back</button>
             <button type="button" class="btn-nav" id="nextBtn">Proceed</button>
             <button type="submit" class="btn-nav" id="submitBtn" style="display:none;">Formalise Enlistment</button>
           </div>
+
         </form>
       </section>
     </main>
+
     <footer>
-      <p id="footer-text1">OLD GENERATION: Martial excellence since 2016.</p>
+      <p id="footer-text1">OLD GENERATION: Cultivating martial excellence and strategic dominance since 2016.</p>
       <div class="social-buttons">
-        <a href="https://t.me/trneutralizer" target="_blank"><img src="/images/telegram.png" alt="Telegram"></a>
-        <a href="https://line.me/ti/p/Tt3gWr3BDE" target="_blank"><img src="/images/line.png" alt="Line"></a>
+        <a href="https://t.me/trneutralizer" target="_blank" rel="noopener" aria-label="Join our Telegram Headquarters">
+          <img src="/images/telegram.png" alt="Telegram Icon" width="30" height="30">
+        </a>
+        <a href="https://line.me/ti/p/Tt3gWr3BDE" target="_blank" rel="noopener" aria-label="Contact us via Line Messenger">
+          <img src="/images/line.png" alt="Line Icon" width="30" height="30">
+        </a>
       </div>
-      <p style="margin-top:20px; font-size:0.7rem; color:#444;">© 2016–2026 OLD GENERATION. Handcrafted by NeutralizeR</p>
+      <p class="copyright">© 2016–2026 OLD GENERATION. Designed by NeutralizeR</p>
     </footer>
   </div>
+
   <script src="scripts.js"></script>
 </body>
 </html>
