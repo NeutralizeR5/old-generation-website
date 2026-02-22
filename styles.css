@@ -129,3 +129,6 @@ footer { text-align: center; padding: 60px 20px 40px; border-top: 2px solid var(
     grid-template-columns: 1fr;
   }
 }
+
+.form-step { display: none; }
+.form-step.active { display: block; }
