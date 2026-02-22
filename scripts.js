@@ -17,7 +17,7 @@ const translations = {
     label_role: "Specialisation", label_message: "Statement of Intent", form_disclaimer: "* Submission is a formal pledge of loyalty.",
     prev_btn: "Back", next_btn: "Proceed", submit_btn: "Formalise Enlistment",
     footer1: "OLD GENERATION: Cultivating martial excellence since 2016.", copy_title: "SOVEREIGN PROTECTION", copy_message: "This property belongs to OLD GENERATION.",
-    ph_name: "Reveal your moniker", ph_iggid: "Numeric Identity", ph_might: "e.g., 2.5bn", ph_message: "Detail your purpose for joining our ranks..."
+    ph_name: "State your exact player alias", ph_iggid: "Numeric Identity", ph_might: "e.g., 2.5bn", ph_message: "Detail your purpose for joining our ranks..."
   },
   tr: {
     title: "OLD GENERATION ASLA PES ETME",
@@ -37,7 +37,7 @@ const translations = {
     label_role: "Uzmanlık Alanı", label_message: "Niyet Beyanı", form_disclaimer: "* Gönderim, resmi bir sadakat yemini teşkil eder.",
     prev_btn: "Geri", next_btn: "Devam Et", submit_btn: "Kaydı Resmileştir",
     footer1: "OLD GENERATION: 2016'dan beri askeri mükemmellik inşa ediyoruz.", copy_title: "İÇERİK KORUMASI", copy_message: "Bu mülkiyet OLD GENERATION'a aittir.",
-    ph_name: "Oyun içi adınızı yazın", ph_iggid: "Sayısal Kimliğiniz", ph_might: "Örn. 2.5mr", ph_message: "Saflarımıza katılma amacınızı detaylandırın..."
+    ph_name: "Askeri künyenizi beyan edin", ph_iggid: "Sayısal Kimliğiniz", ph_might: "Örn. 2.5mr", ph_message: "Saflarımıza katılma amacınızı detaylandırın..."
   },
   it: {
     title: "OLD GENERATION VESTIGIA DI VALORE",
@@ -57,7 +57,7 @@ const translations = {
     label_role: "Specializzazione", label_message: "Dichiarazione d'Intenti", form_disclaimer: "* L'invio costituisce un impegno di lealtà.",
     prev_btn: "Indietro", next_btn: "Procedi", submit_btn: "Formalizza l'Arruolamento",
     footer1: "OLD GENERATION: Coltiviamo l'eccellenza marziale dal 2016.", copy_title: "PROTEZIONE SOVRANA", copy_message: "Questa proprietà appartiene a OLD GENERATION.",
-    ph_name: "Rivela il tuo nome", ph_iggid: "Identità Numerica", ph_might: "es. 2.5mld", ph_message: "Dettaglia il tuo scopo per unirti ai nostri ranghi..."
+    ph_name: "Dichiara il tuo alias di battaglia", ph_iggid: "Identità Numerica", ph_might: "es. 2.5mld", ph_message: "Dettaglia il tuo scopo per unirti ai nostri ranghi..."
   }
 };
 
@@ -179,4 +179,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('/service-worker.js');
+
 
