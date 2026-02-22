@@ -49,11 +49,11 @@
       display: flex; justify-content: center; align-items: center;
     }
 
-    nav ul { display: flex; list-style: none; gap: 20px; }
+    nav ul { display: flex; list-style: none; gap: 15px; }
     nav a {
       color: var(--text-light); text-decoration: none;
-      padding: 8px 15px; font-weight: 600; text-transform: uppercase;
-      font-size: 0.9rem; transition: 0.3s; border-radius: 20px;
+      padding: 8px 12px; font-weight: 600; text-transform: uppercase;
+      font-size: 0.8rem; transition: 0.3s; border-radius: 20px;
     }
     nav a:hover { background: var(--primary-red); color: var(--bg-dark); box-shadow: var(--glow); }
 
@@ -77,7 +77,7 @@
     .language-buttons { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
     .language-buttons button {
       background: transparent; border: 1px solid var(--gold);
-      color: var(--gold); padding: 5px 15px; cursor: pointer; transition: 0.3s;
+      color: var(--gold); padding: 5px 12px; cursor: pointer; transition: 0.3s; font-size: 0.7rem;
     }
     .language-buttons button:hover { background: var(--gold); color: var(--bg-dark); }
 
@@ -98,7 +98,6 @@
     }
     .member-card:hover, .stat-card:hover { border-color: var(--primary-red); box-shadow: var(--glow); }
 
-    /* Multi-Step Enlistment Form */
     .form-step { display: none; }
     .form-step.active { display: block; animation: fadeIn 0.5s ease; }
     
@@ -108,7 +107,6 @@
       width: 100%; padding: 12px; background: #000; border: 1px solid var(--primary-red);
       color: #fff; font-family: 'Orbitron'; border-radius: 5px; outline: none;
     }
-    input:focus { border-color: var(--gold); box-shadow: var(--glow); }
 
     .form-navigation { display: flex; justify-content: space-between; margin-top: 30px; }
     .btn-nav {
@@ -157,10 +155,11 @@
     <header>
       <div id="logo"><img src="https://oldgeneration.com.tr/images/logo.png" alt="OLD GENERATION"></div>
       <h1>OLD GENERATION</h1>
-      <p id="header-subtitle" style="letter-spacing: 5px; color: var(--text-gray); font-size: 1.1rem;">PRESERVING LEGACY, COMMANDING DESTINY</p>
+      <p id="header-subtitle">PRESERVING LEGACY, COMMANDING DESTINY</p>
       <div class="language-buttons">
         <button onclick="setLang('tr')">TR</button>
         <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('it')">IT</button>
       </div>
     </header>
 
@@ -215,10 +214,9 @@
         <div class="progress-container"><div class="progress-bar" id="p-bar"></div></div>
         
         <form id="recruitment-form" action="https://formspree.io/f/myzeveog" method="POST">
-          
           <div class="form-step active" data-step="1">
             <div class="form-group">
-              <label id="label-name">In-Game Moniker</label>
+              <label id="label-name">In-Game Name</label>
               <input type="text" name="name" id="name" required placeholder="Reveal your identity">
             </div>
             <div class="form-group">
@@ -226,7 +224,6 @@
               <input type="number" name="iggid" required placeholder="Numeric Identifier">
             </div>
           </div>
-
           <div class="form-step" data-step="2">
             <div class="form-group">
               <label id="label-might">Current Might Stature</label>
@@ -240,7 +237,6 @@
               </select>
             </div>
           </div>
-
           <div class="form-step" data-step="3">
             <div class="form-group">
               <label id="label-message">Statement of Intent</label>
@@ -248,16 +244,13 @@
             </div>
             <p style="font-size: 0.75rem; color: var(--primary-red); text-align: center;" id="form-disclaimer">Submission constitutes a formal pledge of loyalty to the Old Generation Council.</p>
           </div>
-
           <div class="form-navigation">
             <button type="button" class="btn-nav" id="prevBtn" style="visibility:hidden;">Back</button>
             <button type="button" class="btn-nav" id="nextBtn">Proceed</button>
             <button type="submit" class="btn-nav" id="submitBtn" style="display:none;">Formalise Enlistment</button>
           </div>
-
         </form>
       </section>
-
     </main>
 
     <footer>
@@ -274,7 +267,7 @@
     const translations = {
       en: {
         title: "OLD GENERATION – VESTIGES OF VALOUR",
-        header_subtitle: "PRESERVING THE ANCIENT LEGACY, COMMANDING DESTINY",
+        header_subtitle: "PRESERVING LEGACY, COMMANDING DESTINY",
         nav_stats: "Intelligence",
         nav_profiles: "Legion",
         nav_terminology: "Archives",
@@ -296,10 +289,9 @@
         term2_title: "Coordinated Rally",
         term2_desc: "A masterfully synchronised offensive where legionnaires unite under a singular command to overwhelm the opposition.",
         contact_title: "The Inquisitorial Protocol",
-        label_name: "In-Game Moniker",
+        label_name: "In-Game Name",
         input_name_placeholder: "Reveal your identity",
         label_iggid: "Unique IGG ID",
-        input_iggid_placeholder: "Numeric Identifier",
         label_might: "Current Might Stature",
         label_specialisation: "Specialisation",
         label_message: "Statement of Intent",
@@ -336,10 +328,9 @@
         term2_title: "Koordineli Miting",
         term2_desc: "Lejyonerlerin muhalefeti ezmek için tek bir komuta altında birleştiği, ustaca senkronize edilmiş bir saldırı.",
         contact_title: "Üyelik Sorgulama Protokolü",
-        label_name: "Oyun İçi Takma Ad",
+        label_name: "Oyun İçi İsim",
         input_name_placeholder: "Kimliğinizi açıklayın",
         label_iggid: "Benzersiz IGG ID",
-        input_iggid_placeholder: "Sayısal Tanımlayıcı",
         label_might: "Mevcut Kudret Seviyesi",
         label_specialisation: "Uzmanlık Alanı",
         label_message: "Niyet Beyanı",
@@ -351,6 +342,45 @@
         footer1: "OLD GENERATION: 2016'dan beri askeri mükemmellik ve stratejik hakimiyet inşa ediyoruz.",
         copy_title: "İÇERİK KORUMASI",
         copy_message: "Bu fikri mülkiyet OLD GENERATION loncasının münhasır alanıdır."
+      },
+      it: {
+        title: "OLD GENERATION – VESTIGIA DI VALORE",
+        header_subtitle: "PRESERVARE L'EREDITÀ, COMANDARE IL DESTINO",
+        nav_stats: "Intelligence",
+        nav_profiles: "Legione",
+        nav_terminology: "Archivi",
+        nav_contact: "Arruolamento",
+        stats_title: "Metriche Strategiche",
+        members_label: "Combattenti d'Elite",
+        might_label: "Potenza Collettiva",
+        level_label: "Livello Sovrano",
+        profiles_title: "Alto Consiglio",
+        member1_name: "Capo Supremo",
+        member1_role: "GRAN MARESCIALLO",
+        member2_name: "Generale di Guerra",
+        member2_role: "COMANDANTE DI BATTAGLIA",
+        member3_name: "Maestro dello Scudo",
+        member3_role: "STRATEGA DELLA DIFESA",
+        terminology_title: "Compendio Tattico",
+        term1_title: "Statura Marziale",
+        term1_desc: "Una valutazione completa della propria sovranità, che comprende risorse militari, progressi strutturali e ricerca arcana.",
+        term2_title: "Adunata Coordinata",
+        term2_desc: "Un'offensiva magistralmente sincronizzata in cui i legionari si uniscono sotto un unico comando per travolgere l'opposizione.",
+        contact_title: "Il Protocollo Inquisitorio",
+        label_name: "Nome In-Game",
+        input_name_placeholder: "Rivela la tua identità",
+        label_iggid: "ID IGG Univoco",
+        label_might: "Statura di Potenza Attuale",
+        label_specialisation: "Specializzazione",
+        label_message: "Dichiarazione d'Intenti",
+        input_message_placeholder: "Articola il tuo scopo per unirti al nostro vessillo...",
+        form_disclaimer: "L'invio costituisce un impegno formale di lealtà al Consiglio di Old Generation.",
+        prev_btn: "Indietro",
+        next_btn: "Procedi",
+        submit_btn: "Formalizza l'Arruolamento",
+        footer1: "OLD GENERATION: Coltiviamo l'eccellenza marziale e il dominio strategico dal 2016.",
+        copy_title: "PROTEZIONE SOVRANA",
+        copy_message: "Questa proprietà intellettuale è dominio esclusivo di OLD GENERATION."
       }
     };
 
@@ -373,7 +403,6 @@
       document.getElementById('level-label').textContent = t.level_label;
       document.getElementById('profiles-title').textContent = t.profiles_title;
       
-      // Member names and roles
       document.getElementById('member1-name').textContent = t.member1_name;
       document.getElementById('member1-role').textContent = t.member1_role;
       document.getElementById('member2-name').textContent = t.member2_name;
@@ -381,14 +410,12 @@
       document.getElementById('member3-name').textContent = t.member3_name;
       document.getElementById('member3-role').textContent = t.member3_role;
 
-      // Terminology content
       document.getElementById('terminology-title').textContent = t.terminology_title;
       document.getElementById('term1-title').textContent = t.term1_title;
       document.getElementById('term1-desc').textContent = t.term1_desc;
       document.getElementById('term2-title').textContent = t.term2_title;
       document.getElementById('term2-desc').textContent = t.term2_desc;
 
-      // Contact form
       document.getElementById('contact-title').textContent = t.contact_title;
       document.getElementById('label-name').textContent = t.label_name;
       document.getElementById('name').placeholder = t.input_name_placeholder;
@@ -430,7 +457,6 @@
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
       const submitBtn = document.getElementById('submitBtn');
-
       prevBtn.style.visibility = currentStep === 1 ? 'hidden' : 'visible';
       if (currentStep === 3) {
         nextBtn.style.display = 'none';
