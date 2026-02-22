@@ -1,11 +1,11 @@
 const translations = {
   en: {
-    title: "OLD GENERATION VESTIGES OF VALOUR",
+    title: "OLD GENERATION VESTIGIA OF VALOUR",
     header_subtitle: "PRESERVING LEGACY, COMMANDING DESTINY",
     nav_stats: "Intelligence", nav_profiles: "Legion", nav_terminology: "Archives", nav_contact: "Enlistment",
     stats_title: "Strategic Metrics", members_label: "Elite Combatants", might_label: "Collective Potency", level_label: "Sovereign Level",
-    profiles_title: "High Council", member1_name: "Supreme Leader", member1_role: "GRAND MARSHAL",
-    member2_name: "War General", member2_role: "BATTLE COMMANDER", member3_name: "Shield Master", member3_role: "DEFENCE STRATEGIST",
+    profiles_title: "High Council", member1_name: "Supreme Leader", member1_role: "R5 LEADER",
+    member2_name: "War General", member2_role: "R4 WAR LEADER", member3_name: "Shield Master", member3_role: "R4 DEFENCE LEADER",
     terminology_title: "Tactical Compendium",
     calc_title: "Deployment Calculator", calc_label_total: "Total Deployment Size", calc_label_split: "Ratio Integration",
     calc_split_40: "40% T5 60% T4 (Standard Vanguard)", calc_split_50: "50% T5 50% T4 (Equilibrium)", calc_split_60: "60% T5 40% T4 (Heavy Assault)", calc_split_100: "100% T4 (Pure Vanguard)",
@@ -24,8 +24,8 @@ const translations = {
     header_subtitle: "MİRASI KORUYOR, KADERİ YENİYORUZ",
     nav_stats: "İstihbarat", nav_profiles: "Lejyon", nav_terminology: "Arşivler", nav_contact: "Başvuru",
     stats_title: "Stratejik Veriler", members_label: "Seçkin Savaşçılar", might_label: "Toplam Kudret", level_label: "Lonca Kademesi",
-    profiles_title: "Yüksek Konsey", member1_name: "Yüce Lider", member1_role: "BAŞ MARŞAL",
-    member2_name: "Savaş Generali", member2_role: "MUHAREBE KOMUTANI", member3_name: "Kalkan Ustası", member3_role: "SAVUNMA STRATEJİSTİ",
+    profiles_title: "Yüksek Konsey", member1_name: "Yüce Lider", member1_role: "R5 LİDER",
+    member2_name: "Savaş Generali", member2_role: "R4 SAVAŞ LİDERİ", member3_name: "Kalkan Ustası", member3_role: "R4 SAVUNMA LİDERİ",
     terminology_title: "Taktik Rehber",
     calc_title: "Birlik Dağılım Hesaplayıcısı", calc_label_total: "Toplam Birlik Kapasitesi", calc_label_split: "Oran Dağılımı",
     calc_split_40: "40% T5 60% T4 (Standart Öncü)", calc_split_50: "50% T5 50% T4 (Dengeli)", calc_split_60: "60% T5 40% T4 (Ağır Taarruz)", calc_split_100: "100% T4 (Saf Öncü)",
@@ -44,8 +44,8 @@ const translations = {
     header_subtitle: "PRESERVARE L'EREDITÀ, COMANDARE IL DESTINO",
     nav_stats: "Intelligence", nav_profiles: "Legione", nav_terminology: "Archivi", nav_contact: "Arruolamento",
     stats_title: "Metriche Strategiche", members_label: "Combattenti d'Elite", might_label: "Potenza Collettiva", level_label: "Livello Sovrano",
-    profiles_title: "Alto Consiglio", member1_name: "Capo Supremo", member1_role: "GRAN MARESCIALLO",
-    member2_name: "Generale di Guerra", member2_role: "COMANDANTE DI BATTAGLIA", member3_name: "Maestro dello Scudo", member3_role: "STRATEGA DELLA DIFESA",
+    profiles_title: "Alto Consiglio", member1_name: "Capo Supremo", member1_role: "R5 LEADER",
+    member2_name: "Generale di Guerra", member2_role: "R4 LEADER DI GUERRA", member3_name: "Maestro dello Scudo", member3_role: "R4 LEADER DELLA DIFESA",
     terminology_title: "Compendio Tattico",
     calc_title: "Calcolatore di Schieramento", calc_label_total: "Capacità Totale", calc_label_split: "Integrazione Rapporto",
     calc_split_40: "40% T5 60% T4 (Avanguardia Standard)", calc_split_50: "50% T5 50% T4 (Equilibrio)", calc_split_60: "60% T5 40% T4 (Assalto Pesante)", calc_split_100: "100% T4 (Pura Avanguardia)",
@@ -181,3 +181,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('/service-worker.js');
+
