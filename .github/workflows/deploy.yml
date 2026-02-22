@@ -8,13 +8,14 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Bu satırı ekleyin!
+      contents: write
       
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
       
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.DEPLOY_TOKEN }}  # Veya secrets.DEPLOY_TOKEN
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
