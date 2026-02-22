@@ -12,7 +12,8 @@ const translations = {
     label_role: "Specialisation", label_message: "Statement of Intent", form_disclaimer: "* Submission is a formal pledge of loyalty.",
     prev_btn: "Back", next_btn: "Proceed", submit_btn: "Formalise Enlistment",
     footer1: "OLD GENERATION: Cultivating martial excellence since 2016.",
-    copy_title: "SOVEREIGN PROTECTION", copy_message: "This property belongs to OLD GENERATION."
+    copy_title: "SOVEREIGN PROTECTION", copy_message: "This property belongs to OLD GENERATION.",
+    ph_name: "Reveal your moniker", ph_iggid: "Numeric Identity", ph_might: "e.g., 2.5bn", ph_message: "Detail your purpose for joining our ranks..."
   },
   tr: {
     title: "OLD GENERATION – ASLA PES ETME",
@@ -27,7 +28,8 @@ const translations = {
     label_role: "Uzmanlık Alanı", label_message: "Niyet Beyanı", form_disclaimer: "* Gönderim, resmi bir sadakat yemini teşkil eder.",
     prev_btn: "Geri", next_btn: "Devam Et", submit_btn: "Kaydı Resmileştir",
     footer1: "OLD GENERATION: 2016'dan beri askeri mükemmellik inşa ediyoruz.",
-    copy_title: "İÇERİK KORUMASI", copy_message: "Bu mülkiyet OLD GENERATION'a aittir."
+    copy_title: "İÇERİK KORUMASI", copy_message: "Bu mülkiyet OLD GENERATION'a aittir.",
+    ph_name: "Oyun içi adınızı yazın", ph_iggid: "Sayısal Kimliğiniz", ph_might: "Örn. 2.5mr", ph_message: "Saflarımıza katılma amacınızı detaylandırın..."
   },
   it: {
     title: "OLD GENERATION – VESTIGIA DI VALORE",
@@ -42,7 +44,8 @@ const translations = {
     label_role: "Specializzazione", label_message: "Dichiarazione d'Intenti", form_disclaimer: "* L'invio costituisce un impegno di lealtà.",
     prev_btn: "Indietro", next_btn: "Procedi", submit_btn: "Formalizza l'Arruolamento",
     footer1: "OLD GENERATION: Coltiviamo l'eccellenza marziale dal 2016.",
-    copy_title: "PROTEZIONE SOVRANA", copy_message: "Questa proprietà appartiene a OLD GENERATION."
+    copy_title: "PROTEZIONE SOVRANA", copy_message: "Questa proprietà appartiene a OLD GENERATION.",
+    ph_name: "Rivela il tuo nome", ph_iggid: "Identità Numerica", ph_might: "es. 2.5mld", ph_message: "Dettaglia il tuo scopo per unirti ai nostri ranghi..."
   }
 };
 
@@ -65,10 +68,24 @@ function setLang(lang) {
     let el = document.getElementById(id);
     if (el) el.textContent = elements[id];
   }
+
+  // Placeholder Text Translations
+  const placeholders = {
+    'name': t.ph_name,
+    'iggid': t.ph_iggid,
+    'might': t.ph_might,
+    'message': t.ph_message
+  };
+
+  for (let id in placeholders) {
+    let el = document.getElementById(id);
+    if (el) el.placeholder = placeholders[id];
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  setLang(localStorage.getItem('lang') || 'tr');
+  // Default to 'en' (English) if no language is selected yet
+  setLang(localStorage.getItem('lang') || 'en');
 
   let currentStep = 1;
   const steps = document.querySelectorAll('.form-step');
