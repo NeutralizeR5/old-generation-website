@@ -105,35 +105,47 @@ function setLang(lang) {
 }
 
 let ytPlayer;
+window.ytApiReady = false;
+
 window.onYouTubeIframeAPIReady = function() {
+  window.ytApiReady = true;
+};
+
+function loadVideoInView() {
+  const isDesktop = window.innerWidth > 768;
+  let pVars = {
+    'autoplay': 1,
+    'controls': 0,
+    'mute': 1,
+    'modestbranding': 1,
+    'rel': 0,
+    'disablekb': 1,
+    'playsinline': 1,
+    'loop': 1,
+    'playlist': 'eD9sfQft3CQ'
+  };
+
+  if (isDesktop) {
+    pVars['vq'] = 'hd1080';
+  }
+
   ytPlayer = new YT.Player('ytplayer', {
     host: 'https://www.youtube-nocookie.com',
     videoId: 'eD9sfQft3CQ',
-    playerVars: {
-      'autoplay': 1,
-      'controls': 0,
-      'mute': 1,
-      'modestbranding': 1,
-      'rel': 0,
-      'disablekb': 1,
-      'playsinline': 1,
-      'loop': 1,
-      'playlist': 'eD9sfQft3CQ',
-      'vq': 'hd1080'
-    },
+    playerVars: pVars,
     events: {
       'onReady': function(event) {
-        event.target.setPlaybackQuality('hd1080');
+        if (isDesktop) event.target.setPlaybackQuality('hd1080');
         event.target.playVideo();
       },
       'onStateChange': function(event) {
-        if (event.data == YT.PlayerState.PLAYING) {
+        if (isDesktop && event.data == YT.PlayerState.PLAYING) {
           event.target.setPlaybackQuality('hd1080');
         }
       }
     }
   });
-};
+}
 
 window.toggleMute = function() {
   if(ytPlayer && ytPlayer.isMuted) {
@@ -265,6 +277,24 @@ document.addEventListener('DOMContentLoaded', () => {
     sec.classList.add('fade-in-section');
     observer.observe(sec);
   });
+
+  const videoSection = document.getElementById('cinematic');
+  if (videoSection) {
+    const videoObserver = new IntersectionObserver((entries, observerInstance) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const checkApi = setInterval(() => {
+            if (window.ytApiReady) {
+              clearInterval(checkApi);
+              loadVideoInView();
+            }
+          }, 100);
+          observerInstance.disconnect();
+        }
+      });
+    }, { rootMargin: '0px 0px 500px 0px' });
+    videoObserver.observe(videoSection);
+  }
 });
 
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('/service-worker.js');
