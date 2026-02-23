@@ -13,14 +13,30 @@
   <link rel="manifest" href="/manifest.json">
 
   <link rel="preload" as="image" href="/images/logo.png" fetchpriority="high">
+  <link rel="preload" as="image" href="/images/fortbg.jpg" fetchpriority="high">
   <link rel="preload" href="styles.css" as="style">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbitron:wght@400;700&family=Oswald:wght@500;700&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbitron:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbitron:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbitron:wght@400;700&family=Oswald:wght@500;700&display=swap"></noscript>
   
   <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background-image: url('/images/fortbg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      opacity: 0.20;
+      z-index: -1;
+    }
+  </style>
 </head>
 <body>
 
@@ -56,7 +72,7 @@
 
     <main id="main-content">
       
-      <section id="live-stats" style="min-height: 150px;">
+      <section id="live-stats" style="min-height: 200px;">
         <h2 id="stats-title">Guild Stats</h2>
         <div class="stats-grid">
           <div class="stat-card">
@@ -74,7 +90,7 @@
         </div>
       </section>
 
-      <section id="profiles">
+      <section id="profiles" style="min-height: 200px;">
         <h2 id="profiles-title">Guild Leadership</h2>
         <div class="member-grid">
           <div class="member-card">
@@ -213,10 +229,10 @@
       <p id="footer-text1">OLD GENERATION: Cultivating martial excellence since 2016.</p>
       <div class="social-buttons">
         <a href="https://t.me/trneutralizer" target="_blank" rel="noopener" aria-label="Join our Telegram Headquarters">
-          <img src="/images/telegram.png" alt="Telegram Icon">
+          <img src="/images/telegram.png" alt="Telegram Icon" width="40" height="40" loading="lazy">
         </a>
         <a href="https://line.me/ti/p/Tt3gWr3BDE" target="_blank" rel="noopener" aria-label="Contact us via Line Messenger">
-          <img src="/images/line.png" alt="Line Icon">
+          <img src="/images/line.png" alt="Line Icon" width="40" height="40" loading="lazy">
         </a>
       </div>
       <p class="copyright">© 2016–2026 OLD GENERATION. Designed by NeutralizeR</p>
