@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>OLD GENERATION – VESTIGES OF VALOUR</title>
+  <title>OLD GENERATION</title>
   <link rel="canonical" href="https://oldgeneration.com.tr/">
   <meta name="theme-color" content="#ff3333">
   
@@ -34,7 +34,7 @@
       <li><a href="#live-stats" id="nav-stats">Intelligence</a></li>
       <li><a href="#profiles" id="nav-profiles">Legion</a></li>
       <li><a href="#terminology" id="nav-terminology">Archives</a></li>
-      <li><a href="#contact" id="nav-contact">Enlistment</a></li>
+      <li><a href="#contact" id="nav-contact">Recruitment</a></li>
     </ul>
   </nav>
 
@@ -44,7 +44,7 @@
         <img src="/images/logo.png" alt="OLD GENERATION Official Emblem" width="150" height="150" fetchpriority="high">
       </div>
       <h1>OLD GENERATION</h1>
-      <p id="header-subtitle">PRESERVING LEGACY, COMMANDING DESTINY</p>
+      <p id="header-subtitle">PRESERVING LEGACY COMMANDING DESTINY</p>
       <div class="language-buttons">
         <button onclick="setLang('tr')" aria-label="Switch to Turkish">TR</button>
         <button onclick="setLang('en')" aria-label="Switch to English">EN</button>
@@ -55,25 +55,25 @@
     <main id="main-content">
       
       <section id="live-stats">
-        <h2 id="stats-title">Strategic Metrics</h2>
+        <h2 id="stats-title">Guild Stats</h2>
         <div class="stats-grid">
           <div class="stat-card">
             <span class="stat-number">100</span>
-            <div id="members-label">Elite Combatants</div>
+            <div id="members-label">Active Members</div>
           </div>
           <div class="stat-card">
-            <span class="stat-number">120B+</span>
-            <div id="might-label">Collective Potency</div>
+            <span class="stat-number">100B+</span>
+            <div id="might-label">Guild Might</div>
           </div>
           <div class="stat-card">
             <span class="stat-number">29</span>
-            <div id="level-label">Sovereign Level</div>
+            <div id="level-label">Guild Level</div>
           </div>
         </div>
       </section>
 
       <section id="profiles">
-        <h2 id="profiles-title">High Council</h2>
+        <h2 id="profiles-title">Guild Leadership</h2>
         <div class="member-grid">
           <div class="member-card">
             <div class="avatar-icon" role="img" aria-label="Supreme Leader Icon">👑</div>
@@ -102,22 +102,22 @@
       </section>
 
       <section id="terminology">
-        <h2 id="terminology-title">Tactical Compendium</h2>
+        <h2 id="terminology-title">Tactical Guide</h2>
         
         <div class="calculator-container">
-          <h3 id="calc-title" class="calc-header">Deployment Calculator</h3>
+          <h3 id="calc-title" class="calc-header">Troop Calculator</h3>
           <div class="calc-inputs">
             <div class="form-group">
-              <label id="calc-label-total" for="total-troops">Total Deployment Size</label>
+              <label id="calc-label-total" for="total-troops">Total Army Capacity</label>
               <input type="number" id="total-troops" value="250000" min="1000">
             </div>
             <div class="form-group">
               <label id="calc-label-split" for="t5-split">Ratio Integration</label>
               <select id="t5-split">
-                <option value="40" id="calc-split-40">40% T5 / 60% T4 (Standard Vanguard)</option>
-                <option value="50" id="calc-split-50">50% T5 / 50% T4 (Equilibrium)</option>
-                <option value="60" id="calc-split-60">60% T5 / 40% T4 (Heavy Assault)</option>
-                <option value="0" id="calc-split-100">100% T4 (Pure Vanguard)</option>
+                <option value="40" id="calc-split-40">40% T5 60% T4 (Standard)</option>
+                <option value="50" id="calc-split-50">50% T5 50% T4 (Balanced)</option>
+                <option value="60" id="calc-split-60">60% T5 40% T4 (Heavy)</option>
+                <option value="0" id="calc-split-100">100% T4 (Pure)</option>
               </select>
             </div>
             <div class="form-group">
@@ -126,16 +126,16 @@
                 <option value="inf-blast" id="comp-inf">Infantry Blast</option>
                 <option value="rng-blast" id="comp-rng">Ranged Blast</option>
                 <option value="cav-blast" id="comp-cav">Cavalry Blast</option>
-                <option value="442" id="comp-442">Mixed 4 4 2 (Inf/Rng Focus)</option>
-                <option value="424" id="comp-424">Mixed 4 2 4 (Inf/Cav Focus)</option>
-                <option value="244" id="comp-244">Mixed 2 4 4 (Rng/Cav Focus)</option>
+                <option value="442" id="comp-442">Mixed 4 4 2</option>
+                <option value="424" id="comp-424">Mixed 4 2 4</option>
+                <option value="244" id="comp-244">Mixed 2 4 4</option>
               </select>
             </div>
-            <button class="btn-nav" id="btn-calculate" onclick="calculateTroops()" style="margin-top:10px; width:100%;">Compute Matrix</button>
+            <button class="btn-nav" id="btn-calculate" onclick="calculateTroops()" style="margin-top:10px; width:100%;">Calculate Troops</button>
           </div>
           
           <div class="calc-results" id="calc-results" style="display:none;">
-            <h3 id="calc-result-title" style="color: var(--gold); margin-top: 30px; margin-bottom: 15px; text-align: center;">Deployment Matrix Overview</h3>
+            <h3 id="calc-result-title" style="color: var(--gold); margin-top: 30px; margin-bottom: 15px; text-align: center;">Troop Deployment Overview</h3>
             <div class="result-grid">
               <div class="res-box inf">
                 <h4 id="res-inf-title">Infantry</h4>
@@ -153,52 +153,53 @@
                 <p>T4: <span id="res-t4-cav" class="res-number">0</span></p>
               </div>
             </div>
-            <button class="btn-nav" id="btn-copy" onclick="copyResults()" style="margin-top:20px; width:100%; background: #222; border: 1px solid var(--gold);">Copy to Clipboard</button>
+            <button class="btn-nav" id="btn-copy" onclick="copyResults()" style="margin-top:20px; width:100%; background: #222; border: 1px solid var(--gold);">Copy</button>
           </div>
         </div>
       </section>
 
       <section id="contact">
-        <h2 id="contact-title">The Inquisitorial Protocol</h2>
+        <h2 id="contact-title">Application Form</h2>
         <div class="progress-container"><div class="progress-bar" id="p-bar"></div></div>
         
         <form id="recruitment-form" action="https://formspree.io/f/myzeveog" method="POST">
           <div class="form-step active" data-step="1">
             <div class="form-group">
               <label id="label-name" for="name">In Game Name</label>
-              <input type="text" name="name" id="name" required placeholder="State your exact player alias">
+              <input type="text" name="name" id="name" required placeholder="Enter your exact player name">
             </div>
             <div class="form-group">
-              <label id="label-iggid" for="iggid">Unique IGG ID</label>
+              <label id="label-iggid" for="iggid">IGG ID</label>
               <input type="number" name="iggid" id="iggid" required placeholder="Numeric Identity">
             </div>
           </div>
 
           <div class="form-step" data-step="2">
             <div class="form-group">
-              <label id="label-might" for="might">Current Might Stature</label>
-              <input type="text" name="might" id="might" required placeholder="e.g. 2.5bn">
+              <label id="label-might" for="might">Total Might</label>
+              <input type="text" name="might" id="might" required placeholder="e.g. 2.5B">
             </div>
             <div class="form-group">
-              <label id="label-role" for="role">Specialisation</label>
+              <label id="label-role" for="role">Combat Role</label>
               <select name="role" id="role">
-                <option value="filler" id="opt-filler">Elite Vanguard (Filler)</option>
-                <option value="rally-lead" id="opt-rally">High Tier Rally Lead</option>
+                <option value="filler" id="opt-filler">Filler</option>
+                <option value="rally-lead" id="opt-rally">Rally Lead</option>
               </select>
             </div>
+          </div>
 
           <div class="form-step" data-step="3">
             <div class="form-group">
-              <label id="label-message" for="message">Statement of Intent</label>
-              <textarea name="message" id="message" rows="4" placeholder="Detail your purpose for joining our ranks..."></textarea>
+              <label id="label-message" for="message">Message</label>
+              <textarea name="message" id="message" rows="4" placeholder="Tell us why you want to join..."></textarea>
             </div>
-            <p id="form-disclaimer" class="disclaimer">* Submission is a formal pledge of loyalty.</p>
+            <p id="form-disclaimer" class="disclaimer">Please fill out the form completely.</p>
           </div>
 
           <div class="form-navigation">
             <button type="button" class="btn-nav" id="prevBtn" style="visibility:hidden;">Back</button>
             <button type="button" class="btn-nav" id="nextBtn">Proceed</button>
-            <button type="submit" class="btn-nav" id="submitBtn" style="display:none;">Formalise Enlistment</button>
+            <button type="submit" class="btn-nav" id="submitBtn" style="display:none;">Submit Application</button>
           </div>
         </form>
       </section>
