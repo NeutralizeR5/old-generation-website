@@ -2,7 +2,7 @@ const translations = {
   en: {
     title: "OLD GENERATION OFFICIAL PORTAL",
     header_subtitle: "PRESERVING LEGACY COMMANDING DESTINY",
-    nav_stats: "Intelligence", nav_profiles: "Legion", nav_terminology: "Archives", nav_contact: "Recruitment",
+    nav_stats: "Intelligence", nav_profiles: "Legion", nav_terminology: "Calculator", nav_contact: "Recruitment",
     stats_title: "Guild Stats", members_label: "Active Members", might_label: "Guild Might", level_label: "Guild Level",
     profiles_title: "Guild Leadership", member1_name: "Supreme Leader", member1_role: "R5 LEADER",
     member2_name: "War General", member2_role: "R4 WAR LEADER", member3_name: "Shield Master", member3_role: "R4 DEFENCE LEADER",
@@ -23,7 +23,7 @@ const translations = {
   tr: {
     title: "OLD GENERATION ASLA PES ETME",
     header_subtitle: "MİRASI KORUYOR KADERİ YENİYORUZ",
-    nav_stats: "İstihbarat", nav_profiles: "Lejyon", nav_terminology: "Arşivler", nav_contact: "Başvuru",
+    nav_stats: "İstihbarat", nav_profiles: "Lejyon", nav_terminology: "Hesaplayıcı", nav_contact: "Başvuru",
     stats_title: "Lonca İstatistikleri", members_label: "Aktif Üyeler", might_label: "Lonca Kudreti", level_label: "Lonca Seviyesi",
     profiles_title: "Lonca Liderliği", member1_name: "Yüce Lider", member1_role: "R5 LİDER",
     member2_name: "Savaş Generali", member2_role: "R4 SAVAŞ LİDERİ", member3_name: "Kalkan Ustası", member3_role: "R4 SAVUNMA LİDERİ",
@@ -44,7 +44,7 @@ const translations = {
   it: {
     title: "OLD GENERATION PORTALE UFFICIALE",
     header_subtitle: "PRESERVARE L'EREDITÀ COMANDARE IL DESTINO",
-    nav_stats: "Statistiche", nav_profiles: "Legione", nav_terminology: "Archivi", nav_contact: "Reclutamento",
+    nav_stats: "Statistiche", nav_profiles: "Legione", nav_terminology: "Calcolatore", nav_contact: "Reclutamento",
     stats_title: "Statistiche Gilda", members_label: "Membri Attivi", might_label: "Potenza Gilda", level_label: "Livello Gilda",
     profiles_title: "Leadership della Gilda", member1_name: "Capo Supremo", member1_role: "R5 LEADER",
     member2_name: "Generale di Guerra", member2_role: "R4 LEADER DI GUERRA", member3_name: "Maestro dello Scudo", member3_role: "R4 LEADER DELLA DIFESA",
