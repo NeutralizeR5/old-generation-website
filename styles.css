@@ -44,7 +44,6 @@ h2 { font-family: 'Cinzel', serif; color: var(--gold); text-align: center; margi
 label { display: block; color: var(--gold); font-size: 0.8rem; margin-bottom: 5px; text-transform: uppercase; }
 input, textarea, select { width: 100%; padding: 12px; background: #000; border: 1px solid var(--primary-red); color: #fff; font-family: 'Orbitron'; border-radius: 5px; }
 
-/* FIX: Buton Hizalama - Sağ Tarafa Yaslama */
 .form-navigation { 
   display: flex; 
   justify-content: space-between; 
@@ -56,7 +55,7 @@ input, textarea, select { width: 100%; padding: 12px; background: #000; border: 
 #nextBtn, #submitBtn { 
   background: var(--primary-red); 
   color: #fff; 
-  margin-left: auto; /* Butonu sağa iter */
+  margin-left: auto;
 }
 #prevBtn { background: #333; color: #fff; }
 
@@ -73,7 +72,6 @@ footer { text-align: center; padding: 60px 20px 40px; border-top: 2px solid var(
 
 @media (max-width: 768px) { h1 { font-size: 2.5rem; } nav ul { gap: 10px; } nav a { font-size: 0.75rem; } .social-buttons { gap: 15px; } }
 
-/* Tactical Calculator Styles */
 .calculator-container {
   background: #111;
   padding: 30px;
@@ -132,15 +130,6 @@ footer { text-align: center; padding: 60px 20px 40px; border-top: 2px solid var(
 
 .form-step { display: none; }
 .form-step.active { display: block; }
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: url('/images/fortbg.jpg') center/cover no-repeat;
-  opacity: 0.20;
-  z-index: -1;
-}
 
 input:focus, textarea:focus, select:focus {
   outline: none;
