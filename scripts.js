@@ -117,11 +117,18 @@ window.onYouTubeIframeAPIReady = function() {
       'disablekb': 1,
       'playsinline': 1,
       'loop': 1,
-      'playlist': 'eD9sfQft3CQ'
+      'playlist': 'eD9sfQft3CQ',
+      'vq': 'hd1080'
     },
     events: {
       'onReady': function(event) {
+        event.target.setPlaybackQuality('hd1080');
         event.target.playVideo();
+      },
+      'onStateChange': function(event) {
+        if (event.data == YT.PlayerState.PLAYING) {
+          event.target.setPlaybackQuality('hd1080');
+        }
       }
     }
   });
