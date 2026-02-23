@@ -132,3 +132,66 @@ footer { text-align: center; padding: 60px 20px 40px; border-top: 2px solid var(
 
 .form-step { display: none; }
 .form-step.active { display: block; }
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('/images/fort-bg.jpg') center/cover no-repeat;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+  transition: 0.3s ease;
+}
+
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  border: 1px solid var(--gold);
+  outline: none;
+  background-color: var(--bg-card);
+  color: var(--gold);
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  transition: 0.3s;
+  box-shadow: var(--glow);
+}
+
+#scrollTopBtn:hover {
+  background-color: var(--gold);
+  color: #000;
+  transform: scale(1.1);
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes pulse-matrix {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); color: var(--gold); text-shadow: 0 0 10px var(--gold); }
+  100% { transform: scale(1); }
+}
+
+.pulse-active {
+  animation: pulse-matrix 0.5s ease-out;
+  display: inline-block;
+}
