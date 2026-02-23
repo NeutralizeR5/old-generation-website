@@ -110,7 +110,11 @@ window.calculateTroops = function() {
   }
 
   const setVal = (id, val) => {
-    document.getElementById(id).textContent = Math.round(val).toLocaleString();
+    let element = document.getElementById(id);
+    element.textContent = Math.round(val).toLocaleString();
+    element.classList.remove('pulse-active');
+    void element.offsetWidth;
+    element.classList.add('pulse-active');
   };
 
   setVal('res-t5-inf', total * t5Ratio * infRatio);
@@ -178,7 +182,31 @@ document.addEventListener('DOMContentLoaded', () => {
     ov.style.opacity = '1'; ov.style.pointerEvents = 'all';
     setTimeout(() => { ov.style.opacity = '0'; ov.style.pointerEvents = 'none'; }, 2000);
   }));
+
+  const scrollBtn = document.getElementById("scrollTopBtn");
+  window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      scrollBtn.style.display = "block";
+    } else {
+      scrollBtn.style.display = "none";
+    }
+  };
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('section').forEach(sec => {
+    sec.classList.add('fade-in-section');
+    observer.observe(sec);
+  });
 });
 
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('/service-worker.js');
-
