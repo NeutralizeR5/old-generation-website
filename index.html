@@ -62,7 +62,7 @@
             <div id="members-label">Elite Combatants</div>
           </div>
           <div class="stat-card">
-            <span class="stat-number">120B+</span>
+            <span class="stat-number">100B+</span>
             <div id="might-label">Collective Potency</div>
           </div>
           <div class="stat-card">
@@ -78,27 +78,29 @@
           <div class="member-card">
             <div class="avatar-icon" role="img" aria-label="Supreme Leader Icon">👑</div>
             <div id="member1-name">Supreme Leader</div>
-            <div id="member1-role" class="role-text">GRAND MARSHAL</div>
+            <div id="member1-role" class="role-text">R5 LEADER</div>
           </div>
           <div class="member-card">
             <div class="avatar-icon" role="img" aria-label="War General Icon">⚔️</div>
             <div id="member2-name">War General</div>
-            <div id="member2-role" class="role-text">BATTLE COMMANDER</div>
+            <div id="member2-role" class="role-text">R4 WAR LEADER</div>
           </div>
           <div class="member-card">
             <div class="avatar-icon" role="img" aria-label="Shield Master Icon">🛡️</div>
             <div id="member3-name">Shield Master</div>
-            <div id="member3-role" class="role-text">DEFENCE STRATEGIST</div>
+            <div id="member3-role" class="role-text">R4 DEFENCE LEADER</div>
           </div>
         </div>
       </section>
 
-<section id="cinematic" class="fade-in-section">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/eD9sfQft3CQ?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&disablekb=1&iv_load_policy=3&playsinline=1" title="Lords Mobile Cinematic" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <section id="cinematic" class="fade-in-section">
+        <div class="video-container">
+          <div id="ytplayer"></div>
+          <div class="video-overlay"></div>
+          <button id="custom-mute-btn" onclick="toggleMute()">SESİ AÇ</button>
         </div>
       </section>
-      
+
       <section id="terminology">
         <h2 id="terminology-title">Tactical Compendium</h2>
         
@@ -110,12 +112,12 @@
               <input type="number" id="total-troops" value="250000" min="1000">
             </div>
             <div class="form-group">
-              <label id="calc-label-split" for="t5-split">T5 / T4 Ratio Integration</label>
+              <label id="calc-label-split" for="t5-split">Ratio Integration</label>
               <select id="t5-split">
                 <option value="40" id="calc-split-40">40% T5 / 60% T4 (Standard Vanguard)</option>
                 <option value="50" id="calc-split-50">50% T5 / 50% T4 (Equilibrium)</option>
                 <option value="60" id="calc-split-60">60% T5 / 40% T4 (Heavy Assault)</option>
-                <option value="0" id="calc-split-100">100% T4 (Pure T4 Vanguard)</option>
+                <option value="0" id="calc-split-100">100% T4 (Pure Vanguard)</option>
               </select>
             </div>
             <div class="form-group">
@@ -124,9 +126,9 @@
                 <option value="inf-blast" id="comp-inf">Infantry Blast</option>
                 <option value="rng-blast" id="comp-rng">Ranged Blast</option>
                 <option value="cav-blast" id="comp-cav">Cavalry Blast</option>
-                <option value="442" id="comp-442">Mixed 4-4-2 (Inf/Rng Focus)</option>
-                <option value="424" id="comp-424">Mixed 4-2-4 (Inf/Cav Focus)</option>
-                <option value="244" id="comp-244">Mixed 2-4-4 (Rng/Cav Focus)</option>
+                <option value="442" id="comp-442">Mixed 4 4 2 (Inf/Rng Focus)</option>
+                <option value="424" id="comp-424">Mixed 4 2 4 (Inf/Cav Focus)</option>
+                <option value="244" id="comp-244">Mixed 2 4 4 (Rng/Cav Focus)</option>
               </select>
             </div>
             <button class="btn-nav" id="btn-calculate" onclick="calculateTroops()" style="margin-top:10px; width:100%;">Compute Matrix</button>
@@ -163,8 +165,8 @@
         <form id="recruitment-form" action="https://formspree.io/f/myzeveog" method="POST">
           <div class="form-step active" data-step="1">
             <div class="form-group">
-              <label id="label-name" for="name">In-Game Name</label>
-              <input type="text" name="name" id="name" required placeholder="Reveal your moniker">
+              <label id="label-name" for="name">In Game Name</label>
+              <input type="text" name="name" id="name" required placeholder="State your exact player alias">
             </div>
             <div class="form-group">
               <label id="label-iggid" for="iggid">Unique IGG ID</label>
@@ -175,13 +177,13 @@
           <div class="form-step" data-step="2">
             <div class="form-group">
               <label id="label-might" for="might">Current Might Stature</label>
-              <input type="text" name="might" id="might" required placeholder="e.g., 2.5bn">
+              <input type="text" name="might" id="might" required placeholder="e.g. 2.5bn">
             </div>
             <div class="form-group">
               <label id="label-role" for="role">Specialisation</label>
               <select name="role" id="role">
                 <option value="filler">Elite Vanguard (Filler)</option>
-                <option value="rally-lead">High-Tier Rally Lead</option>
+                <option value="rally-lead">High Tier Rally Lead</option>
               </select>
             </div>
           </div>
@@ -191,7 +193,7 @@
               <label id="label-message" for="message">Statement of Intent</label>
               <textarea name="message" id="message" rows="4" placeholder="Detail your purpose for joining our ranks..."></textarea>
             </div>
-            <p id="form-disclaimer" class="disclaimer">* Submission constitutes a formal pledge of loyalty to the Old Generation Council.</p>
+            <p id="form-disclaimer" class="disclaimer">* Submission is a formal pledge of loyalty.</p>
           </div>
 
           <div class="form-navigation">
@@ -204,9 +206,9 @@
     </main>
 
     <button id="scrollTopBtn" title="Top">⬆</button>
-    
+
     <footer>
-      <p id="footer-text1">OLD GENERATION: Cultivating martial excellence and strategic dominance since 2016.</p>
+      <p id="footer-text1">OLD GENERATION: Cultivating martial excellence since 2016.</p>
       <div class="social-buttons">
         <a href="https://t.me/trneutralizer" target="_blank" rel="noopener" aria-label="Join our Telegram Headquarters">
           <img src="/images/telegram.png" alt="Telegram Icon">
@@ -219,6 +221,7 @@
     </footer>
   </div>
 
+  <script src="https://www.youtube.com/iframe_api"></script>
   <script src="scripts.js"></script>
 </body>
 </html>
