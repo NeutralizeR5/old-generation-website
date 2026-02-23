@@ -210,3 +210,38 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('/service-worker.js');
+
+let ytPlayer;
+window.onYouTubeIframeAPIReady = function() {
+  ytPlayer = new YT.Player('ytplayer', {
+    videoId: 'eD9sfQft3CQ',
+    playerVars: {
+      'autoplay': 1,
+      'controls': 0,
+      'mute': 1,
+      'modestbranding': 1,
+      'rel': 0,
+      'disablekb': 1,
+      'playsinline': 1,
+      'loop': 1,
+      'playlist': 'eD9sfQft3CQ'
+    },
+    events: {
+      'onReady': function(event) {
+        event.target.playVideo();
+      }
+    }
+  });
+};
+
+window.toggleMute = function() {
+  if(ytPlayer && ytPlayer.isMuted) {
+    if(ytPlayer.isMuted()) {
+      ytPlayer.unMute();
+      document.getElementById('custom-mute-btn').textContent = 'SESİ KAPAT';
+    } else {
+      ytPlayer.mute();
+      document.getElementById('custom-mute-btn').textContent = 'SESİ AÇ';
+    }
+  }
+};
